@@ -3,13 +3,6 @@
   <div class="ambient-glow orb-purple"></div>
   <div class="ambient-glow orb-green"></div>
 
-  <div class="ball purple-lg b1"></div>
-  <div class="ball green-md b2"></div>
-  <div class="ball purple-sm b3"></div>
-  <div class="ball green-lg b4"></div>
-  <div class="ball purple-md b5"></div>
-  <div class="ball green-sm b6"></div>
-
   <div class="glass-card fade-in">
     <div class="split-layout">
       
@@ -24,45 +17,54 @@
       </div>
 
       <div class="form-panel">
-        <h2 class="form-header">הרשמה למכירה הסינית שלנו -
-          <tr>
-           שותפות מלאה בהצלת חיים </h2>
-        <form (ngSubmit)="onRegister()" class="compact-form">
+        <h2 class="form-header">הרשמה למכירה הסינית</h2>
+        
+        <form (ngSubmit)="onRegister()" #registerForm="ngForm" class="compact-form">
           <div class="field-row">
             <span class="p-float-label">
-              <input pInputText id="id" name="id" [(ngModel)]="newUser.identity" />
+              <input pInputText id="id" name="id" [(ngModel)]="newUser.Identity" required />
               <label for="id">תעודת זהות</label>
             </span>
             <span class="p-float-label">
-              <p-password id="pass" name="pass" [(ngModel)]="newUser.password" [feedback]="false" [toggleMask]="true"></p-password>
+              <p-password id="pass" name="pass" [(ngModel)]="newUser.password" [feedback]="false" [toggleMask]="true" required></p-password>
               <label for="pass">סיסמה</label>
             </span>
           </div>
+
           <div class="field-row">
             <span class="p-float-label">
-              <input pInputText id="fn" name="fn" [(ngModel)]="newUser.first_Name" />
+              <input pInputText id="fn" name="fn" [(ngModel)]="newUser.First_Name" required />
               <label for="fn">שם פרטי</label>
             </span>
             <span class="p-float-label">
-              <input pInputText id="ln" name="ln" [(ngModel)]="newUser.last_Name" />
+              <input pInputText id="ln" name="ln" [(ngModel)]="newUser.Last_Name" required />
               <label for="ln">שם משפחה</label>
             </span>
           </div>
+
           <div class="field-row">
             <span class="p-float-label">
-              <input pInputText id="ph" name="ph" [(ngModel)]="newUser.phonNumber" />
+              <input pInputText id="ph" name="ph" [(ngModel)]="newUser.PhonNumber" required />
               <label for="ph">טלפון</label>
             </span>
             <span class="p-float-label">
-              <input pInputText id="em" name="em" [(ngModel)]="newUser.email" />
+              <input pInputText id="em" name="em" [(ngModel)]="newUser.Email" required email />
               <label for="em">אימייל</label>
             </span>
           </div>
-          <span class="p-float-label full-width">
-            <input pInputText id="addr" name="addr" [(ngModel)]="newUser.address" />
-            <label for="addr">עיר וכתובת מלאה</label>
-          </span>
-          <button type="submit" class="prime-submit-btn">
+
+          <div class="field-row">
+            <span class="p-float-label">
+              <input pInputText id="city" name="city" [(ngModel)]="newUser.City" required />
+              <label for="city">עיר</label>
+            </span>
+            <span class="p-float-label">
+              <input pInputText id="addr" name="addr" [(ngModel)]="newUser.Address" required />
+              <label for="addr">כתובת</label>
+            </span>
+          </div>
+
+          <button type="submit" class="prime-submit-btn" >
             <span>אישור והצטרפות</span>
             <i class="pi pi-check-circle"></i>
           </button>

@@ -11,7 +11,6 @@ import { RippleModule } from 'primeng/ripple';
   styleUrl: './home.scss',
 })
 export class Home {
-  // הפונקציות שחובה להוסיף כדי שהקומפילציה תעבור
   redirectToPrizes() {
     console.log('מעבר לקטלוג הפרסים');
   }

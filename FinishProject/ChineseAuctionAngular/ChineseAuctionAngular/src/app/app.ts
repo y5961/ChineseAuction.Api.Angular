@@ -8,10 +8,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { Login } from './components/login/login';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Register,Header,Footer,Home],
+  imports: [RouterOutlet,Register,Header,Footer,Home,Login],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

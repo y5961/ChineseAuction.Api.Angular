@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,9 +8,10 @@ import { Package, PackageDto } from '../models/PackageDto';
   providedIn: 'root'
 })
 export class PackageService {
-  private apiUrl = 'https://localhost:xxxx/api/Package'; // יש לעדכן פורט
+  private apiUrl = '/api/Package'; // יש לעדכן פורט
 
-  constructor(private http: HttpClient) { }
+  // שימוש ב-inject במקום ב-Constructor (יותר מודרני ואחיד לשאר הקוד שלך)
+  private http = inject(HttpClient);
 
   // GET /api/Package
   getAllPackages(): Observable<Package[]> {

@@ -1,0 +1,46 @@
+<div class="luxury-light-scene" dir="rtl">
+  <div class="grid-mesh"></div>
+  <div class="ambient-glow orb-purple"></div>
+  <div class="ambient-glow orb-green"></div>
+
+  <div class="glass-card fade-in">
+    <div class="split-layout">
+      
+      <div class="brand-panel">
+        <div class="brand-content">
+          <div class="icon-box">
+             <i class="pi pi-heart-fill heart-beat"></i>
+          </div>
+          <h1 class="brand-title">מתנת חיים</h1>
+          <p class="brand-subtitle">מצילים חיים ביחד</p>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-header">כניסה למכירה הסינית</h2>
+        
+        <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="compact-form">
+          <div class="field-row">
+             <span class="p-float-label">
+              <input pInputText id="em" name="em" [(ngModel)]="loginData.Email" required email />
+              <label for="em">אימייל</label>
+            </span>
+        </div>
+
+          <div class="field-row">
+           <span class="p-float-label">
+              <p-password id="pass" name="pass" [(ngModel)]="loginData.password" [feedback]="false" [toggleMask]="true" required></p-password>
+              <label for="pass">סיסמה</label>
+            </span>
+          </div>
+
+
+          <button type="submit" class="prime-submit-btn" [disabled]="!loginForm.valid" >
+            <span>כניסה</span>
+            <i class="pi pi-check-circle"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

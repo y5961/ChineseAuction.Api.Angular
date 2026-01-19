@@ -1,0 +1,98 @@
+$purple-deep: #6b2d82; // סגול מותג
+$green-fresh: #97c05c; // ירוק מותג
+$soft-bg: #fdfdfd;
+
+.auction-page {
+  background-color: $soft-bg;
+  overflow-x: hidden;
+  font-family: 'Assistant', sans-serif;
+}
+
+.auction-hero {
+  background: linear-gradient(135deg, rgba($purple-deep, 0.05) 0%, rgba($green-fresh, 0.05) 100%);
+  border-bottom: 3px solid rgba($purple-deep, 0.1);
+  
+  .main-title {
+    color: $purple-deep;
+    font-size: 4rem;
+    .highlight { color: $green-fresh; }
+  }
+  
+  .subtitle {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.image-wrapper {
+  background: white;
+  padding: 40px;
+  border-radius: 50% 20% 50% 20%; // צורה ייחודית
+  display: inline-block;
+  border: 1px solid rgba($green-fresh, 0.3);
+  
+  .logo-hero {
+    max-width: 300px;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+  }
+}
+
+.section-title {
+  color: $purple-deep;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $green-fresh;
+    border-radius: 2px;
+  }
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.feature-list {
+  li {
+    font-size: 1.1rem;
+    color: $purple-deep;
+    margin-bottom: 12px;
+    font-weight: 600;
+    
+    i {
+      color: $green-brand;
+      margin-left: 10px;
+    }
+  }
+}
+
+.cta-banner {
+  background: linear-gradient(90deg, $purple-deep 0%, darken($purple-deep, 10%) 100%);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); // חיתוך אלכסוני מודרני
+  
+  .btn-auction-primary {
+    background-color: $green-fresh;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &:hover {
+      background-color: lighten($green-fresh, 5%);
+      transform: scale(1.1);
+      color: white;
+    }
+  }
+}

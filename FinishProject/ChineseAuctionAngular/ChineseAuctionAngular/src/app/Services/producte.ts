@@ -7,7 +7,7 @@ import { Gift, GiftDto, GiftDtoNew } from '../models/GiftDto';
   providedIn: 'root',
 })
 export class GiftService {
-  private readonly BASE_URL = 'https://localhost:7157/api/Gift';
+  private readonly BASE_URL = '/api/Gift';
   private http = inject(HttpClient);
 
   constructor() {}

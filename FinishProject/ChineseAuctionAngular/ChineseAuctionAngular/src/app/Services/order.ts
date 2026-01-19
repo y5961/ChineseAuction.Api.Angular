@@ -8,7 +8,7 @@ import { AddGiftRequest, OrderDto } from '../models/OrderDto';
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'https://localhost:xxxx/api/Order'; // עדכן פורט בהתאם לשרת שלך
+  private apiUrl = '/api/Order'; // עדכן פורט בהתאם לשרת שלך
 
   constructor(private http: HttpClient) { }
 

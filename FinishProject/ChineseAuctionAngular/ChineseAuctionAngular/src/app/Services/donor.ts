@@ -8,8 +8,7 @@ import { Donor, DonorDto } from '../models/DonorDto';
   providedIn: 'root'
 })
 export class DonorService {
-  private apiUrl = 'https://localhost:xxxx/api/Donor'; // יש לעדכן את הפורט
-
+  private apiUrl = '/api/Donor'; 
   constructor(private http: HttpClient) { }
 
   // שליחת אובייקטים מסוג ה-Class החדש
