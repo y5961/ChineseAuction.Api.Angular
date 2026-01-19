@@ -7,7 +7,7 @@ import { OrderDTO } from '../models/OrderDTO';
   providedIn: 'root'
 })
 export class OrderService {
-  readonly BASE_URL = "https://localhost:7273/api/Orders";
+  readonly BASE_URL = "api/Orders";
   private http = inject(HttpClient);
 
   constructor() {}

@@ -1,0 +1,28 @@
+<p>login works!</p>
+<div dir="rtl">
+  <h2>רישום משתמש חדש</h2>
+
+  <fieldset>
+    <legend>פרטי משתמש</legend>
+
+    <form (ngSubmit)="onLogin()">
+      <div>
+        <label for="password">סיסמה:</label><br>
+       <input type="password" id="password" name="password" autocomplete="new-password" 
+               [(ngModel)]="userToLogin.password" required>
+      </div>
+      <br>
+      <div>
+        <label for="email">אימייל:</label><br>
+        <input type="email" id="email" name="email" 
+               [(ngModel)]="userToLogin.email">
+      </div>
+      <br>
+     
+
+      <button type="submit">שלח רישום</button>
+    </form>
+  </fieldset>
+
+  <p *ngIf="message">{{ message }}</p>
+</div>

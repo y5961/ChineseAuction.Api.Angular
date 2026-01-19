@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class GiftService {
-  readonly BASE_URL="https://localhost:7273/api/Gift";
+  readonly BASE_URL="api/Gift";
  private http =inject(HttpClient);
 
   constructor() {}

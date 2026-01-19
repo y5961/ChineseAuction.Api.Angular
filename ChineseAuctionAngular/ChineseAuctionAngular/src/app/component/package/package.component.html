@@ -1,0 +1,49 @@
+<div class="packages-container" style="padding: 20px; direction: rtl; font-family: sans-serif;">
+  <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">חבילות כרטיסים משתלמות</h2>
+
+  <div class="packages-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    
+    @for (pkg of packages(); track pkg.idPackage) {
+      <div class="package-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 15px; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: white;">
+        
+        <h3 style="color: #0056b3; margin-top: 0;">{{ pkg.name }}</h3>
+        
+        @if (pkg.description) {
+          <p style="color: #666; font-size: 0.9em; min-height: 40px;">{{ pkg.description }}</p>
+        }
+
+        <div style="background: #f9f9f9; padding: 12px; border-radius: 10px; margin-top: 15px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span>כרטיסים רגילים:</span>
+            <span style="font-weight: bold;">{{ pkg.amountRegular }}</span>
+          </div>
+
+          @if (pkg.amountPremium) {
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #d4af37;">
+              <span>כרטיסי פרימיום:</span>
+              <span style="font-weight: bold;">{{ pkg.amountPremium }}</span>
+            </div>
+          }
+          
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-size: 0.8em; color: #888;">מחיר:</span>
+              <span style="font-size: 1.4em; color: #27ae60; font-weight: bold;">{{ pkg.price }} ₪</span>
+            </div>
+            
+            <button style="background-color: #0056b3; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+              הוספה לסל
+            </button>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div style="text-align: center; width: 100%; color: #888; padding: 40px;">
+        <p>טוען חבילות כרטיסים...</p>
+      </div>
+    }
+    
+  </div>
+</div>

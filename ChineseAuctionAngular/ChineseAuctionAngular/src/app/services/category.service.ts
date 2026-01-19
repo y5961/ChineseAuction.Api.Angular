@@ -7,7 +7,7 @@ import { CreateGiftCategoryDTO, GiftCategoryDTO, UpdateGiftCategoryDTO } from '.
   providedIn: 'root'
 })
 export class GiftCategoryService {
-  readonly BASE_URL="https://localhost:7273/api/GiftCategory";
+  readonly BASE_URL="api/GiftCategory";
 
   constructor(private http: HttpClient) {}
 

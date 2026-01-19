@@ -18,18 +18,16 @@ export class RegisterComponent {
   
   // משתנה להצגת הודעות הצלחה/שגיאה במסך
   message: string = '';
-
   constructor(private authService: AuthService) {}
 
-  // 2. הפונקציה שנקראת בלחיצה על הכפתור
-  onRegister() {
+onRegister() {
     this.authService.register(this.userToRegister).subscribe({
       next: (response) => {
-        console.log('הרישום הצליח!', response);
+        console.log('Registration successful!', response);
         this.message = 'נרשמת בהצלחה למכירה הסינית!';
       },
       error: (err) => {
-        console.error('שגיאה ברישום', err);
+        console.error('Registration error:', err);
         this.message = 'אופס... חלה שגיאה ברישום. נסה שוב.';
       }
     });

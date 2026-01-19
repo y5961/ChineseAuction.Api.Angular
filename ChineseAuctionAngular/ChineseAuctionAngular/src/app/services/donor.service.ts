@@ -8,7 +8,7 @@ import { Gift } from '../models/GiftDTO';
   providedIn: 'root'
 })
 export class DonorService {
-  readonly BASE_URL = "https://localhost:7273/api/Donors";
+  readonly BASE_URL = "api/Donors";
   private http = inject(HttpClient);
 
   constructor() {}

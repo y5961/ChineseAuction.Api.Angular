@@ -10,7 +10,7 @@
             <p-tabs [value]="0">
                 <p-tablist>
                     @for (tab of tabs; track tab.value) {
-                        <p-tab [value]="tab.value">
+                        <p-tab [value]="tab.value" (click)="onTabChange(tab.value)">
                             <span class="tab-text">{{ tab.title }}</span>
                         </p-tab>
                     }

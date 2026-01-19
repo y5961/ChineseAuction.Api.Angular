@@ -8,7 +8,7 @@ import { PackageDTO, PackageCreateDTO } from '../models/PackageDTO';
 })
 export class PackageService {
   // כתובת ה-API כפי שמופיעה ב-Controller בדרך כלל
-  readonly BASE_URL = "https://localhost:7273/api/Packages";
+  readonly BASE_URL = "api/Packages";
   private http = inject(HttpClient);
 
   constructor() {}
