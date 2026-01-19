@@ -1,0 +1,39 @@
+<div class="luxury-hero-section">
+    <div class="bg-animation-layer">
+        <div class="moving-blob purple"></div>
+        <div class="moving-blob green"></div>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div class="glow-wrapper">
+            <div class="premium-glass-card shadow-8">
+                <h1 class="main-title">מתנת חיים</h1>
+                <p class="main-subtitle">המכירה הסינית שמעניקה חיים</p>
+                
+                <div class="design-divider"></div>
+
+                <div class="buttons-layout flex flex-column md:flex-row gap-4 justify-content-center">
+                    <button pButton pRipple 
+                            label="לצפייה בפרסים" 
+                            icon="pi pi-gift" 
+                            class="p-button-rounded btn-p-luxury"
+                            (click)="redirectToPrizes()">
+                    </button>
+
+                    <button pButton pRipple 
+                            label="רכישת חבילות" 
+                            icon="pi pi-shopping-bag" 
+                            class="p-button-rounded btn-g-luxury"
+                            (click)="redirectToPackages()">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-indicators">
+            <div class="indicator"><i class="pi pi-heart-fill"></i><span>נתינה</span></div>
+            <div class="indicator"><i class="pi pi-shield"></i><span>ביטחון</span></div>
+            <div class="indicator"><i class="pi pi-star-fill"></i><span>איכות</span></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+// .color {
+//     width: 100%;
+//     height: 300px; /* גובה לדוגמה, ניתן לשנות לפי הצורך */
+//     background-color: #e4e1e8; /* צבע רקע לדוגמה, ניתן לשנות לפי הצורך */
+// }
+// .main-footer {
+//     width: 100%;
+//     background-color: #EAE6EE; /* הצבע המדויק של תחתית התמונה */
+//     margin: 0;
+//     padding: 0;
+//     line-height: 0;
+//     display: block;
+// }
+
+
+
+
+// .main-footer img {
+//     width: 100%;
+//     height: auto;
+//     display: block; /* קריטי למניעת רווח של 3px מתחת לתמונה */
+//     margin-bottom: -1px; /* "דוחף" את התמונה מעט למטה כדי להעלים קווים לבנים */
+// }
+$matnat-purple-dark: #5d2b87;
+$footer-bg-color:  #EAE6EE; // הסגול הבהיר מהתמונה ששלחת
+
+
+.main-footer {
+    width: 100%;
+    direction: rtl; // יישור לימין
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-wave {
+    width: 100%;
+    display: block;
+    margin-bottom: -1px; // מונע פס לבן בין התמונה לרקע
+}
+
+
+.footer-bottom-content {
+    background-color: $footer-bg-color;
+    padding: 60px 20px;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; // מרווח שווה בין העמודות
+    align-items: flex-start;
+    gap: 40px;
+}
+
+
+.footer-col {
+    flex: 1; // כל עמודה מקבלת שטח שווה
+}
+
+
+.footer-title {
+    color: $matnat-purple-dark;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+
+.footer-text {
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+
+    li {
+        color: black;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        cursor: pointer;
+       
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+// התאמה לנייד - שהכל יהיה אחד מתחת לשני
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+

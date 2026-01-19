@@ -1,0 +1,73 @@
+<div class="luxury-light-scene" dir="rtl">
+  <div class="grid-mesh"></div>
+  <div class="ambient-glow orb-purple"></div>
+  <div class="ambient-glow orb-green"></div>
+
+  <div class="ball purple-lg b1"></div>
+  <div class="ball green-md b2"></div>
+  <div class="ball purple-sm b3"></div>
+  <div class="ball green-lg b4"></div>
+  <div class="ball purple-md b5"></div>
+  <div class="ball green-sm b6"></div>
+
+  <div class="glass-card fade-in">
+    <div class="split-layout">
+      
+      <div class="brand-panel">
+        <div class="brand-content">
+          <div class="icon-box">
+             <i class="pi pi-heart-fill heart-beat"></i>
+          </div>
+          <h1 class="brand-title">מתנת חיים</h1>
+          <p class="brand-subtitle">מצילים חיים ביחד</p>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-header">הרשמה למכירה הסינית שלנו -
+          <tr>
+           שותפות מלאה בהצלת חיים </h2>
+        <form (ngSubmit)="onRegister()" class="compact-form">
+          <div class="field-row">
+            <span class="p-float-label">
+              <input pInputText id="id" name="id" [(ngModel)]="newUser.identity" />
+              <label for="id">תעודת זהות</label>
+            </span>
+            <span class="p-float-label">
+              <p-password id="pass" name="pass" [(ngModel)]="newUser.password" [feedback]="false" [toggleMask]="true"></p-password>
+              <label for="pass">סיסמה</label>
+            </span>
+          </div>
+          <div class="field-row">
+            <span class="p-float-label">
+              <input pInputText id="fn" name="fn" [(ngModel)]="newUser.first_Name" />
+              <label for="fn">שם פרטי</label>
+            </span>
+            <span class="p-float-label">
+              <input pInputText id="ln" name="ln" [(ngModel)]="newUser.last_Name" />
+              <label for="ln">שם משפחה</label>
+            </span>
+          </div>
+          <div class="field-row">
+            <span class="p-float-label">
+              <input pInputText id="ph" name="ph" [(ngModel)]="newUser.phonNumber" />
+              <label for="ph">טלפון</label>
+            </span>
+            <span class="p-float-label">
+              <input pInputText id="em" name="em" [(ngModel)]="newUser.email" />
+              <label for="em">אימייל</label>
+            </span>
+          </div>
+          <span class="p-float-label full-width">
+            <input pInputText id="addr" name="addr" [(ngModel)]="newUser.address" />
+            <label for="addr">עיר וכתובת מלאה</label>
+          </span>
+          <button type="submit" class="prime-submit-btn">
+            <span>אישור והצטרפות</span>
+            <i class="pi pi-check-circle"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* גובה מסך מלא */
+}
+
+.main-content {
+  flex: 1; /* אומר לאזור התוכן לגדול ולמלא את כל הרווח הפנוי */
+}
+
+app-footer {
+  margin-top: auto; /* מוודא שהפוטר נצמד לתחתית בכל מקרה */
+}

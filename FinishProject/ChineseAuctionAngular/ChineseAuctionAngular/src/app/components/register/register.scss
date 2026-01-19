@@ -1,0 +1,97 @@
+// אנימציית תנועה מהירה על כל המסך
+@keyframes rapidFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(60vw, -15vh) rotate(120deg); }
+  66% { transform: translate(-10vw, 70vh) rotate(240deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+.luxury-light-scene {
+  min-height: 100vh;
+  background: #fdfbff; // רקע בהיר נקי
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding: 20px;
+
+  .grid-mesh {
+    position: absolute; inset: -50%;
+    background-image: 
+      linear-gradient(45deg, rgba(123, 31, 162, 0.03) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(38, 166, 154, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px; z-index: 0;
+  }
+
+  .ambient-glow {
+    position: absolute; border-radius: 50%; filter: blur(120px); z-index: 1;
+    &.orb-purple { width: 600px; height: 600px; background: rgba(233, 213, 255, 0.4); top: -10%; left: -5%; }
+    &.orb-green { width: 500px; height: 500px; background: rgba(204, 251, 241, 0.4); bottom: -10%; right: -5%; }
+  }
+
+  // הגדרת הכדורים - כמות מוגברת ותנועה מהירה
+  .ball {
+    position: absolute; border-radius: 50%; z-index: 2;
+    box-shadow: inset -10px -10px 30px rgba(0,0,0,0.1), 0 20px 50px rgba(0,0,0,0.05);
+    animation: rapidFloat 14s infinite linear; 
+
+    &.purple-lg { width: 160px; height: 160px; background: radial-gradient(circle at 30% 30%, #ba68c8, #7b1fa2); top: 5%; left: 2%; }
+    &.green-lg { width: 130px; height: 130px; background: radial-gradient(circle at 30% 30%, #80cbc4, #26a69a); bottom: 5%; right: 2%; animation-delay: -4s; }
+    &.purple-md { width: 90px; height: 90px; background: #ce93d8; top: 60%; left: 10%; animation-duration: 18s; animation-delay: -2s; }
+    &.green-md { width: 85px; height: 85px; background: #b2dfdb; bottom: 40%; right: 15%; animation-duration: 16s; animation-delay: -7s; }
+    &.purple-sm { width: 40px; height: 40px; background: #e1bee7; top: 20%; right: 30%; animation-duration: 12s; }
+    &.green-sm { width: 35px; height: 35px; background: #80cbc4; bottom: 20%; left: 40%; animation-duration: 13s; animation-delay: -5s; }
+  }
+
+  .glass-card {
+    width: 100%; max-width: 780px; z-index: 10;
+    background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px);
+    border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.07); overflow: hidden;
+  }
+
+  .split-layout { display: flex; @media (max-width: 768px) { flex-direction: column; } }
+
+  .brand-panel {
+    flex: 0.85; background: linear-gradient(135deg, #7b1fa2 0%, #26a69a 100%);
+    padding: 50px 40px; color: white; display: flex; align-items: center; justify-content: center;
+    .brand-content {
+      text-align: center;
+      .heart-beat { font-size: 3.5rem; animation: pulse 2s infinite; display: block; margin-bottom: 20px; }
+      .brand-title { font-size: 1.8rem; font-weight: 900; }
+      .brand-subtitle { font-size: 0.9rem; opacity: 0.9; margin-top: 10px; }
+    }
+  }
+
+  .form-panel {
+    flex: 1.15; padding: 45px 50px; background: white;
+    .form-header { color: #1e293b; font-size: 1.5rem; font-weight: 800; margin-bottom: 35px; }
+  }
+
+  .compact-form {
+    display: flex; flex-direction: column; gap: 28px;
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .full-width { width: 100%; }
+  }
+
+  ::ng-deep {
+    .p-inputtext, .p-password input {
+      width: 100% !important; border: none !important; border-bottom: 2px solid #f1f5f9 !important;
+      padding: 10px 0 !important; font-size: 0.95rem !important; transition: 0.3s;
+      &:focus { border-bottom-color: #26a69a !important; background: rgba(38, 166, 154, 0.02) !important; }
+    }
+    .p-float-label label { right: 0; color: #94a3b8; font-size: 0.85rem; }
+  }
+
+  .prime-submit-btn {
+    width: 100%; padding: 16px; border: none; border-radius: 14px;
+    background: linear-gradient(90deg, #7b1fa2, #26a69a);
+    color: white; font-weight: 800; font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    box-shadow: 0 15px 35px rgba(38, 166, 154, 0.25);
+    transition: 0.4s;
+    &:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(38, 166, 154, 0.35); }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px white); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 15px white); }
+}
