@@ -1,0 +1,233 @@
+﻿using ChineseAuctionAPI.DTOs;
+using ChineseAuctionAPI.Models;
+using ChineseAuctionAPI.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+
+namespace ChineseAuctionAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+   
+    public class GiftController : ControllerBase
+    {
+        private readonly IGiftService _giftService;
+        private readonly ILogger<GiftController> _logger;
+
+        public GiftController(IGiftService giftService, ILogger<GiftController> logger)
+        {
+            _giftService = giftService;
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve all gifts.");
+                var gifts = await _giftService.GetAllGiftsAsync();
+                return Ok(gifts);
+            }
+            catch (Exception ex)
+            {
+             
+                _logger.LogError(ex, "An error occurred while fetching all gifts.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with ID: {Id}", id);
+                var gift = await _giftService.GetGiftByIdAsync(id);
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with ID: {Id} not found.", id);
+                    return NotFound();
+                }
+
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with ID: {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Manager")]
+        public async Task<IActionResult> Post([FromBody] GiftDTO dto)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to create a new gift.");
+                var newGift = await _giftService.CreateGiftAsync(dto);
+                _logger.LogInformation("Gift created successfully with ID: {Id}", newGift.IdGift);
+
+                return CreatedAtAction(nameof(Get), new { id = newGift.IdGift }, newGift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while creating a new gift.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Manager")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to delete gift with ID: {Id}", id);
+                var success = await _giftService.DeleteGiftAsync(id);
+
+                if (!success)
+                {
+                    _logger.LogWarning("Delete failed. Gift with ID: {Id} not found.", id);
+                    return NotFound();
+                }
+
+                _logger.LogInformation("Gift with ID: {Id} deleted successfully.", id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while deleting gift with ID: {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("{id}/draw")]
+        [Authorize(Roles = "Manager")]
+        public async Task<IActionResult> DrawWinner(int id)
+        {
+            var result = await _giftService.DrawWinnerForGiftAsync(id);
+
+            if (result == null)
+            {
+                return BadRequest("לא ניתן לבצע הגרלה: המתנה לא נמצאה, כבר הוגרלה או שאין רוכשים.");
+            }
+
+            return Ok(new { Message = "ההגרלה בוצעה בהצלחה!", WinnerUserId = result.IdUser });
+
+        }
+
+
+        [HttpGet("sort/word/{word}")]
+
+        public async Task<IActionResult> GetByNameGift(string word)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with word: {word}", word);
+                var gift = await _giftService.GetByNameGift(word);
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with word: {word} not found.", word);
+                   
+                }
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with word: {word}", word);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("sort/donor/{donor}")]
+        public async Task<IActionResult> GetByNameDonor(string donor)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with donor: {donor}", donor);
+                var gift = await _giftService.GetByNameDonor(donor);
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with donor: {donor} not found.", donor);
+
+                }
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with donor: {donor}", donor);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("sort/buyers/{buyers}")]
+        public async Task<IActionResult> GetByNumOfBuyers(int buyers)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with buyers: {buyers}", buyers);
+                var gift = await _giftService.GetByNumOfBuyers(buyers);
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with buyers: {buyers} not found.", buyers);
+
+                }
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with buyers: {buyers}", buyers);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("sort/gift_price/")]
+        public async Task<IActionResult> GetByNumOfBuyers()
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with Price: {Price}");
+                var gift = await _giftService.SortByPrice();
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with buyers: {buyers} not found.");
+
+                }
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with buyers: {buyers}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("sort/amount_buyers/")]
+        public async Task<IActionResult> SortByAmountPeople()
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to retrieve gift with Price: {Price}");
+                var gift = await _giftService.SortByAmountPeople();
+
+                if (gift == null)
+                {
+                    _logger.LogWarning("Gift with buyers: {buyers} not found.");
+
+                }
+                return Ok(gift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching gift with buyers: {buyers}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+2026-01-02 00:00:19.687 +02:00 [INF] HTTP POST /api/Gift/4/draw responded 401 in 22.7754 ms
+2026-01-02 00:00:56.198 +02:00 [INF] HTTP POST /api/Gift/4/draw responded 400 in 40.7994 ms
+2026-01-02 00:01:04.420 +02:00 [INF] HTTP POST /api/Gift/5/draw responded 400 in 8.6395 ms
+2026-01-02 00:01:13.521 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-02 00:01:15.225 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 109.3676 ms
+2026-01-02 00:01:15.418 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 51.5773 ms
+2026-01-02 00:01:36.394 +02:00 [INF] HTTP POST /api/Gift/4/draw responded 400 in 2942.0284 ms
+2026-01-02 00:02:56.022 +02:00 [INF] מייל ברכה נשלח לזוכה 1 על המתנה 4
+2026-01-02 00:02:56.051 +02:00 [INF] HTTP POST /api/Gift/4/draw responded 200 in 524.5177 ms
