@@ -1,0 +1,34 @@
+<div class="cart-wrapper">
+  <div class="cart-header">
+    <i class="pi pi-shopping-bag"></i>
+    <span>הסל שלי</span>
+  </div>
+
+  <div class="cart-content">
+    <!-- <ul class="package-list" *ngIf="cartPackages.length > 0">
+      <li *ngFor="let pkg of cartPackages" (contextmenu)="onContextMenu($event)">
+        <div class="pkg-info">
+          <span class="pkg-name">{{ pkg.name }}</span>
+          <span class="pkg-price">{{ pkg.price }} &#8362;</span>
+        </div>
+
+        <div class="quantity-control">
+          <button (click)="increment(pkg.idPackage)" class="control-btn">+</button>
+          <span class="qty-display">{{ packageQuantities()[pkg.idPackage] || 0 }}</span>
+          <button (click)="decrement(pkg.idPackage)" class="control-btn">-</button>
+        </div>
+      </li>
+    </ul> -->
+
+    <div class="empty-state" *ngIf="cartPackages.length === 0">
+      <i class="pi pi-cart-plus"></i>
+      <p>הסל שלך מחכה שתמלאי אותו בחבילות ומתנות</p>
+    </div>
+  </div>
+
+  <div class="cart-footer" *ngIf="cartPackages.length > 0">
+    <button class="checkout-btn">למעבר לתשלום</button>
+  </div>
+</div>
+
+<p-contextmenu #cm [model]="items"></p-contextmenu>

@@ -1,12 +1,17 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap');
 
 
 $matnat-purple: #5d2b87;
 $matnat-green: #29a745;
 $matnat-dark: #2d2e83;
 
-
+* {
+    font-family: 'Assistant', sans-serif; /* הגדרת הגופן לכל הדף */
+    direction: rtl; /* הגדרה חיונית לעברית (Right to Left) */
+    background-color: #ffffff;
+}
 .header-wrapper {
     background: #ffffff;
     border-bottom: 1px solid #f0f0f0;
@@ -44,10 +49,10 @@ $matnat-dark: #2d2e83;
     .p-tab {
         background: transparent !important;
         border: none !important;
-        padding: 12px 20px !important;
+        padding: 30px 20px !important;
        
         .tab-text {
-            color: #4b5563;
+            color:black;
             font-weight: 500;
             font-size: 1.2rem; // הגדלת הכתב כפי שביקשת
             transition: all 0.3s ease;
@@ -65,10 +70,16 @@ $matnat-dark: #2d2e83;
         &.p-tab-active {
             .tab-text {
                 color: $matnat-dark !important;
-                font-weight: 700; // הדגשה של הטאב הנבחר
+                font-weight: 550; // הדגשה של הטאב הנבחר
             }
         }
     }
 }
 
+
+.registration-form {
+    max-width: 400px;
+    margin-right: 50px; /* רווח מהצד ליצירת המראה שבתמונה */
+    margin-top: 30px;
+}
 
