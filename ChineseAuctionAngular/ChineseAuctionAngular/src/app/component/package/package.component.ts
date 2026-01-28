@@ -1,70 +1,60 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PackageService } from '../../services/package.service';
+import { OrderService } from '../../services/order.service';
+import { AuthService } from '../../services/auth.service';
 import { PackageDTO } from '../../models/PackageDTO';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-package',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './package.component.html',
+  templateUrl: './package.component.html', // ודאי שכתוב כאן package ולא cart!
   styleUrl: './package.component.scss'
 })
-export class PackageComponent implements OnInit {
+export class PackageComponent implements OnInit { // ודאי שיש כאן export
   private packageService = inject(PackageService);
+  private orderService = inject(OrderService);
+  public authService = inject(AuthService);
+  private router = inject(Router);
 
-  // 1. Signal המחזיק את רשימת החבילות מהשרת
   packages = signal<PackageDTO[]>([]);
+  packageQuantities = signal<{ [key: number]: number }>({});
 
-  // 2. Signal לניהול הכמויות שנבחרו לכל חבילה (מפתח: idPackage, ערך: כמות)
-  // שימוש ב-Record מאפשר גישה קלה ב-HTML לפי ID
-  packageQuantities = signal<Record<number, number>>({});
+ngOnInit() {
+  // 1. טעינת כל החבילות לתצוגה
+  this.packageService.getAllPackages().subscribe(data => this.packages.set(data));
 
-  ngOnInit(): void {
-    this.loadPackages();
-  }
-
-  loadPackages(): void {
-    this.packageService.getAllPackages().subscribe({
-      next: (data: PackageDTO[]) => {
-        this.packages.set(data);
-        
-        // אתחול אופציונלי של כל הכמויות ל-0
-        const initialQuantities: Record<number, number> = {};
-        data.forEach(pkg => {
-          initialQuantities[pkg.idPackage] = 0;
-        });
-        this.packageQuantities.set(initialQuantities);
-      },
-      error: (err) => {
-        console.error('שגיאה בטעינת החבילות:', err);
+  // 2. טעינת הכמויות הקיימות מהשרת כדי שהן יופיעו בריענון
+  const userId = this.authService.getUserId();
+  if (userId > 0) {
+    this.orderService.getUserOrders(userId).subscribe({
+      next: (userResponse: any) => {
+        const orders = userResponse.orders || [];
+        const draft = orders.find((o: any) => o.status === 0) || orders[0];
+        if (draft && draft.ordersPackages) {
+          const qtys: any = {};
+          draft.ordersPackages.forEach((p: any) => {
+            qtys[p.idPackage] = p.quantity;
+          });
+          this.packageQuantities.set(qtys); // הכמויות יופיעו בסימנים הירוקים בדף הבית
+        }
       }
     });
   }
+}
 
-  // 3. פונקציה להגדלת כמות - מקבלת את ה-ID של החבילה
-  increment(packageId: number): void {
-    this.packageQuantities.update(q => ({
-      ...q,
-      [packageId]: (q[packageId] || 0) + 1
-    }));
-  }
+  handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
+    const userId = this.authService.getUserId();
+    if (!userId) { this.router.navigate(['/register']); return; }
 
-  // 4. פונקציה להפחתת כמות - מקבלת את ה-ID של החבילה
-  decrement(packageId: number): void {
-    this.packageQuantities.update(q => {
-      const currentQty = q[packageId] || 0;
-      if (currentQty <= 0) return q; // מניעת ירידה מתחת ל-0
-      
-      return {
-        ...q,
-        [packageId]: currentQty - 1
-      };
+    const currentQty = this.packageQuantities()[packageId] || 0;
+    const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
+    if (newQty < 0) return;
+
+    this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe(() => {
+      this.packageQuantities.update(q => ({ ...q, [packageId]: newQty }));
     });
-  }
-
-  // פונקציית עזר למקרה שתרצי לשלוח את הנתונים לסל בהמשך
-  getSelectedPackages() {
-    return this.packages().filter(p => (this.packageQuantities()[p.idPackage] || 0) > 0);
   }
 }

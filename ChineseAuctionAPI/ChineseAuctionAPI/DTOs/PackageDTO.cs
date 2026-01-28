@@ -26,4 +26,9 @@ namespace ChineseAuctionAPI.DTOs
         public string Name { get; set; }
         public string? Description { get; set; }
     }
+    public class OrdersPackageDTO
+    {
+        public int IdPackage { get; set; } // שימי לב לאותיות קטנות כדי שיתאים ל-Angular שלך
+        public int Quantity { get; set; }
+    }
 }

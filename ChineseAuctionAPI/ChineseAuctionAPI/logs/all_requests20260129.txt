@@ -1,0 +1,477 @@
+2026-01-29 00:01:52.526 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:52.538 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:52.603 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:52.615 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:52.617 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:52.622 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 96.3448 ms
+2026-01-29 00:01:52.624 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.3532 ms
+2026-01-29 00:01:56.273 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:56.275 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:56.317 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:56.323 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:56.324 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:56.326 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 52.8199 ms
+2026-01-29 00:01:56.331 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.6107 ms
+2026-01-29 00:01:59.759 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:59.761 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:59.806 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:59.811 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:59.812 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:59.812 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 53.5888 ms
+2026-01-29 00:01:59.818 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.7229 ms
+2026-01-29 00:02:07.890 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:02:07.899 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:02:07.907 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:02:07.961 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:02:07.972 +02:00 [INF] HTTP GET /api/Packages responded 200 in 64.6726 ms
+2026-01-29 00:02:07.979 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:02:07.983 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 93.4421 ms
+2026-01-29 00:02:20.201 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:02:20.289 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 89.3958 ms
+2026-01-29 00:02:20.423 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:02:20.445 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.9234 ms
+2026-01-29 00:02:20.979 +02:00 [INF] Updating package 1 for user 14 with amount 3
+2026-01-29 00:02:21.016 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.8853 ms
+2026-01-29 00:02:25.006 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:02:25.007 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:02:25.009 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:02:25.015 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.6598 ms
+2026-01-29 00:02:25.054 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:02:25.058 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:02:25.060 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 54.1502 ms
+2026-01-29 00:07:07.706 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:07:07.708 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:07:07.754 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:07:07.756 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:07:07.758 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 51.9244 ms
+2026-01-29 00:07:07.771 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:07:07.777 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.4969 ms
+2026-01-29 00:08:00.244 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:08:00.248 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:08:00.282 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:08:00.282 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:08:00.286 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:08:00.292 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.7097 ms
+2026-01-29 00:08:00.292 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.6336 ms
+2026-01-29 00:08:49.570 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:08:49.572 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:08:49.599 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:08:49.624 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:08:49.628 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.7924 ms
+2026-01-29 00:08:49.640 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:08:49.645 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.0118 ms
+2026-01-29 00:09:07.442 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:07.444 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:07.487 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:07.489 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:07.493 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:07.500 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 58.7215 ms
+2026-01-29 00:09:07.500 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.2122 ms
+2026-01-29 00:09:08.645 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:09:08.692 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.7082 ms
+2026-01-29 00:09:08.899 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:09:08.933 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1653 ms
+2026-01-29 00:09:10.410 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:10.412 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:10.464 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:10.464 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:10.470 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:10.479 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.4815 ms
+2026-01-29 00:09:10.479 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 69.3021 ms
+2026-01-29 00:09:51.966 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:51.969 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:51.980 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:52.032 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:52.040 +02:00 [INF] HTTP GET /api/Packages responded 200 in 61.5159 ms
+2026-01-29 00:09:52.050 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:52.058 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 98.6639 ms
+2026-01-29 00:09:52.942 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:09:52.996 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.8513 ms
+2026-01-29 00:09:53.183 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:09:53.224 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.1988 ms
+2026-01-29 00:09:54.666 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:54.672 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:54.673 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:54.720 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:54.723 +02:00 [INF] HTTP GET /api/Packages responded 200 in 51.9540 ms
+2026-01-29 00:09:54.727 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:54.733 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 67.1952 ms
+2026-01-29 00:11:38.042 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:38.048 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:38.138 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:38.172 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:38.179 +02:00 [INF] HTTP GET /api/Packages responded 200 in 68.4090 ms
+2026-01-29 00:11:38.180 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:38.190 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 148.3803 ms
+2026-01-29 00:11:42.697 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:42.699 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:42.708 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:42.744 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:42.749 +02:00 [INF] HTTP GET /api/Packages responded 200 in 41.8545 ms
+2026-01-29 00:11:42.751 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:42.757 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 60.4632 ms
+2026-01-29 00:11:44.265 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:11:44.322 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 57.0163 ms
+2026-01-29 00:11:44.563 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:11:44.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.6128 ms
+2026-01-29 00:11:46.465 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:46.467 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:46.521 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:46.523 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:46.530 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:46.543 +02:00 [INF] HTTP GET /api/Packages responded 200 in 19.8556 ms
+2026-01-29 00:11:46.544 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 80.4010 ms
+2026-01-29 00:13:01.012 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:13:01.079 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 93.8635 ms
+2026-01-29 00:13:01.650 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:13:01.693 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.8681 ms
+2026-01-29 00:13:03.930 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:13:03.931 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:13:03.964 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:13:03.983 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:13:03.991 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.6763 ms
+2026-01-29 00:13:03.993 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:13:04.006 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.5854 ms
+2026-01-29 00:13:12.401 +02:00 [INF] Updating package 3 for user 14 with amount 1
+2026-01-29 00:13:12.420 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.6237 ms
+2026-01-29 00:13:14.283 +02:00 [INF] Updating package 3 for user 14 with amount 2
+2026-01-29 00:13:14.306 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2423 ms
+2026-01-29 00:13:15.947 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:13:15.990 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.2579 ms
+2026-01-29 00:17:37.890 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:37.893 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:37.973 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:37.993 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:37.999 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:17:38.013 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 123.2391 ms
+2026-01-29 00:17:38.025 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.1898 ms
+2026-01-29 00:17:51.120 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:51.123 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:51.213 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:51.227 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:51.227 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:17:51.233 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 112.7010 ms
+2026-01-29 00:17:51.244 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.6142 ms
+2026-01-29 00:17:51.260 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:51.263 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:51.295 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:51.298 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:51.300 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 41.6310 ms
+2026-01-29 00:18:15.007 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:15.011 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:15.019 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:18:15.091 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:15.099 +02:00 [INF] HTTP GET /api/Packages responded 200 in 80.3217 ms
+2026-01-29 00:18:15.104 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:15.118 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 115.3989 ms
+2026-01-29 00:18:15.247 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:15.252 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:15.323 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:15.329 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:15.333 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 86.8097 ms
+2026-01-29 00:18:16.516 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:18:16.571 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.6246 ms
+2026-01-29 00:18:16.749 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:18:16.771 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3885 ms
+2026-01-29 00:18:16.993 +02:00 [INF] Updating package 2 for user 14 with amount 3
+2026-01-29 00:18:17.035 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.9310 ms
+2026-01-29 00:18:18.485 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:18.487 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:18.529 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:18.535 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:18.538 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 53.8246 ms
+2026-01-29 00:18:18.707 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:18:18.717 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.2520 ms
+2026-01-29 00:18:18.731 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:18.734 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:18.822 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:18.833 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:18.836 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 105.1986 ms
+2026-01-29 00:20:15.640 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:15.642 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:15.689 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:15.716 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:15.723 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:15.725 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 85.3390 ms
+2026-01-29 00:20:15.741 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:15.742 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:15.756 +02:00 [INF] HTTP GET /api/Packages responded 200 in 69.2372 ms
+2026-01-29 00:20:15.779 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:15.784 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:15.786 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 45.4072 ms
+2026-01-29 00:20:21.478 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:21.482 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:21.488 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:21.509 +02:00 [INF] HTTP GET /api/Packages responded 200 in 30.5786 ms
+2026-01-29 00:20:21.550 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:21.556 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:21.558 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 77.0095 ms
+2026-01-29 00:20:21.573 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:21.574 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:21.609 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:21.612 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:21.615 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 41.5998 ms
+2026-01-29 00:20:25.800 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:20:25.854 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.7158 ms
+2026-01-29 00:20:27.396 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:20:27.435 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.6991 ms
+2026-01-29 00:20:28.177 +02:00 [INF] Updating package 1 for user 14 with amount 3
+2026-01-29 00:20:28.217 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.0002 ms
+2026-01-29 00:20:30.947 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:30.948 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:30.948 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:30.963 +02:00 [INF] HTTP GET /api/Packages responded 200 in 15.0792 ms
+2026-01-29 00:20:31.002 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:31.008 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:31.010 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 62.8040 ms
+2026-01-29 00:20:31.041 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:31.042 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:31.075 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:31.080 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:31.081 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 40.6297 ms
+2026-01-29 00:21:28.563 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-29 00:21:28.565 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-29 00:21:28.745 +02:00 [INF] HTTP POST /api/User/login responded 200 in 190.7058 ms
+2026-01-29 00:21:30.848 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:21:30.862 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:30.866 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.6679 ms
+2026-01-29 00:21:30.870 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:30.931 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:30.937 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:30.940 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 82.9836 ms
+2026-01-29 00:21:38.036 +02:00 [INF] Updating package 1 for user 13 with amount 1
+2026-01-29 00:21:38.109 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.9479 ms
+2026-01-29 00:21:39.291 +02:00 [INF] Updating package 1 for user 13 with amount 2
+2026-01-29 00:21:39.311 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3544 ms
+2026-01-29 00:21:40.278 +02:00 [INF] Updating package 1 for user 13 with amount 3
+2026-01-29 00:21:40.312 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.5342 ms
+2026-01-29 00:21:43.388 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:21:43.390 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:43.391 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:43.394 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.5245 ms
+2026-01-29 00:21:43.425 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:43.429 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:43.431 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 42.0757 ms
+2026-01-29 00:21:43.460 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:43.462 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:43.494 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:43.497 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:43.498 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 38.3323 ms
+2026-01-29 00:23:33.291 +02:00 [INF] Updating package 1 for user 13 with amount 1
+2026-01-29 00:23:33.366 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 80.7900 ms
+2026-01-29 00:23:41.346 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:23:41.348 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:23:41.348 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:23:41.378 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.0380 ms
+2026-01-29 00:23:41.411 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:23:41.457 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:23:41.459 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 113.6227 ms
+2026-01-29 00:23:41.477 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:23:41.478 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:23:41.512 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:23:41.517 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:23:41.519 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 42.5520 ms

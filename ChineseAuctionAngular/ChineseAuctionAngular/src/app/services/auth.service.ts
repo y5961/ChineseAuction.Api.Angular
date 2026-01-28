@@ -3,41 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { DtoLogin, UserDTO } from '../models/UserDTO';
 import { Observable, tap } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  readonly BASE_URL = "api/User";
+  readonly BASE_URL = "/api/User";
   private http = inject(HttpClient);
-  private readonly TOKEN_KEY = 'auth_token'; // מפתח קבוע לשימוש ב-Storage
+  private readonly TOKEN_KEY = 'auth_token';
 
-  constructor() { }
+  login = (details: DtoLogin) => this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(tap(t => localStorage.setItem(this.TOKEN_KEY, t)));
+  register = (userInfo: UserDTO) => this.http.post(`${this.BASE_URL}/register`, userInfo, { responseType: 'text' }).pipe(tap(t => localStorage.setItem(this.TOKEN_KEY, t)));
+  logout = () => localStorage.removeItem(this.TOKEN_KEY);
+  getToken = () => localStorage.getItem(this.TOKEN_KEY);
 
-  // התחברות ושמירת התוקן
-  login(details: DtoLogin): Observable<string> {
-    return this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(
-      tap(token => this.saveToken(token))
-    );
-  }
-
-  // רישום ושמירת התוקן
-  register(userInfo: UserDTO): Observable<string> {
-    return this.http.post(`${this.BASE_URL}/register`, userInfo, { responseType: 'text' }).pipe(
-      tap(token => this.saveToken(token))
-    );
-  }
-
-  // יציאה מהמערכת - ניקוי ה-LocalStorage
-  logout(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-  }
-
-  // פונקציות עזר פנימיות
-  private saveToken(token: string): void {
-    localStorage.setItem(this.TOKEN_KEY, token);
-  }
-
-  public getToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY);
+  public getUserId(): number {
+    const token = this.getToken();
+    if (!token) return 0;
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      // שליפה לפי המבנה שראינו ב-Console שלך
+      const soapId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+      return Number(soapId || 0);
+    } catch { return 0; }
   }
 }

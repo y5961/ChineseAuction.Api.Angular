@@ -202,5 +202,49 @@ namespace ChineseAuctionAPI.Repositories
                 .ThenInclude(go => go.Gift)
                 .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
         }
+        // בתוך מחלקת OrderRepo
+        public async Task AddOrUpdatePackageInOrderAsync(int userId, int packageId, int amount)
+        {
+            // 1. מציאת הזמנת טיוטה או יצירת חדשה
+            var order = await GetDraftOrderByUserAsync(userId) ?? await CreateDraftOrderAsync(userId);
+
+            var package = await _context.Packages.FindAsync(packageId);
+            if (package == null) throw new Exception("Package not found");
+
+            // 2. חיפוש אם החבילה כבר קיימת בהזמנה
+            var orderPackage = await _context.OrdersPackage
+                .FirstOrDefaultAsync(op => op.OrderId == order.IdOrder && op.IdPackage == packageId);
+
+            if (orderPackage != null)
+            {
+                // עדכון כמות (מונע ירידה מתחת ל-0)
+                orderPackage.Quantity += amount;
+
+                if (orderPackage.Quantity <= 0)
+                {
+                    _context.OrdersPackage.Remove(orderPackage);
+                    order.Price -= package.Price * (orderPackage.Quantity - amount); // עדכון מחיר בהסרה
+                }
+                else
+                {
+                    order.Price += package.Price * amount;
+                }
+            }
+            else if (amount > 0)
+            {
+                // הוספה חדשה
+                var newOrderPackage = new OrdersPackage
+                {
+                    OrderId = order.IdOrder,
+                    IdPackage = packageId,
+                    Quantity = amount,
+                    PriceAtPurchase = package.Price
+                };
+                _context.OrdersPackage.Add(newOrderPackage);
+                order.Price += package.Price * amount;
+            }
+
+            await _context.SaveChangesAsync();
+        }
     }
 }

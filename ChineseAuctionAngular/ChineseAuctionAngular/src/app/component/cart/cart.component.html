@@ -1,34 +1,29 @@
-<div class="cart-wrapper">
-  <div class="cart-header">
-    <i class="pi pi-shopping-bag"></i>
-    <span>הסל שלי</span>
-  </div>
+<pre dir="ltr">{{ packageQuantities() | json }}</pre>
+<div class="cart-container" dir="rtl">
+  <h2 class="cart-title">סל הקניות שלי</h2>
 
-  <div class="cart-content">
-    <!-- <ul class="package-list" *ngIf="cartPackages.length > 0">
-      <li *ngFor="let pkg of cartPackages" (contextmenu)="onContextMenu($event)">
-        <div class="pkg-info">
-          <span class="pkg-name">{{ pkg.name }}</span>
-          <span class="pkg-price">{{ pkg.price }} &#8362;</span>
+  @if (cartPackages().length > 0) {
+    <div class="cart-items">
+      @for (pkg of cartPackages(); track pkg.idPackage) {
+        <div class="cart-item">
+          <div class="item-info">
+            <span class="item-name">{{ pkg.name }}</span>
+            <span class="item-price">₪{{ pkg.price }}</span>
+          </div>
+          
+          <div class="quantity-controls">
+            <button class="qty-btn" (click)="increment(pkg.idPackage)">+</button>
+            
+            <span class="qty-num">
+              {{ packageQuantities()[pkg.idPackage] || 0 }}
+            </span>
+            
+            <button class="qty-btn" (click)="decrement(pkg.idPackage)">-</button>
+          </div>
         </div>
-
-        <div class="quantity-control">
-          <button (click)="increment(pkg.idPackage)" class="control-btn">+</button>
-          <span class="qty-display">{{ packageQuantities()[pkg.idPackage] || 0 }}</span>
-          <button (click)="decrement(pkg.idPackage)" class="control-btn">-</button>
-        </div>
-      </li>
-    </ul> -->
-
-    <div class="empty-state" *ngIf="cartPackages.length === 0">
-      <i class="pi pi-cart-plus"></i>
-      <p>הסל שלך מחכה שתמלאי אותו בחבילות ומתנות</p>
+      }
     </div>
-  </div>
-
-  <div class="cart-footer" *ngIf="cartPackages.length > 0">
-    <button class="checkout-btn">למעבר לתשלום</button>
-  </div>
+  } @else {
+    <div class="empty-message">הסל שלך ריק כרגע</div>
+  }
 </div>
-
-<p-contextmenu #cm [model]="items"></p-contextmenu>

@@ -1,107 +1,75 @@
-import { Component, OnInit, signal, inject, ViewChild } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrderService } from '../../services/order.service'; // וודאי נתיב תקין
-import { PackageDTO } from '../../models/PackageDTO';
-import { BadgeModule } from 'primeng/badge';
-import { ContextMenuModule, ContextMenu } from 'primeng/contextmenu';
-import { MenuItem } from 'primeng/api';
+import { OrderService } from '../../services/order.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, BadgeModule, ContextMenuModule],
+  imports: [CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
 export class CartComponent implements OnInit {
   private orderService = inject(OrderService);
-  
-  @ViewChild('cm') cm!: ContextMenu;
-
-  // מזהה המשתמש - בדרך כלל יגיע משירות Auth
-  userId = 1; 
-  
-  // ניהול כמויות בעזרת Signal לממשק מהיר
+  private authService = inject(AuthService);
+  cartPackages = signal<any[]>([]); 
   packageQuantities = signal<{ [key: number]: number }>({});
-  
-  // רשימת החבילות שנציג בעגלה
-  cartPackages: PackageDTO[] = [];
-  
-  items: MenuItem[] = [
-    { label: 'מחק מהסל', icon: 'pi pi-trash', command: () => console.log('Delete logic here') }
-  ];
+  userId: number = 0;
 
   ngOnInit() {
-    this.loadCart();
+    this.userId = this.authService.getUserId(); 
+    if (this.userId > 0) {
+      this.loadCart();
+    }
   }
+// src/app/component/cart/cart.component.ts
+loadCart() {
+  this.orderService.getUserOrders(this.userId).subscribe({
+    next: (userResponse: any) => {
+      const orders = userResponse.orders || [];
+      const draft = orders.find((o: any) => o.status === 0);
+      
+      if (draft && draft.ordersPackages) {
+        const qtys: { [key: number]: number } = {};
+        
+        draft.ordersPackages.forEach((p: any) => {
+          // שימי לב: השמות חייבים להתאים ל-DTO מה-C#
+          // אם ב-C# כתבת IdPackage ו-Quantity, השתמשי בהם כאן:
+          const id = p.idPackage || p.IdPackage; 
+          const qty = p.quantity !== undefined ? p.quantity : p.Quantity;
+          
+          if (id) {
+            qtys[id] = qty;
+          }
+        });
 
-  loadCart() {
-    this.orderService.getDraftOrder(this.userId).subscribe({
-      next: (order) => {
-        if (order && order.ordersGifts) {
-          const quantities: { [key: number]: number } = {};
-          
-          // מיפוי הנתונים מהשרת לתוך ה-Signal והרשימה
-          // order.ordersPackages.forEach(pkg => {
-          //   quantities[pkg.idPackage] = pkg.quantity;
-          //   if (pkg.package) {
-          //     this.cartPackages.push(pkg.package);
-          //   }
-          // });
-          
-          this.packageQuantities.set(quantities);
-        }
+        this.packageQuantities.set(qtys);
+        this.cartPackages.set([...draft.ordersPackages]); 
       }
-    });
-  }
-
-  // פונקציית הגדלת כמות
-  increment(packageId: number): void {
-    const currentQty = this.packageQuantities()[packageId] || 0;
-    const newQty = currentQty + 1;
-    this.updateQuantity(packageId, newQty);
-  }
-
-  // פונקציית הפחתת כמות
-  decrement(packageId: number): void {
-    const currentQty = this.packageQuantities()[packageId] || 0;
-    if (currentQty <= 0) return;
-
-    const newQty = currentQty - 1;
-    this.updateQuantity(packageId, newQty);
-  }
-
-  private updateQuantity(packageId: number, newQty: number) {
-    // עדכון אופטימי (מיידי בממשק)
-    const previousQty = this.packageQuantities()[packageId];
-    this.packageQuantities.update(q => ({ ...q, [packageId]: newQty }));
-
-    // עדכון ב-API
-    this.orderService.addOrUpdateGift(this.userId, packageId, newQty).subscribe({
-      next: (success) => {
-        if (!success) this.rollback(packageId, previousQty);
-      },
-      error: () => this.rollback(packageId, previousQty)
-    });
-  }
-
-  private rollback(id: number, qty: number) {
-    this.packageQuantities.update(q => ({ ...q, [id]: qty }));
-  }
-
-  onContextMenu(event: MouseEvent) {
-    this.cm.show(event);
-    event.preventDefault();
-  }
+    },
+    error: (err) => console.error('Error:', err)
+  });
 }
-// import { Component } from '@angular/core';
+  increment(idPackage: number) {
+    const currentQty = this.packageQuantities()[idPackage] || 0;
+    this.updateQty(idPackage, currentQty + 1);
+  }
 
-// @Component({
-//   selector: 'app-cart',
-//   imports: [],
-//   templateUrl: './cart.component.html',
-//   styleUrl: './cart.component.scss'
-// })
-// export class CartComponent {
+  decrement(idPackage: number) {
+    const currentQty = this.packageQuantities()[idPackage] || 0;
+    if (currentQty > 0) this.updateQty(idPackage, currentQty - 1);
+  }
 
-// }
+  private updateQty(idPackage: number, newQty: number) {
+    this.orderService.updatePackageQuantity(this.userId, idPackage, newQty).subscribe({
+      next: () => {
+        // עדכון מקומי של ה-Signal כדי שהתצוגה תשתנה מיד
+        console.log(this.packageQuantities())
+        this.packageQuantities.update(q => ({ ...q, [idPackage]: newQty }));
+      },
+      error: (err) => console.error('Update failed:', err)
+    });
+  }
+  
+}

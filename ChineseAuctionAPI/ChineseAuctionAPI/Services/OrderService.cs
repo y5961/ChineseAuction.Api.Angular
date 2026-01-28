@@ -169,5 +169,20 @@ namespace ChineseAuctionAPI.Services
                 throw;
             }
         }
+        // בתוך מחלקת OrderService
+        public async Task<bool> UpdatePackageQuantityAsync(int userId, int packageId, int amount)
+        {
+            try
+            {
+                _logger.LogInformation("Updating package {PackageId} for user {UserId} with amount {Amount}", packageId, userId, amount);
+                await _OrderRepository.AddOrUpdatePackageInOrderAsync(userId, packageId, amount);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating package in order");
+                return false;
+            }
+        }
     }
 }

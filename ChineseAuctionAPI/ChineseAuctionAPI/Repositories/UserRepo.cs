@@ -66,8 +66,12 @@ namespace ChineseAuctionAPI.Repositories
         public async Task<User?> GetUserWithOrdersAsync(int userId)
         {
             return await _context.Users
-                .Include(u => u.Orders)
-                .FirstOrDefaultAsync(u => u.IdUser == userId);
+        .Include(u => u.Orders)
+            .ThenInclude(o => o.OrdersPackage) // <--- הוספה קריטית: טעינת החבילות
+        .Include(u => u.Orders)
+            .ThenInclude(o => o.OrdersGift)    // טעינת המתנות
+                .ThenInclude(og => og.Gift)
+        .FirstOrDefaultAsync(u => u.IdUser == userId);
         }
 
         public async Task<User?> GetUserWithCardsAsync(int userId)

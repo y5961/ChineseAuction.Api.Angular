@@ -16,6 +16,7 @@ namespace ChineseAuctionAPI.Repositories
         Task<bool?> CompleteOrder(int orderId);
 
         Task <IEnumerable <Order?> > GetAllOrder(int userId);
+        Task AddOrUpdatePackageInOrderAsync(int userId, int packageId, int amount);
 
     }
 }

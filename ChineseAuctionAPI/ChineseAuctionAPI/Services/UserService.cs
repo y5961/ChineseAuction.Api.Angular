@@ -80,14 +80,11 @@ namespace ChineseAuctionAPI.Services
                 throw new Exception($"Error deleting user with ID {id}", ex);
             }
         }
-
         public async Task<DtoUserOrder?> GetUserWithOrdersAsync(int userId)
         {
             try
             {
-                _logger.LogInformation("שולף משתמש {UserId} עם הזמנות.", userId);
                 var user = await _userRepository.GetUserWithOrdersAsync(userId);
-
                 if (user == null) return null;
 
                 return new DtoUserOrder
@@ -99,23 +96,65 @@ namespace ChineseAuctionAPI.Services
                         Status = o.Status,
                         OrderDate = o.OrderDate,
                         IdUser = o.IdUser,
-                        OrdersGifts = o.OrdersGift.Select(ord => new OrdersGiftDTO
+                        // מיפוי החבילות לפי ה-DTO החדש שלך:
+                        OrdersPackages = o.OrdersPackage?.Select(op => new OrdersPackageDTO
                         {
-                            Name = ord.Gift.Name,
+                            IdPackage = op.IdPackage, // אות גדולה כמו ב-DTO שלך
+                            Quantity = op.Quantity     // ודאי שבמודל המקורי זה Amount או Quantity
+                        }).ToList() ?? new List<OrdersPackageDTO>(),
+
+                        OrdersGifts = o.OrdersGift?.Select(ord => new OrdersGiftDTO
+                        {
+                            Name = ord.Gift?.Name ?? "",
                             Amount = ord.Amount,
-                            Price = ord.Gift.Price,
-                            Description = ord.Gift.Description,
-                            Image = ord.Gift.Image
-                        }).ToList()
+                            Price = ord.Gift?.Price ?? 0,
+                            Description = ord.Gift?.Description ?? ""
+                        }).ToList() ?? new List<OrdersGiftDTO>()
                     }).ToList() ?? new List<OrderDTO>()
                 };
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "שגיאה בשליפת משתמש והזמנות עבור מזהה {UserId}", userId);
+                _logger.LogError(ex, "Error fetching orders");
                 return null;
             }
         }
+        //public async Task<DtoUserOrder?> GetUserWithOrdersAsync(int userId)
+        //{
+        //    try
+        //    {
+        //        _logger.LogInformation("שולף משתמש {UserId} עם הזמנות.", userId);
+        //        var user = await _userRepository.GetUserWithOrdersAsync(userId);
+
+        //        if (user == null) return null;
+
+        //        return new DtoUserOrder
+        //        {
+        //            FirstName = user.FirstName,
+        //            LastName = user.LastName,
+        //            Orders = user.Orders?.Select(o => new OrderDTO
+        //            {
+        //                Status = o.Status,
+        //                OrderDate = o.OrderDate,
+        //                IdUser = o.IdUser,
+        //                OrdersGifts = o.OrdersGift.Select(ord => new OrdersGiftDTO
+        //                {
+        //                    Name = ord.Gift.Name,
+        //                    Amount = ord.Amount,
+        //                    Price = ord.Gift.Price,
+        //                    Description = ord.Gift.Description,
+        //                    Image = ord.Gift.Image
+        //                }).ToList()
+        //            }).ToList() ?? new List<OrderDTO>()
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "שגיאה בשליפת משתמש והזמנות עבור מזהה {UserId}", userId);
+        //        return null;
+        //    }
+        //}
+
 
         public async Task<string?> RegisterAsync(DtoLogin dto)
         {

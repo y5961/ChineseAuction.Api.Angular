@@ -1,13 +1,36 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  height: 100vh; /* גובה מסך מלא */
+  overflow: hidden; /* מונע גלילה של כל הדף */
+}
+
+.main-layout {
+  display: flex;
+  flex: 1; /* תופס את כל השטח שמתחת ל-Header */
+  direction: ltr; /* מצמיד את הסרגל לשמאל */
+  overflow: hidden;
+}
+
+.side-cart {
+  width: 300px;
+  min-width: 300px;
+  height: 100%; /* מה-Header עד למטה ממש */
+  overflow-y: auto; /* גלילה פנימית רק לעגלה */
+  border-right: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.content-and-footer {
+  flex: 1; /* מצמצם את כל האזור הזה לימין */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; /* הגלילה של האתר קורית כאן */
+  direction: rtl; /* מחזיר לעברית */
 }
 
 .main-content {
-  flex: 1; 
-}
-
-app-footer {
-  margin-top: auto; 
+  flex: 1; /* דוחף את הפוטר לתחתית האזור הימני */
+  padding: 20px;
 }

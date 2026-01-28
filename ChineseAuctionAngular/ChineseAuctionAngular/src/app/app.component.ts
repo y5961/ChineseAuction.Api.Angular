@@ -9,10 +9,11 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import { Gift } from './models/GiftDTO';
 import { GiftComponent } from './component/gift/gift.component';
 import { PackageComponent } from './component/package/package.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RegisterComponent,Header,Footer,HomeComponent,LoginComponent,NotFoundComponent,GiftComponent,PackageComponent],
+  imports: [RouterOutlet,RegisterComponent,Header,Footer,HomeComponent,LoginComponent,NotFoundComponent,GiftComponent,PackageComponent,CartComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

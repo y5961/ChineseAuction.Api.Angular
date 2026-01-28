@@ -1,14 +1,16 @@
-
 <div class="app-container">
   <app-header></app-header>
-  <!-- <app-register></app-register>
-  <app-login></app-login> -->
 
-  <main class="main-content">
-    <router-outlet>
+  <div class="main-layout">
+    <aside class="side-cart">
+      <app-cart></app-cart>
+    </aside>
 
-    </router-outlet>
-  </main>
-
-  <app-footer></app-footer>
+    <div class="content-and-footer">
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+    </div>
+  </div>
 </div>
