@@ -1,0 +1,84 @@
+2026-01-28 17:29:10.683 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-28 17:29:14.026 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 87.2366 ms
+2026-01-28 17:29:14.350 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 27.8176 ms
+2026-01-28 17:37:05.907 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 17:37:06.528 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 17:37:06.536 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 17:37:09.358 +02:00 [INF] HTTP GET /api/Packages responded 200 in 4202.8540 ms
+2026-01-28 17:37:09.388 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 17:37:09.439 +02:00 [INF] HTTP GET /api/Gift responded 200 in 2932.5467 ms
+2026-01-28 17:37:11.783 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 17:37:11.788 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 17:37:11.905 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 17:37:11.906 +02:00 [INF] HTTP GET /api/Gift responded 200 in 140.3074 ms
+2026-01-28 17:37:13.900 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 17:37:13.916 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.9471 ms
+2026-01-28 17:37:16.074 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 17:37:16.078 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 17:37:16.094 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 17:37:16.098 +02:00 [INF] HTTP GET /api/Gift responded 200 in 34.9278 ms
+2026-01-28 17:38:07.709 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 123.7970 ms
+2026-01-28 17:38:08.287 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 93.3134 ms
+2026-01-28 19:02:35.766 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-28 19:02:39.651 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 288.8462 ms
+2026-01-28 19:02:40.043 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 107.2265 ms
+2026-01-28 19:04:00.893 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 175.8350 ms
+2026-01-28 19:04:01.861 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 215.9145 ms
+2026-01-28 19:18:35.852 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:18:35.863 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:18:42.236 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 7406.0294 ms
+2026-01-28 19:21:33.130 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:21:33.138 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:21:33.536 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:21:33.610 +02:00 [INF] HTTP GET /api/Gift responded 200 in 509.4297 ms
+2026-01-28 19:21:35.846 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:21:36.025 +02:00 [INF] HTTP GET /api/Packages responded 200 in 216.0450 ms
+2026-01-28 19:21:38.054 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:21:38.060 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:21:38.107 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:21:38.115 +02:00 [INF] HTTP GET /api/Gift responded 200 in 64.3702 ms
+2026-01-28 19:21:42.543 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:21:42.548 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:21:42.571 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:21:42.581 +02:00 [INF] HTTP GET /api/Gift responded 200 in 50.2754 ms
+2026-01-28 19:22:21.150 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:22:21.156 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:22:21.205 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 58.7127 ms
+2026-01-28 19:22:28.240 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:22:28.264 +02:00 [INF] HTTP GET /api/Packages responded 200 in 26.8856 ms
+2026-01-28 19:22:36.909 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:22:36.913 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:22:36.936 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:22:36.944 +02:00 [INF] HTTP GET /api/Gift responded 200 in 35.9102 ms
+2026-01-28 19:22:39.487 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:22:39.494 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:22:39.513 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:22:39.523 +02:00 [INF] HTTP GET /api/Gift responded 200 in 38.4457 ms
+2026-01-28 19:24:54.808 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:24:54.811 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:24:54.871 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 69.7757 ms
+2026-01-28 19:25:11.193 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:25:11.197 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:25:11.233 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 41.5985 ms
+2026-01-28 19:25:16.188 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:25:16.193 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:25:16.256 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 69.8096 ms
+2026-01-28 19:25:17.944 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:25:17.979 +02:00 [INF] HTTP GET /api/Packages responded 200 in 42.6832 ms
+2026-01-28 19:25:19.793 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:25:19.798 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:25:19.817 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:25:19.824 +02:00 [INF] HTTP GET /api/Gift responded 200 in 31.7827 ms
+2026-01-28 19:25:20.636 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:25:20.656 +02:00 [INF] HTTP GET /api/Packages responded 200 in 20.7345 ms
+2026-01-28 19:50:01.811 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-28 19:50:01.817 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-28 19:50:02.033 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-28 19:50:02.043 +02:00 [INF] HTTP GET /api/Gift responded 200 in 232.6580 ms
+2026-01-28 19:50:38.251 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:50:38.315 +02:00 [INF] HTTP GET /api/Packages responded 200 in 69.3387 ms
+2026-01-28 19:58:15.666 +02:00 [INF] שולף את כל החבילות.
+2026-01-28 19:58:15.668 +02:00 [INF] Fetching draft order for user ID: 1
+2026-01-28 19:58:15.681 +02:00 [INF] מחפש הזמנה במצב טיוטה (Draft) עבור משתמש 1.
+2026-01-28 19:58:15.871 +02:00 [INF] HTTP GET /api/Packages responded 200 in 206.1107 ms
+2026-01-28 19:58:15.901 +02:00 [INF] HTTP GET /api/Orders/draft/1 responded 200 in 235.9887 ms
