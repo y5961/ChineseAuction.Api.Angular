@@ -1,26 +1,28 @@
-<pre dir="ltr">{{ packageQuantities() | json }}</pre>
 <div class="cart-container" dir="rtl">
   <h2 class="cart-title">סל הקניות שלי</h2>
 
   @if (cartPackages().length > 0) {
     <div class="cart-items">
       @for (pkg of cartPackages(); track pkg.idPackage) {
-        <div class="cart-item">
-          <div class="item-info">
-            <span class="item-name">{{ pkg.name }}</span>
-            <span class="item-price">₪{{ pkg.price }}</span>
-          </div>
-          
-          <div class="quantity-controls">
-            <button class="qty-btn" (click)="increment(pkg.idPackage)">+</button>
+        
+        @if ((packageQuantities()[pkg.idPackage] || 0) > 0) {
+          <div class="cart-item">
+            <div class="item-info">
+              <span class="item-name">{{ pkg.name }}</span>
+              <span class="item-price">₪{{ pkg.price }}</span>
+            </div>
             
-            <span class="qty-num">
-              {{ packageQuantities()[pkg.idPackage] || 0 }}
-            </span>
-            
-            <button class="qty-btn" (click)="decrement(pkg.idPackage)">-</button>
+            <div class="quantity-controls">
+              <button class="qty-btn" (click)="increment(pkg.idPackage)">+</button>
+              
+              <span class="qty-num">
+                {{ packageQuantities()[pkg.idPackage] }}
+              </span>
+              
+              <button class="qty-btn" (click)="decrement(pkg.idPackage)">-</button>
+            </div>
           </div>
-        </div>
+        }
       }
     </div>
   } @else {
