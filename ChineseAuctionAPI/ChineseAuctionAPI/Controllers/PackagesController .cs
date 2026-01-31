@@ -57,5 +57,12 @@ namespace ChineseAuctionAPI.Controllers
             await _service.DeletePackageAsync(id);
             return NoContent();
         }
+        // DTO פשוט עבור הקלט
+        public class PackageUpdateDto
+        {
+            public int UserId { get; set; }
+            public int PackageId { get; set; }
+            public int Quantity { get; set; }
+        }
     }
 }

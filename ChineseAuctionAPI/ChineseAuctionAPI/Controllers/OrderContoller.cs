@@ -1,5 +1,6 @@
 ﻿using ChineseAuctionAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using static ChineseAuctionAPI.Controllers.PackagesController;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -29,10 +30,3 @@ public class OrdersController : ControllerBase
     }
 }
 
-// DTO פשוט עבור הקלט
-public class PackageUpdateDto
-{
-    public int UserId { get; set; }
-    public int PackageId { get; set; }
-    public int Quantity { get; set; }
-}
