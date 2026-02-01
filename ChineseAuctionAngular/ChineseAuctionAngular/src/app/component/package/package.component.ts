@@ -70,4 +70,19 @@ export class PackageComponent implements OnInit {
       }
     });
   }
+  getPackageGradient(id: number): string {
+    const gradients = [
+      'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', // ירוק
+      'linear-gradient(135deg, #00c6fb 0%, #005bea 100%)', // כחול
+      'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', // ורוד-אדום
+      'linear-gradient(135deg, #f6d365 0%, #fda085 100%)'  // כתום
+    ];
+    // אנחנו משתמשים ב-Modulo (%) כדי שאם יש יותר מ-4 חבילות, הצבעים יחזרו על עצמם
+    return gradients[id % gradients.length];
+  }
+
+  getPackageImage(id: number): string {
+    const images = ['p-green.png', 'p-blue.png', 'p-pink.png', 'p-red.png'];
+    return images[id % images.length];
+  }
 }
