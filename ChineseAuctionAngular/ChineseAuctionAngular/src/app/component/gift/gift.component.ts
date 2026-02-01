@@ -1,6 +1,8 @@
 import { Component, OnInit, inject, signal } from '@angular/core'; 
 import { CommonModule } from '@angular/common';
 import { GiftService } from '../../services/gift.service';
+import { OrderService } from '../../services/order.service';
+import { AuthService } from '../../services/auth.service';
 import { Gift } from '../../models/GiftDTO';
 
 @Component({
@@ -8,14 +10,16 @@ import { Gift } from '../../models/GiftDTO';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './gift.component.html',
-  styleUrl: './gift.component.scss' // ודאי שהקובץ קיים, אפילו אם הוא ריק
+  styleUrl: './gift.component.scss'
 })
 export class GiftComponent implements OnInit {
   private giftService = inject(GiftService);
+  private orderService = inject(OrderService);
+  private authService = inject(AuthService);
   
-  // סיגנלים לניהול הנתונים
   gifts = signal<Gift[]>([]);
   selectedGift = signal<Gift | null>(null);
+  showNoTicketsModal = signal<boolean>(false);
 
   ngOnInit(): void {
     this.loadGifts();
@@ -24,7 +28,6 @@ export class GiftComponent implements OnInit {
   loadGifts(): void {
     this.giftService.getAllGifts().subscribe({
       next: (data) => {
-        // מאתחל כל מתנה עם אובייקט חדש כדי להבטיח ש-customerQuantity קיים
         const initializedGifts = data.map(g => {
           const gift = new Gift(g);
           gift.customerQuantity = 0;
@@ -32,13 +35,13 @@ export class GiftComponent implements OnInit {
         });
         this.gifts.set(initializedGifts);
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('שגיאה בטעינת הנתונים', err);
       }
     });
   }
 
-  // פונקציות לניהול ה-Popup
+  // פונקציות לפתיחה וסגירה של המודל
   openDetails(gift: Gift): void {
     this.selectedGift.set(gift);
   }
@@ -47,14 +50,37 @@ export class GiftComponent implements OnInit {
     this.selectedGift.set(null);
   }
 
-  // פונקציות כמות
+  // פונקציה להעלאת כמות (פלוס)
   increaseQuantity(gift: Gift): void {
-    gift.customerQuantity = (gift.customerQuantity || 0) + 1;
+    const userId = this.authService.getUserId();
+    const newQty = (gift.customerQuantity || 0) + 1;
+
+    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
+      next: () => {
+        gift.customerQuantity = newQty;
+        // עדכון הסיגנל כדי שה-UI יתרענן
+        this.gifts.set([...this.gifts()]);
+      },
+      error: (err: any) => {
+        if (err.status === 400) {
+          this.showNoTicketsModal.set(true);
+        }
+      }
+    });
   }
 
+  // פונקציה להורדת כמות (מינוס)
   decreaseQuantity(gift: Gift): void {
-    if (gift.customerQuantity && gift.customerQuantity > 0) {
-      gift.customerQuantity--;
-    }
+    if (!gift.customerQuantity || gift.customerQuantity <= 0) return;
+
+    const userId = this.authService.getUserId();
+    const newQty = gift.customerQuantity - 1;
+
+    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
+      next: () => {
+        gift.customerQuantity = newQty;
+        this.gifts.set([...this.gifts()]);
+      }
+    });
   }
 }

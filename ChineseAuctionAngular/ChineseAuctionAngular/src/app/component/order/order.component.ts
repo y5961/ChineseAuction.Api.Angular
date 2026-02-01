@@ -14,13 +14,13 @@ export class OrderService {
     return this.http.post<boolean>(`${this.BASE_URL}/update-package`, body);
   }
 
-  addOrUpdateGiftInOrder(userId: number, giftId: number, amount: number): Observable<boolean> {
-    const body = { userId, giftId, amount };
-    // שימי לב: הנתיב /add-gift צריך להיות מוגדר ב-OrdersController ב-C#
-    return this.http.post<boolean>(`${this.BASE_URL}/add-gift`, body);
-  }
-
+  // שליפת הזמנות
   getUserOrders(userId: number): Observable<any> {
     return this.http.get<any>(`/api/User/${userId}/orders`);
   }
+
+addOrUpdateGiftInOrder(userId: number, giftId: number, amount: number): Observable<boolean> {
+  const body = { userId, giftId, amount };
+  return this.http.post<boolean>(`${this.BASE_URL}/add-gift`, body);
+}
 }
