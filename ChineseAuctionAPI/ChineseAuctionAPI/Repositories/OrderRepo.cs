@@ -15,52 +15,70 @@ namespace ChineseAuctionAPI.Repositories
 
         }
 
-        //public async Task AddOrUpdateGiftInOrderAsync(int orderId, int giftId, int amount)
-        //{
-        //    var gift = await _context.Gifts.FindAsync(giftId);
-        //    var order = await _context.OrdersOrders
-        //        .Include(o => o.OrdersGift)
-        //        .FirstOrDefaultAsync(o => o.IdOrder == orderId);
+        public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int amount)
+        {
+            // 1. שליפת ההזמנה כולל החבילות והמתנות שכבר קיימות בה
+            var order = await _context.OrdersOrders
+                .Include(o => o.OrdersGift)
+                .Include(o => o.OrdersPackage) // חשוב! כדי לדעת כמה כרטיסים יש לו
+                .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
 
-        //    if (order == null)
-        //        throw new Exception("Order not found");
+            if (order == null) throw new Exception("עליך לבחור חבילה לפני בחירת מתנות");
 
-        //    var orderGift = order.OrdersGift
-        //        .FirstOrDefault(go => go.IdGift == giftId);
+            // 2. חישוב סך הכרטיסים המגיעים לו מהחבילות (לפי השדות בדגם שלך)
+            // אני משתמש ב-AmountRegular, שנהי לפי הצורך ל-AmountPremium אם זו מתנת פרימיום
+            var totalTicketsAllowed = await _context.OrdersPackage
+                .Where(op => op.OrderId == order.IdOrder)
+                .Join(_context.Packages, op => op.IdPackage, p => p.IdPackage, (op, p) => p.AmountRegular * op.Quantity)
+                .SumAsync();
 
-        //    if (orderGift != null)
-        //    {
-        //        // Update existing gift amount
-        //        orderGift.Amount = amount;
-        //        _context.OrdersGift.Update(orderGift);
-        //    }
-        //    else
-        //    {
-        //        // Add new gift to order
-        //        orderGift = new OrdersGift
-        //        {
-        //            IdOrder = orderId,
-        //            IdGift = giftId,
-        //            Amount = amount,
-        //        };
-        //        _context.OrdersGift.Add(orderGift);
-        //    }
+            // 3. חישוב כמה כרטיסים הוא כבר ניצל (סכום ה-Amount של המתנות)
+            var currentUsedTickets = order.OrdersGift.Sum(og => og.Amount);
 
-        //    order.Price = order.Price + gift.Price * amount;
-        //    await _context.SaveChangesAsync();
-        //}
+            // בדיקה אם המתנה החדשה תחרוג מהמותר
+            var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
+            int extraRequested = amount - (existingGift?.Amount ?? 0);
+
+            if (currentUsedTickets + extraRequested > totalTicketsAllowed)
+            {
+                // זריקת שגיאה שתחזור ל-Angular ותקפיץ את ההודעה
+                throw new InvalidOperationException("INSUFFICIENT_TICKETS");
+            }
+
+            // 4. לוגיקת ההוספה הקיימת שלך...
+            if (existingGift != null)
+            {
+                existingGift.Amount = amount;
+            }
+            else
+            {
+                order.OrdersGift.Add(new OrdersGift { IdGift = IdGift, Amount = amount, IdOrder = order.IdOrder });
+            }
+
+            await _context.SaveChangesAsync();
+        }
+        public async Task<int> GetRemainingTicketsAsync(int userId)
+        {
+            var order = await _context.OrdersOrders
+                .Include(o => o.OrdersGift)
+                .Include(o => o.OrdersPackage)
+                .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
+
+            if (order == null) return 0;
+
+            var total = order.OrdersPackage.Sum(op => _context.Packages.Find(op.IdPackage).AmountRegular * op.Quantity);
+            var used = order.OrdersGift.Sum(og => og.Amount);
+
+            return total - used;
+        }
         //public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int amount)
         //{
-        //    var ord = await _context.OrdersOrders
+        //    // 1. חיפוש הזמנה קיימת בטיוטה
+        //    var order = await _context.OrdersOrders
         //        .Include(o => o.OrdersGift)
         //        .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
 
-        //    if (ord == null)
-        //        throw new InvalidOperationException("לא ניתן להוסיף מוצרים להזמנה סגורה או שאינה קיימת.");
-
-        //    var order = await _context.OrdersOrders
-        //   .Include(o => o.OrdersGift)
-        //    .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
+        //    // 2. אם לא קיימת, יוצרים אחת חדשה
         //    if (order == null)
         //    {
         //        order = new Order
@@ -68,55 +86,32 @@ namespace ChineseAuctionAPI.Repositories
         //            IdUser = userId,
         //            Price = 0,
         //            OrderDate = DateTime.Now,
-        //            Status = OrderStatus.Draft
+        //            Status = OrderStatus.Draft,
+        //            OrdersGift = new List<OrdersGift>()
         //        };
+
         //        _context.OrdersOrders.Add(order);
         //        await _context.SaveChangesAsync();
         //    }
 
-        //    var existing = ord.OrdersGift?.FirstOrDefault(go => go.IdGift == IdGift);
+        //    // 3. הוספה או עדכון של המתנה בתוך ה-order שמצאנו/יצרנו
+        //    var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
+        //    if (existingGift != null)
+        //    {
+        //        existingGift.Amount = amount;
+        //    }
+        //    else
+        //    {
+        //        order.OrdersGift.Add(new OrdersGift
+        //        {
+        //            IdGift = IdGift,
+        //            Amount = amount,
+        //            IdOrder = order.IdOrder
+        //        });
+        //    }
+
+        //    await _context.SaveChangesAsync();
         //}
-        public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int amount)
-        {
-            // 1. חיפוש הזמנה קיימת בטיוטה
-            var order = await _context.OrdersOrders
-                .Include(o => o.OrdersGift)
-                .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
-
-            // 2. אם לא קיימת, יוצרים אחת חדשה
-            if (order == null)
-            {
-                order = new Order
-                {
-                    IdUser = userId,
-                    Price = 0,
-                    OrderDate = DateTime.Now,
-                    Status = OrderStatus.Draft,
-                    OrdersGift = new List<OrdersGift>()
-                };
-               
-                _context.OrdersOrders.Add(order);
-                await _context.SaveChangesAsync();
-            }
-
-            // 3. הוספה או עדכון של המתנה בתוך ה-order שמצאנו/יצרנו
-            var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
-            if (existingGift != null)
-            {
-                existingGift.Amount = amount;
-            }
-            else
-            {
-                order.OrdersGift.Add(new OrdersGift
-                {
-                    IdGift = IdGift,
-                    Amount = amount,
-                    IdOrder = order.IdOrder
-                });
-            }
-
-            await _context.SaveChangesAsync();
-        }
         public async Task<bool?> CompleteOrder(int orderId)
         {
             var order = await _context.OrdersOrders.FindAsync(orderId);

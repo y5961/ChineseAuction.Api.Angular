@@ -27,4 +27,10 @@ namespace ChineseAuctionAPI.DTOs
         public int Price { get; set; }
         public int NumOfBuyers { get; set; }
     }
+    public class GiftUpdateDto
+    {
+        public int UserId { get; set; }
+        public int GiftId { get; set; }
+        public int Amount { get; set; }
+    }
 }

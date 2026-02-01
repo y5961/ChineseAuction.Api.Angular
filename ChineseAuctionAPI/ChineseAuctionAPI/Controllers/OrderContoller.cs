@@ -1,4 +1,5 @@
-﻿using ChineseAuctionAPI.Services;
+﻿using ChineseAuctionAPI.DTOs;
+using ChineseAuctionAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using static ChineseAuctionAPI.Controllers.PackagesController;
 
@@ -28,5 +29,28 @@ public class OrdersController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+    [HttpPost("add-gift")]
+    public async Task<ActionResult> AddOrUpdateGift([FromBody] GiftUpdateDto dto)
+    {
+        try
+        {
+            // קריאה לשירות שכבר מימשת ב-Service וב-Repo
+            var result = await _orderService.AddOrUpdateGiftInOrderAsync(dto.UserId, dto.GiftId, dto.Amount);
+
+            if (result) return Ok(true);
+            return BadRequest("שגיאה בעדכון המתנה");
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "INSUFFICIENT_TICKETS")
+        {
+            // מחזירים BadRequest ספציפי כדי שה-Angular יזהה שנגמרו הכרטיסים
+            return BadRequest("INSUFFICIENT_TICKETS");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+ 
 }
 
