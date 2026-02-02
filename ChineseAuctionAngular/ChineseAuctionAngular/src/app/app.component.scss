@@ -1,0 +1,41 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* מונע גלילה של כל ה-Viewport */
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* קריטי: מונע מהילדים "לפרוץ" החוצה */
+  direction: ltr; /* מצמיד את הסרגל לשמאל */
+}
+
+.side-cart {
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  overflow-y: auto; /* גלילה עצמאית לעגלה */
+  border-right: 1px solid #ddd;
+  background-color: #f9f9f9; /* אופציונלי: להפרדה ויזואלית */
+}
+
+.content-and-footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  overflow-y: auto; /* כאן מתרחשת הגלילה של התוכן הראשי */
+  direction: rtl; /* חזרה לעברית */
+}
+
+.main-content {
+  flex: 1 0 auto; /* מאפשר לתוכן לגדול ודוחף את הפוטר למטה */
+  padding: 20px;
+}
+
+app-footer {
+  flex-shrink: 0; /* מבטיח שהפוטר לא יתכווץ */
+}

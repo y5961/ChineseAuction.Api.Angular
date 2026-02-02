@@ -1,0 +1,55 @@
+
+
+.not-found-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    .error-code {
+        font-size: 8rem;
+        margin: 0;
+        color: #f4f4f4;
+        position: absolute;
+        z-index: -1;
+        font-weight: bold;
+    }
+
+
+    .error-icon {
+        font-size: 4rem;
+        color: var(--primary-color, #007bff);
+        margin-bottom: 1rem;
+    }
+
+
+    h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+
+    p {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 400px;
+    }
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+
+    }
+}
+
+

@@ -1,0 +1,7 @@
+2026-01-13 20:31:41.691 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-13 20:31:51.203 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 339.4680 ms
+2026-01-13 20:31:51.703 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 122.0238 ms
+2026-01-13 21:13:33.294 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 124.8978 ms
+2026-01-13 22:38:59.506 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-13 22:39:00.943 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 118.4994 ms
+2026-01-13 22:39:01.080 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 41.7702 ms

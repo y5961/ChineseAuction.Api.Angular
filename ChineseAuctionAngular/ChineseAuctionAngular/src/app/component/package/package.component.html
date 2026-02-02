@@ -1,0 +1,29 @@
+<div class="packages-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+  @for (packageItem of packages(); track packageItem.idPackage) {
+    <div class="package-card" [style.background]="getPackageGradient(packageItem.idPackage)" style="position: relative; width: 280px; height: 280px; border-radius: 40px; padding: 25px; color: white;">
+      
+      <div style="z-index: 3; position: relative;">
+         <h3 style="margin: 0; font-size: 2.3em; font-weight: 900;">{{ packageItem.amountRegular }} כרטיסים</h3>
+         <div style="font-size: 1.2em;">₪ {{ packageItem.price }}</div>
+      </div>
+
+      <div style="position: absolute; bottom: 20px; right: 10px; width: 150px; z-index: 1;">
+        @if (packageItem.image && packageItem.image !== 'string' && packageItem.image !== '') {
+          <img [src]="imageUrl + packageItem.image" 
+               style="width: 100%; object-fit: contain; mix-blend-mode: multiply;">
+        } @else {
+          <img [src]="imageUrl + getPackageImage(packageItem.idPackage)" 
+               style="width: 100%; object-fit: contain; mix-blend-mode: multiply; opacity: 0.7;">
+        }
+      </div>
+
+      <div style="position: absolute; bottom: 30px; left: 25px; z-index: 3;">
+        <div style="background: white; border-radius: 18px; display: flex; align-items: center; padding: 6px 14px; color: #442604;">
+<button (click)="handlePackageUpdate(packageItem, 'increment')">+</button>
+          <span style="font-size: 1.3em; font-weight: 800; min-width: 35px; text-align: center;">{{ packageQuantities()[packageItem.idPackage] || 0 }}</span>
+<button (click)="handlePackageUpdate(packageItem, 'decrement')">-</button>   
+     </div>
+      </div>
+    </div>
+  }
+</div>

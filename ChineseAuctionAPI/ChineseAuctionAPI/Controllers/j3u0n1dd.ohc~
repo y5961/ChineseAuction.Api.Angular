@@ -1,0 +1,33 @@
+﻿using ChineseAuctionAPI.DTOs;
+using ChineseAuctionAPI.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ChineseAuctionAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController:ControllerBase
+    {
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] DtoLogin dto)
+        {
+            var resp = await _userService.RegisterAsync(dto);
+            return Ok(resp);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] DtologinRequest dto)
+        {
+            var resp = await _userService.LoginAsync(dto.Email, dto.Password);
+            return Ok(resp);
+        }
+       
+
+    }
+}

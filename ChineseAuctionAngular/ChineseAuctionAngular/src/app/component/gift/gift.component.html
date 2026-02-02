@@ -1,0 +1,75 @@
+
+<div class="gifts-container" style="max-width: 1200px; margin: 0 auto; padding: 20px; direction: rtl; font-family: sans-serif;">
+  
+  <div class="gifts-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start;">
+    
+    @for (gift of gifts(); track gift.idGift) {
+      <div class="gift-card" 
+           style="background: white; border-radius: 20px; width: calc(25% - 19px); min-width: 240px; box-shadow: 0 4px 15px rgba(106, 27, 154, 0.1); overflow: hidden; display: flex; flex-direction: column; border: 2px solid #f3e5f5; height: 320px; transition: all 0.3s ease-in-out; cursor: default;"
+           onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(106, 27, 154, 0.15)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(106, 27, 154, 0.1)';"
+      >
+        
+        <div (click)="openDetails(gift)" style="width: 100%; height: 160px; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; border-bottom: 1px solid #f3e5f5; cursor: pointer;">
+          @if (gift.image && gift.image !== 'string') {
+            <img [src]="imageUrl + gift.image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          } @else {
+            <div style="color: #ce93d8; font-size: 2em;">🎁</div>
+          }
+        </div>
+
+        <div style="padding: 15px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          
+          <a (click)="openDetails(gift)" 
+             style="color: #6a1b9a; font-size: 1.1em; font-weight: 700; cursor: pointer; text-decoration: none; min-height: 40px; display: flex; align-items: center; justify-content: center;"
+             onmouseover="this.style.textDecoration='underline'"
+             onmouseout="this.style.textDecoration='none'">
+            {{ gift.name }}
+          </a>
+
+          <div style="display: flex; align-items: center; justify-content: center; background: #f3e5f5; border-radius: 30px; padding: 5px 15px; width: fit-content; margin: 0 auto; border: 1px solid #e1bee7;">
+            <button (click)="increaseQuantity(gift)" style="border: none; background: none; font-size: 22px; cursor: pointer; color: #7b1fa2; font-weight: bold; padding: 0 10px;">+</button>
+            <span style="font-size: 1.3em; font-weight: 800; color: #4a148c; min-width: 35px;">{{ gift.customerQuantity || 0 }}</span>
+            <button (click)="decreaseQuantity(gift)" [style.opacity]="(gift.customerQuantity || 0) <= 0 ? '0.2' : '1'" style="border: none; background: none; font-size: 26px; cursor: pointer; color: #7b1fa2; font-weight: bold; padding: 0 10px;">-</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (selectedGift()) {
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(5px);">
+      <div style="background: white; width: 90%; max-width: 550px; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.4); border: 4px solid #ba68c8;">
+        
+        <div style="background: #7b1fa2; color: white; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0; font-size: 1.4em;">פרטי המתנה</h2>
+          <button (click)="closeDetails()" style="background: none; border: none; color: white; font-size: 28px; cursor: pointer;">✕</button>
+        </div>
+
+        <div style="padding: 25px; text-align: center;">
+          <img [src]="imageUrl + selectedGift()?.image" style="width: 200px; height: 200px; object-fit: contain; margin-bottom: 20px; border-radius: 15px;">
+          
+          <h1 style="color: #4a148c; margin: 10px 0;">{{ selectedGift()?.name }}</h1>
+          <p style="font-size: 1.1em; color: #555; line-height: 1.5; background: #fdf7ff; padding: 15px; border-radius: 15px;">{{ selectedGift()?.description }}</p>
+          
+          <div style="display: flex; justify-content: space-around; margin-top: 20px; padding: 15px; border-top: 1px solid #f3e5f5;">
+            <div style="color: #7b1fa2;"><strong>מחיר כרטיס:</strong> {{ selectedGift()?.price }} ₪</div>
+            <div style="color: #7b1fa2;"><strong>תורם:</strong> {{ selectedGift()?.donor?.firstName }}</div>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <div style="display: flex; align-items: center; justify-content: center; background: #f3e5f5; border-radius: 30px; padding: 5px 20px; width: fit-content; margin: 0 auto; border: 1px solid #e1bee7;">
+              <button (click)="increaseQuantity(selectedGift()!)" style="border: none; background: none; font-size: 24px; cursor: pointer; color: #7b1fa2; font-weight: bold; padding: 0 15px;">+</button>
+              <span style="font-size: 1.5em; font-weight: 800; color: #4a148c; min-width: 40px;">{{ selectedGift()?.customerQuantity || 0 }}</span>
+              <button (click)="decreaseQuantity(selectedGift()!)" [style.opacity]="(selectedGift()?.customerQuantity || 0) <= 0 ? '0.2' : '1'" style="border: none; background: none; font-size: 28px; cursor: pointer; color: #7b1fa2; font-weight: bold; padding: 0 15px;">-</button>
+            </div>
+          </div>
+
+          <button (click)="closeDetails()" style="background: #9c27b0; color: white; border: none; padding: 12px 35px; border-radius: 25px; font-size: 1.1em; cursor: pointer; font-weight: bold;">חזרה למכירה</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+

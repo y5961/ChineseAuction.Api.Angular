@@ -1,0 +1,2093 @@
+2026-01-31 20:08:59.355 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-31 20:09:03.493 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 106.8843 ms
+2026-01-31 20:09:03.763 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 51.6160 ms
+2026-01-31 20:11:32.759 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:11:35.197 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-01-31 20:11:37.417 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 5394.1854 ms
+2026-01-31 20:11:38.774 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:11:38.790 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:11:38.994 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 233.3002 ms
+2026-01-31 20:11:39.103 +02:00 [INF] HTTP GET /api/Packages responded 200 in 343.7454 ms
+2026-01-31 20:11:42.738 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-31 20:11:42.744 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-31 20:11:42.879 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-31 20:11:42.947 +02:00 [INF] HTTP GET /api/Gift responded 200 in 224.3584 ms
+2026-01-31 20:11:54.059 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 20:11:54.251 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 20:11:54.545 +02:00 [INF] HTTP POST /api/User/login responded 200 in 535.9081 ms
+2026-01-31 20:11:57.259 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:11:57.259 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:11:57.268 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.0847 ms
+2026-01-31 20:11:57.272 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 12.8567 ms
+2026-01-31 20:12:06.144 +02:00 [INF] Updating package 1 for user 13 with amount 6260
+2026-01-31 20:12:06.575 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 453.8280 ms
+2026-01-31 20:12:09.400 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:12:09.419 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:12:09.442 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 42.2581 ms
+2026-01-31 20:12:09.459 +02:00 [INF] HTTP GET /api/Packages responded 200 in 44.9282 ms
+2026-01-31 20:12:09.542 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:12:09.562 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 20.8412 ms
+2026-01-31 20:21:36.564 +02:00 [INF] Updating package 3 for user 13 with amount 338353
+2026-01-31 20:21:36.783 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 250.7140 ms
+2026-01-31 20:21:37.797 +02:00 [INF] Updating package 3 for user 13 with amount 338354
+2026-01-31 20:21:37.843 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.3216 ms
+2026-01-31 20:21:41.505 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:21:41.524 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:21:41.541 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 36.6021 ms
+2026-01-31 20:21:41.549 +02:00 [INF] HTTP GET /api/Packages responded 200 in 25.4728 ms
+2026-01-31 20:21:41.644 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:21:41.666 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 22.9130 ms
+2026-01-31 20:32:07.793 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-31 20:32:10.209 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 111.0815 ms
+2026-01-31 20:32:10.516 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 58.0873 ms
+2026-01-31 20:32:29.463 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:31.177 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-01-31 20:32:32.510 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 3737.1553 ms
+2026-01-31 20:32:37.712 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:37.724 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:32:37.789 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 90.6933 ms
+2026-01-31 20:32:37.817 +02:00 [INF] HTTP GET /api/Packages responded 200 in 120.6108 ms
+2026-01-31 20:32:42.581 +02:00 [INF] Updating package 3 for user 13 with amount 1015058
+2026-01-31 20:32:42.912 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 383.0599 ms
+2026-01-31 20:32:43.823 +02:00 [INF] Updating package 3 for user 13 with amount 1015057
+2026-01-31 20:32:43.855 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.8190 ms
+2026-01-31 20:32:45.477 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:45.492 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 21.0151 ms
+2026-01-31 20:32:45.662 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:32:45.678 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.4778 ms
+2026-01-31 20:32:45.710 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:45.741 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 32.6157 ms
+2026-01-31 20:32:48.667 +02:00 [INF] Updating package 3 for user 13 with amount 1015056
+2026-01-31 20:32:48.699 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.3305 ms
+2026-01-31 20:32:48.856 +02:00 [INF] Updating package 3 for user 13 with amount 1015055
+2026-01-31 20:32:48.889 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.0692 ms
+2026-01-31 20:32:49.034 +02:00 [INF] Updating package 3 for user 13 with amount 1015054
+2026-01-31 20:32:49.064 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.9636 ms
+2026-01-31 20:32:49.222 +02:00 [INF] Updating package 3 for user 13 with amount 1015053
+2026-01-31 20:32:49.256 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.6517 ms
+2026-01-31 20:32:49.728 +02:00 [INF] Updating package 3 for user 13 with amount 1015052
+2026-01-31 20:32:49.765 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.0239 ms
+2026-01-31 20:32:49.941 +02:00 [INF] Updating package 3 for user 13 with amount 1015052
+2026-01-31 20:32:49.959 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.0425 ms
+2026-01-31 20:32:49.997 +02:00 [INF] Updating package 3 for user 13 with amount 1015051
+2026-01-31 20:32:50.045 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.6877 ms
+2026-01-31 20:32:50.130 +02:00 [INF] Updating package 3 for user 13 with amount 1015051
+2026-01-31 20:32:50.149 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9706 ms
+2026-01-31 20:32:50.334 +02:00 [INF] Updating package 3 for user 13 with amount 1015050
+2026-01-31 20:32:50.359 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.1160 ms
+2026-01-31 20:32:50.564 +02:00 [INF] Updating package 3 for user 13 with amount 1015049
+2026-01-31 20:32:50.574 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.3501 ms
+2026-01-31 20:32:50.766 +02:00 [INF] Updating package 3 for user 13 with amount 1015048
+2026-01-31 20:32:50.777 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.2632 ms
+2026-01-31 20:32:54.908 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:54.919 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 11.4939 ms
+2026-01-31 20:32:55.105 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:32:55.116 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.1722 ms
+2026-01-31 20:32:55.134 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:32:55.160 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 26.1530 ms
+2026-01-31 20:32:58.438 +02:00 [INF] Updating package 3 for user 13 with amount 1015049
+2026-01-31 20:32:58.501 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 64.2285 ms
+2026-01-31 20:32:58.653 +02:00 [INF] Updating package 3 for user 13 with amount 1015050
+2026-01-31 20:32:58.731 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 79.1258 ms
+2026-01-31 20:33:01.689 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:33:01.707 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 20:33:01.732 +02:00 [INF] HTTP GET /api/Packages responded 200 in 24.8585 ms
+2026-01-31 20:33:01.732 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 42.9702 ms
+2026-01-31 20:33:01.915 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 20:33:01.923 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 8.2812 ms
+2026-01-31 20:49:09.153 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-31 20:49:10.625 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 103.8779 ms
+2026-01-31 20:49:10.855 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 50.1049 ms
+2026-01-31 21:10:50.455 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:10:53.354 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-01-31 21:10:55.287 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 5583.0582 ms
+2026-01-31 21:13:16.488 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:13:16.749 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 273.6849 ms
+2026-01-31 21:13:36.691 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:13:36.721 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 44.8370 ms
+2026-01-31 21:13:56.637 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:13:56.666 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 30.7410 ms
+2026-01-31 21:14:46.909 +02:00 [INF] Attempting to register user with email: jj@gmail.com
+2026-01-31 21:14:47.091 +02:00 [INF] ניסיון רישום משתמש חדש: jj@gmail.com
+2026-01-31 21:14:48.067 +02:00 [INF] משתמש נרשם בהצלחה: 15
+2026-01-31 21:14:48.072 +02:00 [INF] HTTP POST /api/User/register responded 200 in 1270.7746 ms
+2026-01-31 21:14:53.660 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:14:53.675 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 28.9458 ms
+2026-01-31 21:14:53.691 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:14:53.781 +02:00 [INF] HTTP GET /api/Packages responded 200 in 126.4009 ms
+2026-01-31 21:14:58.486 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:14:58.519 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:14:58.553 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 68.2124 ms
+2026-01-31 21:14:58.553 +02:00 [INF] HTTP GET /api/Packages responded 200 in 38.3502 ms
+2026-01-31 21:14:58.577 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:14:58.585 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 8.5080 ms
+2026-01-31 21:15:05.063 +02:00 [INF] Updating package 3 for user 15 with amount 1
+2026-01-31 21:15:05.346 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 310.3706 ms
+2026-01-31 21:15:10.611 +02:00 [INF] Updating package 2 for user 15 with amount 1
+2026-01-31 21:15:10.644 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.1238 ms
+2026-01-31 21:15:10.839 +02:00 [INF] Updating package 2 for user 15 with amount 2
+2026-01-31 21:15:10.877 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.2999 ms
+2026-01-31 21:15:15.767 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:15.787 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:15:15.794 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.1159 ms
+2026-01-31 21:15:15.801 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 36.3503 ms
+2026-01-31 21:15:15.939 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:15.961 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 22.2148 ms
+2026-01-31 21:15:18.317 +02:00 [INF] Updating package 2 for user 15 with amount 3
+2026-01-31 21:15:18.383 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.0776 ms
+2026-01-31 21:15:19.638 +02:00 [INF] Updating package 2 for user 15 with amount 4
+2026-01-31 21:15:19.672 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9668 ms
+2026-01-31 21:15:29.179 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:29.187 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 8.9673 ms
+2026-01-31 21:15:29.207 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:15:29.218 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.3210 ms
+2026-01-31 21:15:29.418 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:29.438 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 21.5062 ms
+2026-01-31 21:15:30.563 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:30.575 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 12.7109 ms
+2026-01-31 21:15:30.581 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:15:30.589 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.8799 ms
+2026-01-31 21:15:30.596 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:15:30.603 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 7.0574 ms
+2026-01-31 21:17:27.934 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:17:27.991 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 58.0154 ms
+2026-01-31 21:17:28.017 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:17:28.025 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:17:28.030 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.1494 ms
+2026-01-31 21:17:28.054 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 30.3079 ms
+2026-01-31 21:20:15.228 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:20:15.324 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:20:15.385 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 166.7666 ms
+2026-01-31 21:20:15.405 +02:00 [INF] HTTP GET /api/Packages responded 200 in 136.5713 ms
+2026-01-31 21:20:15.415 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:20:15.453 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 39.0452 ms
+2026-01-31 21:21:39.602 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:21:39.680 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:21:39.681 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 80.3732 ms
+2026-01-31 21:21:39.687 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.9264 ms
+2026-01-31 21:21:39.701 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:21:39.718 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 17.7806 ms
+2026-01-31 21:29:38.036 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:29:38.081 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:29:38.194 +02:00 [INF] HTTP GET /api/Packages responded 200 in 113.6681 ms
+2026-01-31 21:29:38.253 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 217.4328 ms
+2026-01-31 21:29:38.275 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:29:38.283 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 9.1413 ms
+2026-01-31 21:30:54.466 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:30:54.514 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:30:54.537 +02:00 [INF] HTTP GET /api/Packages responded 200 in 23.9550 ms
+2026-01-31 21:30:54.573 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 112.1879 ms
+2026-01-31 21:30:54.596 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:30:54.605 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 9.9890 ms
+2026-01-31 21:32:24.352 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:32:24.395 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:32:24.405 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.9478 ms
+2026-01-31 21:32:24.456 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 106.8324 ms
+2026-01-31 21:32:24.476 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:32:24.486 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 10.2294 ms
+2026-01-31 21:35:24.131 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:24.179 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:35:24.228 +02:00 [INF] HTTP GET /api/Packages responded 200 in 49.5332 ms
+2026-01-31 21:35:24.261 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 135.2547 ms
+2026-01-31 21:35:24.276 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:24.284 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 7.5962 ms
+2026-01-31 21:35:44.160 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:35:44.161 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:44.173 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.1966 ms
+2026-01-31 21:35:44.180 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 19.8739 ms
+2026-01-31 21:35:44.196 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:44.204 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 8.3673 ms
+2026-01-31 21:35:45.021 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:45.032 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 11.4419 ms
+2026-01-31 21:35:51.090 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:51.098 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 8.7225 ms
+2026-01-31 21:35:54.061 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:35:54.063 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:35:54.081 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 20.4419 ms
+2026-01-31 21:35:54.082 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.9288 ms
+2026-01-31 21:35:57.934 +02:00 [INF] Updating package 1 for user 15 with amount 1
+2026-01-31 21:35:58.013 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 79.8991 ms
+2026-01-31 21:36:01.260 +02:00 [INF] Updating package 1 for user 15 with amount 2
+2026-01-31 21:36:01.308 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.2339 ms
+2026-01-31 21:36:02.359 +02:00 [INF] Updating package 1 for user 15 with amount 3
+2026-01-31 21:36:02.427 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.1539 ms
+2026-01-31 21:36:03.843 +02:00 [INF] Updating package 1 for user 15 with amount 4
+2026-01-31 21:36:03.931 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 89.5677 ms
+2026-01-31 21:36:04.212 +02:00 [INF] Updating package 1 for user 15 with amount 5
+2026-01-31 21:36:04.260 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.7169 ms
+2026-01-31 21:36:06.905 +02:00 [INF] Updating package 2 for user 15 with amount 3
+2026-01-31 21:36:06.971 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 66.8060 ms
+2026-01-31 21:36:07.175 +02:00 [INF] Updating package 2 for user 15 with amount 3
+2026-01-31 21:36:07.177 +02:00 [INF] Updating package 2 for user 15 with amount 2
+2026-01-31 21:36:07.197 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8207 ms
+2026-01-31 21:36:07.207 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.2691 ms
+2026-01-31 21:36:07.379 +02:00 [INF] Updating package 2 for user 15 with amount 1
+2026-01-31 21:36:07.396 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.8096 ms
+2026-01-31 21:36:07.596 +02:00 [INF] Updating package 2 for user 15 with amount 0
+2026-01-31 21:36:07.620 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3728 ms
+2026-01-31 21:36:07.896 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:36:07.942 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 47.3613 ms
+2026-01-31 21:36:08.317 +02:00 [INF] Updating package 3 for user 15 with amount 0
+2026-01-31 21:36:08.331 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.4357 ms
+2026-01-31 21:36:08.670 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:36:08.685 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 15.5215 ms
+2026-01-31 21:36:09.539 +02:00 [INF] Updating package 1 for user 15 with amount 4
+2026-01-31 21:36:09.563 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.0827 ms
+2026-01-31 21:36:10.455 +02:00 [INF] Updating package 1 for user 15 with amount 3
+2026-01-31 21:36:10.491 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.7943 ms
+2026-01-31 21:36:10.689 +02:00 [INF] Updating package 1 for user 15 with amount 3
+2026-01-31 21:36:10.704 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4254 ms
+2026-01-31 21:36:10.716 +02:00 [INF] Updating package 1 for user 15 with amount 2
+2026-01-31 21:36:10.738 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.2652 ms
+2026-01-31 21:36:10.865 +02:00 [INF] Updating package 1 for user 15 with amount 2
+2026-01-31 21:36:10.882 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.9933 ms
+2026-01-31 21:36:11.056 +02:00 [INF] Updating package 1 for user 15 with amount 1
+2026-01-31 21:36:11.091 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7465 ms
+2026-01-31 21:36:11.258 +02:00 [INF] Updating package 1 for user 15 with amount 0
+2026-01-31 21:36:11.280 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.2257 ms
+2026-01-31 21:36:11.424 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:36:11.437 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 12.7989 ms
+2026-01-31 21:36:13.348 +02:00 [INF] Updating package 3 for user 15 with amount 1
+2026-01-31 21:36:13.394 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.4193 ms
+2026-01-31 21:36:14.989 +02:00 [INF] Updating package 3 for user 15 with amount 2
+2026-01-31 21:36:15.014 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.3263 ms
+2026-01-31 21:36:15.913 +02:00 [INF] Updating package 2 for user 15 with amount 1
+2026-01-31 21:36:15.949 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.9113 ms
+2026-01-31 21:36:17.084 +02:00 [INF] Updating package 2 for user 15 with amount 2
+2026-01-31 21:36:17.121 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.3229 ms
+2026-01-31 21:36:17.963 +02:00 [INF] Updating package 1 for user 15 with amount 1
+2026-01-31 21:36:18.004 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.9544 ms
+2026-01-31 21:36:18.953 +02:00 [INF] Updating package 1 for user 15 with amount 2
+2026-01-31 21:36:18.972 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.5326 ms
+2026-01-31 21:36:20.544 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:36:20.552 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 8.7267 ms
+2026-01-31 21:36:20.755 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:36:20.767 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.0715 ms
+2026-01-31 21:36:20.806 +02:00 [INF] Fetching user with orders for ID: 15
+2026-01-31 21:36:20.826 +02:00 [INF] HTTP GET /api/User/15/orders responded 200 in 20.5877 ms
+2026-01-31 21:36:41.609 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 21:36:41.616 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 21:36:41.827 +02:00 [INF] HTTP POST /api/User/login responded 200 in 242.5216 ms
+2026-01-31 21:36:49.561 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:36:49.574 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.1404 ms
+2026-01-31 21:36:49.889 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:36:49.901 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 12.8664 ms
+2026-01-31 21:36:57.344 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:36:57.355 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.5972 ms
+2026-01-31 21:36:57.355 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:36:57.372 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 16.9083 ms
+2026-01-31 21:37:00.099 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:37:00.112 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.2588 ms
+2026-01-31 21:37:00.398 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:37:00.413 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 15.5763 ms
+2026-01-31 21:37:03.586 +02:00 [INF] Updating package 1 for user 13 with amount 12518
+2026-01-31 21:37:03.624 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.1831 ms
+2026-01-31 21:37:03.815 +02:00 [INF] Updating package 1 for user 13 with amount 12518
+2026-01-31 21:37:03.839 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.9915 ms
+2026-01-31 21:37:03.858 +02:00 [INF] Updating package 1 for user 13 with amount 12517
+2026-01-31 21:37:03.900 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.5308 ms
+2026-01-31 21:37:04.022 +02:00 [INF] Updating package 1 for user 13 with amount 12517
+2026-01-31 21:37:04.035 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.5002 ms
+2026-01-31 21:37:04.215 +02:00 [INF] Updating package 1 for user 13 with amount 12516
+2026-01-31 21:37:04.238 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.3980 ms
+2026-01-31 21:37:04.412 +02:00 [INF] Updating package 1 for user 13 with amount 12515
+2026-01-31 21:37:04.463 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 51.3458 ms
+2026-01-31 21:37:04.649 +02:00 [INF] Updating package 1 for user 13 with amount 12514
+2026-01-31 21:37:04.673 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6698 ms
+2026-01-31 21:37:04.898 +02:00 [INF] Updating package 1 for user 13 with amount 12513
+2026-01-31 21:37:04.936 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.7053 ms
+2026-01-31 21:37:05.166 +02:00 [INF] Updating package 1 for user 13 with amount 12512
+2026-01-31 21:37:05.207 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.1106 ms
+2026-01-31 21:37:05.394 +02:00 [INF] Updating package 1 for user 13 with amount 12511
+2026-01-31 21:37:05.408 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.8755 ms
+2026-01-31 21:37:05.616 +02:00 [INF] Updating package 1 for user 13 with amount 12510
+2026-01-31 21:37:05.632 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.8500 ms
+2026-01-31 21:37:05.814 +02:00 [INF] Updating package 1 for user 13 with amount 12509
+2026-01-31 21:37:05.832 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.1087 ms
+2026-01-31 21:37:06.019 +02:00 [INF] Updating package 1 for user 13 with amount 12508
+2026-01-31 21:37:06.036 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.1073 ms
+2026-01-31 21:37:06.234 +02:00 [INF] Updating package 1 for user 13 with amount 12507
+2026-01-31 21:37:06.284 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.1788 ms
+2026-01-31 21:37:06.459 +02:00 [INF] Updating package 1 for user 13 with amount 12506
+2026-01-31 21:37:06.535 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 76.5622 ms
+2026-01-31 21:37:06.662 +02:00 [INF] Updating package 1 for user 13 with amount 12506
+2026-01-31 21:37:06.716 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.6002 ms
+2026-01-31 21:37:06.862 +02:00 [INF] Updating package 1 for user 13 with amount 12505
+2026-01-31 21:37:06.906 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.5679 ms
+2026-01-31 21:37:07.064 +02:00 [INF] Updating package 1 for user 13 with amount 12504
+2026-01-31 21:37:07.100 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.5987 ms
+2026-01-31 21:37:07.293 +02:00 [INF] Updating package 1 for user 13 with amount 12503
+2026-01-31 21:37:07.349 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 57.1986 ms
+2026-01-31 21:37:07.496 +02:00 [INF] Updating package 1 for user 13 with amount 12502
+2026-01-31 21:37:07.565 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.8808 ms
+2026-01-31 21:37:07.694 +02:00 [INF] Updating package 1 for user 13 with amount 12501
+2026-01-31 21:37:07.774 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 80.6904 ms
+2026-01-31 21:37:07.892 +02:00 [INF] Updating package 1 for user 13 with amount 12500
+2026-01-31 21:37:07.930 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.9859 ms
+2026-01-31 21:37:45.608 +02:00 [INF] Attempting to register user with email: H12@gmail.com
+2026-01-31 21:37:45.612 +02:00 [INF] ניסיון רישום משתמש חדש: H12@gmail.com
+2026-01-31 21:37:45.859 +02:00 [INF] משתמש נרשם בהצלחה: 16
+2026-01-31 21:37:45.862 +02:00 [INF] HTTP POST /api/User/register responded 200 in 256.1441 ms
+2026-01-31 21:42:05.820 +02:00 [INF] Fetching user with orders for ID: 16
+2026-01-31 21:42:05.889 +02:00 [INF] HTTP GET /api/User/16/orders responded 200 in 76.3675 ms
+2026-01-31 21:44:14.975 +02:00 [INF] Fetching user with orders for ID: 16
+2026-01-31 21:44:15.038 +02:00 [INF] HTTP GET /api/User/16/orders responded 200 in 66.9799 ms
+2026-01-31 21:44:21.471 +02:00 [INF] Fetching user with orders for ID: 16
+2026-01-31 21:44:21.476 +02:00 [INF] HTTP GET /api/User/16/orders responded 200 in 4.9785 ms
+2026-01-31 21:44:54.463 +02:00 [INF] Attempting to register user with email: jj@gmail.com
+2026-01-31 21:44:54.468 +02:00 [INF] ניסיון רישום משתמש חדש: jj@gmail.com
+2026-01-31 21:44:54.481 +02:00 [WRN] ניסיון רישום נכשל: אימייל jj@gmail.com כבר קיים.
+2026-01-31 21:44:54.485 +02:00 [INF] HTTP POST /api/User/register responded 204 in 27.8879 ms
+2026-01-31 21:44:56.033 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:44:56.067 +02:00 [INF] HTTP GET /api/Packages responded 200 in 34.6443 ms
+2026-01-31 21:45:04.563 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:45:04.574 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.6066 ms
+2026-01-31 21:45:08.968 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:45:08.983 +02:00 [INF] HTTP GET /api/Packages responded 200 in 15.4379 ms
+2026-01-31 21:45:12.889 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:45:12.899 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.0539 ms
+2026-01-31 21:47:45.465 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:47:45.493 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.3440 ms
+2026-01-31 21:52:13.153 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:52:13.332 +02:00 [INF] HTTP GET /api/Packages responded 200 in 181.8335 ms
+2026-01-31 21:52:24.472 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 21:52:24.475 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 21:52:24.693 +02:00 [INF] HTTP POST /api/User/login responded 200 in 222.1397 ms
+2026-01-31 21:52:25.741 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:52:25.743 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:52:25.783 +02:00 [INF] HTTP GET /api/Packages responded 200 in 39.7780 ms
+2026-01-31 21:52:25.803 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 62.0835 ms
+2026-01-31 21:52:38.590 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:52:38.601 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:52:38.610 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.5385 ms
+2026-01-31 21:52:38.635 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 45.6635 ms
+2026-01-31 21:52:38.665 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 21:52:38.674 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.2418 ms
+2026-01-31 21:53:09.734 +02:00 [INF] Attempting to register user with email: 111222633@gmail.com
+2026-01-31 21:53:09.738 +02:00 [INF] ניסיון רישום משתמש חדש: 111222633@gmail.com
+2026-01-31 21:53:09.949 +02:00 [INF] משתמש נרשם בהצלחה: 17
+2026-01-31 21:53:09.951 +02:00 [INF] HTTP POST /api/User/register responded 200 in 254.7602 ms
+2026-01-31 21:53:11.497 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 21:53:11.497 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 21:53:11.519 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 24.3625 ms
+2026-01-31 21:53:11.525 +02:00 [INF] HTTP GET /api/Packages responded 200 in 28.7158 ms
+2026-01-31 21:53:21.208 +02:00 [INF] Updating package 2 for user 17 with amount 1
+2026-01-31 21:53:21.277 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.8080 ms
+2026-01-31 21:53:30.256 +02:00 [INF] Updating package 2 for user 17 with amount 0
+2026-01-31 21:53:30.289 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.4314 ms
+2026-01-31 21:53:33.264 +02:00 [INF] Updating package 3 for user 17 with amount 1
+2026-01-31 21:53:33.287 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2117 ms
+2026-01-31 21:53:33.924 +02:00 [INF] Updating package 3 for user 17 with amount 2
+2026-01-31 21:53:33.967 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.8387 ms
+2026-01-31 21:53:36.654 +02:00 [INF] Updating package 2 for user 17 with amount 1
+2026-01-31 21:53:36.696 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.8172 ms
+2026-01-31 21:53:38.197 +02:00 [INF] Updating package 2 for user 17 with amount 0
+2026-01-31 21:53:38.255 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 58.4620 ms
+2026-01-31 21:53:38.455 +02:00 [INF] Updating package 2 for user 17 with amount 0
+2026-01-31 21:53:38.515 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 60.8434 ms
+2026-01-31 21:53:39.293 +02:00 [INF] Updating package 3 for user 17 with amount 1
+2026-01-31 21:53:39.330 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.9539 ms
+2026-01-31 21:53:39.816 +02:00 [INF] Updating package 3 for user 17 with amount 0
+2026-01-31 21:53:39.841 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.2493 ms
+2026-01-31 21:53:40.084 +02:00 [INF] Updating package 3 for user 17 with amount 0
+2026-01-31 21:53:40.102 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5315 ms
+2026-01-31 22:09:03.290 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:03.356 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:09:03.458 +02:00 [INF] HTTP GET /api/Packages responded 200 in 102.4601 ms
+2026-01-31 22:09:03.475 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 191.5707 ms
+2026-01-31 22:09:03.489 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:03.495 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 6.2195 ms
+2026-01-31 22:09:21.099 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:21.130 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 30.5016 ms
+2026-01-31 22:09:21.145 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:09:21.147 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:21.151 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.7744 ms
+2026-01-31 22:09:21.155 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 7.6635 ms
+2026-01-31 22:09:44.792 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:44.802 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 10.6307 ms
+2026-01-31 22:09:44.875 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:09:44.889 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.0448 ms
+2026-01-31 22:09:44.895 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:09:44.908 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 12.7682 ms
+2026-01-31 22:10:38.172 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:10:38.206 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 34.2117 ms
+2026-01-31 22:10:38.235 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:10:38.235 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:10:38.244 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.9322 ms
+2026-01-31 22:10:38.244 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 9.1329 ms
+2026-01-31 22:11:59.392 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:11:59.431 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:11:59.440 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.1810 ms
+2026-01-31 22:11:59.442 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 52.2069 ms
+2026-01-31 22:11:59.463 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:11:59.469 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 6.4840 ms
+2026-01-31 22:12:06.050 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:06.064 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 14.2838 ms
+2026-01-31 22:12:06.150 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:12:06.153 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:06.161 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.5231 ms
+2026-01-31 22:12:06.168 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 16.2545 ms
+2026-01-31 22:12:36.992 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:37.059 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 68.7601 ms
+2026-01-31 22:12:37.081 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:12:37.088 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.6291 ms
+2026-01-31 22:12:37.134 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:37.140 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 6.9053 ms
+2026-01-31 22:12:58.044 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:58.052 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 8.9949 ms
+2026-01-31 22:12:58.106 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:12:58.114 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.9066 ms
+2026-01-31 22:12:58.134 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:58.140 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 6.6216 ms
+2026-01-31 22:12:58.840 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:58.854 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 13.8854 ms
+2026-01-31 22:12:58.934 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:12:58.949 +02:00 [INF] HTTP GET /api/Packages responded 200 in 15.9523 ms
+2026-01-31 22:12:58.952 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:12:58.968 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 16.2931 ms
+2026-01-31 22:25:27.162 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:25:27.204 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:25:27.322 +02:00 [INF] HTTP GET /api/Packages responded 200 in 117.9493 ms
+2026-01-31 22:25:27.345 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 183.7084 ms
+2026-01-31 22:25:27.356 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:25:27.361 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 5.0956 ms
+2026-01-31 22:26:41.300 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:26:41.354 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:26:41.363 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.9230 ms
+2026-01-31 22:26:41.369 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 68.7338 ms
+2026-01-31 22:26:41.386 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:26:41.392 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 5.7757 ms
+2026-01-31 22:34:52.276 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:34:52.327 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:34:52.405 +02:00 [INF] HTTP GET /api/Packages responded 200 in 77.7086 ms
+2026-01-31 22:34:52.429 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 157.1800 ms
+2026-01-31 22:34:52.445 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:34:52.449 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 4.6306 ms
+2026-01-31 22:35:20.003 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:35:20.016 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 14.1295 ms
+2026-01-31 22:35:20.065 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:35:20.067 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:35:20.072 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.3776 ms
+2026-01-31 22:35:20.080 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 13.1335 ms
+2026-01-31 22:45:03.883 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:45:03.885 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:45:04.044 +02:00 [INF] HTTP GET /api/Packages responded 200 in 166.0405 ms
+2026-01-31 22:45:04.083 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 199.2490 ms
+2026-01-31 22:45:08.838 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:45:08.838 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:45:08.847 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.2658 ms
+2026-01-31 22:45:08.847 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 9.6298 ms
+2026-01-31 22:45:08.872 +02:00 [INF] Fetching user with orders for ID: 17
+2026-01-31 22:45:08.877 +02:00 [INF] HTTP GET /api/User/17/orders responded 200 in 5.1446 ms
+2026-01-31 22:45:20.879 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 22:45:20.881 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 22:45:21.056 +02:00 [INF] HTTP POST /api/User/login responded 200 in 178.4793 ms
+2026-01-31 22:45:44.669 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 22:45:44.672 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 22:45:44.855 +02:00 [INF] HTTP POST /api/User/login responded 200 in 186.9910 ms
+2026-01-31 22:46:00.636 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 22:46:00.689 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 53.1008 ms
+2026-01-31 22:46:03.110 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 22:46:03.115 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 22:46:03.126 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.6197 ms
+2026-01-31 22:46:03.133 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 18.2454 ms
+2026-01-31 22:46:16.098 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 22:46:16.100 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 22:46:16.399 +02:00 [INF] HTTP POST /api/User/login responded 200 in 301.4738 ms
+2026-01-31 23:00:42.448 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:00:42.679 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 237.1120 ms
+2026-01-31 23:00:59.570 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:00:59.588 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 18.3393 ms
+2026-01-31 23:01:52.091 +02:00 [INF] Attempting to register user with email: 000999888@gmail.com
+2026-01-31 23:01:52.095 +02:00 [INF] ניסיון רישום משתמש חדש: 000999888@gmail.com
+2026-01-31 23:01:52.367 +02:00 [INF] משתמש נרשם בהצלחה: 18
+2026-01-31 23:01:52.369 +02:00 [INF] HTTP POST /api/User/register responded 200 in 283.9637 ms
+2026-01-31 23:01:58.696 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:01:58.702 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:01:58.743 +02:00 [INF] HTTP GET /api/Packages responded 200 in 43.0309 ms
+2026-01-31 23:01:58.767 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 71.9122 ms
+2026-01-31 23:02:00.302 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:02:00.363 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 61.7112 ms
+2026-01-31 23:02:12.451 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 23:02:12.452 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 23:02:12.693 +02:00 [INF] HTTP POST /api/User/login responded 200 in 243.1848 ms
+2026-01-31 23:02:17.788 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:02:17.798 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.1438 ms
+2026-01-31 23:02:18.128 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:02:18.155 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 27.4480 ms
+2026-01-31 23:02:28.162 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:02:28.162 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:02:28.168 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.6446 ms
+2026-01-31 23:02:28.171 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.2863 ms
+2026-01-31 23:02:29.847 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:02:29.849 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:02:29.858 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.9858 ms
+2026-01-31 23:02:29.870 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 20.8470 ms
+2026-01-31 23:02:31.227 +02:00 [INF] Updating package 2 for user 13 with amount 522
+2026-01-31 23:02:31.257 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.9892 ms
+2026-01-31 23:02:34.047 +02:00 [INF] Updating package 2 for user 13 with amount 521
+2026-01-31 23:02:34.091 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.3550 ms
+2026-01-31 23:02:34.297 +02:00 [INF] Updating package 2 for user 13 with amount 520
+2026-01-31 23:02:34.319 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.0814 ms
+2026-01-31 23:02:34.477 +02:00 [INF] Updating package 2 for user 13 with amount 520
+2026-01-31 23:02:34.493 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.1352 ms
+2026-01-31 23:02:34.600 +02:00 [INF] Updating package 2 for user 13 with amount 519
+2026-01-31 23:02:34.621 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6501 ms
+2026-01-31 23:02:34.724 +02:00 [INF] Updating package 2 for user 13 with amount 519
+2026-01-31 23:02:34.742 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.4961 ms
+2026-01-31 23:02:34.843 +02:00 [INF] Updating package 2 for user 13 with amount 518
+2026-01-31 23:02:34.860 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.7452 ms
+2026-01-31 23:02:34.970 +02:00 [INF] Updating package 2 for user 13 with amount 518
+2026-01-31 23:02:34.982 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.2962 ms
+2026-01-31 23:02:35.097 +02:00 [INF] Updating package 2 for user 13 with amount 517
+2026-01-31 23:02:35.122 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.3123 ms
+2026-01-31 23:02:35.217 +02:00 [INF] Updating package 2 for user 13 with amount 517
+2026-01-31 23:02:35.230 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.0269 ms
+2026-01-31 23:02:35.352 +02:00 [INF] Updating package 2 for user 13 with amount 516
+2026-01-31 23:02:35.393 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.4272 ms
+2026-01-31 23:02:35.463 +02:00 [INF] Updating package 2 for user 13 with amount 516
+2026-01-31 23:02:35.470 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 7.7774 ms
+2026-01-31 23:02:35.596 +02:00 [INF] Updating package 2 for user 13 with amount 515
+2026-01-31 23:02:35.615 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6953 ms
+2026-01-31 23:02:35.732 +02:00 [INF] Updating package 2 for user 13 with amount 515
+2026-01-31 23:02:35.744 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.0516 ms
+2026-01-31 23:02:35.858 +02:00 [INF] Updating package 2 for user 13 with amount 514
+2026-01-31 23:02:35.891 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.6607 ms
+2026-01-31 23:02:35.993 +02:00 [INF] Updating package 2 for user 13 with amount 514
+2026-01-31 23:02:36.020 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.6769 ms
+2026-01-31 23:02:36.113 +02:00 [INF] Updating package 2 for user 13 with amount 513
+2026-01-31 23:02:36.133 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.4458 ms
+2026-01-31 23:02:36.386 +02:00 [INF] Updating package 2 for user 13 with amount 512
+2026-01-31 23:02:36.427 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.7117 ms
+2026-01-31 23:02:36.487 +02:00 [INF] Updating package 2 for user 13 with amount 512
+2026-01-31 23:02:36.496 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.1144 ms
+2026-01-31 23:02:36.620 +02:00 [INF] Updating package 2 for user 13 with amount 512
+2026-01-31 23:02:36.649 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.5726 ms
+2026-01-31 23:02:36.742 +02:00 [INF] Updating package 2 for user 13 with amount 511
+2026-01-31 23:02:36.768 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.9582 ms
+2026-01-31 23:02:37.206 +02:00 [INF] Updating package 2 for user 13 with amount 510
+2026-01-31 23:02:37.232 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.1182 ms
+2026-01-31 23:02:37.334 +02:00 [INF] Updating package 2 for user 13 with amount 510
+2026-01-31 23:02:37.346 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1440 ms
+2026-01-31 23:02:37.467 +02:00 [INF] Updating package 2 for user 13 with amount 509
+2026-01-31 23:02:37.489 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4787 ms
+2026-01-31 23:02:37.618 +02:00 [INF] Updating package 2 for user 13 with amount 509
+2026-01-31 23:02:37.637 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6246 ms
+2026-01-31 23:02:37.789 +02:00 [INF] Updating package 2 for user 13 with amount 508
+2026-01-31 23:02:37.820 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.9003 ms
+2026-01-31 23:02:37.937 +02:00 [INF] Updating package 2 for user 13 with amount 508
+2026-01-31 23:02:37.950 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.5832 ms
+2026-01-31 23:02:38.110 +02:00 [INF] Updating package 2 for user 13 with amount 507
+2026-01-31 23:02:38.131 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.1042 ms
+2026-01-31 23:02:38.280 +02:00 [INF] Updating package 2 for user 13 with amount 507
+2026-01-31 23:02:38.310 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.1411 ms
+2026-01-31 23:02:38.449 +02:00 [INF] Updating package 2 for user 13 with amount 506
+2026-01-31 23:02:38.466 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3554 ms
+2026-01-31 23:02:38.596 +02:00 [INF] Updating package 2 for user 13 with amount 506
+2026-01-31 23:02:38.609 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.2697 ms
+2026-01-31 23:02:38.783 +02:00 [INF] Updating package 2 for user 13 with amount 505
+2026-01-31 23:02:38.805 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.8045 ms
+2026-01-31 23:02:38.953 +02:00 [INF] Updating package 2 for user 13 with amount 504
+2026-01-31 23:02:38.967 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.2046 ms
+2026-01-31 23:02:39.146 +02:00 [INF] Updating package 2 for user 13 with amount 503
+2026-01-31 23:02:39.173 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4788 ms
+2026-01-31 23:02:39.321 +02:00 [INF] Updating package 2 for user 13 with amount 503
+2026-01-31 23:02:39.343 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2877 ms
+2026-01-31 23:02:39.484 +02:00 [INF] Updating package 2 for user 13 with amount 502
+2026-01-31 23:02:39.503 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6403 ms
+2026-01-31 23:02:39.659 +02:00 [INF] Updating package 2 for user 13 with amount 502
+2026-01-31 23:02:39.686 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.1794 ms
+2026-01-31 23:02:39.832 +02:00 [INF] Updating package 2 for user 13 with amount 501
+2026-01-31 23:02:39.848 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.6718 ms
+2026-01-31 23:02:40.038 +02:00 [INF] Updating package 2 for user 13 with amount 500
+2026-01-31 23:02:40.061 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7375 ms
+2026-01-31 23:02:40.212 +02:00 [INF] Updating package 2 for user 13 with amount 499
+2026-01-31 23:02:40.244 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.1957 ms
+2026-01-31 23:02:40.401 +02:00 [INF] Updating package 2 for user 13 with amount 499
+2026-01-31 23:02:40.413 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.8417 ms
+2026-01-31 23:02:40.568 +02:00 [INF] Updating package 2 for user 13 with amount 498
+2026-01-31 23:02:40.598 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.1278 ms
+2026-01-31 23:02:40.718 +02:00 [INF] Updating package 2 for user 13 with amount 498
+2026-01-31 23:02:40.737 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.3957 ms
+2026-01-31 23:02:40.912 +02:00 [INF] Updating package 2 for user 13 with amount 497
+2026-01-31 23:02:40.943 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.0550 ms
+2026-01-31 23:02:41.135 +02:00 [INF] Updating package 2 for user 13 with amount 496
+2026-01-31 23:02:41.158 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.4359 ms
+2026-01-31 23:02:41.300 +02:00 [INF] Updating package 2 for user 13 with amount 495
+2026-01-31 23:02:41.326 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9933 ms
+2026-01-31 23:02:41.559 +02:00 [INF] Updating package 2 for user 13 with amount 494
+2026-01-31 23:02:41.572 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1983 ms
+2026-01-31 23:02:42.702 +02:00 [INF] Updating package 2 for user 13 with amount 493
+2026-01-31 23:02:42.723 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2928 ms
+2026-01-31 23:02:43.442 +02:00 [INF] Updating package 2 for user 13 with amount 492
+2026-01-31 23:02:43.464 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9440 ms
+2026-01-31 23:02:43.611 +02:00 [INF] Updating package 2 for user 13 with amount 492
+2026-01-31 23:02:43.624 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.3764 ms
+2026-01-31 23:02:43.716 +02:00 [INF] Updating package 2 for user 13 with amount 491
+2026-01-31 23:02:43.750 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.8207 ms
+2026-01-31 23:02:43.800 +02:00 [INF] Updating package 2 for user 13 with amount 491
+2026-01-31 23:02:43.818 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.6839 ms
+2026-01-31 23:02:43.989 +02:00 [INF] Updating package 2 for user 13 with amount 490
+2026-01-31 23:02:44.010 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2211 ms
+2026-01-31 23:02:44.183 +02:00 [INF] Updating package 2 for user 13 with amount 489
+2026-01-31 23:02:44.207 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3842 ms
+2026-01-31 23:02:44.371 +02:00 [INF] Updating package 2 for user 13 with amount 488
+2026-01-31 23:02:44.392 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9656 ms
+2026-01-31 23:02:44.534 +02:00 [INF] Updating package 2 for user 13 with amount 487
+2026-01-31 23:02:44.550 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.1102 ms
+2026-01-31 23:02:44.717 +02:00 [INF] Updating package 2 for user 13 with amount 486
+2026-01-31 23:02:44.726 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.8909 ms
+2026-01-31 23:02:44.954 +02:00 [INF] Updating package 2 for user 13 with amount 485
+2026-01-31 23:02:44.971 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5198 ms
+2026-01-31 23:02:45.132 +02:00 [INF] Updating package 2 for user 13 with amount 484
+2026-01-31 23:02:45.152 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6505 ms
+2026-01-31 23:02:45.339 +02:00 [INF] Updating package 2 for user 13 with amount 483
+2026-01-31 23:02:45.368 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.0479 ms
+2026-01-31 23:02:45.510 +02:00 [INF] Updating package 2 for user 13 with amount 483
+2026-01-31 23:02:45.563 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 53.5797 ms
+2026-01-31 23:02:45.692 +02:00 [INF] Updating package 2 for user 13 with amount 482
+2026-01-31 23:02:45.735 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.7295 ms
+2026-01-31 23:02:45.885 +02:00 [INF] Updating package 2 for user 13 with amount 481
+2026-01-31 23:02:45.950 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 65.3136 ms
+2026-01-31 23:02:46.106 +02:00 [INF] Updating package 2 for user 13 with amount 480
+2026-01-31 23:02:46.172 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 66.8457 ms
+2026-01-31 23:02:46.284 +02:00 [INF] Updating package 2 for user 13 with amount 480
+2026-01-31 23:02:46.326 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.3451 ms
+2026-01-31 23:02:46.485 +02:00 [INF] Updating package 2 for user 13 with amount 479
+2026-01-31 23:02:46.506 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6987 ms
+2026-01-31 23:02:46.677 +02:00 [INF] Updating package 2 for user 13 with amount 478
+2026-01-31 23:02:46.717 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.5410 ms
+2026-01-31 23:02:46.883 +02:00 [INF] Updating package 2 for user 13 with amount 477
+2026-01-31 23:02:46.938 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 56.1497 ms
+2026-01-31 23:02:47.050 +02:00 [INF] Updating package 2 for user 13 with amount 476
+2026-01-31 23:02:47.092 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.2400 ms
+2026-01-31 23:02:47.294 +02:00 [INF] Updating package 2 for user 13 with amount 475
+2026-01-31 23:02:47.320 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8053 ms
+2026-01-31 23:02:47.495 +02:00 [INF] Updating package 2 for user 13 with amount 474
+2026-01-31 23:02:47.526 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.8511 ms
+2026-01-31 23:02:47.691 +02:00 [INF] Updating package 2 for user 13 with amount 473
+2026-01-31 23:02:47.739 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.0359 ms
+2026-01-31 23:02:47.891 +02:00 [INF] Updating package 2 for user 13 with amount 472
+2026-01-31 23:02:47.944 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 53.8726 ms
+2026-01-31 23:02:48.079 +02:00 [INF] Updating package 2 for user 13 with amount 471
+2026-01-31 23:02:48.118 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.3064 ms
+2026-01-31 23:02:48.288 +02:00 [INF] Updating package 2 for user 13 with amount 470
+2026-01-31 23:02:48.315 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1129 ms
+2026-01-31 23:02:48.480 +02:00 [INF] Updating package 2 for user 13 with amount 469
+2026-01-31 23:02:48.540 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 59.5548 ms
+2026-01-31 23:02:48.671 +02:00 [INF] Updating package 2 for user 13 with amount 469
+2026-01-31 23:02:48.722 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 52.0562 ms
+2026-01-31 23:02:48.851 +02:00 [INF] Updating package 2 for user 13 with amount 468
+2026-01-31 23:02:48.899 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.6548 ms
+2026-01-31 23:02:49.053 +02:00 [INF] Updating package 2 for user 13 with amount 467
+2026-01-31 23:02:49.074 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.1894 ms
+2026-01-31 23:02:49.241 +02:00 [INF] Updating package 2 for user 13 with amount 466
+2026-01-31 23:02:49.275 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.5379 ms
+2026-01-31 23:02:49.459 +02:00 [INF] Updating package 2 for user 13 with amount 465
+2026-01-31 23:02:49.501 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.4040 ms
+2026-01-31 23:02:49.642 +02:00 [INF] Updating package 2 for user 13 with amount 464
+2026-01-31 23:02:49.705 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 64.1282 ms
+2026-01-31 23:02:49.837 +02:00 [INF] Updating package 2 for user 13 with amount 464
+2026-01-31 23:02:49.872 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.7062 ms
+2026-01-31 23:02:50.038 +02:00 [INF] Updating package 2 for user 13 with amount 463
+2026-01-31 23:02:50.066 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.9312 ms
+2026-01-31 23:02:50.229 +02:00 [INF] Updating package 2 for user 13 with amount 462
+2026-01-31 23:02:50.288 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 59.2494 ms
+2026-01-31 23:02:50.446 +02:00 [INF] Updating package 2 for user 13 with amount 461
+2026-01-31 23:02:50.507 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 61.6111 ms
+2026-01-31 23:02:50.633 +02:00 [INF] Updating package 2 for user 13 with amount 461
+2026-01-31 23:02:50.647 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.6672 ms
+2026-01-31 23:02:50.820 +02:00 [INF] Updating package 2 for user 13 with amount 460
+2026-01-31 23:02:50.837 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.6881 ms
+2026-01-31 23:02:50.993 +02:00 [INF] Updating package 2 for user 13 with amount 460
+2026-01-31 23:02:51.008 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3295 ms
+2026-01-31 23:02:51.172 +02:00 [INF] Updating package 2 for user 13 with amount 459
+2026-01-31 23:02:51.191 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8931 ms
+2026-01-31 23:02:51.372 +02:00 [INF] Updating package 2 for user 13 with amount 458
+2026-01-31 23:02:51.395 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7616 ms
+2026-01-31 23:02:51.582 +02:00 [INF] Updating package 2 for user 13 with amount 457
+2026-01-31 23:02:51.608 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.3116 ms
+2026-01-31 23:02:51.819 +02:00 [INF] Updating package 2 for user 13 with amount 456
+2026-01-31 23:02:51.848 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.9782 ms
+2026-01-31 23:02:52.123 +02:00 [INF] Updating package 2 for user 13 with amount 455
+2026-01-31 23:02:52.148 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.7698 ms
+2026-01-31 23:02:53.053 +02:00 [INF] Updating package 2 for user 13 with amount 454
+2026-01-31 23:02:53.069 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.2466 ms
+2026-01-31 23:02:53.185 +02:00 [INF] Updating package 2 for user 13 with amount 454
+2026-01-31 23:02:53.200 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.0278 ms
+2026-01-31 23:02:53.311 +02:00 [INF] Updating package 2 for user 13 with amount 454
+2026-01-31 23:02:53.314 +02:00 [INF] Updating package 2 for user 13 with amount 453
+2026-01-31 23:02:53.336 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.5158 ms
+2026-01-31 23:02:53.358 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.2112 ms
+2026-01-31 23:02:53.529 +02:00 [INF] Updating package 2 for user 13 with amount 452
+2026-01-31 23:02:53.555 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.4003 ms
+2026-01-31 23:02:53.707 +02:00 [INF] Updating package 2 for user 13 with amount 452
+2026-01-31 23:02:53.722 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3719 ms
+2026-01-31 23:02:53.885 +02:00 [INF] Updating package 2 for user 13 with amount 451
+2026-01-31 23:02:53.901 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4213 ms
+2026-01-31 23:02:54.151 +02:00 [INF] Updating package 2 for user 13 with amount 450
+2026-01-31 23:02:54.166 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.5984 ms
+2026-01-31 23:02:54.340 +02:00 [INF] Updating package 2 for user 13 with amount 449
+2026-01-31 23:02:54.355 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.0327 ms
+2026-01-31 23:02:54.609 +02:00 [INF] Updating package 2 for user 13 with amount 448
+2026-01-31 23:02:54.634 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.2710 ms
+2026-01-31 23:02:54.793 +02:00 [INF] Updating package 2 for user 13 with amount 447
+2026-01-31 23:02:54.813 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6502 ms
+2026-01-31 23:02:54.979 +02:00 [INF] Updating package 2 for user 13 with amount 446
+2026-01-31 23:02:54.994 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.7484 ms
+2026-01-31 23:02:55.197 +02:00 [INF] Updating package 2 for user 13 with amount 445
+2026-01-31 23:02:55.212 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.7667 ms
+2026-01-31 23:02:55.433 +02:00 [INF] Updating package 2 for user 13 with amount 444
+2026-01-31 23:02:55.448 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.8572 ms
+2026-01-31 23:02:55.638 +02:00 [INF] Updating package 2 for user 13 with amount 443
+2026-01-31 23:02:55.654 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5716 ms
+2026-01-31 23:02:55.858 +02:00 [INF] Updating package 2 for user 13 with amount 442
+2026-01-31 23:02:55.873 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.2679 ms
+2026-01-31 23:02:56.108 +02:00 [INF] Updating package 2 for user 13 with amount 441
+2026-01-31 23:02:56.124 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.1357 ms
+2026-01-31 23:02:56.326 +02:00 [INF] Updating package 2 for user 13 with amount 440
+2026-01-31 23:02:56.341 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.0396 ms
+2026-01-31 23:02:56.565 +02:00 [INF] Updating package 2 for user 13 with amount 439
+2026-01-31 23:02:56.584 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.9020 ms
+2026-01-31 23:02:56.868 +02:00 [INF] Updating package 2 for user 13 with amount 438
+2026-01-31 23:02:56.891 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4560 ms
+2026-01-31 23:02:57.031 +02:00 [INF] Updating package 2 for user 13 with amount 438
+2026-01-31 23:02:57.044 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1106 ms
+2026-01-31 23:02:57.186 +02:00 [INF] Updating package 2 for user 13 with amount 437
+2026-01-31 23:02:57.202 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.8086 ms
+2026-01-31 23:02:57.386 +02:00 [INF] Updating package 2 for user 13 with amount 436
+2026-01-31 23:02:57.401 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.0599 ms
+2026-01-31 23:02:57.622 +02:00 [INF] Updating package 2 for user 13 with amount 435
+2026-01-31 23:02:57.639 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5322 ms
+2026-01-31 23:02:57.843 +02:00 [INF] Updating package 2 for user 13 with amount 434
+2026-01-31 23:02:57.864 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5098 ms
+2026-01-31 23:02:58.042 +02:00 [INF] Updating package 2 for user 13 with amount 433
+2026-01-31 23:02:58.058 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.1881 ms
+2026-01-31 23:02:58.248 +02:00 [INF] Updating package 2 for user 13 with amount 432
+2026-01-31 23:02:58.267 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.3749 ms
+2026-01-31 23:02:58.529 +02:00 [INF] Updating package 2 for user 13 with amount 431
+2026-01-31 23:02:58.566 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.4940 ms
+2026-01-31 23:02:58.711 +02:00 [INF] Updating package 2 for user 13 with amount 430
+2026-01-31 23:02:58.730 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.1576 ms
+2026-01-31 23:02:58.913 +02:00 [INF] Updating package 2 for user 13 with amount 429
+2026-01-31 23:02:58.929 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4511 ms
+2026-01-31 23:02:59.130 +02:00 [INF] Updating package 2 for user 13 with amount 428
+2026-01-31 23:02:59.145 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3590 ms
+2026-01-31 23:02:59.379 +02:00 [INF] Updating package 2 for user 13 with amount 427
+2026-01-31 23:02:59.396 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.0988 ms
+2026-01-31 23:02:59.588 +02:00 [INF] Updating package 2 for user 13 with amount 426
+2026-01-31 23:02:59.609 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0496 ms
+2026-01-31 23:02:59.799 +02:00 [INF] Updating package 2 for user 13 with amount 425
+2026-01-31 23:02:59.816 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9628 ms
+2026-01-31 23:03:00.069 +02:00 [INF] Updating package 2 for user 13 with amount 424
+2026-01-31 23:03:00.090 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.5688 ms
+2026-01-31 23:03:00.284 +02:00 [INF] Updating package 2 for user 13 with amount 423
+2026-01-31 23:03:00.296 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.0970 ms
+2026-01-31 23:03:00.479 +02:00 [INF] Updating package 2 for user 13 with amount 422
+2026-01-31 23:03:00.494 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.8747 ms
+2026-01-31 23:03:00.788 +02:00 [INF] Updating package 2 for user 13 with amount 421
+2026-01-31 23:03:00.816 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.9115 ms
+2026-01-31 23:03:00.954 +02:00 [INF] Updating package 2 for user 13 with amount 420
+2026-01-31 23:03:00.971 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.7431 ms
+2026-01-31 23:03:01.141 +02:00 [INF] Updating package 2 for user 13 with amount 419
+2026-01-31 23:03:01.153 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.1442 ms
+2026-01-31 23:03:01.345 +02:00 [INF] Updating package 2 for user 13 with amount 418
+2026-01-31 23:03:01.358 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.0569 ms
+2026-01-31 23:03:01.548 +02:00 [INF] Updating package 2 for user 13 with amount 417
+2026-01-31 23:03:01.563 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.5345 ms
+2026-01-31 23:03:01.750 +02:00 [INF] Updating package 2 for user 13 with amount 416
+2026-01-31 23:03:01.758 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 8.6578 ms
+2026-01-31 23:03:01.971 +02:00 [INF] Updating package 2 for user 13 with amount 415
+2026-01-31 23:03:02.007 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.9274 ms
+2026-01-31 23:03:02.193 +02:00 [INF] Updating package 2 for user 13 with amount 414
+2026-01-31 23:03:02.208 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.2233 ms
+2026-01-31 23:03:02.380 +02:00 [INF] Updating package 2 for user 13 with amount 413
+2026-01-31 23:03:02.399 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.3077 ms
+2026-01-31 23:03:02.574 +02:00 [INF] Updating package 2 for user 13 with amount 412
+2026-01-31 23:03:02.599 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.3549 ms
+2026-01-31 23:03:02.776 +02:00 [INF] Updating package 2 for user 13 with amount 411
+2026-01-31 23:03:02.798 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7657 ms
+2026-01-31 23:03:02.974 +02:00 [INF] Updating package 2 for user 13 with amount 410
+2026-01-31 23:03:02.996 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7244 ms
+2026-01-31 23:03:03.172 +02:00 [INF] Updating package 2 for user 13 with amount 409
+2026-01-31 23:03:03.193 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.4667 ms
+2026-01-31 23:03:03.456 +02:00 [INF] Updating package 2 for user 13 with amount 408
+2026-01-31 23:03:03.475 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0511 ms
+2026-01-31 23:03:03.631 +02:00 [INF] Updating package 2 for user 13 with amount 408
+2026-01-31 23:03:03.653 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4958 ms
+2026-01-31 23:03:03.797 +02:00 [INF] Updating package 2 for user 13 with amount 407
+2026-01-31 23:03:03.813 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.8066 ms
+2026-01-31 23:03:03.998 +02:00 [INF] Updating package 2 for user 13 with amount 406
+2026-01-31 23:03:04.011 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.5394 ms
+2026-01-31 23:03:04.205 +02:00 [INF] Updating package 2 for user 13 with amount 405
+2026-01-31 23:03:04.223 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.1945 ms
+2026-01-31 23:03:04.425 +02:00 [INF] Updating package 2 for user 13 with amount 404
+2026-01-31 23:03:04.461 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.5292 ms
+2026-01-31 23:03:04.664 +02:00 [INF] Updating package 2 for user 13 with amount 403
+2026-01-31 23:03:04.683 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.1241 ms
+2026-01-31 23:03:04.883 +02:00 [INF] Updating package 2 for user 13 with amount 402
+2026-01-31 23:03:04.919 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.7558 ms
+2026-01-31 23:03:05.071 +02:00 [INF] Updating package 2 for user 13 with amount 401
+2026-01-31 23:03:05.089 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.6766 ms
+2026-01-31 23:03:05.287 +02:00 [INF] Updating package 2 for user 13 with amount 400
+2026-01-31 23:03:05.300 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.6590 ms
+2026-01-31 23:03:05.488 +02:00 [INF] Updating package 2 for user 13 with amount 399
+2026-01-31 23:03:05.504 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.9560 ms
+2026-01-31 23:03:05.708 +02:00 [INF] Updating package 2 for user 13 with amount 398
+2026-01-31 23:03:05.716 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 8.4580 ms
+2026-01-31 23:03:05.916 +02:00 [INF] Updating package 2 for user 13 with amount 397
+2026-01-31 23:03:05.951 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.7817 ms
+2026-01-31 23:03:06.090 +02:00 [INF] Updating package 2 for user 13 with amount 396
+2026-01-31 23:03:06.109 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7421 ms
+2026-01-31 23:03:06.293 +02:00 [INF] Updating package 2 for user 13 with amount 395
+2026-01-31 23:03:06.315 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0580 ms
+2026-01-31 23:03:06.518 +02:00 [INF] Updating package 2 for user 13 with amount 394
+2026-01-31 23:03:06.540 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.0971 ms
+2026-01-31 23:03:06.818 +02:00 [INF] Updating package 2 for user 13 with amount 393
+2026-01-31 23:03:06.836 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.7349 ms
+2026-01-31 23:03:06.992 +02:00 [INF] Updating package 2 for user 13 with amount 392
+2026-01-31 23:03:07.011 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8229 ms
+2026-01-31 23:03:07.194 +02:00 [INF] Updating package 2 for user 13 with amount 391
+2026-01-31 23:03:07.211 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3768 ms
+2026-01-31 23:03:07.403 +02:00 [INF] Updating package 2 for user 13 with amount 390
+2026-01-31 23:03:07.435 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.7156 ms
+2026-01-31 23:03:07.608 +02:00 [INF] Updating package 2 for user 13 with amount 389
+2026-01-31 23:03:07.631 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.3561 ms
+2026-01-31 23:03:07.911 +02:00 [INF] Updating package 2 for user 13 with amount 388
+2026-01-31 23:03:07.930 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.3611 ms
+2026-01-31 23:03:08.084 +02:00 [INF] Updating package 2 for user 13 with amount 387
+2026-01-31 23:03:08.097 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.5817 ms
+2026-01-31 23:03:08.288 +02:00 [INF] Updating package 2 for user 13 with amount 386
+2026-01-31 23:03:08.308 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9854 ms
+2026-01-31 23:03:08.534 +02:00 [INF] Updating package 2 for user 13 with amount 385
+2026-01-31 23:03:08.550 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.1160 ms
+2026-01-31 23:03:08.753 +02:00 [INF] Updating package 2 for user 13 with amount 384
+2026-01-31 23:03:08.775 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7913 ms
+2026-01-31 23:03:09.955 +02:00 [INF] Updating package 2 for user 13 with amount 383
+2026-01-31 23:03:09.978 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.9623 ms
+2026-01-31 23:03:10.452 +02:00 [INF] Updating package 2 for user 13 with amount 382
+2026-01-31 23:03:10.481 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.4647 ms
+2026-01-31 23:03:10.658 +02:00 [INF] Updating package 2 for user 13 with amount 382
+2026-01-31 23:03:10.685 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.2423 ms
+2026-01-31 23:03:10.700 +02:00 [INF] Updating package 2 for user 13 with amount 381
+2026-01-31 23:03:10.714 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.5793 ms
+2026-01-31 23:03:10.835 +02:00 [INF] Updating package 2 for user 13 with amount 381
+2026-01-31 23:03:10.855 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5613 ms
+2026-01-31 23:03:11.035 +02:00 [INF] Updating package 2 for user 13 with amount 380
+2026-01-31 23:03:11.057 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4410 ms
+2026-01-31 23:03:11.240 +02:00 [INF] Updating package 2 for user 13 with amount 379
+2026-01-31 23:03:11.264 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6000 ms
+2026-01-31 23:03:11.456 +02:00 [INF] Updating package 2 for user 13 with amount 378
+2026-01-31 23:03:11.474 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.5661 ms
+2026-01-31 23:03:11.662 +02:00 [INF] Updating package 2 for user 13 with amount 377
+2026-01-31 23:03:11.683 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.9749 ms
+2026-01-31 23:03:11.856 +02:00 [INF] Updating package 2 for user 13 with amount 376
+2026-01-31 23:03:11.873 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.2717 ms
+2026-01-31 23:03:12.048 +02:00 [INF] Updating package 2 for user 13 with amount 375
+2026-01-31 23:03:12.068 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5197 ms
+2026-01-31 23:03:12.251 +02:00 [INF] Updating package 2 for user 13 with amount 374
+2026-01-31 23:03:12.285 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.1438 ms
+2026-01-31 23:03:12.454 +02:00 [INF] Updating package 2 for user 13 with amount 373
+2026-01-31 23:03:12.473 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.9086 ms
+2026-01-31 23:03:12.661 +02:00 [INF] Updating package 2 for user 13 with amount 372
+2026-01-31 23:03:12.704 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.0036 ms
+2026-01-31 23:03:12.893 +02:00 [INF] Updating package 2 for user 13 with amount 371
+2026-01-31 23:03:12.926 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.2095 ms
+2026-01-31 23:03:13.109 +02:00 [INF] Updating package 2 for user 13 with amount 370
+2026-01-31 23:03:13.129 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6421 ms
+2026-01-31 23:03:13.310 +02:00 [INF] Updating package 2 for user 13 with amount 369
+2026-01-31 23:03:13.335 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.8952 ms
+2026-01-31 23:03:13.511 +02:00 [INF] Updating package 2 for user 13 with amount 368
+2026-01-31 23:03:13.537 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.5103 ms
+2026-01-31 23:03:13.710 +02:00 [INF] Updating package 2 for user 13 with amount 367
+2026-01-31 23:03:13.723 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.9648 ms
+2026-01-31 23:03:13.913 +02:00 [INF] Updating package 2 for user 13 with amount 366
+2026-01-31 23:03:13.932 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.5613 ms
+2026-01-31 23:03:14.117 +02:00 [INF] Updating package 2 for user 13 with amount 365
+2026-01-31 23:03:14.134 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.1535 ms
+2026-01-31 23:03:14.320 +02:00 [INF] Updating package 2 for user 13 with amount 364
+2026-01-31 23:03:14.337 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3134 ms
+2026-01-31 23:03:14.525 +02:00 [INF] Updating package 2 for user 13 with amount 363
+2026-01-31 23:03:14.544 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.1849 ms
+2026-01-31 23:03:14.855 +02:00 [INF] Updating package 2 for user 13 with amount 362
+2026-01-31 23:03:14.875 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.7324 ms
+2026-01-31 23:03:15.559 +02:00 [INF] Updating package 2 for user 13 with amount 361
+2026-01-31 23:03:15.576 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9908 ms
+2026-01-31 23:03:15.775 +02:00 [INF] Updating package 2 for user 13 with amount 361
+2026-01-31 23:03:15.787 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.5875 ms
+2026-01-31 23:03:15.826 +02:00 [INF] Updating package 2 for user 13 with amount 360
+2026-01-31 23:03:15.861 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.5870 ms
+2026-01-31 23:03:15.980 +02:00 [INF] Updating package 2 for user 13 with amount 360
+2026-01-31 23:03:15.994 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.3969 ms
+2026-01-31 23:03:16.197 +02:00 [INF] Updating package 2 for user 13 with amount 359
+2026-01-31 23:03:16.245 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.3069 ms
+2026-01-31 23:03:16.399 +02:00 [INF] Updating package 2 for user 13 with amount 358
+2026-01-31 23:03:16.420 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.4026 ms
+2026-01-31 23:03:16.621 +02:00 [INF] Updating package 2 for user 13 with amount 357
+2026-01-31 23:03:16.641 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0830 ms
+2026-01-31 23:03:16.837 +02:00 [INF] Updating package 2 for user 13 with amount 356
+2026-01-31 23:03:16.855 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.0226 ms
+2026-01-31 23:03:17.044 +02:00 [INF] Updating package 2 for user 13 with amount 355
+2026-01-31 23:03:17.064 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8879 ms
+2026-01-31 23:03:17.245 +02:00 [INF] Updating package 2 for user 13 with amount 354
+2026-01-31 23:03:17.265 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.1729 ms
+2026-01-31 23:03:17.452 +02:00 [INF] Updating package 2 for user 13 with amount 353
+2026-01-31 23:03:17.472 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0164 ms
+2026-01-31 23:03:17.669 +02:00 [INF] Updating package 2 for user 13 with amount 352
+2026-01-31 23:03:17.713 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.1874 ms
+2026-01-31 23:03:17.891 +02:00 [INF] Updating package 2 for user 13 with amount 351
+2026-01-31 23:03:17.913 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.5050 ms
+2026-01-31 23:03:18.243 +02:00 [INF] Updating package 2 for user 13 with amount 350
+2026-01-31 23:03:18.279 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.2022 ms
+2026-01-31 23:03:18.775 +02:00 [INF] Updating package 2 for user 13 with amount 349
+2026-01-31 23:03:18.798 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.3184 ms
+2026-01-31 23:03:18.993 +02:00 [INF] Updating package 2 for user 13 with amount 349
+2026-01-31 23:03:19.013 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0270 ms
+2026-01-31 23:03:19.038 +02:00 [INF] Updating package 2 for user 13 with amount 348
+2026-01-31 23:03:19.077 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.8877 ms
+2026-01-31 23:03:19.197 +02:00 [INF] Updating package 2 for user 13 with amount 347
+2026-01-31 23:03:19.224 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.2309 ms
+2026-01-31 23:03:19.467 +02:00 [INF] Updating package 2 for user 13 with amount 346
+2026-01-31 23:03:19.490 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.9024 ms
+2026-01-31 23:03:19.669 +02:00 [INF] Updating package 2 for user 13 with amount 345
+2026-01-31 23:03:19.717 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.6105 ms
+2026-01-31 23:03:19.872 +02:00 [INF] Updating package 2 for user 13 with amount 344
+2026-01-31 23:03:19.906 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.0583 ms
+2026-01-31 23:03:20.108 +02:00 [INF] Updating package 2 for user 13 with amount 343
+2026-01-31 23:03:20.130 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0214 ms
+2026-01-31 23:03:20.337 +02:00 [INF] Updating package 2 for user 13 with amount 342
+2026-01-31 23:03:20.373 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.5082 ms
+2026-01-31 23:03:20.558 +02:00 [INF] Updating package 2 for user 13 with amount 341
+2026-01-31 23:03:20.579 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9331 ms
+2026-01-31 23:03:20.761 +02:00 [INF] Updating package 2 for user 13 with amount 340
+2026-01-31 23:03:20.786 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.0128 ms
+2026-01-31 23:03:20.985 +02:00 [INF] Updating package 2 for user 13 with amount 339
+2026-01-31 23:03:21.025 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.9538 ms
+2026-01-31 23:03:21.155 +02:00 [INF] Updating package 2 for user 13 with amount 339
+2026-01-31 23:03:21.179 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.4948 ms
+2026-01-31 23:03:24.565 +02:00 [INF] Updating package 1 for user 13 with amount 12499
+2026-01-31 23:03:24.585 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3454 ms
+2026-01-31 23:03:26.239 +02:00 [INF] Updating package 1 for user 13 with amount 12498
+2026-01-31 23:03:26.280 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.5217 ms
+2026-01-31 23:03:26.364 +02:00 [INF] Updating package 1 for user 13 with amount 12498
+2026-01-31 23:03:26.381 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.6182 ms
+2026-01-31 23:03:27.069 +02:00 [INF] Updating package 1 for user 13 with amount 12497
+2026-01-31 23:03:27.086 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.8216 ms
+2026-01-31 23:03:27.596 +02:00 [INF] Updating package 1 for user 13 with amount 12496
+2026-01-31 23:03:27.617 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0212 ms
+2026-01-31 23:03:27.859 +02:00 [INF] Updating package 1 for user 13 with amount 12495
+2026-01-31 23:03:27.884 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.7028 ms
+2026-01-31 23:03:29.777 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:03:29.778 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:03:29.788 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.1328 ms
+2026-01-31 23:03:29.810 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 34.1402 ms
+2026-01-31 23:03:29.840 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:03:29.863 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 23.6503 ms
+2026-01-31 23:13:29.007 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-01-31 23:13:29.221 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 215.0113 ms
+2026-01-31 23:13:30.036 +02:00 [INF] Updating package 1 for user 13 with amount 12495
+2026-01-31 23:13:30.058 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9756 ms
+2026-01-31 23:13:31.684 +02:00 [INF] Updating package 2 for user 13 with amount 338
+2026-01-31 23:13:31.726 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.4396 ms
+2026-01-31 23:13:32.322 +02:00 [INF] Updating package 2 for user 13 with amount 339
+2026-01-31 23:13:32.350 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.3953 ms
+2026-01-31 23:13:51.475 +02:00 [INF] Login attempt for email: 000999888@gmail.com
+2026-01-31 23:13:51.477 +02:00 [INF] ניסיון התחברות עבור אימייל: 000999888@gmail.com
+2026-01-31 23:13:51.737 +02:00 [INF] HTTP POST /api/User/login responded 200 in 262.9620 ms
+2026-01-31 23:14:59.506 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:14:59.555 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 49.1591 ms
+2026-01-31 23:15:01.901 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:15:01.907 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 6.0569 ms
+2026-01-31 23:15:03.929 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:15:04.002 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.9341 ms
+2026-01-31 23:15:04.035 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:15:04.046 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 11.3348 ms
+2026-01-31 23:15:06.473 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:15:06.484 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:15:06.485 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.1924 ms
+2026-01-31 23:15:06.509 +02:00 [INF] HTTP GET /api/Packages responded 200 in 26.7630 ms
+2026-01-31 23:15:08.280 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:15:08.305 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.8862 ms
+2026-01-31 23:15:10.204 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-01-31 23:15:10.231 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.0454 ms
+2026-01-31 23:15:12.668 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:15:12.671 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:15:12.675 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.6124 ms
+2026-01-31 23:15:12.689 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.5313 ms
+2026-01-31 23:15:12.703 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:15:12.709 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 5.7197 ms
+2026-01-31 23:15:17.225 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:15:17.245 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2486 ms
+2026-01-31 23:15:17.459 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:15:17.479 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9377 ms
+2026-01-31 23:15:19.364 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:15:19.404 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6203 ms
+2026-01-31 23:15:21.930 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:15:21.971 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.3563 ms
+2026-01-31 23:15:22.190 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:15:22.209 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.5459 ms
+2026-01-31 23:15:22.792 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:15:22.826 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7415 ms
+2026-01-31 23:15:24.845 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:15:24.865 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.7311 ms
+2026-01-31 23:15:26.130 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:15:26.153 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5322 ms
+2026-01-31 23:19:29.197 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:19:29.244 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:19:29.257 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 60.2449 ms
+2026-01-31 23:19:29.277 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:19:29.289 +02:00 [INF] HTTP GET /api/Packages responded 200 in 45.2232 ms
+2026-01-31 23:19:29.289 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.5006 ms
+2026-01-31 23:19:56.984 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:19:56.997 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.5294 ms
+2026-01-31 23:19:57.024 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:19:57.034 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 10.2691 ms
+2026-01-31 23:19:57.052 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:19:57.058 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.4390 ms
+2026-01-31 23:19:57.171 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:19:57.178 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.4785 ms
+2026-01-31 23:20:00.658 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:20:00.659 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:20:00.664 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.6161 ms
+2026-01-31 23:20:00.668 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 9.8197 ms
+2026-01-31 23:20:00.713 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:20:00.730 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 16.9168 ms
+2026-01-31 23:20:00.750 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:20:00.759 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 8.8498 ms
+2026-01-31 23:20:02.441 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:20:02.471 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.9900 ms
+2026-01-31 23:20:03.880 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:20:03.914 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.0413 ms
+2026-01-31 23:20:04.418 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-01-31 23:20:04.446 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.8122 ms
+2026-01-31 23:20:04.688 +02:00 [INF] Updating package 2 for user 18 with amount 3
+2026-01-31 23:20:04.716 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.7794 ms
+2026-01-31 23:20:04.897 +02:00 [INF] Updating package 2 for user 18 with amount 4
+2026-01-31 23:20:04.907 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.5534 ms
+2026-01-31 23:20:06.730 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:20:06.765 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9530 ms
+2026-01-31 23:20:06.982 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:20:07.015 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.9994 ms
+2026-01-31 23:20:08.323 +02:00 [INF] Updating package 1 for user 18 with amount 0
+2026-01-31 23:20:08.342 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8082 ms
+2026-01-31 23:20:12.820 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-01-31 23:20:12.870 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.2000 ms
+2026-01-31 23:20:13.073 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-01-31 23:20:13.090 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5421 ms
+2026-01-31 23:20:13.100 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-01-31 23:20:13.138 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.0734 ms
+2026-01-31 23:20:14.072 +02:00 [INF] Updating package 3 for user 18 with amount 3
+2026-01-31 23:20:14.112 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.8897 ms
+2026-01-31 23:20:14.626 +02:00 [INF] Updating package 3 for user 18 with amount 4
+2026-01-31 23:20:14.643 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.4221 ms
+2026-01-31 23:20:14.892 +02:00 [INF] Updating package 3 for user 18 with amount 4
+2026-01-31 23:20:14.905 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.9044 ms
+2026-01-31 23:20:23.759 +02:00 [INF] Updating package 2 for user 18 with amount 3
+2026-01-31 23:20:23.850 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 91.9835 ms
+2026-01-31 23:20:24.535 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-01-31 23:20:24.563 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.7402 ms
+2026-01-31 23:20:24.803 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:20:24.838 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.4497 ms
+2026-01-31 23:21:55.414 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:21:55.465 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:21:55.468 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 57.8709 ms
+2026-01-31 23:21:55.472 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.5219 ms
+2026-01-31 23:21:55.484 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:21:55.491 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.0554 ms
+2026-01-31 23:21:55.549 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:21:55.556 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.1288 ms
+2026-01-31 23:22:05.000 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:22:05.007 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.6541 ms
+2026-01-31 23:22:05.011 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:22:05.021 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.9272 ms
+2026-01-31 23:22:05.040 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:22:05.047 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.5869 ms
+2026-01-31 23:22:05.074 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:22:05.081 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.6387 ms
+2026-01-31 23:22:08.730 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:22:08.798 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 68.5351 ms
+2026-01-31 23:22:12.275 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:22:12.303 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0073 ms
+2026-01-31 23:22:12.982 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:22:12.999 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.2679 ms
+2026-01-31 23:22:13.979 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:22:14.018 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.0382 ms
+2026-01-31 23:22:14.182 +02:00 [INF] Updating package 1 for user 18 with amount 4
+2026-01-31 23:22:14.207 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.4478 ms
+2026-01-31 23:22:14.713 +02:00 [INF] Updating package 1 for user 18 with amount 5
+2026-01-31 23:22:14.729 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5382 ms
+2026-01-31 23:22:22.546 +02:00 [INF] Updating package 1 for user 18 with amount 4
+2026-01-31 23:22:22.585 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.9662 ms
+2026-01-31 23:22:26.791 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:22:26.805 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.0181 ms
+2026-01-31 23:22:27.015 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:22:27.041 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.6202 ms
+2026-01-31 23:22:27.066 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:22:27.115 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.0398 ms
+2026-01-31 23:22:27.243 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:22:27.259 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4686 ms
+2026-01-31 23:22:27.479 +02:00 [INF] Updating package 1 for user 18 with amount 0
+2026-01-31 23:22:27.489 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.3059 ms
+2026-01-31 23:22:29.259 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:22:29.295 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.1719 ms
+2026-01-31 23:22:29.454 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:22:29.498 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.6646 ms
+2026-01-31 23:22:29.522 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:22:29.558 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.7009 ms
+2026-01-31 23:22:29.653 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:22:29.693 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.5243 ms
+2026-01-31 23:22:30.032 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:22:30.107 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 75.8363 ms
+2026-01-31 23:22:30.721 +02:00 [INF] Updating package 1 for user 18 with amount 4
+2026-01-31 23:22:30.758 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.0934 ms
+2026-01-31 23:22:30.975 +02:00 [INF] Updating package 1 for user 18 with amount 4
+2026-01-31 23:22:31.006 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.0380 ms
+2026-01-31 23:22:40.502 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:22:40.572 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 70.2733 ms
+2026-01-31 23:24:20.221 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:24:20.276 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 60.6211 ms
+2026-01-31 23:24:20.738 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:24:20.773 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9337 ms
+2026-01-31 23:24:21.345 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:24:21.355 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.6374 ms
+2026-01-31 23:24:21.568 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:24:21.582 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.9759 ms
+2026-01-31 23:24:21.916 +02:00 [INF] Updating package 1 for user 18 with amount 0
+2026-01-31 23:24:21.951 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.7278 ms
+2026-01-31 23:24:26.814 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:24:26.860 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.9516 ms
+2026-01-31 23:24:27.031 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:24:27.045 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.1606 ms
+2026-01-31 23:24:27.231 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:24:27.253 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2686 ms
+2026-01-31 23:24:27.763 +02:00 [INF] Updating package 1 for user 18 with amount 3
+2026-01-31 23:24:27.776 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.8011 ms
+2026-01-31 23:25:22.090 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:25:22.121 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:25:22.139 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 49.3202 ms
+2026-01-31 23:25:22.145 +02:00 [INF] HTTP GET /api/Packages responded 200 in 24.1221 ms
+2026-01-31 23:25:22.163 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:25:22.170 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.0358 ms
+2026-01-31 23:25:22.215 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:25:22.224 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 8.5377 ms
+2026-01-31 23:25:29.788 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-01-31 23:25:29.833 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.8280 ms
+2026-01-31 23:25:30.022 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:25:30.068 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.4489 ms
+2026-01-31 23:25:30.222 +02:00 [INF] Updating package 1 for user 18 with amount 0
+2026-01-31 23:25:30.246 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.9749 ms
+2026-01-31 23:25:33.376 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:25:33.414 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.2065 ms
+2026-01-31 23:25:33.562 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:25:33.583 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.1824 ms
+2026-01-31 23:25:33.643 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-01-31 23:25:33.662 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.1047 ms
+2026-01-31 23:25:36.118 +02:00 [INF] Updating package 3 for user 18 with amount 3
+2026-01-31 23:25:36.161 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.6321 ms
+2026-01-31 23:25:36.620 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-01-31 23:25:36.637 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5473 ms
+2026-01-31 23:25:36.820 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-01-31 23:25:36.833 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.0911 ms
+2026-01-31 23:25:36.886 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-01-31 23:25:36.908 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8486 ms
+2026-01-31 23:25:36.999 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-01-31 23:25:37.014 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3600 ms
+2026-01-31 23:25:37.213 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-01-31 23:25:37.232 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.7932 ms
+2026-01-31 23:25:51.334 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 23:25:51.337 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 23:25:51.546 +02:00 [INF] HTTP POST /api/User/login responded 200 in 212.1185 ms
+2026-01-31 23:25:51.883 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:25:51.965 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 81.6159 ms
+2026-01-31 23:25:57.190 +02:00 [INF] Updating package 2 for user 13 with amount 338
+2026-01-31 23:25:57.251 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 62.6078 ms
+2026-01-31 23:25:57.711 +02:00 [INF] Updating package 2 for user 13 with amount 337
+2026-01-31 23:25:57.733 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.0176 ms
+2026-01-31 23:25:57.885 +02:00 [INF] Updating package 2 for user 13 with amount 337
+2026-01-31 23:25:57.900 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.9721 ms
+2026-01-31 23:25:57.990 +02:00 [INF] Updating package 2 for user 13 with amount 336
+2026-01-31 23:25:58.036 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.3788 ms
+2026-01-31 23:25:58.256 +02:00 [INF] Updating package 2 for user 13 with amount 335
+2026-01-31 23:25:58.270 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.8216 ms
+2026-01-31 23:25:58.876 +02:00 [INF] Updating package 2 for user 13 with amount 334
+2026-01-31 23:25:58.897 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.3126 ms
+2026-01-31 23:25:59.350 +02:00 [INF] Updating package 2 for user 13 with amount 333
+2026-01-31 23:25:59.385 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.3692 ms
+2026-01-31 23:25:59.527 +02:00 [INF] Updating package 2 for user 13 with amount 333
+2026-01-31 23:25:59.544 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3325 ms
+2026-01-31 23:25:59.618 +02:00 [INF] Updating package 2 for user 13 with amount 333
+2026-01-31 23:25:59.630 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.0336 ms
+2026-01-31 23:25:59.705 +02:00 [INF] Updating package 2 for user 13 with amount 332
+2026-01-31 23:25:59.734 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.1771 ms
+2026-01-31 23:25:59.864 +02:00 [INF] Updating package 2 for user 13 with amount 332
+2026-01-31 23:25:59.878 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.1514 ms
+2026-01-31 23:26:00.029 +02:00 [INF] Updating package 2 for user 13 with amount 331
+2026-01-31 23:26:00.074 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.7358 ms
+2026-01-31 23:26:00.201 +02:00 [INF] Updating package 2 for user 13 with amount 331
+2026-01-31 23:26:00.219 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.5160 ms
+2026-01-31 23:26:00.365 +02:00 [INF] Updating package 2 for user 13 with amount 330
+2026-01-31 23:26:00.402 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.5737 ms
+2026-01-31 23:26:00.553 +02:00 [INF] Updating package 2 for user 13 with amount 330
+2026-01-31 23:26:00.566 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.4633 ms
+2026-01-31 23:26:00.750 +02:00 [INF] Updating package 2 for user 13 with amount 329
+2026-01-31 23:26:00.774 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5242 ms
+2026-01-31 23:26:00.921 +02:00 [INF] Updating package 2 for user 13 with amount 329
+2026-01-31 23:26:00.944 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.4359 ms
+2026-01-31 23:26:01.098 +02:00 [INF] Updating package 2 for user 13 with amount 328
+2026-01-31 23:26:01.117 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.9328 ms
+2026-01-31 23:26:01.306 +02:00 [INF] Updating package 2 for user 13 with amount 327
+2026-01-31 23:26:01.341 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.0062 ms
+2026-01-31 23:26:01.535 +02:00 [INF] Updating package 2 for user 13 with amount 326
+2026-01-31 23:26:01.551 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9153 ms
+2026-01-31 23:26:01.707 +02:00 [INF] Updating package 2 for user 13 with amount 325
+2026-01-31 23:26:01.726 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9192 ms
+2026-01-31 23:26:01.892 +02:00 [INF] Updating package 2 for user 13 with amount 324
+2026-01-31 23:26:01.903 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.0052 ms
+2026-01-31 23:26:02.075 +02:00 [INF] Updating package 2 for user 13 with amount 323
+2026-01-31 23:26:02.096 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2935 ms
+2026-01-31 23:26:02.256 +02:00 [INF] Updating package 2 for user 13 with amount 322
+2026-01-31 23:26:02.275 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.2674 ms
+2026-01-31 23:26:02.425 +02:00 [INF] Updating package 2 for user 13 with amount 322
+2026-01-31 23:26:02.436 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.7002 ms
+2026-01-31 23:26:02.597 +02:00 [INF] Updating package 2 for user 13 with amount 321
+2026-01-31 23:26:02.608 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.0644 ms
+2026-01-31 23:26:02.768 +02:00 [INF] Updating package 2 for user 13 with amount 320
+2026-01-31 23:26:02.777 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.4730 ms
+2026-01-31 23:26:02.962 +02:00 [INF] Updating package 2 for user 13 with amount 319
+2026-01-31 23:26:02.996 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7623 ms
+2026-01-31 23:26:03.154 +02:00 [INF] Updating package 2 for user 13 with amount 318
+2026-01-31 23:26:03.183 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.8507 ms
+2026-01-31 23:26:03.370 +02:00 [INF] Updating package 2 for user 13 with amount 317
+2026-01-31 23:26:03.417 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.8080 ms
+2026-01-31 23:26:03.540 +02:00 [INF] Updating package 2 for user 13 with amount 317
+2026-01-31 23:26:03.557 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.0493 ms
+2026-01-31 23:26:03.719 +02:00 [INF] Updating package 2 for user 13 with amount 316
+2026-01-31 23:26:03.733 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.6215 ms
+2026-01-31 23:26:03.892 +02:00 [INF] Updating package 2 for user 13 with amount 315
+2026-01-31 23:26:03.909 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9265 ms
+2026-01-31 23:26:04.087 +02:00 [INF] Updating package 2 for user 13 with amount 314
+2026-01-31 23:26:04.109 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7289 ms
+2026-01-31 23:26:04.285 +02:00 [INF] Updating package 2 for user 13 with amount 313
+2026-01-31 23:26:04.300 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.0827 ms
+2026-01-31 23:26:05.407 +02:00 [INF] Updating package 2 for user 13 with amount 312
+2026-01-31 23:26:05.442 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1037 ms
+2026-01-31 23:26:05.907 +02:00 [INF] Updating package 2 for user 13 with amount 311
+2026-01-31 23:26:05.941 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8779 ms
+2026-01-31 23:26:06.102 +02:00 [INF] Updating package 2 for user 13 with amount 311
+2026-01-31 23:26:06.116 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.7175 ms
+2026-01-31 23:26:06.182 +02:00 [INF] Updating package 2 for user 13 with amount 310
+2026-01-31 23:26:06.211 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.5581 ms
+2026-01-31 23:26:06.323 +02:00 [INF] Updating package 2 for user 13 with amount 310
+2026-01-31 23:26:06.338 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.5005 ms
+2026-01-31 23:26:06.530 +02:00 [INF] Updating package 2 for user 13 with amount 309
+2026-01-31 23:26:06.570 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6475 ms
+2026-01-31 23:26:06.731 +02:00 [INF] Updating package 2 for user 13 with amount 308
+2026-01-31 23:26:06.753 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8551 ms
+2026-01-31 23:26:06.946 +02:00 [INF] Updating package 2 for user 13 with amount 307
+2026-01-31 23:26:06.981 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1961 ms
+2026-01-31 23:26:07.147 +02:00 [INF] Updating package 2 for user 13 with amount 306
+2026-01-31 23:26:07.162 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.9860 ms
+2026-01-31 23:26:07.352 +02:00 [INF] Updating package 2 for user 13 with amount 305
+2026-01-31 23:26:07.370 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.6259 ms
+2026-01-31 23:26:07.587 +02:00 [INF] Updating package 2 for user 13 with amount 304
+2026-01-31 23:26:07.622 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7615 ms
+2026-01-31 23:26:07.823 +02:00 [INF] Updating package 2 for user 13 with amount 303
+2026-01-31 23:26:07.847 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.6289 ms
+2026-01-31 23:26:08.078 +02:00 [INF] Updating package 2 for user 13 with amount 302
+2026-01-31 23:26:08.118 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.3353 ms
+2026-01-31 23:26:08.281 +02:00 [INF] Updating package 2 for user 13 with amount 301
+2026-01-31 23:26:08.304 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0136 ms
+2026-01-31 23:26:08.495 +02:00 [INF] Updating package 2 for user 13 with amount 300
+2026-01-31 23:26:08.520 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.6127 ms
+2026-01-31 23:26:08.734 +02:00 [INF] Updating package 2 for user 13 with amount 299
+2026-01-31 23:26:08.777 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.1382 ms
+2026-01-31 23:26:08.963 +02:00 [INF] Updating package 2 for user 13 with amount 298
+2026-01-31 23:26:09.007 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.3204 ms
+2026-01-31 23:26:09.175 +02:00 [INF] Updating package 2 for user 13 with amount 297
+2026-01-31 23:26:09.203 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0533 ms
+2026-01-31 23:26:09.428 +02:00 [INF] Updating package 2 for user 13 with amount 296
+2026-01-31 23:26:09.464 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.6631 ms
+2026-01-31 23:26:09.674 +02:00 [INF] Updating package 2 for user 13 with amount 295
+2026-01-31 23:26:09.705 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.1854 ms
+2026-01-31 23:26:09.853 +02:00 [INF] Updating package 2 for user 13 with amount 294
+2026-01-31 23:26:09.873 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.4429 ms
+2026-01-31 23:26:10.126 +02:00 [INF] Updating package 2 for user 13 with amount 293
+2026-01-31 23:26:10.158 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.7799 ms
+2026-01-31 23:26:10.376 +02:00 [INF] Updating package 2 for user 13 with amount 292
+2026-01-31 23:26:10.395 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.3421 ms
+2026-01-31 23:26:10.593 +02:00 [INF] Updating package 2 for user 13 with amount 291
+2026-01-31 23:26:10.608 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.7672 ms
+2026-01-31 23:26:10.900 +02:00 [INF] Updating package 2 for user 13 with amount 290
+2026-01-31 23:26:10.934 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9012 ms
+2026-01-31 23:26:11.401 +02:00 [INF] Updating package 2 for user 13 with amount 289
+2026-01-31 23:26:11.425 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.0759 ms
+2026-01-31 23:26:11.621 +02:00 [INF] Updating package 2 for user 13 with amount 289
+2026-01-31 23:26:11.642 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8713 ms
+2026-01-31 23:26:11.667 +02:00 [INF] Updating package 2 for user 13 with amount 288
+2026-01-31 23:26:11.691 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.7621 ms
+2026-01-31 23:26:11.827 +02:00 [INF] Updating package 2 for user 13 with amount 288
+2026-01-31 23:26:11.847 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0555 ms
+2026-01-31 23:26:12.028 +02:00 [INF] Updating package 2 for user 13 with amount 287
+2026-01-31 23:26:12.065 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.9837 ms
+2026-01-31 23:26:13.127 +02:00 [INF] Updating package 2 for user 13 with amount 286
+2026-01-31 23:26:13.150 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7176 ms
+2026-01-31 23:26:13.609 +02:00 [INF] Updating package 2 for user 13 with amount 285
+2026-01-31 23:26:13.643 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.6271 ms
+2026-01-31 23:26:13.813 +02:00 [INF] Updating package 2 for user 13 with amount 285
+2026-01-31 23:26:13.826 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.0145 ms
+2026-01-31 23:26:13.879 +02:00 [INF] Updating package 2 for user 13 with amount 284
+2026-01-31 23:26:13.902 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.9581 ms
+2026-01-31 23:26:14.009 +02:00 [INF] Updating package 2 for user 13 with amount 284
+2026-01-31 23:26:14.030 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.7809 ms
+2026-01-31 23:26:14.208 +02:00 [INF] Updating package 2 for user 13 with amount 283
+2026-01-31 23:26:14.249 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.4111 ms
+2026-01-31 23:26:14.514 +02:00 [INF] Updating package 2 for user 13 with amount 282
+2026-01-31 23:26:14.530 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.3847 ms
+2026-01-31 23:26:14.721 +02:00 [INF] Updating package 2 for user 13 with amount 281
+2026-01-31 23:26:14.754 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.9008 ms
+2026-01-31 23:26:14.906 +02:00 [INF] Updating package 2 for user 13 with amount 280
+2026-01-31 23:26:14.930 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.7213 ms
+2026-01-31 23:26:15.105 +02:00 [INF] Updating package 2 for user 13 with amount 279
+2026-01-31 23:26:15.131 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.6050 ms
+2026-01-31 23:26:15.306 +02:00 [INF] Updating package 2 for user 13 with amount 278
+2026-01-31 23:26:15.321 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.7804 ms
+2026-01-31 23:26:15.509 +02:00 [INF] Updating package 2 for user 13 with amount 277
+2026-01-31 23:26:15.524 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.3010 ms
+2026-01-31 23:26:15.729 +02:00 [INF] Updating package 2 for user 13 with amount 276
+2026-01-31 23:26:15.764 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.6321 ms
+2026-01-31 23:26:15.916 +02:00 [INF] Updating package 2 for user 13 with amount 275
+2026-01-31 23:26:15.933 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.8191 ms
+2026-01-31 23:26:16.183 +02:00 [INF] Updating package 2 for user 13 with amount 274
+2026-01-31 23:26:16.217 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7526 ms
+2026-01-31 23:26:16.370 +02:00 [INF] Updating package 2 for user 13 with amount 273
+2026-01-31 23:26:16.385 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3881 ms
+2026-01-31 23:26:16.577 +02:00 [INF] Updating package 2 for user 13 with amount 272
+2026-01-31 23:26:16.591 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.6562 ms
+2026-01-31 23:26:16.781 +02:00 [INF] Updating package 2 for user 13 with amount 271
+2026-01-31 23:26:16.798 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.7558 ms
+2026-01-31 23:26:17.016 +02:00 [INF] Updating package 2 for user 13 with amount 270
+2026-01-31 23:26:17.053 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.6605 ms
+2026-01-31 23:26:17.264 +02:00 [INF] Updating package 2 for user 13 with amount 269
+2026-01-31 23:26:17.293 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.2184 ms
+2026-01-31 23:26:17.481 +02:00 [INF] Updating package 2 for user 13 with amount 268
+2026-01-31 23:26:17.497 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5058 ms
+2026-01-31 23:26:17.732 +02:00 [INF] Updating package 2 for user 13 with amount 267
+2026-01-31 23:26:17.767 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1674 ms
+2026-01-31 23:26:17.917 +02:00 [INF] Updating package 2 for user 13 with amount 266
+2026-01-31 23:26:17.931 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.0387 ms
+2026-01-31 23:26:18.106 +02:00 [INF] Updating package 2 for user 13 with amount 265
+2026-01-31 23:26:18.126 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3701 ms
+2026-01-31 23:26:18.371 +02:00 [INF] Updating package 2 for user 13 with amount 264
+2026-01-31 23:26:18.404 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8066 ms
+2026-01-31 23:26:18.545 +02:00 [INF] Updating package 2 for user 13 with amount 263
+2026-01-31 23:26:18.561 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.6486 ms
+2026-01-31 23:26:18.736 +02:00 [INF] Updating package 2 for user 13 with amount 262
+2026-01-31 23:26:18.754 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.2480 ms
+2026-01-31 23:26:18.936 +02:00 [INF] Updating package 2 for user 13 with amount 261
+2026-01-31 23:26:18.970 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9443 ms
+2026-01-31 23:26:19.347 +02:00 [INF] Updating package 2 for user 13 with amount 260
+2026-01-31 23:26:19.386 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.4301 ms
+2026-01-31 23:26:19.932 +02:00 [INF] Updating package 2 for user 13 with amount 259
+2026-01-31 23:26:19.945 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.3162 ms
+2026-01-31 23:26:20.171 +02:00 [INF] Updating package 2 for user 13 with amount 259
+2026-01-31 23:26:20.192 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8556 ms
+2026-01-31 23:26:20.214 +02:00 [INF] Updating package 2 for user 13 with amount 258
+2026-01-31 23:26:20.235 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6980 ms
+2026-01-31 23:26:20.369 +02:00 [INF] Updating package 2 for user 13 with amount 257
+2026-01-31 23:26:20.385 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.8117 ms
+2026-01-31 23:26:20.649 +02:00 [INF] Updating package 2 for user 13 with amount 256
+2026-01-31 23:26:20.665 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.4330 ms
+2026-01-31 23:26:20.837 +02:00 [INF] Updating package 2 for user 13 with amount 255
+2026-01-31 23:26:20.852 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.1078 ms
+2026-01-31 23:26:21.054 +02:00 [INF] Updating package 2 for user 13 with amount 254
+2026-01-31 23:26:21.069 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.9619 ms
+2026-01-31 23:26:21.258 +02:00 [INF] Updating package 2 for user 13 with amount 253
+2026-01-31 23:26:21.274 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4968 ms
+2026-01-31 23:26:21.493 +02:00 [INF] Updating package 2 for user 13 with amount 252
+2026-01-31 23:26:21.528 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.8596 ms
+2026-01-31 23:26:21.713 +02:00 [INF] Updating package 2 for user 13 with amount 251
+2026-01-31 23:26:21.728 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.3070 ms
+2026-01-31 23:26:21.917 +02:00 [INF] Updating package 2 for user 13 with amount 250
+2026-01-31 23:26:21.930 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.0018 ms
+2026-01-31 23:26:22.106 +02:00 [INF] Updating package 2 for user 13 with amount 249
+2026-01-31 23:26:22.123 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.2886 ms
+2026-01-31 23:26:22.339 +02:00 [INF] Updating package 2 for user 13 with amount 248
+2026-01-31 23:26:22.375 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.5465 ms
+2026-01-31 23:26:22.557 +02:00 [INF] Updating package 2 for user 13 with amount 247
+2026-01-31 23:26:22.574 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4801 ms
+2026-01-31 23:26:22.893 +02:00 [INF] Updating package 2 for user 13 with amount 246
+2026-01-31 23:26:22.936 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.2896 ms
+2026-01-31 23:26:23.407 +02:00 [INF] Updating package 2 for user 13 with amount 245
+2026-01-31 23:26:23.439 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.7149 ms
+2026-01-31 23:26:23.623 +02:00 [INF] Updating package 2 for user 13 with amount 245
+2026-01-31 23:26:23.636 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1341 ms
+2026-01-31 23:26:23.776 +02:00 [INF] Updating package 2 for user 13 with amount 244
+2026-01-31 23:26:23.820 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.9875 ms
+2026-01-31 23:26:24.308 +02:00 [INF] Updating package 2 for user 13 with amount 243
+2026-01-31 23:26:24.344 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.3789 ms
+2026-01-31 23:26:24.540 +02:00 [INF] Updating package 2 for user 13 with amount 243
+2026-01-31 23:26:24.554 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.2473 ms
+2026-01-31 23:26:24.575 +02:00 [INF] Updating package 2 for user 13 with amount 242
+2026-01-31 23:26:24.597 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.9329 ms
+2026-01-31 23:26:24.774 +02:00 [INF] Updating package 2 for user 13 with amount 241
+2026-01-31 23:26:24.789 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.6920 ms
+2026-01-31 23:26:24.981 +02:00 [INF] Updating package 2 for user 13 with amount 240
+2026-01-31 23:26:24.999 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.5270 ms
+2026-01-31 23:26:25.210 +02:00 [INF] Updating package 2 for user 13 with amount 239
+2026-01-31 23:26:25.238 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.8763 ms
+2026-01-31 23:26:25.478 +02:00 [INF] Updating package 2 for user 13 with amount 238
+2026-01-31 23:26:25.493 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.8588 ms
+2026-01-31 23:26:25.732 +02:00 [INF] Updating package 2 for user 13 with amount 237
+2026-01-31 23:26:25.768 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.6024 ms
+2026-01-31 23:26:26.251 +02:00 [INF] Updating package 2 for user 13 with amount 236
+2026-01-31 23:26:26.286 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.0622 ms
+2026-01-31 23:26:26.510 +02:00 [INF] Updating package 2 for user 13 with amount 235
+2026-01-31 23:26:26.511 +02:00 [INF] Updating package 2 for user 13 with amount 236
+2026-01-31 23:26:26.524 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.7314 ms
+2026-01-31 23:26:26.543 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.5223 ms
+2026-01-31 23:26:26.778 +02:00 [INF] Updating package 2 for user 13 with amount 234
+2026-01-31 23:26:26.797 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.4522 ms
+2026-01-31 23:26:27.024 +02:00 [INF] Updating package 2 for user 13 with amount 233
+2026-01-31 23:26:27.061 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.8698 ms
+2026-01-31 23:26:27.311 +02:00 [INF] Updating package 2 for user 13 with amount 232
+2026-01-31 23:26:27.357 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.7092 ms
+2026-01-31 23:26:27.886 +02:00 [INF] Updating package 2 for user 13 with amount 231
+2026-01-31 23:26:27.902 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5420 ms
+2026-01-31 23:26:28.130 +02:00 [INF] Updating package 2 for user 13 with amount 231
+2026-01-31 23:26:28.137 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 7.0168 ms
+2026-01-31 23:26:28.147 +02:00 [INF] Updating package 2 for user 13 with amount 230
+2026-01-31 23:26:28.156 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.3651 ms
+2026-01-31 23:26:28.335 +02:00 [INF] Updating package 2 for user 13 with amount 229
+2026-01-31 23:26:28.352 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.0401 ms
+2026-01-31 23:26:28.585 +02:00 [INF] Updating package 2 for user 13 with amount 228
+2026-01-31 23:26:28.619 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.2237 ms
+2026-01-31 23:26:28.817 +02:00 [INF] Updating package 2 for user 13 with amount 227
+2026-01-31 23:26:28.841 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.5255 ms
+2026-01-31 23:26:29.027 +02:00 [INF] Updating package 2 for user 13 with amount 226
+2026-01-31 23:26:29.050 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8617 ms
+2026-01-31 23:26:29.242 +02:00 [INF] Updating package 2 for user 13 with amount 225
+2026-01-31 23:26:29.256 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.5827 ms
+2026-01-31 23:26:29.461 +02:00 [INF] Updating package 2 for user 13 with amount 224
+2026-01-31 23:26:29.478 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.4152 ms
+2026-01-31 23:26:29.696 +02:00 [INF] Updating package 2 for user 13 with amount 223
+2026-01-31 23:26:29.714 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.6743 ms
+2026-01-31 23:26:29.942 +02:00 [INF] Updating package 2 for user 13 with amount 222
+2026-01-31 23:26:29.965 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8942 ms
+2026-01-31 23:26:30.177 +02:00 [INF] Updating package 2 for user 13 with amount 221
+2026-01-31 23:26:30.198 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2375 ms
+2026-01-31 23:26:30.407 +02:00 [INF] Updating package 2 for user 13 with amount 220
+2026-01-31 23:26:30.449 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.5176 ms
+2026-01-31 23:26:30.652 +02:00 [INF] Updating package 2 for user 13 with amount 219
+2026-01-31 23:26:30.676 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.9004 ms
+2026-01-31 23:26:30.853 +02:00 [INF] Updating package 2 for user 13 with amount 218
+2026-01-31 23:26:30.880 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4290 ms
+2026-01-31 23:26:31.067 +02:00 [INF] Updating package 2 for user 13 with amount 217
+2026-01-31 23:26:31.094 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4615 ms
+2026-01-31 23:26:31.267 +02:00 [INF] Updating package 2 for user 13 with amount 216
+2026-01-31 23:26:31.289 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.1742 ms
+2026-01-31 23:26:31.485 +02:00 [INF] Updating package 2 for user 13 with amount 215
+2026-01-31 23:26:31.502 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.8781 ms
+2026-01-31 23:26:31.742 +02:00 [INF] Updating package 2 for user 13 with amount 214
+2026-01-31 23:26:31.783 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.3136 ms
+2026-01-31 23:26:31.948 +02:00 [INF] Updating package 2 for user 13 with amount 213
+2026-01-31 23:26:31.976 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.0450 ms
+2026-01-31 23:26:32.184 +02:00 [INF] Updating package 2 for user 13 with amount 212
+2026-01-31 23:26:32.214 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.0580 ms
+2026-01-31 23:26:32.406 +02:00 [INF] Updating package 2 for user 13 with amount 211
+2026-01-31 23:26:32.447 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.2828 ms
+2026-01-31 23:26:32.650 +02:00 [INF] Updating package 2 for user 13 with amount 210
+2026-01-31 23:26:32.684 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.4024 ms
+2026-01-31 23:26:32.871 +02:00 [INF] Updating package 2 for user 13 with amount 209
+2026-01-31 23:26:32.904 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.2431 ms
+2026-01-31 23:26:33.109 +02:00 [INF] Updating package 2 for user 13 with amount 208
+2026-01-31 23:26:33.148 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.6579 ms
+2026-01-31 23:26:33.336 +02:00 [INF] Updating package 2 for user 13 with amount 207
+2026-01-31 23:26:33.369 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.2627 ms
+2026-01-31 23:26:33.554 +02:00 [INF] Updating package 2 for user 13 with amount 206
+2026-01-31 23:26:33.572 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.2227 ms
+2026-01-31 23:26:33.773 +02:00 [INF] Updating package 2 for user 13 with amount 205
+2026-01-31 23:26:33.809 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.1321 ms
+2026-01-31 23:26:33.995 +02:00 [INF] Updating package 2 for user 13 with amount 204
+2026-01-31 23:26:34.028 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.7215 ms
+2026-01-31 23:26:34.167 +02:00 [INF] Updating package 2 for user 13 with amount 203
+2026-01-31 23:26:34.195 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.0583 ms
+2026-01-31 23:26:34.384 +02:00 [INF] Updating package 2 for user 13 with amount 202
+2026-01-31 23:26:34.407 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8540 ms
+2026-01-31 23:26:34.536 +02:00 [INF] Updating package 2 for user 13 with amount 201
+2026-01-31 23:26:34.552 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5242 ms
+2026-01-31 23:26:34.836 +02:00 [INF] Updating package 2 for user 13 with amount 200
+2026-01-31 23:26:34.863 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4335 ms
+2026-01-31 23:26:35.395 +02:00 [INF] Updating package 2 for user 13 with amount 199
+2026-01-31 23:26:35.431 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.6008 ms
+2026-01-31 23:26:35.564 +02:00 [INF] Updating package 2 for user 13 with amount 199
+2026-01-31 23:26:35.577 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.4095 ms
+2026-01-31 23:26:35.646 +02:00 [INF] Updating package 2 for user 13 with amount 199
+2026-01-31 23:26:35.659 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.8365 ms
+2026-01-31 23:26:35.764 +02:00 [INF] Updating package 2 for user 13 with amount 198
+2026-01-31 23:26:35.786 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2047 ms
+2026-01-31 23:26:35.930 +02:00 [INF] Updating package 2 for user 13 with amount 197
+2026-01-31 23:26:35.954 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.8636 ms
+2026-01-31 23:26:36.135 +02:00 [INF] Updating package 2 for user 13 with amount 196
+2026-01-31 23:26:36.162 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.5811 ms
+2026-01-31 23:26:36.313 +02:00 [INF] Updating package 2 for user 13 with amount 195
+2026-01-31 23:26:36.325 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.1277 ms
+2026-01-31 23:26:36.532 +02:00 [INF] Updating package 2 for user 13 with amount 194
+2026-01-31 23:26:36.566 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.4344 ms
+2026-01-31 23:26:36.787 +02:00 [INF] Updating package 2 for user 13 with amount 193
+2026-01-31 23:26:36.827 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.4527 ms
+2026-01-31 23:26:36.985 +02:00 [INF] Updating package 2 for user 13 with amount 192
+2026-01-31 23:26:37.002 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5038 ms
+2026-01-31 23:26:37.218 +02:00 [INF] Updating package 2 for user 13 with amount 191
+2026-01-31 23:26:37.249 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.8422 ms
+2026-01-31 23:26:37.423 +02:00 [INF] Updating package 2 for user 13 with amount 190
+2026-01-31 23:26:37.441 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.7309 ms
+2026-01-31 23:26:37.639 +02:00 [INF] Updating package 2 for user 13 with amount 189
+2026-01-31 23:26:37.655 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9979 ms
+2026-01-31 23:26:37.871 +02:00 [INF] Updating package 2 for user 13 with amount 188
+2026-01-31 23:26:37.905 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.6808 ms
+2026-01-31 23:26:38.093 +02:00 [INF] Updating package 2 for user 13 with amount 187
+2026-01-31 23:26:38.110 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3110 ms
+2026-01-31 23:26:38.326 +02:00 [INF] Updating package 2 for user 13 with amount 186
+2026-01-31 23:26:38.344 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.2133 ms
+2026-01-31 23:26:38.555 +02:00 [INF] Updating package 2 for user 13 with amount 185
+2026-01-31 23:26:38.600 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.4149 ms
+2026-01-31 23:26:38.801 +02:00 [INF] Updating package 2 for user 13 with amount 184
+2026-01-31 23:26:38.833 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.4829 ms
+2026-01-31 23:26:38.990 +02:00 [INF] Updating package 2 for user 13 with amount 183
+2026-01-31 23:26:39.008 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.2144 ms
+2026-01-31 23:26:39.266 +02:00 [INF] Updating package 2 for user 13 with amount 182
+2026-01-31 23:26:39.302 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.4071 ms
+2026-01-31 23:26:39.454 +02:00 [INF] Updating package 2 for user 13 with amount 181
+2026-01-31 23:26:39.469 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.6077 ms
+2026-01-31 23:26:39.657 +02:00 [INF] Updating package 2 for user 13 with amount 180
+2026-01-31 23:26:39.675 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.9482 ms
+2026-01-31 23:26:39.922 +02:00 [INF] Updating package 2 for user 13 with amount 179
+2026-01-31 23:26:39.963 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.2591 ms
+2026-01-31 23:26:40.459 +02:00 [INF] Updating package 2 for user 13 with amount 178
+2026-01-31 23:26:40.479 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7685 ms
+2026-01-31 23:26:40.710 +02:00 [INF] Updating package 2 for user 13 with amount 178
+2026-01-31 23:26:40.731 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.9206 ms
+2026-01-31 23:26:40.733 +02:00 [INF] Updating package 2 for user 13 with amount 177
+2026-01-31 23:26:40.789 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 56.6226 ms
+2026-01-31 23:26:40.938 +02:00 [INF] Updating package 2 for user 13 with amount 176
+2026-01-31 23:26:40.961 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8185 ms
+2026-01-31 23:26:41.446 +02:00 [INF] Updating package 2 for user 13 with amount 175
+2026-01-31 23:26:41.470 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6340 ms
+2026-01-31 23:26:41.694 +02:00 [INF] Updating package 2 for user 13 with amount 175
+2026-01-31 23:26:41.720 +02:00 [INF] Updating package 2 for user 13 with amount 174
+2026-01-31 23:26:41.723 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.8178 ms
+2026-01-31 23:26:41.755 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.2340 ms
+2026-01-31 23:26:41.952 +02:00 [INF] Updating package 2 for user 13 with amount 173
+2026-01-31 23:26:41.984 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.6853 ms
+2026-01-31 23:26:42.151 +02:00 [INF] Updating package 2 for user 13 with amount 172
+2026-01-31 23:26:42.181 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.5370 ms
+2026-01-31 23:26:42.394 +02:00 [INF] Updating package 2 for user 13 with amount 171
+2026-01-31 23:26:42.421 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4671 ms
+2026-01-31 23:26:42.595 +02:00 [INF] Updating package 2 for user 13 with amount 170
+2026-01-31 23:26:42.618 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2062 ms
+2026-01-31 23:26:42.851 +02:00 [INF] Updating package 2 for user 13 with amount 169
+2026-01-31 23:26:42.891 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.3983 ms
+2026-01-31 23:26:43.000 +02:00 [INF] Updating package 2 for user 13 with amount 169
+2026-01-31 23:26:43.014 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.9508 ms
+2026-01-31 23:26:43.430 +02:00 [INF] Updating package 2 for user 13 with amount 168
+2026-01-31 23:26:43.469 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.4174 ms
+2026-01-31 23:26:43.862 +02:00 [INF] Updating package 2 for user 13 with amount 167
+2026-01-31 23:26:43.900 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.0041 ms
+2026-01-31 23:26:44.001 +02:00 [INF] Updating package 2 for user 13 with amount 167
+2026-01-31 23:26:44.017 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.5299 ms
+2026-01-31 23:26:44.124 +02:00 [INF] Updating package 2 for user 13 with amount 167
+2026-01-31 23:26:44.126 +02:00 [INF] Updating package 2 for user 13 with amount 166
+2026-01-31 23:26:44.145 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5604 ms
+2026-01-31 23:26:44.167 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.6658 ms
+2026-01-31 23:26:44.371 +02:00 [INF] Updating package 2 for user 13 with amount 165
+2026-01-31 23:26:44.394 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.6707 ms
+2026-01-31 23:26:44.588 +02:00 [INF] Updating package 2 for user 13 with amount 164
+2026-01-31 23:26:44.612 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0605 ms
+2026-01-31 23:26:44.807 +02:00 [INF] Updating package 2 for user 13 with amount 163
+2026-01-31 23:26:44.829 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9247 ms
+2026-01-31 23:26:45.007 +02:00 [INF] Updating package 2 for user 13 with amount 162
+2026-01-31 23:26:45.020 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1609 ms
+2026-01-31 23:26:45.199 +02:00 [INF] Updating package 2 for user 13 with amount 161
+2026-01-31 23:26:45.215 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.0759 ms
+2026-01-31 23:26:45.405 +02:00 [INF] Updating package 2 for user 13 with amount 160
+2026-01-31 23:26:45.423 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.5822 ms
+2026-01-31 23:26:45.706 +02:00 [INF] Updating package 2 for user 13 with amount 159
+2026-01-31 23:26:45.737 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.8070 ms
+2026-01-31 23:26:45.883 +02:00 [INF] Updating package 2 for user 13 with amount 158
+2026-01-31 23:26:45.900 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.8429 ms
+2026-01-31 23:26:46.118 +02:00 [INF] Updating package 2 for user 13 with amount 157
+2026-01-31 23:26:46.161 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.1449 ms
+2026-01-31 23:26:46.295 +02:00 [INF] Updating package 2 for user 13 with amount 156
+2026-01-31 23:26:46.323 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.2643 ms
+2026-01-31 23:26:46.490 +02:00 [INF] Updating package 2 for user 13 with amount 155
+2026-01-31 23:26:46.510 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6547 ms
+2026-01-31 23:26:46.698 +02:00 [INF] Updating package 2 for user 13 with amount 154
+2026-01-31 23:26:46.715 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9165 ms
+2026-01-31 23:26:46.881 +02:00 [INF] Updating package 2 for user 13 with amount 153
+2026-01-31 23:26:46.913 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.2101 ms
+2026-01-31 23:26:47.070 +02:00 [INF] Updating package 2 for user 13 with amount 152
+2026-01-31 23:26:47.099 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.1935 ms
+2026-01-31 23:26:47.275 +02:00 [INF] Updating package 2 for user 13 with amount 151
+2026-01-31 23:26:47.301 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.9892 ms
+2026-01-31 23:26:47.462 +02:00 [INF] Updating package 2 for user 13 with amount 150
+2026-01-31 23:26:47.488 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.9153 ms
+2026-01-31 23:26:47.641 +02:00 [INF] Updating package 2 for user 13 with amount 149
+2026-01-31 23:26:47.657 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4230 ms
+2026-01-31 23:26:47.854 +02:00 [INF] Updating package 2 for user 13 with amount 148
+2026-01-31 23:26:47.897 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.9913 ms
+2026-01-31 23:26:48.036 +02:00 [INF] Updating package 2 for user 13 with amount 148
+2026-01-31 23:26:48.051 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.1374 ms
+2026-01-31 23:26:48.245 +02:00 [INF] Updating package 2 for user 13 with amount 147
+2026-01-31 23:26:48.273 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.6500 ms
+2026-01-31 23:26:48.431 +02:00 [INF] Updating package 2 for user 13 with amount 146
+2026-01-31 23:26:48.456 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.8450 ms
+2026-01-31 23:26:48.653 +02:00 [INF] Updating package 2 for user 13 with amount 145
+2026-01-31 23:26:48.690 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.7661 ms
+2026-01-31 23:26:48.837 +02:00 [INF] Updating package 2 for user 13 with amount 144
+2026-01-31 23:26:48.848 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.0016 ms
+2026-01-31 23:26:49.031 +02:00 [INF] Updating package 2 for user 13 with amount 143
+2026-01-31 23:26:49.049 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.2142 ms
+2026-01-31 23:26:49.249 +02:00 [INF] Updating package 2 for user 13 with amount 142
+2026-01-31 23:26:49.284 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.0573 ms
+2026-01-31 23:26:49.435 +02:00 [INF] Updating package 2 for user 13 with amount 141
+2026-01-31 23:26:49.457 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9366 ms
+2026-01-31 23:26:49.640 +02:00 [INF] Updating package 2 for user 13 with amount 140
+2026-01-31 23:26:49.656 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9310 ms
+2026-01-31 23:26:49.891 +02:00 [INF] Updating package 2 for user 13 with amount 139
+2026-01-31 23:26:49.917 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.1699 ms
+2026-01-31 23:26:50.104 +02:00 [INF] Updating package 2 for user 13 with amount 138
+2026-01-31 23:26:50.133 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.8956 ms
+2026-01-31 23:26:50.302 +02:00 [INF] Updating package 2 for user 13 with amount 137
+2026-01-31 23:26:50.319 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.2563 ms
+2026-01-31 23:26:50.583 +02:00 [INF] Updating package 2 for user 13 with amount 136
+2026-01-31 23:26:50.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5378 ms
+2026-01-31 23:26:50.752 +02:00 [INF] Updating package 2 for user 13 with amount 135
+2026-01-31 23:26:50.766 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.7895 ms
+2026-01-31 23:26:50.978 +02:00 [INF] Updating package 2 for user 13 with amount 134
+2026-01-31 23:26:51.023 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.6674 ms
+2026-01-31 23:26:51.187 +02:00 [INF] Updating package 2 for user 13 with amount 133
+2026-01-31 23:26:51.197 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.0274 ms
+2026-01-31 23:26:51.404 +02:00 [INF] Updating package 2 for user 13 with amount 132
+2026-01-31 23:26:51.415 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.4519 ms
+2026-01-31 23:26:51.625 +02:00 [INF] Updating package 2 for user 13 with amount 131
+2026-01-31 23:26:51.641 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.3191 ms
+2026-01-31 23:26:51.844 +02:00 [INF] Updating package 2 for user 13 with amount 130
+2026-01-31 23:26:51.861 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.7199 ms
+2026-01-31 23:26:52.064 +02:00 [INF] Updating package 2 for user 13 with amount 129
+2026-01-31 23:26:52.097 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8825 ms
+2026-01-31 23:26:52.295 +02:00 [INF] Updating package 2 for user 13 with amount 128
+2026-01-31 23:26:52.341 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.1576 ms
+2026-01-31 23:26:52.519 +02:00 [INF] Updating package 2 for user 13 with amount 127
+2026-01-31 23:26:52.554 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1352 ms
+2026-01-31 23:26:52.781 +02:00 [INF] Updating package 2 for user 13 with amount 126
+2026-01-31 23:26:52.814 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.9021 ms
+2026-01-31 23:26:52.959 +02:00 [INF] Updating package 2 for user 13 with amount 125
+2026-01-31 23:26:53.005 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.0426 ms
+2026-01-31 23:26:53.174 +02:00 [INF] Updating package 2 for user 13 with amount 124
+2026-01-31 23:26:53.222 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.5098 ms
+2026-01-31 23:26:53.360 +02:00 [INF] Updating package 2 for user 13 with amount 123
+2026-01-31 23:26:53.404 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.3060 ms
+2026-01-31 23:26:54.852 +02:00 [INF] Updating package 2 for user 13 with amount 122
+2026-01-31 23:26:54.920 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.1359 ms
+2026-01-31 23:26:55.381 +02:00 [INF] Updating package 2 for user 13 with amount 121
+2026-01-31 23:26:55.426 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.0197 ms
+2026-01-31 23:26:55.615 +02:00 [INF] Updating package 2 for user 13 with amount 121
+2026-01-31 23:26:55.650 +02:00 [INF] Updating package 2 for user 13 with amount 120
+2026-01-31 23:26:55.682 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 67.5871 ms
+2026-01-31 23:26:55.710 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 60.3162 ms
+2026-01-31 23:26:55.846 +02:00 [INF] Updating package 2 for user 13 with amount 119
+2026-01-31 23:26:55.912 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 65.6350 ms
+2026-01-31 23:26:56.118 +02:00 [INF] Updating package 2 for user 13 with amount 118
+2026-01-31 23:26:56.185 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 67.8171 ms
+2026-01-31 23:26:56.357 +02:00 [INF] Updating package 2 for user 13 with amount 117
+2026-01-31 23:26:56.409 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 52.6837 ms
+2026-01-31 23:26:56.583 +02:00 [INF] Updating package 2 for user 13 with amount 116
+2026-01-31 23:26:56.631 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.0219 ms
+2026-01-31 23:26:56.806 +02:00 [INF] Updating package 2 for user 13 with amount 115
+2026-01-31 23:26:56.849 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.2444 ms
+2026-01-31 23:26:57.037 +02:00 [INF] Updating package 2 for user 13 with amount 114
+2026-01-31 23:26:57.082 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.8089 ms
+2026-01-31 23:26:58.403 +02:00 [INF] Updating package 2 for user 13 with amount 113
+2026-01-31 23:26:58.441 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.1673 ms
+2026-01-31 23:27:00.054 +02:00 [INF] Updating package 2 for user 13 with amount 112
+2026-01-31 23:27:00.090 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.3213 ms
+2026-01-31 23:27:00.265 +02:00 [INF] Updating package 2 for user 13 with amount 112
+2026-01-31 23:27:00.276 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.1969 ms
+2026-01-31 23:27:00.320 +02:00 [INF] Updating package 2 for user 13 with amount 111
+2026-01-31 23:27:00.367 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.6632 ms
+2026-01-31 23:27:00.504 +02:00 [INF] Updating package 2 for user 13 with amount 110
+2026-01-31 23:27:00.523 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7424 ms
+2026-01-31 23:27:00.739 +02:00 [INF] Updating package 2 for user 13 with amount 109
+2026-01-31 23:27:00.782 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.6713 ms
+2026-01-31 23:27:00.959 +02:00 [INF] Updating package 2 for user 13 with amount 108
+2026-01-31 23:27:00.981 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.1468 ms
+2026-01-31 23:27:01.195 +02:00 [INF] Updating package 2 for user 13 with amount 107
+2026-01-31 23:27:01.235 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6193 ms
+2026-01-31 23:27:01.428 +02:00 [INF] Updating package 2 for user 13 with amount 106
+2026-01-31 23:27:01.453 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.1402 ms
+2026-01-31 23:27:01.693 +02:00 [INF] Updating package 2 for user 13 with amount 105
+2026-01-31 23:27:01.730 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.4400 ms
+2026-01-31 23:27:01.924 +02:00 [INF] Updating package 2 for user 13 with amount 104
+2026-01-31 23:27:01.942 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.8045 ms
+2026-01-31 23:27:02.152 +02:00 [INF] Updating package 2 for user 13 with amount 103
+2026-01-31 23:27:02.176 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2916 ms
+2026-01-31 23:27:02.372 +02:00 [INF] Updating package 2 for user 13 with amount 102
+2026-01-31 23:27:02.392 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7750 ms
+2026-01-31 23:27:02.605 +02:00 [INF] Updating package 2 for user 13 with amount 101
+2026-01-31 23:27:02.629 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3207 ms
+2026-01-31 23:27:02.854 +02:00 [INF] Updating package 2 for user 13 with amount 100
+2026-01-31 23:27:02.887 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8934 ms
+2026-01-31 23:27:03.091 +02:00 [INF] Updating package 2 for user 13 with amount 99
+2026-01-31 23:27:03.126 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7881 ms
+2026-01-31 23:27:03.325 +02:00 [INF] Updating package 2 for user 13 with amount 98
+2026-01-31 23:27:03.359 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.2876 ms
+2026-01-31 23:27:03.561 +02:00 [INF] Updating package 2 for user 13 with amount 97
+2026-01-31 23:27:03.574 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.3936 ms
+2026-01-31 23:27:04.270 +02:00 [INF] Updating package 2 for user 13 with amount 96
+2026-01-31 23:27:04.313 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.1816 ms
+2026-01-31 23:27:04.810 +02:00 [INF] Updating package 2 for user 13 with amount 95
+2026-01-31 23:27:04.854 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.6843 ms
+2026-01-31 23:27:05.046 +02:00 [INF] Updating package 2 for user 13 with amount 95
+2026-01-31 23:27:05.061 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.4966 ms
+2026-01-31 23:27:05.072 +02:00 [INF] Updating package 2 for user 13 with amount 94
+2026-01-31 23:27:05.094 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8439 ms
+2026-01-31 23:27:05.265 +02:00 [INF] Updating package 2 for user 13 with amount 93
+2026-01-31 23:27:05.281 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.9755 ms
+2026-01-31 23:27:05.501 +02:00 [INF] Updating package 2 for user 13 with amount 92
+2026-01-31 23:27:05.532 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.9359 ms
+2026-01-31 23:27:05.734 +02:00 [INF] Updating package 2 for user 13 with amount 91
+2026-01-31 23:27:05.751 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.4379 ms
+2026-01-31 23:27:05.971 +02:00 [INF] Updating package 2 for user 13 with amount 90
+2026-01-31 23:27:06.007 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.6941 ms
+2026-01-31 23:27:06.236 +02:00 [INF] Updating package 2 for user 13 with amount 89
+2026-01-31 23:27:06.253 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3407 ms
+2026-01-31 23:27:06.470 +02:00 [INF] Updating package 2 for user 13 with amount 88
+2026-01-31 23:27:06.512 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.5246 ms
+2026-01-31 23:27:06.705 +02:00 [INF] Updating package 2 for user 13 with amount 87
+2026-01-31 23:27:06.753 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.8596 ms
+2026-01-31 23:27:06.946 +02:00 [INF] Updating package 2 for user 13 with amount 86
+2026-01-31 23:27:06.987 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.4718 ms
+2026-01-31 23:27:07.164 +02:00 [INF] Updating package 2 for user 13 with amount 85
+2026-01-31 23:27:07.187 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8837 ms
+2026-01-31 23:27:07.379 +02:00 [INF] Updating package 2 for user 13 with amount 84
+2026-01-31 23:27:07.400 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6908 ms
+2026-01-31 23:27:07.613 +02:00 [INF] Updating package 2 for user 13 with amount 83
+2026-01-31 23:27:07.637 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.1305 ms
+2026-01-31 23:27:07.813 +02:00 [INF] Updating package 2 for user 13 with amount 82
+2026-01-31 23:27:07.841 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.3746 ms
+2026-01-31 23:27:08.063 +02:00 [INF] Updating package 2 for user 13 with amount 81
+2026-01-31 23:27:08.100 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.2911 ms
+2026-01-31 23:27:08.298 +02:00 [INF] Updating package 2 for user 13 with amount 80
+2026-01-31 23:27:08.331 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.9195 ms
+2026-01-31 23:27:08.529 +02:00 [INF] Updating package 2 for user 13 with amount 79
+2026-01-31 23:27:08.561 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.8641 ms
+2026-01-31 23:27:08.748 +02:00 [INF] Updating package 2 for user 13 with amount 78
+2026-01-31 23:27:08.783 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.6913 ms
+2026-01-31 23:27:08.967 +02:00 [INF] Updating package 2 for user 13 with amount 77
+2026-01-31 23:27:08.999 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.7241 ms
+2026-01-31 23:27:09.244 +02:00 [INF] Updating package 2 for user 13 with amount 76
+2026-01-31 23:27:09.276 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.9042 ms
+2026-01-31 23:27:09.476 +02:00 [INF] Updating package 2 for user 13 with amount 75
+2026-01-31 23:27:09.514 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.1823 ms
+2026-01-31 23:27:09.722 +02:00 [INF] Updating package 2 for user 13 with amount 74
+2026-01-31 23:27:09.757 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1443 ms
+2026-01-31 23:27:09.928 +02:00 [INF] Updating package 2 for user 13 with amount 73
+2026-01-31 23:27:09.947 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0465 ms
+2026-01-31 23:27:10.192 +02:00 [INF] Updating package 2 for user 13 with amount 72
+2026-01-31 23:27:10.225 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.4845 ms
+2026-01-31 23:27:10.445 +02:00 [INF] Updating package 2 for user 13 with amount 71
+2026-01-31 23:27:10.469 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3984 ms
+2026-01-31 23:27:10.642 +02:00 [INF] Updating package 2 for user 13 with amount 70
+2026-01-31 23:27:10.662 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8814 ms
+2026-01-31 23:27:11.514 +02:00 [INF] Updating package 2 for user 13 with amount 69
+2026-01-31 23:27:11.545 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.9564 ms
+2026-01-31 23:27:12.434 +02:00 [INF] Updating package 2 for user 13 with amount 68
+2026-01-31 23:27:12.443 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.5022 ms
+2026-01-31 23:27:12.709 +02:00 [INF] Updating package 2 for user 13 with amount 68
+2026-01-31 23:27:12.711 +02:00 [INF] Updating package 2 for user 13 with amount 67
+2026-01-31 23:27:12.729 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.4218 ms
+2026-01-31 23:27:12.757 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.9880 ms
+2026-01-31 23:27:13.338 +02:00 [INF] Updating package 2 for user 13 with amount 66
+2026-01-31 23:27:13.367 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.3523 ms
+2026-01-31 23:27:15.070 +02:00 [INF] Updating package 2 for user 13 with amount 65
+2026-01-31 23:27:15.108 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.6222 ms
+2026-01-31 23:27:15.315 +02:00 [INF] Updating package 2 for user 13 with amount 65
+2026-01-31 23:27:15.339 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2528 ms
+2026-01-31 23:27:15.339 +02:00 [INF] Updating package 2 for user 13 with amount 64
+2026-01-31 23:27:15.376 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.7576 ms
+2026-01-31 23:27:15.644 +02:00 [INF] Updating package 2 for user 13 with amount 63
+2026-01-31 23:27:15.663 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.1203 ms
+2026-01-31 23:27:16.200 +02:00 [INF] Updating package 2 for user 13 with amount 62
+2026-01-31 23:27:16.234 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8592 ms
+2026-01-31 23:27:16.422 +02:00 [INF] Updating package 2 for user 13 with amount 62
+2026-01-31 23:27:16.435 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.2166 ms
+2026-01-31 23:27:16.761 +02:00 [INF] Updating package 2 for user 13 with amount 61
+2026-01-31 23:27:16.803 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.1724 ms
+2026-01-31 23:27:17.391 +02:00 [INF] Updating package 2 for user 13 with amount 60
+2026-01-31 23:27:17.432 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.7405 ms
+2026-01-31 23:27:17.630 +02:00 [INF] Updating package 2 for user 13 with amount 60
+2026-01-31 23:27:17.631 +02:00 [INF] Updating package 2 for user 13 with amount 59
+2026-01-31 23:27:17.646 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.1785 ms
+2026-01-31 23:27:17.676 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.9979 ms
+2026-01-31 23:27:17.849 +02:00 [INF] Updating package 2 for user 13 with amount 58
+2026-01-31 23:27:17.864 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.0025 ms
+2026-01-31 23:27:18.068 +02:00 [INF] Updating package 2 for user 13 with amount 57
+2026-01-31 23:27:18.102 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.2987 ms
+2026-01-31 23:27:18.337 +02:00 [INF] Updating package 2 for user 13 with amount 56
+2026-01-31 23:27:18.371 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.4554 ms
+2026-01-31 23:27:18.626 +02:00 [INF] Updating package 2 for user 13 with amount 55
+2026-01-31 23:27:18.650 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2308 ms
+2026-01-31 23:27:18.914 +02:00 [INF] Updating package 2 for user 13 with amount 54
+2026-01-31 23:27:18.944 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.7836 ms
+2026-01-31 23:27:19.183 +02:00 [INF] Updating package 2 for user 13 with amount 53
+2026-01-31 23:27:19.217 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7857 ms
+2026-01-31 23:27:19.469 +02:00 [INF] Updating package 2 for user 13 with amount 52
+2026-01-31 23:27:19.508 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.8865 ms
+2026-01-31 23:27:19.758 +02:00 [INF] Updating package 2 for user 13 with amount 51
+2026-01-31 23:27:19.786 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.7093 ms
+2026-01-31 23:27:20.076 +02:00 [INF] Updating package 2 for user 13 with amount 50
+2026-01-31 23:27:20.120 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.8846 ms
+2026-01-31 23:27:20.359 +02:00 [INF] Updating package 2 for user 13 with amount 49
+2026-01-31 23:27:20.390 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.2453 ms
+2026-01-31 23:27:20.621 +02:00 [INF] Updating package 2 for user 13 with amount 48
+2026-01-31 23:27:20.642 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2403 ms
+2026-01-31 23:27:20.880 +02:00 [INF] Updating package 2 for user 13 with amount 47
+2026-01-31 23:27:20.917 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.3281 ms
+2026-01-31 23:27:21.146 +02:00 [INF] Updating package 2 for user 13 with amount 46
+2026-01-31 23:27:21.182 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.1009 ms
+2026-01-31 23:27:21.519 +02:00 [INF] Updating package 2 for user 13 with amount 45
+2026-01-31 23:27:21.557 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.9531 ms
+2026-01-31 23:27:22.125 +02:00 [INF] Updating package 2 for user 13 with amount 44
+2026-01-31 23:27:22.167 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.1118 ms
+2026-01-31 23:27:22.384 +02:00 [INF] Updating package 2 for user 13 with amount 44
+2026-01-31 23:27:22.403 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.5244 ms
+2026-01-31 23:27:22.406 +02:00 [INF] Updating package 2 for user 13 with amount 43
+2026-01-31 23:27:22.448 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.9292 ms
+2026-01-31 23:27:22.688 +02:00 [INF] Updating package 2 for user 13 with amount 42
+2026-01-31 23:27:22.707 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.1570 ms
+2026-01-31 23:27:23.001 +02:00 [INF] Updating package 2 for user 13 with amount 41
+2026-01-31 23:27:23.043 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.5877 ms
+2026-01-31 23:27:23.289 +02:00 [INF] Updating package 2 for user 13 with amount 40
+2026-01-31 23:27:23.323 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.8458 ms
+2026-01-31 23:27:23.667 +02:00 [INF] Updating package 2 for user 13 with amount 39
+2026-01-31 23:27:23.689 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8856 ms
+2026-01-31 23:27:24.276 +02:00 [INF] Updating package 2 for user 13 with amount 38
+2026-01-31 23:27:24.317 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.4845 ms
+2026-01-31 23:27:24.539 +02:00 [INF] Updating package 2 for user 13 with amount 38
+2026-01-31 23:27:24.542 +02:00 [INF] Updating package 2 for user 13 with amount 37
+2026-01-31 23:27:24.562 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7928 ms
+2026-01-31 23:27:24.571 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.3256 ms
+2026-01-31 23:27:24.795 +02:00 [INF] Updating package 2 for user 13 with amount 36
+2026-01-31 23:27:24.836 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.4984 ms
+2026-01-31 23:27:25.089 +02:00 [INF] Updating package 2 for user 13 with amount 35
+2026-01-31 23:27:25.108 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.7374 ms
+2026-01-31 23:27:25.338 +02:00 [INF] Updating package 2 for user 13 with amount 34
+2026-01-31 23:27:25.362 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.4574 ms
+2026-01-31 23:27:25.652 +02:00 [INF] Updating package 2 for user 13 with amount 33
+2026-01-31 23:27:25.691 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.6449 ms
+2026-01-31 23:27:26.260 +02:00 [INF] Updating package 2 for user 13 with amount 32
+2026-01-31 23:27:26.302 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.6926 ms
+2026-01-31 23:27:26.529 +02:00 [INF] Updating package 2 for user 13 with amount 32
+2026-01-31 23:27:26.545 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.2762 ms
+2026-01-31 23:27:26.617 +02:00 [INF] Updating package 2 for user 13 with amount 31
+2026-01-31 23:27:26.640 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.0237 ms
+2026-01-31 23:27:27.227 +02:00 [INF] Updating package 2 for user 13 with amount 30
+2026-01-31 23:27:27.263 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.8770 ms
+2026-01-31 23:27:27.496 +02:00 [INF] Updating package 2 for user 13 with amount 29
+2026-01-31 23:27:27.501 +02:00 [INF] Updating package 2 for user 13 with amount 30
+2026-01-31 23:27:27.524 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2716 ms
+2026-01-31 23:27:27.540 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.8294 ms
+2026-01-31 23:27:27.769 +02:00 [INF] Updating package 2 for user 13 with amount 28
+2026-01-31 23:27:27.778 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.6485 ms
+2026-01-31 23:27:28.035 +02:00 [INF] Updating package 2 for user 13 with amount 27
+2026-01-31 23:27:28.069 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7528 ms
+2026-01-31 23:27:28.301 +02:00 [INF] Updating package 2 for user 13 with amount 26
+2026-01-31 23:27:28.309 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 8.3288 ms
+2026-01-31 23:27:28.526 +02:00 [INF] Updating package 2 for user 13 with amount 25
+2026-01-31 23:27:28.562 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.9338 ms
+2026-01-31 23:27:28.788 +02:00 [INF] Updating package 2 for user 13 with amount 24
+2026-01-31 23:27:28.834 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.2986 ms
+2026-01-31 23:27:29.056 +02:00 [INF] Updating package 2 for user 13 with amount 23
+2026-01-31 23:27:29.093 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.6061 ms
+2026-01-31 23:27:29.305 +02:00 [INF] Updating package 2 for user 13 with amount 22
+2026-01-31 23:27:29.342 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.7719 ms
+2026-01-31 23:27:29.559 +02:00 [INF] Updating package 2 for user 13 with amount 21
+2026-01-31 23:27:29.579 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8061 ms
+2026-01-31 23:27:29.798 +02:00 [INF] Updating package 2 for user 13 with amount 20
+2026-01-31 23:27:29.823 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.3592 ms
+2026-01-31 23:27:30.074 +02:00 [INF] Updating package 2 for user 13 with amount 19
+2026-01-31 23:27:30.111 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.6248 ms
+2026-01-31 23:27:30.354 +02:00 [INF] Updating package 2 for user 13 with amount 18
+2026-01-31 23:27:30.389 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.2088 ms
+2026-01-31 23:27:30.649 +02:00 [INF] Updating package 2 for user 13 with amount 17
+2026-01-31 23:27:30.675 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.7538 ms
+2026-01-31 23:27:30.908 +02:00 [INF] Updating package 2 for user 13 with amount 16
+2026-01-31 23:27:30.933 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.4921 ms
+2026-01-31 23:27:31.183 +02:00 [INF] Updating package 2 for user 13 with amount 15
+2026-01-31 23:27:31.199 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.4276 ms
+2026-01-31 23:27:31.455 +02:00 [INF] Updating package 2 for user 13 with amount 14
+2026-01-31 23:27:31.487 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.3445 ms
+2026-01-31 23:27:31.717 +02:00 [INF] Updating package 2 for user 13 with amount 13
+2026-01-31 23:27:31.758 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6938 ms
+2026-01-31 23:27:31.981 +02:00 [INF] Updating package 2 for user 13 with amount 12
+2026-01-31 23:27:32.005 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.8667 ms
+2026-01-31 23:27:32.239 +02:00 [INF] Updating package 2 for user 13 with amount 11
+2026-01-31 23:27:32.261 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5061 ms
+2026-01-31 23:27:32.520 +02:00 [INF] Updating package 2 for user 13 with amount 10
+2026-01-31 23:27:32.565 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.3839 ms
+2026-01-31 23:27:32.765 +02:00 [INF] Updating package 2 for user 13 with amount 9
+2026-01-31 23:27:32.805 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.0266 ms
+2026-01-31 23:27:33.040 +02:00 [INF] Updating package 2 for user 13 with amount 8
+2026-01-31 23:27:33.074 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.1246 ms
+2026-01-31 23:27:33.295 +02:00 [INF] Updating package 2 for user 13 with amount 7
+2026-01-31 23:27:33.332 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.9922 ms
+2026-01-31 23:27:33.586 +02:00 [INF] Updating package 2 for user 13 with amount 6
+2026-01-31 23:27:33.625 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.7253 ms
+2026-01-31 23:27:33.880 +02:00 [INF] Updating package 2 for user 13 with amount 5
+2026-01-31 23:27:33.917 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.4042 ms
+2026-01-31 23:27:34.436 +02:00 [INF] Updating package 2 for user 13 with amount 4
+2026-01-31 23:27:34.478 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.8240 ms
+2026-01-31 23:27:34.719 +02:00 [INF] Updating package 2 for user 13 with amount 3
+2026-01-31 23:27:34.721 +02:00 [INF] Updating package 2 for user 13 with amount 4
+2026-01-31 23:27:34.744 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.7274 ms
+2026-01-31 23:27:34.744 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7263 ms
+2026-01-31 23:27:34.955 +02:00 [INF] Updating package 2 for user 13 with amount 3
+2026-01-31 23:27:34.972 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.9108 ms
+2026-01-31 23:27:35.217 +02:00 [INF] Updating package 2 for user 13 with amount 2
+2026-01-31 23:27:35.235 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.4760 ms
+2026-01-31 23:27:35.494 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-01-31 23:27:35.511 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.7785 ms
+2026-01-31 23:27:35.765 +02:00 [INF] Updating package 2 for user 13 with amount 0
+2026-01-31 23:27:35.799 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.9351 ms
+2026-01-31 23:27:35.999 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:27:36.061 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 63.1797 ms
+2026-01-31 23:27:41.586 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:27:41.602 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.1481 ms
+2026-01-31 23:27:41.890 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:27:41.909 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 20.0851 ms
+2026-01-31 23:27:45.004 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-01-31 23:27:45.042 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.4941 ms
+2026-01-31 23:27:45.377 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:27:45.387 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 10.4713 ms
+2026-01-31 23:27:46.656 +02:00 [INF] Updating package 2 for user 13 with amount 0
+2026-01-31 23:27:46.690 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.2772 ms
+2026-01-31 23:28:17.899 +02:00 [INF] Login attempt for email: 000999888@gmail.com
+2026-01-31 23:28:17.907 +02:00 [INF] ניסיון התחברות עבור אימייל: 000999888@gmail.com
+2026-01-31 23:28:18.096 +02:00 [INF] HTTP POST /api/User/login responded 200 in 204.9396 ms
+2026-01-31 23:28:18.157 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:28:18.184 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 28.1616 ms
+2026-01-31 23:28:26.929 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:28:26.940 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.2992 ms
+2026-01-31 23:28:27.235 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:28:27.248 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.2841 ms
+2026-01-31 23:28:30.918 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-01-31 23:28:30.958 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.1908 ms
+2026-01-31 23:28:31.292 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:28:31.304 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.0329 ms
+2026-01-31 23:28:33.894 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-01-31 23:28:33.943 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.3211 ms
+2026-01-31 23:28:35.737 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-01-31 23:28:35.772 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.4147 ms
+2026-01-31 23:28:36.002 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:28:36.010 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 8.3046 ms
+2026-01-31 23:28:37.570 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-01-31 23:28:37.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.7688 ms
+2026-01-31 23:28:37.943 +02:00 [INF] Fetching user with orders for ID: 18
+2026-01-31 23:28:37.951 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 8.2219 ms
+2026-01-31 23:28:39.761 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-01-31 23:28:39.785 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.7019 ms
+2026-01-31 23:28:56.947 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-31 23:28:56.949 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-31 23:28:57.189 +02:00 [INF] HTTP POST /api/User/login responded 200 in 243.3090 ms
+2026-01-31 23:28:57.217 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:28:57.224 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 7.9153 ms
+2026-01-31 23:29:05.483 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:29:05.493 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.4244 ms
+2026-01-31 23:29:05.796 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:29:05.824 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 28.7256 ms
+2026-01-31 23:29:09.278 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-01-31 23:29:09.350 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.6706 ms
+2026-01-31 23:29:09.684 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:29:09.727 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 42.7532 ms
+2026-01-31 23:29:10.892 +02:00 [INF] Updating package 2 for user 13 with amount 0
+2026-01-31 23:29:10.928 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.5536 ms
+2026-01-31 23:32:11.269 +02:00 [INF] שולף את כל החבילות.
+2026-01-31 23:32:11.268 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-31 23:32:11.315 +02:00 [INF] HTTP GET /api/Packages responded 200 in 47.0880 ms
+2026-01-31 23:32:11.356 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 92.0446 ms
+2026-01-31 23:32:12.746 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-31 23:32:12.753 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-31 23:32:12.920 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-31 23:32:12.969 +02:00 [INF] HTTP GET /api/Gift responded 200 in 240.4959 ms
+2026-01-31 23:32:17.797 +02:00 [INF] Attempting to retrieve all gifts.
+2026-01-31 23:32:17.802 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-01-31 23:32:17.815 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-01-31 23:32:17.821 +02:00 [INF] HTTP GET /api/Gift responded 200 in 25.3335 ms
+2026-01-31 23:32:22.265 +02:00 [INF] Updating package 3 for user 13 with amount 1015049
+2026-01-31 23:32:22.303 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.5390 ms
+2026-01-31 23:32:22.507 +02:00 [INF] Updating package 3 for user 13 with amount 1015048
+2026-01-31 23:32:22.556 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.7911 ms
+2026-01-31 23:32:23.030 +02:00 [INF] Updating package 3 for user 13 with amount 1015047
+2026-01-31 23:32:23.091 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 61.8161 ms
+2026-01-31 23:32:23.201 +02:00 [INF] Updating package 3 for user 13 with amount 1015047
+2026-01-31 23:32:23.233 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.0730 ms
+2026-01-31 23:32:23.305 +02:00 [INF] Updating package 3 for user 13 with amount 1015047
+2026-01-31 23:32:23.324 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5275 ms
+2026-01-31 23:32:23.381 +02:00 [INF] Updating package 3 for user 13 with amount 1015046
+2026-01-31 23:32:23.402 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9955 ms
+2026-01-31 23:32:23.584 +02:00 [INF] Updating package 3 for user 13 with amount 1015045
+2026-01-31 23:32:23.610 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.6287 ms
+2026-01-31 23:32:23.792 +02:00 [INF] Updating package 3 for user 13 with amount 1015044
+2026-01-31 23:32:23.831 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.2407 ms
+2026-01-31 23:32:24.002 +02:00 [INF] Updating package 3 for user 13 with amount 1015043
+2026-01-31 23:32:24.052 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.1796 ms
+2026-01-31 23:32:24.224 +02:00 [INF] Updating package 3 for user 13 with amount 1015042
+2026-01-31 23:32:24.277 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.3424 ms
+2026-01-31 23:32:24.409 +02:00 [INF] Updating package 3 for user 13 with amount 1015041
+2026-01-31 23:32:24.471 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 62.6761 ms
+2026-01-31 23:32:24.625 +02:00 [INF] Updating package 3 for user 13 with amount 1015040
+2026-01-31 23:32:24.673 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.8656 ms
+2026-01-31 23:32:25.118 +02:00 [INF] Updating package 3 for user 13 with amount 1015039
+2026-01-31 23:32:25.163 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.7572 ms
+2026-01-31 23:32:25.576 +02:00 [INF] Updating package 3 for user 13 with amount 1015038
+2026-01-31 23:32:25.616 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.7691 ms
+2026-01-31 23:32:25.709 +02:00 [INF] Updating package 3 for user 13 with amount 1015038
+2026-01-31 23:32:25.760 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 52.0399 ms
+2026-01-31 23:32:25.825 +02:00 [INF] Updating package 3 for user 13 with amount 1015038
+2026-01-31 23:32:25.848 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1295 ms
+2026-01-31 23:32:25.878 +02:00 [INF] Updating package 3 for user 13 with amount 1015037
+2026-01-31 23:32:25.905 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8667 ms
+2026-01-31 23:32:26.300 +02:00 [INF] Updating package 3 for user 13 with amount 1015036
+2026-01-31 23:32:26.320 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.7244 ms
+2026-01-31 23:32:26.426 +02:00 [INF] Updating package 3 for user 13 with amount 1015036
+2026-01-31 23:32:26.446 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.1714 ms
+2026-01-31 23:32:26.560 +02:00 [INF] Updating package 3 for user 13 with amount 1015036
+2026-01-31 23:32:26.572 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.7918 ms
+2026-01-31 23:32:26.592 +02:00 [INF] Updating package 3 for user 13 with amount 1015035
+2026-01-31 23:32:26.630 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.5021 ms
+2026-01-31 23:32:26.781 +02:00 [INF] Updating package 3 for user 13 with amount 1015034
+2026-01-31 23:32:26.796 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.7772 ms
+2026-01-31 23:32:27.012 +02:00 [INF] Updating package 3 for user 13 with amount 1015033
+2026-01-31 23:32:27.041 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.2098 ms
+2026-01-31 23:32:27.146 +02:00 [INF] Updating package 3 for user 13 with amount 1015033
+2026-01-31 23:32:27.173 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0039 ms
+2026-01-31 23:32:27.278 +02:00 [INF] Updating package 3 for user 13 with amount 1015032
+2026-01-31 23:32:27.312 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.7300 ms
+2026-01-31 23:32:27.431 +02:00 [INF] Updating package 3 for user 13 with amount 1015032
+2026-01-31 23:32:27.450 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.8107 ms
+2026-01-31 23:32:27.559 +02:00 [INF] Updating package 3 for user 13 with amount 1015031
+2026-01-31 23:32:27.583 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.5475 ms
+2026-01-31 23:32:27.667 +02:00 [INF] Updating package 3 for user 13 with amount 1015031
+2026-01-31 23:32:27.674 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 6.9553 ms
+2026-01-31 23:32:27.810 +02:00 [INF] Updating package 3 for user 13 with amount 1015030
+2026-01-31 23:32:27.851 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.7654 ms
+2026-01-31 23:32:27.916 +02:00 [INF] Updating package 3 for user 13 with amount 1015030
+2026-01-31 23:32:27.922 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 7.0550 ms
+2026-01-31 23:32:28.058 +02:00 [INF] Updating package 3 for user 13 with amount 1015029
+2026-01-31 23:32:28.093 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.0775 ms
+2026-01-31 23:32:28.181 +02:00 [INF] Updating package 3 for user 13 with amount 1015029
+2026-01-31 23:32:28.191 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.8877 ms
+2026-01-31 23:32:28.297 +02:00 [INF] Updating package 3 for user 13 with amount 1015028
+2026-01-31 23:32:28.314 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.8237 ms
+2026-01-31 23:32:28.432 +02:00 [INF] Updating package 3 for user 13 with amount 1015028
+2026-01-31 23:32:28.441 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 9.3689 ms

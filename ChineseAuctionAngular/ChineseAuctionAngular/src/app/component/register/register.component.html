@@ -1,0 +1,67 @@
+<div class="registration-container">
+  <div class="main-card">
+
+    <!-- צד טופס -->
+    <div class="form-side">
+      <div class="header">
+        <h2 class="glow-text">הרשמה למכירה הסינית</h2>
+        <p>הצטרפו למשפחת "מתנת חיים"</p>
+      </div>
+
+      <form (ngSubmit)="onRegister()" class="form-grid">
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.identity" name="id" required />
+          <label>תעודת זהות</label>
+        </span>
+
+        <span class="p-float-label">
+          <p-password [(ngModel)]="userToRegister.password" name="pass"
+            [toggleMask]="true" [feedback]="false"></p-password>
+          <label>סיסמה</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.firstName" name="fn" />
+          <label>שם פרטי</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.lastName" name="ln" />
+          <label>שם משפחה</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.email" name="em" />
+          <label>אימייל</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.phoneNumber" name="ph" />
+          <label>טלפון</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.address" name="ad" />
+          <label>כתובת</label>
+        </span>
+
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.city" name="ct" />
+          <label>עיר</label>
+        </span>
+
+        <button pButton type="submit" class="premium-glow-btn">
+          אישור והצטרפות <i class="pi pi-sparkles"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- צד ויזואלי -->
+    <div class="visual-side">
+      <i class="pi pi-heart-fill heart"></i>
+      <h1>מתנת חיים</h1>
+      <p>מצילים חיים ביחד</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,96 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.registration-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+.main-card {
+  width: 1100px;
+  height: 580px;
+  display: flex;
+  border-radius: 32px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(122, 40, 176, 0.25);
+}
+
+/* טופס */
+.form-side {
+  flex: 7;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  p {
+    color: #64748b;
+    margin-top: .25rem;
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.p-float-label input,
+.p-password input {
+  padding: .85rem;
+  border-radius: 12px;
+}
+
+button {
+  grid-column: span 2;
+  margin-top: .5rem;
+}
+
+/* כפתור */
+.premium-glow-btn {
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  padding: 1rem;
+  background: linear-gradient(90deg, #7a28b0, #20b2aa);
+  box-shadow: 0 6px 18px rgba(32, 178, 170, .45);
+}
+
+/* צד ויזואלי */
+.visual-side {
+  flex: 5;
+  background: linear-gradient(135deg, #7a28b0, #3a47d5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  font-size: 6rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.glow-text {
+  background: linear-gradient(90deg, #7a28b0, #20b2aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

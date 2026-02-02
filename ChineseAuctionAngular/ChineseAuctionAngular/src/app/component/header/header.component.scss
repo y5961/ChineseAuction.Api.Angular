@@ -1,0 +1,85 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap');
+
+
+$matnat-purple: #5d2b87;
+$matnat-green: #29a745;
+$matnat-dark: #2d2e83;
+
+* {
+    font-family: 'Assistant', sans-serif; /* הגדרת הגופן לכל הדף */
+    direction: rtl; /* הגדרה חיונית לעברית (Right to Left) */
+    background-color: #ffffff;
+}
+.header-wrapper {
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+    direction: rtl;
+}
+
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+
+:host ::ng-deep {
+    .p-tablist {
+        border: none !important;
+        background: transparent !important;
+    }
+
+
+    // 1. הפס הופך לדק מאוד (1.5px) ושומר על האנימציה
+    .p-tablist-active-bar {
+        height: 1.5px !important; // דק מאוד ואלגנטי
+        background: linear-gradient(to left, $matnat-purple, $matnat-green) !important;
+        bottom: 0 !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+
+    .p-tab {
+        background: transparent !important;
+        border: none !important;
+        padding: 30px 20px !important;
+       
+        .tab-text {
+            color:black;
+            font-weight: 500;
+            font-size: 1.2rem; // הגדלת הכתב כפי שביקשת
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px; // ריווח קל לאותיות למראה נקי
+        }
+
+
+        // אפקט מעבר עכבר על הטקסט
+        &:hover:not(.p-tab-active) .tab-text {
+            color: $matnat-purple;
+        }
+
+
+        // עיצוב הטקסט בטאב הפעיל
+        &.p-tab-active {
+            .tab-text {
+                color: $matnat-dark !important;
+                font-weight: 550; // הדגשה של הטאב הנבחר
+            }
+        }
+    }
+}
+
+
+.registration-form {
+    max-width: 400px;
+    margin-right: 50px; /* רווח מהצד ליצירת המראה שבתמונה */
+    margin-top: 30px;
+}
+

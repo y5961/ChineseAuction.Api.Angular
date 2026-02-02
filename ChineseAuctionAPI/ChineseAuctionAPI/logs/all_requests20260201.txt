@@ -1,0 +1,693 @@
+2026-02-01 18:17:19.980 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 18:17:29.136 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 353.3058 ms
+2026-02-01 18:17:29.772 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 77.3551 ms
+2026-02-01 18:18:39.431 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:18:43.267 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-01 18:18:45.414 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 6863.3006 ms
+2026-02-01 18:18:45.460 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:18:45.697 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 250.9410 ms
+2026-02-01 18:20:45.211 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:20:45.223 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 18:20:45.325 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 134.0678 ms
+2026-02-01 18:20:45.408 +02:00 [INF] HTTP GET /api/Packages responded 200 in 216.4606 ms
+2026-02-01 18:22:02.578 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:22:02.585 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:22:02.790 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:22:02.839 +02:00 [INF] HTTP GET /api/Gift responded 200 in 277.2438 ms
+2026-02-01 18:23:35.143 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:23:35.147 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:23:35.186 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:23:35.192 +02:00 [INF] HTTP GET /api/Gift responded 200 in 73.0838 ms
+2026-02-01 18:23:38.239 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:23:38.243 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 18:23:38.265 +02:00 [INF] HTTP GET /api/Packages responded 200 in 24.3804 ms
+2026-02-01 18:23:38.320 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 82.3233 ms
+2026-02-01 18:23:38.967 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:23:38.972 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:23:38.999 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:23:39.007 +02:00 [INF] HTTP GET /api/Gift responded 200 in 47.4197 ms
+2026-02-01 18:23:49.415 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:23:49.419 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:23:49.434 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:23:49.440 +02:00 [INF] HTTP GET /api/Gift responded 200 in 26.4712 ms
+2026-02-01 18:29:11.730 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:29:11.811 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:29:11.815 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:29:12.023 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:29:12.026 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 298.2947 ms
+2026-02-01 18:29:12.027 +02:00 [INF] HTTP GET /api/Gift responded 200 in 216.7054 ms
+2026-02-01 18:29:12.070 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:29:12.086 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 17.4137 ms
+2026-02-01 18:41:39.986 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:41:39.986 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:41:39.997 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:41:40.168 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:41:40.178 +02:00 [INF] HTTP GET /api/Gift responded 200 in 193.9767 ms
+2026-02-01 18:41:40.206 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 221.9496 ms
+2026-02-01 18:41:40.244 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:41:40.257 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 14.4126 ms
+2026-02-01 18:55:28.505 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:55:28.745 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 242.0027 ms
+2026-02-01 18:55:28.798 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:55:28.818 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 22.1845 ms
+2026-02-01 18:56:03.725 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:56:03.759 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 35.3240 ms
+2026-02-01 18:56:03.797 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:56:03.820 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 23.9552 ms
+2026-02-01 18:56:08.445 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:56:08.449 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 18:56:08.479 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 36.1484 ms
+2026-02-01 18:56:08.531 +02:00 [INF] HTTP GET /api/Packages responded 200 in 88.1967 ms
+2026-02-01 18:56:10.425 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:56:10.430 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:56:10.452 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:56:10.464 +02:00 [INF] HTTP GET /api/Gift responded 200 in 39.0282 ms
+2026-02-01 18:56:40.862 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:40.996 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:40.998 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:41.189 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:41.403 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:41.641 +02:00 [INF] Updating package 1 for user 13 with amount 12494
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 722.2256 ms
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 945.3461 ms
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 929.7018 ms
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 1191.0699 ms
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 508.5377 ms
+2026-02-01 18:56:41.910 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 271.6198 ms
+2026-02-01 18:56:43.349 +02:00 [INF] Updating package 3 for user 13 with amount 1015027
+2026-02-01 18:56:43.392 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.2939 ms
+2026-02-01 18:56:44.146 +02:00 [INF] Updating package 3 for user 13 with amount 1015026
+2026-02-01 18:56:44.210 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 65.8804 ms
+2026-02-01 18:56:45.132 +02:00 [INF] Updating package 3 for user 13 with amount 1015025
+2026-02-01 18:56:45.193 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 62.4411 ms
+2026-02-01 18:56:52.169 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 18:56:52.190 +02:00 [INF] HTTP GET /api/Packages responded 200 in 22.9588 ms
+2026-02-01 18:56:52.474 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 18:56:52.550 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 76.7017 ms
+2026-02-01 18:57:03.429 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 18:57:03.434 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 18:57:03.469 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 18:57:03.476 +02:00 [INF] HTTP GET /api/Gift responded 200 in 47.6834 ms
+2026-02-01 19:09:21.734 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:09:21.930 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 197.3870 ms
+2026-02-01 19:09:21.970 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:09:21.989 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 19.8559 ms
+2026-02-01 19:09:24.317 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 19:09:24.324 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 19:09:24.347 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 19:09:24.355 +02:00 [INF] HTTP GET /api/Gift responded 200 in 37.7978 ms
+2026-02-01 19:10:07.923 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:10:07.937 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 19:10:07.947 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 19:10:07.998 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 86.3941 ms
+2026-02-01 19:10:08.003 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 19:10:08.023 +02:00 [INF] HTTP GET /api/Gift responded 200 in 86.2302 ms
+2026-02-01 19:10:08.040 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:10:08.053 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 14.0866 ms
+2026-02-01 19:17:30.923 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:17:30.924 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:17:31.093 +02:00 [INF] HTTP GET /api/Packages responded 200 in 170.6195 ms
+2026-02-01 19:17:31.127 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 204.7242 ms
+2026-02-01 19:18:19.992 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 19:18:20.007 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 19:18:20.062 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 19:18:20.068 +02:00 [INF] HTTP GET /api/Gift responded 200 in 77.1041 ms
+2026-02-01 19:19:25.631 +02:00 [INF] Updating package 3 for user 13 with amount 1015024
+2026-02-01 19:19:25.744 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 114.4811 ms
+2026-02-01 19:19:25.887 +02:00 [INF] Updating package 3 for user 13 with amount 1015024
+2026-02-01 19:19:25.910 +02:00 [INF] Updating package 3 for user 13 with amount 1015023
+2026-02-01 19:19:25.960 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 75.1045 ms
+2026-02-01 19:19:26.027 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 117.9850 ms
+2026-02-01 19:21:48.469 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:21:48.470 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:21:48.641 +02:00 [INF] HTTP GET /api/Packages responded 200 in 172.7182 ms
+2026-02-01 19:21:48.680 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 217.5030 ms
+2026-02-01 19:21:52.014 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:21:52.032 +02:00 [INF] HTTP GET /api/Packages responded 200 in 19.4728 ms
+2026-02-01 19:21:52.311 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:21:52.328 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 18.1578 ms
+2026-02-01 19:21:56.889 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:21:56.891 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:21:56.915 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 26.5434 ms
+2026-02-01 19:21:56.918 +02:00 [INF] HTTP GET /api/Packages responded 200 in 26.8493 ms
+2026-02-01 19:22:02.028 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:22:02.046 +02:00 [INF] HTTP GET /api/Packages responded 200 in 17.7606 ms
+2026-02-01 19:22:02.330 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:22:02.352 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 22.7145 ms
+2026-02-01 19:37:28.082 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:37:28.149 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:37:28.349 +02:00 [INF] HTTP GET /api/Packages responded 200 in 201.2197 ms
+2026-02-01 19:37:28.400 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 326.3320 ms
+2026-02-01 19:37:28.443 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:37:28.466 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 23.8284 ms
+2026-02-01 19:37:28.505 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:37:28.525 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 20.8608 ms
+2026-02-01 19:37:38.105 +02:00 [INF] Updating package 3 for user 13 with amount 1015022
+2026-02-01 19:37:38.199 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 96.1133 ms
+2026-02-01 19:37:38.354 +02:00 [INF] Updating package 3 for user 13 with amount 1015021
+2026-02-01 19:37:38.411 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 58.8907 ms
+2026-02-01 19:37:38.584 +02:00 [INF] Updating package 3 for user 13 with amount 1015020
+2026-02-01 19:37:38.632 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.7015 ms
+2026-02-01 19:37:38.885 +02:00 [INF] Updating package 3 for user 13 with amount 1015019
+2026-02-01 19:37:38.936 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 51.3486 ms
+2026-02-01 19:37:38.980 +02:00 [INF] Updating package 3 for user 13 with amount 1015019
+2026-02-01 19:37:39.005 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9069 ms
+2026-02-01 19:37:39.165 +02:00 [INF] Updating package 3 for user 13 with amount 1015018
+2026-02-01 19:37:39.200 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.0224 ms
+2026-02-01 19:37:39.355 +02:00 [INF] Updating package 3 for user 13 with amount 1015017
+2026-02-01 19:37:39.391 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.7279 ms
+2026-02-01 19:37:39.561 +02:00 [INF] Updating package 3 for user 13 with amount 1015016
+2026-02-01 19:37:39.611 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 51.0752 ms
+2026-02-01 19:37:39.781 +02:00 [INF] Updating package 3 for user 13 with amount 1015015
+2026-02-01 19:37:39.817 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.2751 ms
+2026-02-01 19:40:35.548 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:40:35.629 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:40:35.646 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 103.4631 ms
+2026-02-01 19:40:35.674 +02:00 [INF] HTTP GET /api/Packages responded 200 in 45.3518 ms
+2026-02-01 19:40:35.696 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:40:35.729 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 36.8105 ms
+2026-02-01 19:40:35.758 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:40:35.775 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 17.4668 ms
+2026-02-01 19:40:50.336 +02:00 [INF] Updating package 3 for user 13 with amount 1015014
+2026-02-01 19:40:50.405 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 70.8682 ms
+2026-02-01 19:40:51.004 +02:00 [INF] Updating package 3 for user 13 with amount 1015013
+2026-02-01 19:40:51.055 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 52.2659 ms
+2026-02-01 19:40:51.564 +02:00 [INF] Updating package 3 for user 13 with amount 1015012
+2026-02-01 19:40:51.635 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.0014 ms
+2026-02-01 19:40:51.814 +02:00 [INF] Updating package 3 for user 13 with amount 1015012
+2026-02-01 19:40:51.840 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.7620 ms
+2026-02-01 19:40:57.547 +02:00 [INF] Updating package 1 for user 13 with amount 12493
+2026-02-01 19:40:57.597 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.4311 ms
+2026-02-01 19:42:10.781 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-02-01 19:42:11.031 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 283.9348 ms
+2026-02-01 19:42:11.394 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:42:11.460 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 68.0836 ms
+2026-02-01 19:42:11.689 +02:00 [INF] Updating package 2 for user 13 with amount 2
+2026-02-01 19:42:11.760 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 71.9099 ms
+2026-02-01 19:42:12.814 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-02-01 19:42:12.872 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 58.6598 ms
+2026-02-01 19:42:13.086 +02:00 [INF] Updating package 2 for user 13 with amount 0
+2026-02-01 19:42:13.127 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.7519 ms
+2026-02-01 19:42:14.958 +02:00 [INF] Updating package 3 for user 13 with amount 1015011
+2026-02-01 19:42:15.019 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 62.2643 ms
+2026-02-01 19:42:15.436 +02:00 [INF] Updating package 3 for user 13 with amount 1015010
+2026-02-01 19:42:15.506 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.1424 ms
+2026-02-01 19:42:15.561 +02:00 [INF] Updating package 3 for user 13 with amount 1015010
+2026-02-01 19:42:15.615 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 55.1413 ms
+2026-02-01 19:42:15.692 +02:00 [INF] Updating package 3 for user 13 with amount 1015010
+2026-02-01 19:42:15.714 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9533 ms
+2026-02-01 19:42:15.734 +02:00 [INF] Updating package 3 for user 13 with amount 1015009
+2026-02-01 19:42:15.778 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.0585 ms
+2026-02-01 19:42:15.867 +02:00 [INF] Updating package 3 for user 13 with amount 1015009
+2026-02-01 19:42:15.894 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.8891 ms
+2026-02-01 19:42:15.999 +02:00 [INF] Updating package 3 for user 13 with amount 1015008
+2026-02-01 19:42:16.028 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.0066 ms
+2026-02-01 19:42:16.124 +02:00 [INF] Updating package 3 for user 13 with amount 1015008
+2026-02-01 19:42:16.146 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3132 ms
+2026-02-01 19:42:16.252 +02:00 [INF] Updating package 3 for user 13 with amount 1015008
+2026-02-01 19:42:16.292 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.0503 ms
+2026-02-01 19:42:16.376 +02:00 [INF] Updating package 3 for user 13 with amount 1015007
+2026-02-01 19:42:16.403 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.8438 ms
+2026-02-01 19:42:16.528 +02:00 [INF] Updating package 3 for user 13 with amount 1015007
+2026-02-01 19:42:16.565 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.1893 ms
+2026-02-01 19:42:16.756 +02:00 [INF] Updating package 3 for user 13 with amount 1015006
+2026-02-01 19:42:16.825 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.7825 ms
+2026-02-01 19:42:17.179 +02:00 [INF] Updating package 3 for user 13 with amount 1015006
+2026-02-01 19:42:17.250 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 71.4151 ms
+2026-02-01 19:42:17.314 +02:00 [INF] Updating package 3 for user 13 with amount 1015005
+2026-02-01 19:42:17.341 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.1477 ms
+2026-02-01 19:42:17.427 +02:00 [INF] Updating package 3 for user 13 with amount 1015005
+2026-02-01 19:42:17.465 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.2161 ms
+2026-02-01 19:42:17.555 +02:00 [INF] Updating package 3 for user 13 with amount 1015004
+2026-02-01 19:42:17.588 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.7533 ms
+2026-02-01 19:47:51.187 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:47:51.306 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 19:47:51.407 +02:00 [INF] HTTP GET /api/Packages responded 200 in 101.4859 ms
+2026-02-01 19:47:51.466 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 280.4405 ms
+2026-02-01 19:47:51.511 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:47:51.536 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 28.1851 ms
+2026-02-01 19:47:51.629 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 19:47:51.649 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 20.6527 ms
+2026-02-01 19:48:03.551 +02:00 [INF] Updating package 1 for user 13 with amount 12492
+2026-02-01 19:48:03.650 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 99.9256 ms
+2026-02-01 19:48:03.837 +02:00 [INF] Updating package 1 for user 13 with amount 12491
+2026-02-01 19:48:03.895 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 59.6023 ms
+2026-02-01 19:48:04.114 +02:00 [INF] Updating package 1 for user 13 with amount 12490
+2026-02-01 19:48:04.141 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.2392 ms
+2026-02-01 19:48:04.398 +02:00 [INF] Updating package 1 for user 13 with amount 12489
+2026-02-01 19:48:04.446 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.0913 ms
+2026-02-01 19:50:27.211 +02:00 [INF] Updating package 3 for user 13 with amount 1015003
+2026-02-01 19:50:27.285 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 74.9693 ms
+2026-02-01 20:03:54.170 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 20:03:54.177 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:03:54.365 +02:00 [INF] HTTP GET /api/Packages responded 200 in 191.1890 ms
+2026-02-01 20:03:54.385 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:03:54.397 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.4228 ms
+2026-02-01 20:03:54.414 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 249.2622 ms
+2026-02-01 20:03:54.453 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 20:03:54.466 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 13.6790 ms
+2026-02-01 20:03:54.533 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 20:03:54.539 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 7.1043 ms
+2026-02-01 20:06:08.992 +02:00 [INF] Updating package 1 for user 13 with amount 12488
+2026-02-01 20:06:09.073 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 81.9824 ms
+2026-02-01 20:06:09.573 +02:00 [INF] Updating package 1 for user 13 with amount 12487
+2026-02-01 20:06:09.613 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.7021 ms
+2026-02-01 20:06:09.831 +02:00 [INF] Updating package 1 for user 13 with amount 12487
+2026-02-01 20:06:09.851 +02:00 [INF] Updating package 1 for user 13 with amount 12486
+2026-02-01 20:06:09.865 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.7705 ms
+2026-02-01 20:06:09.883 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.3188 ms
+2026-02-01 20:06:10.072 +02:00 [INF] Updating package 1 for user 13 with amount 12485
+2026-02-01 20:06:10.097 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.3908 ms
+2026-02-01 20:06:10.306 +02:00 [INF] Updating package 1 for user 13 with amount 12484
+2026-02-01 20:06:10.330 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.1656 ms
+2026-02-01 20:06:10.555 +02:00 [INF] Updating package 1 for user 13 with amount 12483
+2026-02-01 20:06:10.579 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2010 ms
+2026-02-01 20:06:10.804 +02:00 [INF] Updating package 1 for user 13 with amount 12482
+2026-02-01 20:06:10.828 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.0561 ms
+2026-02-01 20:06:11.058 +02:00 [INF] Updating package 1 for user 13 with amount 12481
+2026-02-01 20:06:11.087 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.7883 ms
+2026-02-01 20:06:11.276 +02:00 [INF] Updating package 1 for user 13 with amount 12480
+2026-02-01 20:06:11.300 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8623 ms
+2026-02-01 20:06:11.524 +02:00 [INF] Updating package 1 for user 13 with amount 12479
+2026-02-01 20:06:11.550 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.4372 ms
+2026-02-01 20:06:11.774 +02:00 [INF] Updating package 1 for user 13 with amount 12478
+2026-02-01 20:06:11.816 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.1184 ms
+2026-02-01 20:06:12.021 +02:00 [INF] Updating package 1 for user 13 with amount 12477
+2026-02-01 20:06:12.058 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.5836 ms
+2026-02-01 20:06:12.271 +02:00 [INF] Updating package 1 for user 13 with amount 12476
+2026-02-01 20:06:12.318 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 47.3591 ms
+2026-02-01 20:06:12.498 +02:00 [INF] Updating package 1 for user 13 with amount 12475
+2026-02-01 20:06:12.518 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.8726 ms
+2026-02-01 20:06:12.750 +02:00 [INF] Updating package 1 for user 13 with amount 12474
+2026-02-01 20:06:12.771 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.8149 ms
+2026-02-01 20:06:12.994 +02:00 [INF] Updating package 1 for user 13 with amount 12473
+2026-02-01 20:06:13.006 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.7378 ms
+2026-02-01 20:06:13.248 +02:00 [INF] Updating package 1 for user 13 with amount 12472
+2026-02-01 20:06:13.290 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.8959 ms
+2026-02-01 20:06:13.519 +02:00 [INF] Updating package 1 for user 13 with amount 12471
+2026-02-01 20:06:13.544 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.6832 ms
+2026-02-01 20:06:14.458 +02:00 [INF] Updating package 1 for user 13 with amount 12470
+2026-02-01 20:06:14.479 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6747 ms
+2026-02-01 20:06:15.020 +02:00 [INF] Updating package 1 for user 13 with amount 12469
+2026-02-01 20:06:15.049 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.1656 ms
+2026-02-01 20:06:15.264 +02:00 [INF] Updating package 1 for user 13 with amount 12469
+2026-02-01 20:06:15.286 +02:00 [INF] Updating package 1 for user 13 with amount 12468
+2026-02-01 20:06:15.292 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0427 ms
+2026-02-01 20:06:15.332 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.7327 ms
+2026-02-01 20:06:15.867 +02:00 [INF] Updating package 1 for user 13 with amount 12467
+2026-02-01 20:06:15.906 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.4385 ms
+2026-02-01 20:06:16.122 +02:00 [INF] Updating package 1 for user 13 with amount 12467
+2026-02-01 20:06:16.124 +02:00 [INF] Updating package 1 for user 13 with amount 12466
+2026-02-01 20:06:16.150 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0898 ms
+2026-02-01 20:06:16.180 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 55.8955 ms
+2026-02-01 20:06:18.439 +02:00 [INF] Updating package 3 for user 13 with amount 1015002
+2026-02-01 20:06:18.463 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0137 ms
+2026-02-01 20:06:18.947 +02:00 [INF] Updating package 3 for user 13 with amount 1015001
+2026-02-01 20:06:18.989 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.4887 ms
+2026-02-01 20:06:19.149 +02:00 [INF] Updating package 3 for user 13 with amount 1015001
+2026-02-01 20:06:19.164 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.8725 ms
+2026-02-01 20:06:19.214 +02:00 [INF] Updating package 3 for user 13 with amount 1015000
+2026-02-01 20:06:19.258 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.6745 ms
+2026-02-01 20:06:19.333 +02:00 [INF] Updating package 3 for user 13 with amount 1015000
+2026-02-01 20:06:19.340 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 6.8369 ms
+2026-02-01 20:06:19.559 +02:00 [INF] Updating package 3 for user 13 with amount 1014999
+2026-02-01 20:06:19.591 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.0149 ms
+2026-02-01 20:06:19.745 +02:00 [INF] Updating package 3 for user 13 with amount 1014999
+2026-02-01 20:06:19.762 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.1705 ms
+2026-02-01 20:06:19.869 +02:00 [INF] Updating package 3 for user 13 with amount 1014998
+2026-02-01 20:06:19.891 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1163 ms
+2026-02-01 20:06:20.055 +02:00 [INF] Updating package 3 for user 13 with amount 1014998
+2026-02-01 20:06:20.070 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.5351 ms
+2026-02-01 20:06:20.178 +02:00 [INF] Updating package 3 for user 13 with amount 1014997
+2026-02-01 20:06:20.211 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.9888 ms
+2026-02-01 20:06:20.347 +02:00 [INF] Updating package 3 for user 13 with amount 1014997
+2026-02-01 20:06:20.368 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7092 ms
+2026-02-01 20:06:20.474 +02:00 [INF] Updating package 3 for user 13 with amount 1014996
+2026-02-01 20:06:20.493 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7998 ms
+2026-02-01 20:06:20.601 +02:00 [INF] Updating package 3 for user 13 with amount 1014996
+2026-02-01 20:06:20.622 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.8226 ms
+2026-02-01 20:06:21.533 +02:00 [INF] Updating package 3 for user 13 with amount 1014995
+2026-02-01 20:06:21.552 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6925 ms
+2026-02-01 20:06:22.110 +02:00 [INF] Updating package 3 for user 13 with amount 1014994
+2026-02-01 20:06:22.148 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.2822 ms
+2026-02-01 20:06:22.302 +02:00 [INF] Updating package 3 for user 13 with amount 1014994
+2026-02-01 20:06:22.319 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5758 ms
+2026-02-01 20:06:22.381 +02:00 [INF] Updating package 3 for user 13 with amount 1014994
+2026-02-01 20:06:22.403 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3747 ms
+2026-02-01 20:06:22.473 +02:00 [INF] Updating package 3 for user 13 with amount 1014993
+2026-02-01 20:06:22.493 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3793 ms
+2026-02-01 20:06:22.655 +02:00 [INF] Updating package 3 for user 13 with amount 1014992
+2026-02-01 20:06:22.674 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7201 ms
+2026-02-01 20:06:22.826 +02:00 [INF] Updating package 3 for user 13 with amount 1014991
+2026-02-01 20:06:22.850 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0777 ms
+2026-02-01 20:06:23.012 +02:00 [INF] Updating package 3 for user 13 with amount 1014990
+2026-02-01 20:06:23.037 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.1013 ms
+2026-02-01 20:06:23.197 +02:00 [INF] Updating package 3 for user 13 with amount 1014989
+2026-02-01 20:06:23.217 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5131 ms
+2026-02-01 20:06:23.401 +02:00 [INF] Updating package 3 for user 13 with amount 1014988
+2026-02-01 20:06:23.435 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.1080 ms
+2026-02-01 20:06:23.591 +02:00 [INF] Updating package 3 for user 13 with amount 1014987
+2026-02-01 20:06:23.610 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0987 ms
+2026-02-01 20:06:23.807 +02:00 [INF] Updating package 3 for user 13 with amount 1014986
+2026-02-01 20:06:23.826 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0906 ms
+2026-02-01 20:08:08.180 +02:00 [INF] Fetching user with orders for ID: 13
+2026-02-01 20:08:08.181 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:08:08.225 +02:00 [INF] HTTP GET /api/Packages responded 200 in 44.8655 ms
+2026-02-01 20:08:08.266 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 90.6428 ms
+2026-02-01 20:08:30.730 +02:00 [INF] Login attempt for email: 000999888@gmail.com
+2026-02-01 20:08:31.014 +02:00 [INF] ניסיון התחברות עבור אימייל: 000999888@gmail.com
+2026-02-01 20:08:31.397 +02:00 [INF] HTTP POST /api/User/login responded 200 in 716.4614 ms
+2026-02-01 20:08:31.739 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:08:31.751 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.4461 ms
+2026-02-01 20:08:39.206 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-02-01 20:08:39.284 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 78.8065 ms
+2026-02-01 20:08:41.235 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-02-01 20:08:41.297 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 61.8762 ms
+2026-02-01 20:08:42.588 +02:00 [INF] Updating package 1 for user 18 with amount 0
+2026-02-01 20:08:42.661 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.8462 ms
+2026-02-01 20:08:42.989 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:08:43.056 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 67.2058 ms
+2026-02-01 20:08:44.791 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:08:44.807 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.6171 ms
+2026-02-01 20:08:45.095 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:08:45.107 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.1356 ms
+2026-02-01 20:08:46.419 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:08:46.488 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.2688 ms
+2026-02-01 20:08:46.825 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:08:46.836 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 11.6552 ms
+2026-02-01 20:08:47.897 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-02-01 20:08:47.940 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.5929 ms
+2026-02-01 20:08:49.932 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:08:49.953 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6031 ms
+2026-02-01 20:08:50.193 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:08:50.203 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 10.5101 ms
+2026-02-01 20:08:50.333 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-02-01 20:08:50.375 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.5200 ms
+2026-02-01 20:30:17.360 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:30:17.539 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 179.2627 ms
+2026-02-01 20:30:17.620 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:30:17.631 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.1689 ms
+2026-02-01 20:30:18.708 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-02-01 20:30:18.733 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9716 ms
+2026-02-01 20:30:19.059 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:19.096 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 37.3035 ms
+2026-02-01 20:30:33.999 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:30:34.034 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1557 ms
+2026-02-01 20:30:34.372 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:34.385 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.9011 ms
+2026-02-01 20:30:35.402 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-02-01 20:30:35.424 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3710 ms
+2026-02-01 20:30:36.995 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:30:37.020 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.7993 ms
+2026-02-01 20:30:37.262 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:37.325 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 63.2051 ms
+2026-02-01 20:30:39.762 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-02-01 20:30:39.857 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 96.2846 ms
+2026-02-01 20:30:42.040 +02:00 [INF] Updating package 3 for user 18 with amount 3
+2026-02-01 20:30:42.116 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 76.9514 ms
+2026-02-01 20:30:42.715 +02:00 [INF] Updating package 3 for user 18 with amount 4
+2026-02-01 20:30:42.799 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 84.9501 ms
+2026-02-01 20:30:44.432 +02:00 [INF] Updating package 3 for user 18 with amount 3
+2026-02-01 20:30:44.468 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.1714 ms
+2026-02-01 20:30:44.691 +02:00 [INF] Updating package 3 for user 18 with amount 3
+2026-02-01 20:30:44.713 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.1658 ms
+2026-02-01 20:30:44.719 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-02-01 20:30:44.764 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.0218 ms
+2026-02-01 20:30:44.943 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:30:44.964 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.9704 ms
+2026-02-01 20:30:45.178 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-02-01 20:30:45.212 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.7767 ms
+2026-02-01 20:30:47.233 +02:00 [INF] Updating package 2 for user 18 with amount 3
+2026-02-01 20:30:47.276 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.0234 ms
+2026-02-01 20:30:49.313 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-02-01 20:30:49.353 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6967 ms
+2026-02-01 20:30:50.552 +02:00 [INF] Updating package 1 for user 18 with amount 1
+2026-02-01 20:30:50.582 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.5663 ms
+2026-02-01 20:30:50.922 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:50.985 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 63.2058 ms
+2026-02-01 20:30:51.995 +02:00 [INF] Updating package 1 for user 18 with amount 2
+2026-02-01 20:30:52.022 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4760 ms
+2026-02-01 20:30:54.200 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:54.202 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:30:54.211 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 11.0588 ms
+2026-02-01 20:30:54.220 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.8016 ms
+2026-02-01 20:30:54.261 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:54.273 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.2617 ms
+2026-02-01 20:30:54.498 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:30:54.501 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:30:54.513 +02:00 [INF] HTTP GET /api/Packages responded 200 in 15.8417 ms
+2026-02-01 20:30:54.524 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 23.1313 ms
+2026-02-01 20:30:58.382 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-02-01 20:30:58.404 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7819 ms
+2026-02-01 20:30:58.677 +02:00 [INF] Updating package 2 for user 18 with amount 0
+2026-02-01 20:30:58.718 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.5577 ms
+2026-02-01 20:31:00.845 +02:00 [INF] Updating package 2 for user 18 with amount 1
+2026-02-01 20:31:00.885 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.1667 ms
+2026-02-01 20:31:01.227 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:01.240 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.0582 ms
+2026-02-01 20:31:06.864 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:31:06.886 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8902 ms
+2026-02-01 20:31:07.216 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:07.226 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 9.7675 ms
+2026-02-01 20:31:09.226 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:09.234 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.0178 ms
+2026-02-01 20:31:09.437 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:09.448 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 11.8218 ms
+2026-02-01 20:31:09.477 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:09.488 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.7030 ms
+2026-02-01 20:31:09.518 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:09.530 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.5458 ms
+2026-02-01 20:31:09.545 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:09.553 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 7.4107 ms
+2026-02-01 20:31:11.093 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:11.096 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:11.100 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.1404 ms
+2026-02-01 20:31:11.105 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 9.8089 ms
+2026-02-01 20:31:11.119 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:11.124 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.0925 ms
+2026-02-01 20:31:11.354 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:11.372 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 18.8072 ms
+2026-02-01 20:31:11.419 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:11.431 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.1104 ms
+2026-02-01 20:31:12.110 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:12.112 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:12.116 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.5109 ms
+2026-02-01 20:31:12.122 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 10.6937 ms
+2026-02-01 20:31:12.130 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:12.136 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.2054 ms
+2026-02-01 20:31:12.403 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:12.417 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.7508 ms
+2026-02-01 20:31:12.441 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:12.454 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 12.8745 ms
+2026-02-01 20:31:14.666 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:14.667 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:14.671 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.7095 ms
+2026-02-01 20:31:14.675 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 8.7690 ms
+2026-02-01 20:31:14.686 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:31:14.692 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.5546 ms
+2026-02-01 20:31:14.982 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:15.000 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 18.1990 ms
+2026-02-01 20:31:15.027 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:31:15.040 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 13.9478 ms
+2026-02-01 20:52:14.751 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:14.757 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:52:14.991 +02:00 [INF] HTTP GET /api/Packages responded 200 in 234.3818 ms
+2026-02-01 20:52:15.050 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 300.2384 ms
+2026-02-01 20:52:15.095 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:15.109 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 14.5782 ms
+2026-02-01 20:52:16.980 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 20:52:16.985 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 20:52:17.018 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 20:52:17.023 +02:00 [INF] HTTP GET /api/Gift responded 200 in 43.0191 ms
+2026-02-01 20:52:38.085 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:52:38.103 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:38.118 +02:00 [INF] HTTP GET /api/Packages responded 200 in 35.2009 ms
+2026-02-01 20:52:38.148 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 47.5629 ms
+2026-02-01 20:52:40.549 +02:00 [INF] Updating package 3 for user 18 with amount 2
+2026-02-01 20:52:40.619 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 69.8760 ms
+2026-02-01 20:52:42.839 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:52:42.840 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:42.847 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.5577 ms
+2026-02-01 20:52:42.894 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 54.5420 ms
+2026-02-01 20:52:42.964 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 20:52:42.970 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.4797 ms
+2026-02-01 20:52:43.111 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:43.121 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 10.5942 ms
+2026-02-01 20:52:43.153 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:43.163 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 10.9401 ms
+2026-02-01 20:52:46.311 +02:00 [INF] Updating package 3 for user 18 with amount 1
+2026-02-01 20:52:46.340 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.1690 ms
+2026-02-01 20:52:46.843 +02:00 [INF] Updating package 3 for user 18 with amount 0
+2026-02-01 20:52:46.875 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.9542 ms
+2026-02-01 20:52:46.907 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 20:52:46.931 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 24.1218 ms
+2026-02-01 20:54:20.647 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 20:54:20.670 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 20:54:20.733 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 20:54:20.739 +02:00 [INF] HTTP GET /api/Gift responded 200 in 91.9612 ms
+2026-02-01 20:54:39.763 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-02-01 20:54:39.813 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.2606 ms
+2026-02-01 20:54:41.122 +02:00 [INF] Updating package 2 for user 18 with amount 3
+2026-02-01 20:54:41.167 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.4615 ms
+2026-02-01 20:54:44.411 +02:00 [INF] Updating package 2 for user 18 with amount 2
+2026-02-01 20:54:44.442 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.5276 ms
+2026-02-01 21:03:12.490 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 21:03:15.335 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 119.6035 ms
+2026-02-01 21:03:15.617 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 55.2780 ms
+2026-02-01 21:19:08.546 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 21:19:10.962 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 215.7510 ms
+2026-02-01 21:19:11.222 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 74.9970 ms
+2026-02-01 21:22:55.934 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 21:22:55.964 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 21:22:59.245 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-01 21:23:01.138 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5994.9797 ms
+2026-02-01 21:23:01.311 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 6168.2704 ms
+2026-02-01 21:23:01.379 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 21:23:01.662 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 305.6505 ms
+2026-02-01 21:23:06.724 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 21:23:06.740 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 21:23:06.741 +02:00 [INF] HTTP GET /api/Packages responded 200 in 17.4894 ms
+2026-02-01 21:23:06.762 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 38.1465 ms
+2026-02-01 21:23:14.418 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-01 21:23:14.426 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-01 21:23:14.702 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-01 21:23:14.792 +02:00 [INF] HTTP GET /api/Gift responded 200 in 417.3313 ms
+2026-02-01 21:23:17.297 +02:00 [INF] מעדכן/מוסיף מתנה 8 להזמנה 18 בכמות 1.
+2026-02-01 21:23:17.340 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-01 21:23:18.019 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 839.8745 ms
+2026-02-01 21:23:18.945 +02:00 [INF] מעדכן/מוסיף מתנה 8 להזמנה 18 בכמות 2.
+2026-02-01 21:23:19.003 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 64.3230 ms
+2026-02-01 21:23:20.994 +02:00 [INF] מעדכן/מוסיף מתנה 8 להזמנה 18 בכמות 1.
+2026-02-01 21:23:21.039 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 50.7301 ms
+2026-02-01 21:23:21.189 +02:00 [INF] מעדכן/מוסיף מתנה 8 להזמנה 18 בכמות 1.
+2026-02-01 21:23:21.206 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 18.8321 ms
+2026-02-01 21:23:21.246 +02:00 [INF] מעדכן/מוסיף מתנה 8 להזמנה 18 בכמות 0.
+2026-02-01 21:23:21.292 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 48.6413 ms
+2026-02-01 21:23:27.103 +02:00 [INF] שולף את כל החבילות.
+2026-02-01 21:23:27.122 +02:00 [INF] HTTP GET /api/Packages responded 200 in 23.8993 ms
+2026-02-01 21:23:27.395 +02:00 [INF] Fetching user with orders for ID: 18
+2026-02-01 21:23:27.504 +02:00 [INF] HTTP GET /api/User/18/orders responded 200 in 110.2649 ms
+2026-02-01 22:01:50.909 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 22:01:52.391 +02:00 [INF] HTTP GET /swagger responded 301 in 4.3232 ms
+2026-02-01 22:01:52.458 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 48.4839 ms
+2026-02-01 22:01:52.498 +02:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 33.1057 ms
+2026-02-01 22:01:52.498 +02:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 33.0486 ms
+2026-02-01 22:01:52.514 +02:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 48.9824 ms
+2026-02-01 22:01:52.677 +02:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 0.2494 ms
+2026-02-01 22:01:52.694 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.8387 ms
+2026-02-01 22:18:44.835 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 22:18:46.034 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 53.6438 ms
+2026-02-01 22:18:46.199 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 16.4403 ms
+2026-02-01 22:19:26.758 +02:00 [INF] HTTP GET /api/Donors responded 401 in 789.5042 ms
+2026-02-01 22:20:29.980 +02:00 [INF] Attempting to register user with email: Aa123456@example.com
+2026-02-01 22:20:29.998 +02:00 [INF] ניסיון רישום משתמש חדש: Aa123456@example.com
+2026-02-01 22:20:30.959 +02:00 [ERR] An error occurred using the connection to database '' on server ''.
+2026-02-01 22:20:30.991 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'ChineseAuctionAPI.Data.SaleContextDB'.
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-02-01 22:20:31.046 +02:00 [ERR] שגיאה ברישום משתמש חדש.
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at ChineseAuctionAPI.Repositories.UserRepo.ExistEmailAsync(String email) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Repositories\UserRepo.cs:line 41
+   at ChineseAuctionAPI.Services.UserService.RegisterAsync(DtoLogin dto) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 171
+2026-02-01 22:20:31.078 +02:00 [ERR] Error occurred during registration for email: Aa123456@example.com
+System.Exception: שגיאה בהרשמת משתמש חדש
+ ---> System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at ChineseAuctionAPI.Repositories.UserRepo.ExistEmailAsync(String email) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Repositories\UserRepo.cs:line 41
+   at ChineseAuctionAPI.Services.UserService.RegisterAsync(DtoLogin dto) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 171
+   --- End of inner exception stack trace ---
+   at ChineseAuctionAPI.Services.UserService.RegisterAsync(DtoLogin dto) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 202
+   at ChineseAuctionAPI.Controllers.UserController.Register(DtoLogin dto) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Controllers\UserController.cs:line 29
+2026-02-01 22:20:31.084 +02:00 [ERR] HTTP POST /api/User/register responded 500 in 1460.4853 ms
+2026-02-01 22:26:52.010 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 22:26:52.071 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Program.cs:line 113
+2026-02-01 22:27:02.837 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 22:27:02.900 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Program.cs:line 113
+2026-02-01 22:27:18.250 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-01 22:27:18.311 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\1\OneDrive\Desktop\finish_project\ChineseAuctionAPI\ChineseAuctionAPI\Program.cs:line 113

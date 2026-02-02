@@ -1,0 +1,64 @@
+<div class="cart-container" dir="rtl" style="background: #fdfaf7; padding: 20px; border-radius: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.05); min-height: 100vh; font-family: 'Segoe UI', sans-serif; max-width: 400px; margin: 0 auto;">
+  
+  <h2 style="color: #442604; font-size: 1.3em; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; font-weight: 800;">
+    סל הקניות שלי
+  </h2>
+
+  @if (cartPackages().length > 0) {
+    <div class="cart-items" style="display: flex; flex-direction: column; gap: 12px;">
+      @for (pkg of cartPackages(); track pkg.idPackage) {
+        @if ((packageQuantities()[pkg.idPackage] || 0) > 0) {
+          
+          <div class="cart-item" style="background: white; border-radius: 15px; padding: 12px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;">
+            
+            <div style="display: flex; align-items: center; background: #f3f3f3; border-radius: 20px; padding: 4px 10px; min-width: 90px; justify-content: space-between;">
+              <button (click)="increment(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 18px;">+</button>
+              <span style="font-weight: 800; font-size: 1em; color: #442604;">{{ packageQuantities()[pkg.idPackage] }}</span>
+              <button (click)="decrement(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 22px;">-</button>
+            </div>
+
+            <div style="flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; text-align: right;">
+              <span style="font-weight: 800; color: #442604; font-size: 1em; line-height: 1.2;">{{ pkg.name }}</span>
+              <span style="color: #b08d57; font-size: 0.85em; font-weight: 600;">₪{{ pkg.price }} ליחידה</span>
+              <div style="font-weight: 900; color: #442604; font-size: 0.9em; margin-top: 4px;">
+                סה"כ: ₪{{ (pkg.price || 0) * (packageQuantities()[pkg.idPackage] || 0) }}
+              </div>
+            </div>
+
+            <div style="width: 50px; height: 50px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; flex-shrink: 0;">
+                @if (pkg.image && pkg.image !== 'string' && pkg.image !== '') {
+                <img [src]="imageUrl + pkg.image" 
+                     style="max-width: 100%; max-height: 100%; object-fit: contain;">
+              } @else {
+                <img [src]="imageUrl + getPackageImage(pkg.idPackage)" 
+                     style="max-width: 100%; max-height: 100%; object-fit: contain;">
+              }
+            </div>
+
+          </div>
+        }
+      }
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; border: 2px dashed #e8e5df; border-radius: 20px; background: white; text-align: center;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; margin-bottom: 20px;">
+        <span style="font-size: 1.2em; font-weight: 800; color: #442604;"><div class="total-price">
+  סה"כ לתשלום: 
+</div></span>
+        <span style="font-size: 2.2em; font-weight: 900; color: #442604; letter-spacing: -1px;">₪{{ totalPrice()}}</span>
+      </div>
+
+      <button style="width: 100%; background: #442604; color: white; border: none; padding: 16px; border-radius: 15px; font-size: 1.2em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(68, 38, 4, 0.2);">
+        לתשלום מאובטח
+      </button>
+      
+      <p style="color: #999; font-size: 0.8em; margin-top: 12px;">* המחירים כוללים מע"מ כחוק</p>
+    </div>
+
+  } @else {
+    <div style="text-align: center; color: #ccc; padding: 50px 0;">
+      <div style="font-size: 4em; margin-bottom: 10px;">🛒</div>
+      <p>הסל שלך עדיין ריק</p>
+    </div>
+  }
+</div>
