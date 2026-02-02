@@ -44,17 +44,17 @@ getGiftsByDonorId(donorName: string): Observable<Gift[]> {
 }
 
   // 7. חיפוש/מיון לפי שם
-  sortByName(name: string): Observable<Donor[]> {
-    return this.http.get<Donor[]>(`${this.BASE_URL}/sort/name?name=${name}`);
-  }
+sortByName(name: string): Observable<Donor[]> {
+  return this.http.get<Donor[]>(`${this.BASE_URL}/sort/name/${name}`);
+}
 
-  // 8. חיפוש/מיון לפי אימייל
-  sortByEmail(email: string): Observable<Donor[]> {
-    return this.http.get<Donor[]>(`${this.BASE_URL}/sort/email?email=${email}`);
-  }
+// 8. חיפוש/מיון לפי אימייל
+sortByEmail(email: string): Observable<Donor[]> {
+  return this.http.get<Donor[]>(`${this.BASE_URL}/sort/email/${email}`);
+}
 
-  // 9. חיפוש לפי מתנה
-  sortByGift(giftName: string): Observable<Donor> {
-    return this.http.get<Donor>(`${this.BASE_URL}/sort/gift?gift=${giftName}`);
-  }
+// 9. חיפוש לפי מתנה
+sortByGift(giftName: string): Observable<Donor> {
+  return this.http.get<Donor>(`${this.BASE_URL}/sort/gift/${giftName}`);
+}
 }

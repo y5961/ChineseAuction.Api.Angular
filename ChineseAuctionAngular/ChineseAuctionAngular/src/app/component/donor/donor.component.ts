@@ -58,19 +58,28 @@ export class DonorComponent implements OnInit {
     this.searchSubject.next(this.searchQuery);
   }
 
-  executeSearch() {
-    if (!this.searchQuery.trim()) {
-      this.loadDonors();
-      return;
-    }
-    const q = this.searchQuery.trim();
-    switch (this.currentFilter) {
-      case 'name': this.donorService.sortByName(q).subscribe(res => this.donors = res); break;
-      case 'email': this.donorService.sortByEmail(q).subscribe(res => this.donors = res); break;
-      case 'gift': this.donorService.sortByGift(q).subscribe(res => this.donors = res ? [res] : []); break;
-    }
+executeSearch() {
+  const q = this.searchQuery.trim();
+  if (!q) {
+    this.loadDonors();
+    return;
   }
 
+  switch (this.currentFilter) {
+    case 'name': 
+      this.donorService.sortByName(q).subscribe(res => this.donors = res || []); 
+      break;
+    case 'email': 
+      this.donorService.sortByEmail(q).subscribe(res => this.donors = res || []); 
+      break;
+    case 'gift': 
+      this.donorService.sortByGift(q).subscribe(res => {
+        // מכיוון שחוזר אובייקט אחד, נשים אותו בתוך מערך כדי שה-ngFor לא יישבר
+        this.donors = res ? [res] : [];
+      }); 
+      break;
+  }
+}
 // שינוי החתימה מ-donorId: number ל-donor: DonorDTO
 toggleGifts(donor: DonorDTO): void {
   const id = donor.idDonor; // לצורך ניהול ה-Expanded
