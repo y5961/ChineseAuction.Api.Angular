@@ -4,6 +4,7 @@ import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { PackageService } from '../../services/package.service';
+import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-cart',
@@ -13,6 +14,7 @@ import { PackageService } from '../../services/package.service';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent implements OnInit {
+  imageUrl = environment.apiUrl + '/images/packages/';
   private cartService = inject(CartService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
@@ -22,51 +24,51 @@ export class CartComponent implements OnInit {
   packageQuantities = this.cartService.packageQuantities;
   allAvailablePackages = signal<any[]>([]);
 
-  constructor() {
-    effect(() => {
-      const userId = this.authService.getUserId();
-      if (userId > 0) {
-        this.loadCart();
-      }
-    }, { allowSignalWrites: true });
-  }
+  constructor() {}
 
-  ngOnInit() {
-    this.packageService.getAllPackages().subscribe((pkgs: any[]) => {
-      this.allAvailablePackages.set(pkgs);
-      this.loadCart();
-    });
-  }
-
-  loadCart() {
+ngOnInit() {
+  // טעינת חבילות ורק אז טעינת הסל כדי להבטיח שהנתונים זמינים להצלבה
+  this.packageService.getAllPackages().subscribe((pkgs: any[]) => {
+    this.allAvailablePackages.set(pkgs);
+    
     const userId = this.authService.getUserId();
     if (userId > 0) {
-      this.orderService.getUserOrders(userId).subscribe({
-        next: (res: any) => {
-          const draft = res.orders?.find((o: any) => o.status === 0);
-          if (draft && draft.ordersPackages) {
-            const qtys: Record<number, number> = {};
-            
-            const enrichedPackages = draft.ordersPackages.map((item: any) => {
-              const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
-              qtys[item.idPackage] = item.quantity;
-              return {
-                ...item,
-                name: fullInfo?.name || item.name || 'חבילה',
-                price: fullInfo?.price || item.price || 0
-              };
-            });
-
-            this.cartService.setAllQuantities(qtys);
-            this.cartService.setCartItems(enrichedPackages);
-          } else {
-            this.cartService.setCartItems([]);
-          }
-        },
-        error: (err) => console.error('Error loading cart', err)
-      });
+      this.loadCart();
     }
+  });
+}
+
+  loadCart() {
+  const userId = this.authService.getUserId();
+  if (userId > 0) {
+    this.orderService.getUserOrders(userId).subscribe({
+      next: (res: any) => {
+        const draft = res.orders?.find((o: any) => o.status === 0);
+        if (draft && draft.ordersPackages) {
+          const qtys: Record<number, number> = {};
+          
+          const enrichedPackages = draft.ordersPackages.map((item: any) => {
+            const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
+            qtys[item.idPackage] = item.quantity; // עדכון הכמות במיפוי
+            return {
+              ...item,
+              price: fullInfo?.price || item.price || 0 // וודא שהמחיר מגיע מהחבילה המקורית
+            };
+          });
+
+          // עדכון ה-Signals
+          this.cartService.setAllQuantities(qtys);
+          this.cartService.setCartItems(enrichedPackages);
+          
+          // רק עכשיו נקרא לחישוב מחדש
+          this.calculateTotal(); 
+        }
+      }
+    });
   }
+}
+
+
 
   increment(id: number) {
     this.updateQty(id, (this.packageQuantities()[id] || 0) + 1);

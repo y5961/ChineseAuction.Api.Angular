@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,17 @@ export class CartService {
   packageQuantities = this.quantitiesSignal.asReadonly();
   cartItems = this.cartItemsSignal.asReadonly();
 
-  clearCart() {
-    this.quantitiesSignal.set({});
-    this.cartItemsSignal.set([]);
-  }
+  // לוגיקה חדשה: חישוב אוטומטי של המחיר הכולל בתוך השירות
+  totalPrice = computed(() => {
+    const items = this.cartItemsSignal();
+    const quantities = this.quantitiesSignal();
+    
+    return items.reduce((acc, pkg) => {
+      const qty = quantities[pkg.idPackage] || 0;
+      const price = pkg.price || 0;
+      return acc + (price * qty);
+    }, 0);
+  });
 
   setQuantity(packageId: number, qty: number) {
     this.quantitiesSignal.update(current => {
@@ -33,5 +40,10 @@ export class CartService {
 
   setAllQuantities(quantities: Record<number, number>) {
     this.quantitiesSignal.set(quantities);
+  }
+
+  clearCart() {
+    this.quantitiesSignal.set({});
+    this.cartItemsSignal.set([]);
   }
 }

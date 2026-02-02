@@ -6,6 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { PackageDTO } from '../../models/PackageDTO';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-package',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
   styleUrl: './package.component.scss'
 })
 export class PackageComponent implements OnInit {
+  imageUrl = environment.apiUrl + '/images/packages/';
   private packageService = inject(PackageService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
@@ -50,26 +52,41 @@ export class PackageComponent implements OnInit {
       });
     }
   }
-
-  handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
-    const userId = this.authService.getUserId();
-    if (!userId) { 
-      this.router.navigate(['/register']); 
-      return; 
+handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
+  const currentQty = this.packageQuantities()[packageId] || 0;
+  const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
+  
+  if (newQty < 0) return;
+  this.cartService.setQuantity(packageId, newQty);
+  const userId = this.authService.getUserId();
+  this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe({
+    next: () => {
+    },
+    error: (err) => {
+      this.cartService.setQuantity(packageId, currentQty);
     }
+  });
+}
 
-    const currentQty = this.packageQuantities()[packageId] || 0;
-    const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
-    if (newQty < 0) return;
+  // handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
+  //   const userId = this.authService.getUserId();
+  //   if (!userId) { 
+  //     this.router.navigate(['/register']); 
+  //     return; 
+  //   }
 
-    this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe(() => {
-      this.cartService.setQuantity(packageId, newQty);
+  //   const currentQty = this.packageQuantities()[packageId] || 0;
+  //   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
+  //   if (newQty < 0) return;
+
+  //   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe(() => {
+  //     this.cartService.setQuantity(packageId, newQty);
       
-      if (newQty === 1 && action === 'increment') {
-        this.loadUserData();
-      }
-    });
-  }
+  //     if (newQty === 1 && action === 'increment') {
+  //       this.loadUserData();
+  //     }
+  //   });
+  // }
   getPackageGradient(id: number): string {
     const gradients = [
       'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', // ירוק

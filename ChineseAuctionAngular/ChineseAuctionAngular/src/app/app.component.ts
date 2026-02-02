@@ -13,7 +13,7 @@ import { CartComponent } from './component/cart/cart.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RegisterComponent,Header,Footer,HomeComponent,LoginComponent,NotFoundComponent,GiftComponent,PackageComponent,CartComponent],
+  imports: [RouterOutlet,Header,Footer,CartComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

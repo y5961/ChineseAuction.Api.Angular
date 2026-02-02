@@ -11,31 +11,56 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
   private cartService = inject(CartService);
+  
   private readonly TOKEN_KEY = 'auth_token';
+  private readonly MANAGER_KEY = 'is_manager'; 
+  // ה-Signal שבו ה-Header משתמש
+  isLoggedIn = signal<boolean>(!!localStorage.getItem('auth_token'));
 
-  currentUserId = signal<number>(0);
+  isManager = signal<boolean>(localStorage.getItem(this.MANAGER_KEY) === 'true');
+  currentUserId = signal<number>(0);  
 
   constructor() {
-    this.currentUserId.set(this.getUserIdFromToken());
+  this.currentUserId.set(this.getUserIdFromToken());
   }
 
   getToken() {
     return localStorage.getItem(this.TOKEN_KEY);
   }
 
-  login(details: DtoLogin) {
-    return this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(
-      tap(token => {
-        localStorage.setItem(this.TOKEN_KEY, token);
-        this.currentUserId.set(this.getUserIdFromToken());
-      })
-    );
+
+  private checkAdminFromToken(token: string): boolean {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const role = payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+      return role === 'Admin' || role === 'Manager' || payload['IsManager'] === true;
+    } catch {
+      return false;
+    }
   }
+login(details: DtoLogin) {
+  // הוספת responseType: 'text' אומרת לאנגולר לא לנסות להפוך את הטוקן ל-JSON
+  return this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(
+    tap(token => {
+      // עכשיו 'token' הוא מחרוזת נקייה ללא שגיאות
+      localStorage.setItem(this.TOKEN_KEY, token);
+      
+      // שליפת הנתונים מהטוקן שקיבלנו
+      const isAdmin = this.checkAdminFromToken(token);
+      localStorage.setItem('is_manager', String(isAdmin));
+      
+      this.isLoggedIn.set(true);
+      this.isManager.set(isAdmin);
+      this.currentUserId.set(this.getUserIdFromToken());
+    })
+  );
+}
 
   register(userInfo: UserDTO) {
     return this.http.post(`${this.BASE_URL}/register`, userInfo, { responseType: 'text' }).pipe(
       tap(token => {
         localStorage.setItem(this.TOKEN_KEY, token);
+        this.isLoggedIn.set(true);
         this.currentUserId.set(this.getUserIdFromToken());
       })
     );
@@ -43,22 +68,31 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(this.TOKEN_KEY);
+    this.isLoggedIn.set(false); // מחזיר את ה-Header למצב "כניסה/הרשמה"
     this.currentUserId.set(0);
     this.cartService.clearCart();
     this.router.navigate(['/login']);
   }
 
+
   private getUserIdFromToken(): number {
-    const token = this.getToken();
-    if (!token) return 0;
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const soapId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
-      return Number(soapId || 0);
-    } catch {
-      return 0;
-    }
+  const token = this.getToken();
+  if (!token) return 0;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    
+    const role = payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+    const isAdmin = role === 'Manager' || role === 'Admin';
+    
+    this.isManager.set(isAdmin);
+    localStorage.setItem('is_manager', String(isAdmin));
+
+    const soapId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+    return Number(soapId || 0);
+  } catch {
+    return 0;
   }
+}
 
   public getUserId(): number {
     return this.currentUserId();
