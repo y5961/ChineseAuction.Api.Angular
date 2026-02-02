@@ -39,9 +39,9 @@ export class DonorService {
   }
 
   // 6. קבלת מתנות של תורם ספציפי
-  getGiftsByDonorId(donorId: number): Observable<Gift[]> { // הוחלף מ-any[]
-    return this.http.get<Gift[]>(`${this.BASE_URL}/${donorId}/gifts`);
-  }
+getGiftsByDonorId(donorName: string): Observable<Gift[]> { 
+  return this.http.get<Gift[]>(`api/Gift/sort/donor/${donorName}`);
+}
 
   // 7. חיפוש/מיון לפי שם
   sortByName(name: string): Observable<Donor[]> {

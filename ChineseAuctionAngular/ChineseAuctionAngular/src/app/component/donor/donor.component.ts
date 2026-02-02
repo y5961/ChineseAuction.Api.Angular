@@ -17,21 +17,17 @@ import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 export class DonorComponent implements OnInit {
   private donorService = inject(DonorService);
   
-  // נתונים
   donors: DonorDTO[] = [];
   donorGifts: { [key: number]: Gift[] } = {};
   expandedDonorId: number | null = null;
   
-  // מצבי תצוגה (Modals)
   showAddModal = false;
   showEditModal = false;
   donorToDelete: DonorDTO | null = null;
   
-  // טפסים
   newDonor: DonorCreateDTO = new DonorCreateDTO();
   editingDonor: DonorDTO | null = null;
   
-  // סינון וחיפוש
   searchQuery: string = '';
   currentFilter: 'name' | 'email' | 'gift' = 'name';
   activeFilterName: string = 'שם';
@@ -41,8 +37,6 @@ export class DonorComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadDonors();
-
-    // לוגיקת חיפוש דינמית
     this.searchSubject.pipe(
       debounceTime(400),
       distinctUntilChanged()
@@ -56,7 +50,8 @@ export class DonorComponent implements OnInit {
   setFilter(filter: 'name' | 'email' | 'gift', name: string) {
     this.currentFilter = filter;
     this.activeFilterName = name;
-    if (this.searchQuery) this.executeSearch();
+    this.searchQuery = '';
+    this.loadDonors();
   }
 
   onSearchInput() {
@@ -64,47 +59,35 @@ export class DonorComponent implements OnInit {
   }
 
   executeSearch() {
-    if (!this.searchQuery) {
+    if (!this.searchQuery.trim()) {
       this.loadDonors();
       return;
     }
-
+    const q = this.searchQuery.trim();
     switch (this.currentFilter) {
-      case 'name':
-        this.donorService.sortByName(this.searchQuery).subscribe(data => this.donors = data);
-        break;
-      case 'email':
-        this.donorService.sortByEmail(this.searchQuery).subscribe(data => this.donors = data);
-        break;
-      case 'gift':
-        this.donorService.sortByGift(this.searchQuery).subscribe(data => {
-          this.donors = data ? [data] : [];
-        });
-        break;
+      case 'name': this.donorService.sortByName(q).subscribe(res => this.donors = res); break;
+      case 'email': this.donorService.sortByEmail(q).subscribe(res => this.donors = res); break;
+      case 'gift': this.donorService.sortByGift(q).subscribe(res => this.donors = res ? [res] : []); break;
     }
   }
 
-  toggleGifts(donorId: number): void {
-    if (this.expandedDonorId === donorId) {
-      this.expandedDonorId = null;
-      return;
-    }
-    this.expandedDonorId = donorId;
-    if (!this.donorGifts[donorId]) {
-      this.donorService.getGiftsByDonorId(donorId).subscribe(gifts => {
-        this.donorGifts[donorId] = gifts;
-      });
-    }
+// שינוי החתימה מ-donorId: number ל-donor: DonorDTO
+toggleGifts(donor: DonorDTO): void {
+  const id = donor.idDonor; // לצורך ניהול ה-Expanded
+  
+  if (this.expandedDonorId === id) {
+    this.expandedDonorId = null;
+    return;
   }
+  this.expandedDonorId = id;
 
-  // פעולות CRUD
-  submitAddDonor() {
-    this.donorService.createDonor(this.newDonor).subscribe(id => {
-      this.donors.push(new DonorDTO({ idDonor: id, ...this.newDonor }));
-      this.showAddModal = false;
-      this.newDonor = new DonorCreateDTO();
+  if (!this.donorGifts[id]) {
+    // שליחת ה-firstName (string) כפי שה-Service מצפה
+    this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
+      this.donorGifts[id] = gifts || [];
     });
   }
+}
 
   openEditModal(donor: DonorDTO) {
     this.editingDonor = { ...donor };
@@ -113,8 +96,7 @@ export class DonorComponent implements OnInit {
 
   submitEditDonor() {
     if (this.editingDonor) {
-      const dto = new DonorCreateDTO(this.editingDonor);
-      this.donorService.updateDonor(this.editingDonor.idDonor, dto).subscribe(() => {
+      this.donorService.updateDonor(this.editingDonor.idDonor, new DonorCreateDTO(this.editingDonor)).subscribe(() => {
         const idx = this.donors.findIndex(d => d.idDonor === this.editingDonor?.idDonor);
         if (idx !== -1) this.donors[idx] = this.editingDonor!;
         this.showEditModal = false;
@@ -122,8 +104,15 @@ export class DonorComponent implements OnInit {
     }
   }
 
-  confirmDelete(donor: DonorDTO) { this.donorToDelete = donor; }
+  submitAddDonor() {
+    this.donorService.createDonor(this.newDonor).subscribe(id => {
+      this.donors.push(new DonorDTO({ idDonor: id, ...this.newDonor }));
+      this.showAddModal = false;
+      this.newDonor = new DonorCreateDTO();
+    });
+  }
 
+  confirmDelete(donor: DonorDTO) { this.donorToDelete = donor; }
   executeDelete() {
     if (this.donorToDelete) {
       this.donorService.deleteDonor(this.donorToDelete.idDonor).subscribe(() => {

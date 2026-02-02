@@ -41,9 +41,9 @@
           <td>{{ donor.email }}</td>
           <td>{{ donor.phoneNumber }}</td>
           <td>
-            <button class="btn-toggle" (click)="toggleGifts(donor.idDonor)">
-              {{ expandedDonorId === donor.idDonor ? 'סגור מתנות' : 'הצג מתנות' }}
-            </button>
+            <button class="btn-toggle" (click)="toggleGifts(donor)">
+              {{ expandedDonorId === donor.idDonor ? 'סגור' : 'הצג מתנות' }}
+            </button>             
           </td>
           <td class="actions-cell">
             <button class="btn-icon edit" (click)="openEditModal(donor)">✏️</button>
@@ -54,17 +54,23 @@
         <tr *ngIf="expandedDonorId === donor.idDonor" class="gifts-row">
           <td colspan="6">
             <div class="gifts-expanded-box">
-              <h4 class="gifts-title">📦 מתנות שנתרמו על ידי התורם:</h4>
+              <h4 class="gifts-title">📦 מתנות שנתרמו על ידי {{ donor.firstName }}:</h4>
               <div *ngIf="donorGifts[donor.idDonor]?.length === 0" class="no-gifts">אין מתנות רשומות לתורם זה.</div>
+              
               <div class="gifts-grid">
                 <div class="gift-mini-card" *ngFor="let gift of donorGifts[donor.idDonor]">
                   <div class="gift-thumb">
-                    <img *ngIf="gift.image && gift.image !== 'string'" [src]="imageBaseUrl + gift.image">
-                    <div *ngIf="!gift.image || gift.image === 'string'" class="no-img">✖</div>
+                    <img *ngIf="gift.image && gift.image !== 'string'" [src]="imageBaseUrl + gift.image" alt="Gift Image">
+                    <div *ngIf="!gift.image || gift.image === 'string'" class="no-img">🎁</div>
                   </div>
                   <div class="gift-info">
-                    <small>{{ gift.category?.name || 'מתנה' }}</small>
-                    <span>{{ gift.name }}</span>
+                    <div class="gift-header-text">
+                        <small class="category-tag">{{ gift.category?.name || 'מתנה' }}</small>
+                        <span class="gift-name">{{ gift.name }}</span>
+                    </div>
+                    <p class="gift-description" *ngIf="gift.description">
+                        {{ gift.description }}
+                    </p>
                   </div>
                 </div>
               </div>
