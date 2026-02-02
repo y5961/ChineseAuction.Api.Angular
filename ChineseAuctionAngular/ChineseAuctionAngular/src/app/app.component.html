@@ -1,10 +1,13 @@
 <div class="app-container">
   <app-header></app-header>
 
-  <div class="main-layout">
-    <aside class="side-cart">
-      <app-cart></app-cart>
-    </aside>
+  <div class="main-layout" [class.no-cart]="!showCart()">
+    
+    @if (showCart()) {
+      <aside class="side-cart">
+        <app-cart></app-cart>
+      </aside>
+    }
 
     <div class="content-and-footer">
       <main class="main-content">
@@ -14,3 +17,4 @@
     </div>
   </div>
 </div>
+

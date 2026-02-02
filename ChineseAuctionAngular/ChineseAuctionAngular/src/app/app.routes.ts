@@ -7,6 +7,8 @@ import { GiftComponent } from './component/gift/gift.component';
 import { PackageComponent } from './component/package/package.component';
 import { TaskManagerComponent } from './component/task-manager/task-manager.component';
 import { DonorsComponent } from './component/donors/donors.component';
+import { ManageGiftComponent } from './component/manage-gift/manage-gift.component';
+import { ManageEditGiftComponent } from './component/manage-edit-gift/manage-edit-gift.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch: 'full' },
@@ -17,7 +19,8 @@ export const routes: Routes = [
     { path: 'task-manager', 
     component: TaskManagerComponent, 
     children: [
-        { path: 'manage-gifts', component: GiftComponent },
+        { path: 'manage-gifts', component: ManageGiftComponent },
+        { path: 'edit-gift/:id', component: ManageEditGiftComponent }, 
         { path: 'manage-packages', component: PackageComponent },
         { path: 'donors', component: DonorsComponent },
     ],

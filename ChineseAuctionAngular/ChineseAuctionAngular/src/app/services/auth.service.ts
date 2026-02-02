@@ -38,13 +38,10 @@ export class AuthService {
     }
   }
 login(details: DtoLogin) {
-  // הוספת responseType: 'text' אומרת לאנגולר לא לנסות להפוך את הטוקן ל-JSON
   return this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(
     tap(token => {
-      // עכשיו 'token' הוא מחרוזת נקייה ללא שגיאות
       localStorage.setItem(this.TOKEN_KEY, token);
       
-      // שליפת הנתונים מהטוקן שקיבלנו
       const isAdmin = this.checkAdminFromToken(token);
       localStorage.setItem('is_manager', String(isAdmin));
       

@@ -15,7 +15,6 @@ export class UserDTO {
   }
 }
 
-// 2. DtoLogin Class (לשימוש ברישום מורחב)
 export class DtoLogin {
   password?: string = '';
   identity: string = '';

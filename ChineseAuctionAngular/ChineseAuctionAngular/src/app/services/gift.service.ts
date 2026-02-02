@@ -16,11 +16,9 @@ export class GiftService {
     return this.http.post<Gift>(`${this.BASE_URL}`, dto);
   }
 
-  // 2. מחיקת מתנה
-  deleteGift(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.BASE_URL}/${id}`);
-  }
-
+deleteGift(id: number) {
+  return this.http.delete(`${this.BASE_URL}/${id}`); // בלי <boolean>
+}
   // 3. קבלת כל המתנות
   getAllGifts(): Observable<Gift[]> {
     return this.http.get<Gift[]>(`${this.BASE_URL}`);
