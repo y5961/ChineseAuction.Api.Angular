@@ -5,10 +5,15 @@
       
       <div class="filter-wrapper">
         <div class="search-input-group">
+          <span class="search-icon">🔍</span>
+          
           <input type="text" [(ngModel)]="searchQuery" 
                  [placeholder]="'חיפוש לפי ' + activeFilterName + '...'"
                  (input)="onSearchInput()">
-          <span class="search-icon">🔍</span>
+          
+          <div class="spinner-inline" *ngIf="isLoading"></div>
+          
+          <span class="clear-icon" *ngIf="searchQuery && !isLoading" (click)="clearSearch()" title="נקה חיפוש">✖️</span>
         </div>
         
         <div class="filter-buttons">
@@ -19,7 +24,9 @@
       </div>
     </div>
     
-    <button class="btn-add-donor" (click)="showAddModal = true">+ הוספת תורם חדש</button>
+    <button class="btn-add-donor" (click)="showAddModal = true">
+      <span class="plus-icon">+</span> הוספת תורם חדש
+    </button>
   </div>
   
   <table class="donor-table">
@@ -29,7 +36,7 @@
         <th>שם משפחה</th>
         <th>אימייל</th>
         <th>טלפון</th>
-        <th>פעולות</th>
+        <th>מתנות</th>
         <th>ניהול</th>
       </tr>
     </thead>
@@ -46,15 +53,15 @@
             </button>             
           </td>
           <td class="actions-cell">
-            <button class="btn-icon edit" (click)="openEditModal(donor)">✏️</button>
-            <button class="btn-icon delete" (click)="confirmDelete(donor)">🗑️</button>
+            <button class="btn-icon edit" (click)="openEditModal(donor)" title="ערוך">✏️</button>
+            <button class="btn-icon delete" (click)="confirmDelete(donor)" title="מחק">❌</button>
           </td>
         </tr>
 
         <tr *ngIf="expandedDonorId === donor.idDonor" class="gifts-row">
           <td colspan="6">
             <div class="gifts-expanded-box">
-              <h4 class="gifts-title">📦 מתנות שנתרמו על ידי {{ donor.firstName }}:</h4>
+              <h4 class="gifts-title">🎁 מתנות שנתרמו על ידי {{ donor.firstName }}:</h4>
               <div *ngIf="donorGifts[donor.idDonor]?.length === 0" class="no-gifts">אין מתנות רשומות לתורם זה.</div>
               
               <div class="gifts-grid">
@@ -81,8 +88,8 @@
     </tbody>
   </table>
 
-  <div class="modal-overlay" *ngIf="showAddModal">
-    <div class="modal-card">
+  <div class="modal-overlay" *ngIf="showAddModal" (click)="showAddModal = false">
+    <div class="modal-card" (click)="$event.stopPropagation()">
       <h3 class="modal-title">הוספת תורם חדש</h3>
       <div class="modal-form">
         <input type="text" [(ngModel)]="newDonor.firstName" placeholder="שם פרטי">
@@ -97,8 +104,8 @@
     </div>
   </div>
 
-  <div class="modal-overlay" *ngIf="showEditModal && editingDonor">
-    <div class="modal-card">
+  <div class="modal-overlay" *ngIf="showEditModal && editingDonor" (click)="showEditModal = false">
+    <div class="modal-card" (click)="$event.stopPropagation()">
       <h3 class="modal-title">עריכת פרטי תורם</h3>
       <div class="modal-form">
         <input type="text" [(ngModel)]="editingDonor.firstName" placeholder="שם פרטי">
@@ -113,12 +120,12 @@
     </div>
   </div>
 
-  <div class="modal-overlay" *ngIf="donorToDelete">
-    <div class="modal-card">
+  <div class="modal-overlay" *ngIf="donorToDelete" (click)="donorToDelete = null">
+    <div class="modal-card modal-delete" (click)="$event.stopPropagation()">
       <h3 class="modal-title">אישור מחיקה</h3>
-      <p style="text-align: center;">האם למחוק את <b>{{donorToDelete.firstName}} {{donorToDelete.lastName}}</b>?</p>
+      <p class="delete-text">האם אתם בטוחים שברצונכם למחוק את <b>{{donorToDelete.firstName}} {{donorToDelete.lastName}}</b>?</p>
       <div class="modal-actions">
-        <button class="btn-confirm-delete" (click)="executeDelete()">מחק</button>
+        <button class="btn-confirm-delete" (click)="executeDelete()">מחק לצמיתות</button>
         <button class="btn-cancel" (click)="donorToDelete = null">ביטול</button>
       </div>
     </div>

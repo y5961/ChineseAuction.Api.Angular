@@ -17,39 +17,64 @@ import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 export class DonorComponent implements OnInit {
   private donorService = inject(DonorService);
   
+  // נתונים
   donors: DonorDTO[] = [];
   donorGifts: { [key: number]: Gift[] } = {};
   expandedDonorId: number | null = null;
   
+  // ניהול מודלים (Modals)
   showAddModal = false;
   showEditModal = false;
   donorToDelete: DonorDTO | null = null;
   
+  // אובייקטים לעריכה והוספה
   newDonor: DonorCreateDTO = new DonorCreateDTO();
   editingDonor: DonorDTO | null = null;
   
+  // חיפוש וסינון
   searchQuery: string = '';
   currentFilter: 'name' | 'email' | 'gift' = 'name';
   activeFilterName: string = 'שם';
+  isLoading: boolean = false; // אינדיקטור טעינה
   private searchSubject = new Subject<string>();
 
   imageBaseUrl = `${environment.apiUrl}/images/gift/`;
 
   ngOnInit(): void {
     this.loadDonors();
+    
+    // הגדרת ה-Pipe לחיפוש עם השהייה (Debounce)
     this.searchSubject.pipe(
       debounceTime(400),
       distinctUntilChanged()
     ).subscribe(() => this.executeSearch());
   }
 
+  // טעינת כל התורמים
   loadDonors() {
-    this.donorService.getAllDonors().subscribe(data => this.donors = data);
+    this.isLoading = true;
+    this.donorService.getAllDonors().subscribe({
+      next: (data) => {
+        this.donors = data;
+        this.isLoading = false;
+      },
+      error: () => this.isLoading = false
+    });
   }
 
+  // שינוי סוג המסנן - מבצע חיפוש חוזר עם הטקסט הקיים
   setFilter(filter: 'name' | 'email' | 'gift', name: string) {
     this.currentFilter = filter;
     this.activeFilterName = name;
+    
+    // אם יש טקסט בתיבה, נבצע חיפוש לפי הקטגוריה החדשה מיד
+    if (this.searchQuery.trim()) {
+      this.executeSearch();
+    }
+  }
+
+  // ניקוי תיבת החיפוש
+  clearSearch() {
     this.searchQuery = '';
     this.loadDonors();
   }
@@ -58,46 +83,60 @@ export class DonorComponent implements OnInit {
     this.searchSubject.next(this.searchQuery);
   }
 
-executeSearch() {
-  const q = this.searchQuery.trim();
-  if (!q) {
-    this.loadDonors();
-    return;
+  // פונקציית החיפוש המרכזית
+  executeSearch() {
+    const q = this.searchQuery.trim();
+    
+    if (!q) {
+      this.loadDonors();
+      return;
+    }
+
+    this.isLoading = true;
+
+    // פונקציית עזר לטיפול בתשובה מהשרת
+    const handleResponse = (res: any) => {
+      // אם התוצאה היא מערך - נשמור אותו, אם אובייקט בודד (מתנה) - נעטוף במערך
+      this.donors = Array.isArray(res) ? res : (res ? [res] : []);
+      this.isLoading = false;
+    };
+
+    const handleError = () => {
+      this.donors = [];
+      this.isLoading = false;
+    };
+
+    switch (this.currentFilter) {
+      case 'name': 
+        this.donorService.sortByName(q).subscribe({ next: handleResponse, error: handleError }); 
+        break;
+      case 'email': 
+        this.donorService.sortByEmail(q).subscribe({ next: handleResponse, error: handleError }); 
+        break;
+      case 'gift': 
+        this.donorService.sortByGift(q).subscribe({ next: handleResponse, error: handleError }); 
+        break;
+    }
   }
 
-  switch (this.currentFilter) {
-    case 'name': 
-      this.donorService.sortByName(q).subscribe(res => this.donors = res || []); 
-      break;
-    case 'email': 
-      this.donorService.sortByEmail(q).subscribe(res => this.donors = res || []); 
-      break;
-    case 'gift': 
-      this.donorService.sortByGift(q).subscribe(res => {
-        // מכיוון שחוזר אובייקט אחד, נשים אותו בתוך מערך כדי שה-ngFor לא יישבר
-        this.donors = res ? [res] : [];
-      }); 
-      break;
-  }
-}
-// שינוי החתימה מ-donorId: number ל-donor: DonorDTO
-toggleGifts(donor: DonorDTO): void {
-  const id = donor.idDonor; // לצורך ניהול ה-Expanded
-  
-  if (this.expandedDonorId === id) {
-    this.expandedDonorId = null;
-    return;
-  }
-  this.expandedDonorId = id;
+  // ניהול רשימת מתנות לתורם (Accordion)
+  toggleGifts(donor: DonorDTO): void {
+    const id = donor.idDonor;
+    
+    if (this.expandedDonorId === id) {
+      this.expandedDonorId = null;
+      return;
+    }
+    this.expandedDonorId = id;
 
-  if (!this.donorGifts[id]) {
-    // שליחת ה-firstName (string) כפי שה-Service מצפה
-    this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
-      this.donorGifts[id] = gifts || [];
-    });
+    if (!this.donorGifts[id]) {
+      this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
+        this.donorGifts[id] = gifts || [];
+      });
+    }
   }
-}
 
+  // פעולות עריכה
   openEditModal(donor: DonorDTO) {
     this.editingDonor = { ...donor };
     this.showEditModal = true;
@@ -113,15 +152,21 @@ toggleGifts(donor: DonorDTO): void {
     }
   }
 
+  // פעולות הוספה
   submitAddDonor() {
     this.donorService.createDonor(this.newDonor).subscribe(id => {
-      this.donors.push(new DonorDTO({ idDonor: id, ...this.newDonor }));
+      const addedDonor = new DonorDTO({ idDonor: id, ...this.newDonor });
+      this.donors.push(addedDonor);
       this.showAddModal = false;
       this.newDonor = new DonorCreateDTO();
     });
   }
 
-  confirmDelete(donor: DonorDTO) { this.donorToDelete = donor; }
+  // פעולות מחיקה
+  confirmDelete(donor: DonorDTO) { 
+    this.donorToDelete = donor; 
+  }
+
   executeDelete() {
     if (this.donorToDelete) {
       this.donorService.deleteDonor(this.donorToDelete.idDonor).subscribe(() => {
