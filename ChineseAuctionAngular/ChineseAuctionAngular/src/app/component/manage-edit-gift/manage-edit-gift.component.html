@@ -1,0 +1,61 @@
+<div class="edit-card" *ngIf="giftToEdit(); let gift">
+  <div class="header">
+    <h2>עריכת מתנה </h2>
+    <p>עדכני את פרטי המתנה במערכת</p>
+  </div>
+
+  <div class="form-container">
+    <div class="input-group">
+      <label>שם המתנה</label>
+      <input type="text" [(ngModel)]="gift.name" placeholder="לדוגמה: רכב יוקרה">
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <label>קטגוריה</label>
+        <select [(ngModel)]="gift.categoryId">
+          <option [value]="0" disabled>בחרי קטגוריה...</option>
+          <option *ngFor="let cat of categories()" [value]="cat.idGiftCategory">
+            {{cat.name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>תורם</label>
+        <select [(ngModel)]="gift.idDonor">
+          <option [value]="0" disabled>בחרי תורם...</option>
+          <option *ngFor="let donor of donors()" [value]="donor.idDonor">
+            {{donor.firstName}} {{donor.lastName}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <label>מחיר כרטיס (₪)</label>
+        <input type="number" [(ngModel)]="gift.price">
+      </div>
+      <div class="input-group">
+        <label>כמות במלאי</label>
+        <input type="number" [(ngModel)]="gift.amount">
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>תיאור המתנה</label>
+      <textarea [(ngModel)]="gift.description" rows="3"></textarea>
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="drawn" [(ngModel)]="gift.isDrawn">
+      <label for="drawn">בוצעה הגרלה</label>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-save" (click)="saveChanges()">שמירה</button>
+      <button class="btn-cancel" [routerLink]="['/task-manager/manage-gifts']">ביטול</button>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { PackageDTO } from '../../models/PackageDTO';
 import { Router } from '@angular/router';
-import { environment } from '../../../../environment';
+import { environment } from '../../../../enviroment';
 
 @Component({
   selector: 'app-package',
@@ -57,36 +57,19 @@ handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
   
   if (newQty < 0) return;
-  this.cartService.setQuantity(packageId, newQty);
+
+  // עדכון אופטימי מיידי בשירות
+  this.cartService.updatePackageInCart(packageId, newQty);
+
   const userId = this.authService.getUserId();
   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe({
-    next: () => {
-    },
-    error: (err) => {
-      this.cartService.setQuantity(packageId, currentQty);
+    error: () => {
+      // החזרה למצב קודם במקרה של שגיאה בשרת
+      this.cartService.updatePackageInCart(packageId, currentQty);
     }
   });
 }
 
-  // handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
-  //   const userId = this.authService.getUserId();
-  //   if (!userId) { 
-  //     this.router.navigate(['/register']); 
-  //     return; 
-  //   }
-
-  //   const currentQty = this.packageQuantities()[packageId] || 0;
-  //   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
-  //   if (newQty < 0) return;
-
-  //   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe(() => {
-  //     this.cartService.setQuantity(packageId, newQty);
-      
-  //     if (newQty === 1 && action === 'increment') {
-  //       this.loadUserData();
-  //     }
-  //   });
-  // }
   getPackageGradient(id: number): string {
     const gradients = [
       'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', // ירוק

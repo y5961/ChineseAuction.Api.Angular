@@ -36,6 +36,9 @@
                 "input": "public"
               }
             ],
+            "styles": [
+              "src/styles.scss"
+            ],
           
             "scripts": []
           },
@@ -64,7 +67,11 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "opFtions": {
     "proxyConfig": "proxy.conf.json"
   },
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -108,4 +115,8 @@
   "cli": {
     "analytics": false
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

@@ -3,7 +3,12 @@ import { TabsModule } from 'primeng/tabs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+<<<<<<< HEAD
+import { environment } from '../../../../enviroment';
+
+=======
 import { environment } from '../../../../environment';
+>>>>>>> origin/main
 interface TabItem {
   title: string;
   value: string;
@@ -21,7 +26,8 @@ interface TabItem {
 export class Header implements OnInit {
   private router = inject(Router);
   public authService = inject(AuthService); 
-  imageUrl = environment.apiUrl + '/images/main/';
+
+  logoUrl = (environment?.apiUrl || 'http://localhost:5242') + '/images/main/logo.webp';
 
   tabs: TabItem[] = [
     { title: 'החבילות', value: 'package' },
@@ -29,14 +35,14 @@ export class Header implements OnInit {
     { title: 'על ההגרלה', value: 'about' },
     { title: 'מי אנחנו', value: 'who-we-are' },
     { title: 'דברו איתנו', value: 'contact' },
-    { title: 'ניהול', value: 'manager', adminOnly: true },
+    { title: 'ניהול', value: 'task-manager', adminOnly: true },
     { title: 'הרשמה', value: 'register', onlyLoggedOut: true },
     { title: 'כניסה', value: 'login', onlyLoggedOut: true },
     { title: 'התנתקות', value: 'logout' }
   ];
 
   ngOnInit() {
-    // הטאבים כבר מוגדרים למעלה בצורה טיפוסית (Typed)
+
   }
 
   // סינון הטאבים בצורה בטוחה לפי מצב המשתמש והמנהל
@@ -63,4 +69,5 @@ export class Header implements OnInit {
       this.router.navigate([value]);
     }
   }
+
 }

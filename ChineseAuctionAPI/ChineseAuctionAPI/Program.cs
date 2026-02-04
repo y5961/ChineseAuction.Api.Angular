@@ -11,10 +11,9 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. äâãøú äìåâø - áìé ùéîåù á-LogEventLevel ëãé ìîðåò ÷ååéí àãåîéí
+// --- ×”×’×“×¨×•×ª Serilog ---
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
-    // äùú÷ú äîòøëú áàîöòåú îçøåæåú (Strings) - ä-Visual Studio ìà éòùä ôä ÷ååéí àãåîéí
     .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
     .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
     .Enrich.FromLogContext()
@@ -22,15 +21,28 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/all_requests.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
+builder.Host.UseSerilog();
+
 try
 {
     Log.Information("Starting web host - Monitoring all requests");
 
-    builder.Host.UseSerilog();
+    // --- Database Configuration ---
+    var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+    // ×§×•×“ ×›×¤×•×œ ×©× ×©×ž×¨ ×‘×”×¢×¨×”:
+    // var connectionStringOld = "Server=DESKTOP-021APTL\\SQLEXPRESS;Database=3285461_SalesAPI;Integrated Security=True;TrustServerCertificate=True;";
+    
+    builder.Services.AddDbContext<SaleContextDB>(options =>
+        options.UseSqlServer(connectionString));
 
-    // ===== Register Services (JWT, Auth, Scoped) =====
+    // --- JWT & Authentication Configuration ---
     var jwtSection = builder.Configuration.GetSection("Jwt");
     var key = Encoding.UTF8.GetBytes(jwtSection["Key"]);
+    
+    // × ×ª×•× ×™× × ×•×¡×¤×™× ×©×”×™×• ×‘×§×•×“ ×”×ž×§×•×¨×™ × ×©×ž×¨×• ×›××Ÿ:
+    var jwtKey = "0O6SjqnvXHnZDPb1i6xEukyD3f8TP/JvHEvuZlYc6I8=";
+    var jwtIssuer = "ChineseAuctionAPI";
+    var jwtAudience = "ChineseAuctionClient";
 
     builder.Services.AddAuthentication(options =>
     {
@@ -44,6 +56,19 @@ try
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
+            ValidIssuer = jwtIssuer, // ×©×™×ž×•×© ×‘×ž×©×ª× ×” ×ž×”×§×•×“ ×”×¨××©×•×Ÿ
+            ValidateAudience = true,
+            ValidAudience = jwtAudience, // ×©×™×ž×•×© ×‘×ž×©×ª× ×” ×ž×”×§×•×“ ×”×¨××©×•×Ÿ
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.FromSeconds(30)
+        };
+        
+        /* ×”×’×“×¨×” ×›×¤×•×œ×” ×ž×”×‘×œ×•×§ ×”×©× ×™ ×©× ×©×ž×¨×” ×‘×”×¢×¨×”:
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
             ValidIssuer = jwtSection["Issuer"],
             ValidateAudience = true,
             ValidAudience = jwtSection["Audience"],
@@ -52,6 +77,7 @@ try
             ValidateLifetime = true,
             ClockSkew = TimeSpan.FromSeconds(30)
         };
+        */
     });
 
     builder.Services.AddAuthorization(options =>
@@ -59,8 +85,25 @@ try
         options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     });
 
+    // --- Services & Repositories Registration ---
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
+    
+    builder.Services.AddScoped<IUserRepo, UserRepo>();
+    builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+    builder.Services.AddScoped<IOrderService, OrderService>();
+    builder.Services.AddScoped<IGiftCategoryRepo, GiftCategoryRepo>();
+    builder.Services.AddScoped<IGiftCategoryService, GiftCategoryService>();
+    builder.Services.AddScoped<IGiftRepo, GiftRepo>();
+    builder.Services.AddScoped<IGiftService, GiftService>();
+    builder.Services.AddScoped<IDonorRepository, DonorRepository>();
+    builder.Services.AddScoped<IDonorService, DonorService>();
+    builder.Services.AddScoped<IPackageRepo, PackageRepo>();
+    builder.Services.AddScoped<IPackageService, PackageService>();
+    builder.Services.AddScoped<IEmailService1, EmailService>();
+
+    // --- Swagger Configuration ---
     builder.Services.AddSwaggerGen(c =>
     {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChineseAuctionAPI", Version = "v1" });
@@ -76,44 +119,25 @@ try
         c.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
             {
-                new OpenApiSecurityScheme
-                {
-                    Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
-                },
+                new OpenApiSecurityScheme { Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" } },
                 new string[] { }
             }
         });
     });
 
-    // Register Repositories & Services
-    builder.Services.AddScoped<IUserRepo, UserRepo>();
-    builder.Services.AddScoped<IUserService, UserService>();
-    builder.Services.AddScoped<IOrderRepo, OrderRepo>();
-    builder.Services.AddScoped<IOrderService, OrderService>();
-    builder.Services.AddScoped<IGiftCategoryRepo, GiftCategoryRepo>();
-    builder.Services.AddScoped<IGiftCategoryService, GiftCategoryService>();
-    builder.Services.AddScoped<IGiftRepo, GiftRepo>();
-    builder.Services.AddScoped<IGiftService, GiftService>();
-    builder.Services.AddScoped<IDonorRepository, DonorRepository>();
-    builder.Services.AddScoped<IDonorService, DonorService>();
-    builder.Services.AddScoped<IPackageRepo, PackageRepo>();
-    builder.Services.AddScoped<IPackageService, PackageService>();
-    builder.Services.AddScoped<IEmailService1, EmailService>();
-
-
-    var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
-    builder.Services.AddDbContext<SaleContextDB>(options =>
-        options.UseSqlServer(connectionString));
+    // --- CORS ---
     builder.Services.AddCors(options =>
     {
-        options.AddPolicy("AllowAngular",
-            policy => policy.AllowAnyOrigin() // àå ìäâáéì ì-http://localhost:4200
-                            .AllowAnyMethod()
-                            .AllowAnyHeader());
+        options.AddPolicy("AllowAngular", policy => 
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader());
     });
+
     var app = builder.Build();
 
-    // 2. ùåøú äîçõ - øéùåí ëì ÷øéàú HTTP áöåøä ð÷ééä
+    // --- Middleware Pipeline ---
+    
     app.UseSerilogRequestLogging();
 
     if (app.Environment.IsDevelopment())
@@ -121,14 +145,26 @@ try
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChineseAuctionAPI v1"));
     }
+
     app.UseCors("AllowAngular");
     app.UseHttpsRedirection();
+
     app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(
             Path.Combine(builder.Environment.ContentRootPath, "public")),
-        RequestPath = "" 
-    });  
+        RequestPath = ""
+    });
+
+    /* ×§×•×“ ×›×¤×•×œ ×©× ×©×ž×¨ ×‘×”×¢×¨×”:
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+            Path.Combine(builder.Environment.ContentRootPath, "public")),
+        RequestPath = ""
+    });
+    */
+
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
@@ -137,6 +173,7 @@ try
 }
 catch (Exception ex)
 {
+    Log.Fatal(ex, "The application failed to start");
     Log.Fatal(ex, "Host terminated unexpectedly");
 }
 finally

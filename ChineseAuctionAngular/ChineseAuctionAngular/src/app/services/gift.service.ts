@@ -60,6 +60,9 @@ export class GiftService {
   sortByAmountPeople(): Observable<Gift[]> {
     return this.http.get<Gift[]>(`${this.BASE_URL}/sort/popularity`);
   }
+<<<<<<< HEAD
+
+=======
 // 11. העלאת תמונה לסרבר
 
 uploadImage(file: File): Observable<{ fileName: string }> {
@@ -67,5 +70,6 @@ uploadImage(file: File): Observable<{ fileName: string }> {
   formData.append('file', file);
   return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
 }
+>>>>>>> origin/main
    }
 

@@ -21,6 +21,7 @@ namespace ChineseAuctionAPI.Controllers
             _giftService = giftService;
             _logger = logger;
         }
+
         [HttpPost("upload")]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {

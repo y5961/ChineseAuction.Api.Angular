@@ -1,0 +1,71 @@
+.edit-card {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 25px;
+  direction: rtl;
+
+  .header {
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 20px;
+    h2 { color: #7b1fa2; margin: 0; }
+    p { color: #666; font-size: 0.9em; }
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label { font-weight: bold; color: #444; font-size: 0.9em; }
+
+      input, select, textarea {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border 0.3s;
+        &:focus { outline: none; border-color: #7b1fa2; }
+      }
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn-save { background: #7b1fa2; color: white; &:hover { background: #4a148c; } }
+      .btn-cancel { background: #f5f5f5; color: #333; &:hover { background: #e0e0e0; } }
+    }
+  }
+}

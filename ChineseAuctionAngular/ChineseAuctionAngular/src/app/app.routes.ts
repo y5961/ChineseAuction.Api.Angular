@@ -5,6 +5,10 @@ import { HomeComponent } from './component/home/home.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { GiftComponent } from './component/gift/gift.component';
 import { PackageComponent } from './component/package/package.component';
+import { TaskManagerComponent } from './component/task-manager/task-manager.component';
+import { DonorsComponent } from './component/donors/donors.component';
+import { ManageGiftComponent } from './component/manage-gift/manage-gift.component';
+import { ManageEditGiftComponent } from './component/manage-edit-gift/manage-edit-gift.component';
 import { DonorComponent } from './component/donor/donor.component';
 import { ManagerComponent } from './component/admin/manager/manager.component';
 
@@ -15,11 +19,12 @@ export const routes: Routes = [
     { path: 'gift', component: GiftComponent, pathMatch: 'full' },
     { path: 'package', component: PackageComponent, pathMatch: 'full' },
     { path: 'manager', component: ManagerComponent,
-        children: [
-          { path: 'donor', component: DonorComponent, pathMatch: 'full' },
-          { path: 'manage-gifts', component: GiftComponent, pathMatch: 'full' },
-
-        ],
-       },
-        { path: '**', component: NotFoundComponent, pathMatch: 'full' },
+    children: [
+        { path: 'manage-gifts', component: ManageGiftComponent },
+        { path: 'edit-gift/:id', component: ManageEditGiftComponent }, 
+        { path: 'manage-packages', component: PackageComponent },
+        { path: 'donors', component: DonorComponent },
+    ],
+    },
+    { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];

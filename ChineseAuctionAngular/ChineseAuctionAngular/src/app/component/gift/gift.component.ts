@@ -4,7 +4,7 @@ import { GiftService } from '../../services/gift.service';
 import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
 import { Gift } from '../../models/GiftDTO';
-import { environment } from '../../../../environment';
+import { environment } from '../../../../enviroment';
 
 @Component({
   selector: 'app-gift',
@@ -13,8 +13,9 @@ import { environment } from '../../../../environment';
   templateUrl: './gift.component.html',
   styleUrl: './gift.component.scss'
 })
+
 export class GiftComponent implements OnInit {
-  imageUrl = environment.apiUrl + '/images/gift/';
+  imageUrl = environment.apiUrl + '/images/gift/';  
   private giftService = inject(GiftService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);

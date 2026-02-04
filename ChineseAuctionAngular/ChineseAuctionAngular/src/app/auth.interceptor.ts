@@ -1,4 +1,3 @@
-import { HttpInterceptorFn } from '@angular/common/http';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // שליפת הטוקן לפי המפתח המדויק מה-AuthService שלך

@@ -4,7 +4,7 @@ import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { PackageService } from '../../services/package.service';
-import { environment } from '../../../../environment';
+import { environment } from '../../../../enviroment';
 
 @Component({
   selector: 'app-cart',
@@ -15,60 +15,68 @@ import { environment } from '../../../../environment';
 })
 export class CartComponent implements OnInit {
   imageUrl = environment.apiUrl + '/images/packages/';
+  
+  // הזרקת שירותים (Dependencies)
   private cartService = inject(CartService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
   private packageService = inject(PackageService);
 
+  // נתונים ו-Signals
   cartPackages = this.cartService.cartItems;
   packageQuantities = this.cartService.packageQuantities;
   allAvailablePackages = signal<any[]>([]);
+  totalPrice = this.cartService.totalPrice;
 
-  constructor() {}
-
-ngOnInit() {
-  // טעינת חבילות ורק אז טעינת הסל כדי להבטיח שהנתונים זמינים להצלבה
-  this.packageService.getAllPackages().subscribe((pkgs: any[]) => {
-    this.allAvailablePackages.set(pkgs);
-    
-    const userId = this.authService.getUserId();
-    if (userId > 0) {
-      this.loadCart();
-    }
-  });
-}
-
-  loadCart() {
-  const userId = this.authService.getUserId();
-  if (userId > 0) {
-    this.orderService.getUserOrders(userId).subscribe({
-      next: (res: any) => {
-        const draft = res.orders?.find((o: any) => o.status === 0);
-        if (draft && draft.ordersPackages) {
-          const qtys: Record<number, number> = {};
-          
-          const enrichedPackages = draft.ordersPackages.map((item: any) => {
-            const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
-            qtys[item.idPackage] = item.quantity; // עדכון הכמות במיפוי
-            return {
-              ...item,
-              price: fullInfo?.price || item.price || 0 // וודא שהמחיר מגיע מהחבילה המקורית
-            };
-          });
-
-          // עדכון ה-Signals
-          this.cartService.setAllQuantities(qtys);
-          this.cartService.setCartItems(enrichedPackages);
-          
-          // רק עכשיו נקרא לחישוב מחדש
-          this.calculateTotal(); 
-        }
+  constructor() {
+    // מאזין לשינויים ב-UserId וטוען את הסל בהתאם
+    effect(() => {
+      const userId = this.authService.getUserId();
+      if (userId > 0) {
+        this.loadCart();
       }
+    }, { allowSignalWrites: true });
+  }
+
+  ngOnInit() {
+    // טעינת חבילות ורק אז טעינת הסל כדי להבטיח שהנתונים זמינים להצלבה
+    this.packageService.getAllPackages().subscribe((pkgs: any[]) => {
+      this.allAvailablePackages.set(pkgs);
+      this.loadCart();
     });
   }
-}
 
+  loadCart() {
+    const userId = this.authService.getUserId();
+    if (userId > 0) {
+      this.orderService.getUserOrders(userId).subscribe({
+        next: (res: any) => {
+          const draft = res.orders?.find((o: any) => o.status === 0);
+          if (draft && draft.ordersPackages) {
+            const qtys: Record<number, number> = {};
+            
+            const enrichedPackages = draft.ordersPackages.map((item: any) => {
+              const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
+              qtys[item.idPackage] = item.quantity;
+              
+              return {
+                ...item,
+                name: fullInfo?.name || item.name || 'חבילה',
+                price: fullInfo?.price || item.price || 0
+              };
+            });
 
+            // עדכון ה-Signals ב-Service
+            this.cartService.setAllQuantities(qtys);
+            this.cartService.setCartItems(enrichedPackages);
+          } else {
+            this.cartService.setCartItems([]);
+          }
+        },
+        error: (err) => console.error('Error loading cart', err)
+      });
+    }
+  }
 
   increment(id: number) {
     this.updateQty(id, (this.packageQuantities()[id] || 0) + 1);
@@ -83,11 +91,19 @@ ngOnInit() {
 
   private updateQty(idPackage: number, newQty: number) {
     const userId = this.authService.getUserId();
+    const pkg = this.cartPackages().find(p => p.idPackage === idPackage);
+
     this.orderService.updatePackageQuantity(userId, idPackage, newQty).subscribe({
       next: () => {
-        this.cartService.setQuantity(idPackage, newQty);
+        // שילוב שתי הגרסאות: גם עדכון ה-Signals וגם טיפול במחיקה
+        this.cartService.updatePackageInCart(idPackage, newQty);
+        
+        if (pkg) {
+          this.cartService.updatePackageInCart(pkg, newQty);
+        }
+        
         if (newQty === 0) {
-          this.loadCart();
+          this.loadCart(); // טעינה מחדש של הסל אם מוצר הוסר לחלוטין
         }
       },
       error: (err) => console.error('Error updating quantity', err)
@@ -99,6 +115,7 @@ ngOnInit() {
     return images[id % images.length];
   }
 
+  // פונקציה לחישוב סכום ידני במידת הצורך (למרות שיש Signal ב-Service)
   calculateTotal(): number {
     return this.cartPackages().reduce((acc, pkg) => {
       const qty = this.packageQuantities()[pkg.idPackage] || 0;

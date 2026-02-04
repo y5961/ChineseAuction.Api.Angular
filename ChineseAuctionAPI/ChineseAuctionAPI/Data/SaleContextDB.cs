@@ -18,6 +18,7 @@ namespace ChineseAuctionAPI.Data
         public DbSet<Card> Cards => Set<Card>();
         public DbSet<Winner> winners => Set<Winner>();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        { 
         {
             base.OnModelCreating(modelBuilder);
 
@@ -30,6 +31,14 @@ namespace ChineseAuctionAPI.Data
           .HasFilter("[Status] = 0") // Status.Draft = 0 לפי enum
           .IsUnique();
 
+        }
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=DESKTOP-021APTL\\SQLEXPRESS;Database=3285461_SalesAPI;Integrated Security=True;TrustServerCertificate=True;");
+            }
         }
 
     }

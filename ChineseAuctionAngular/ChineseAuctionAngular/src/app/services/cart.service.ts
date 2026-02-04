@@ -10,7 +10,7 @@ export class CartService {
   packageQuantities = this.quantitiesSignal.asReadonly();
   cartItems = this.cartItemsSignal.asReadonly();
 
-  // לוגיקה חדשה: חישוב אוטומטי של המחיר הכולל בתוך השירות
+  // חישוב מחיר אוטומטי שמתעדכן מיד בכל שינוי
   totalPrice = computed(() => {
     const items = this.cartItemsSignal();
     const quantities = this.quantitiesSignal();
@@ -22,15 +22,20 @@ export class CartService {
     }, 0);
   });
 
-  setQuantity(packageId: number, qty: number) {
+  // עדכון אופטימי: מעדכן גם כמות וגם מוסיף את האובייקט לסל מיד
+  updatePackageInCart(pkg: any, qty: number) {
     this.quantitiesSignal.update(current => {
       const updated = { ...current };
-      if (qty <= 0) {
-        delete updated[packageId];
-      } else {
-        updated[packageId] = qty;
-      }
+      if (qty <= 0) delete updated[pkg.idPackage];
+      else updated[pkg.idPackage] = qty;
       return updated;
+    });
+
+    this.cartItemsSignal.update(current => {
+      const exists = current.find(item => item.idPackage === pkg.idPackage);
+      if (!exists && qty > 0) return [...current, pkg];
+      if (qty <= 0) return current.filter(item => item.idPackage !== pkg.idPackage);
+      return current;
     });
   }
 
@@ -42,6 +47,7 @@ export class CartService {
     this.quantitiesSignal.set(quantities);
   }
 
+  // הפונקציה שחסרה לך וגורמת לשגיאה
   clearCart() {
     this.quantitiesSignal.set({});
     this.cartItemsSignal.set([]);

@@ -1,71 +1,67 @@
-<div dir="rtl">
-  <h2>רישום משתמש חדש</h2>
+<div class="registration-container">
+  <div class="main-card">
 
-  <fieldset>
-    <legend>פרטי משתמש</legend>
-
-    <form (ngSubmit)="onRegister()">
-      
-      <div>
-        <label for="identity">תעודת זהות:</label><br>
-        <input type="text" id="identity" name="identity" 
-               [(ngModel)]="userToRegister.identity" 
-               border="1" required>
+    <!-- צד טופס -->
+    <div class="form-side">
+      <div class="header">
+        <h2 class="glow-text">הרשמה למכירה הסינית</h2>
+        <p>הצטרפו למשפחת "מתנת חיים"</p>
       </div>
-      <br>
 
-      <div>
-        <label for="firstName">שם פרטי:</label><br>
-        <input type="text" id="firstName" name="firstName" 
-               [(ngModel)]="userToRegister.firstName" required>
-      </div>
-      <br>
+      <form (ngSubmit)="onRegister()" class="form-grid">
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.identity" name="id" required />
+          <label>תעודת זהות</label>
+        </span>
 
-      <div>
-        <label for="lastName">שם משפחה:</label><br>
-        <input type="text" id="lastName" name="lastName" 
-               [(ngModel)]="userToRegister.lastName" required>
-      </div>
-      <br>
+        <span class="p-float-label">
+          <p-password [(ngModel)]="userToRegister.password" name="pass"
+            [toggleMask]="true" [feedback]="false"></p-password>
+          <label>סיסמה</label>
+        </span>
 
-      <div>
-        <label for="password">סיסמה:</label><br>
-       <input type="password" id="password" name="password" autocomplete="new-password" 
-               [(ngModel)]="userToRegister.password" required>
-      </div>
-      <br>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.firstName" name="fn" />
+          <label>שם פרטי</label>
+        </span>
 
-      <div>
-        <label for="email">אימייל:</label><br>
-        <input type="email" id="email" name="email" 
-               [(ngModel)]="userToRegister.email">
-      </div>
-      <br>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.lastName" name="ln" />
+          <label>שם משפחה</label>
+        </span>
 
-      <div>
-        <label for="phoneNumber">מספר טלפון:</label><br>
-        <input type="tel" id="phoneNumber" name="phoneNumber" 
-               [(ngModel)]="userToRegister.phoneNumber" required>
-      </div>
-      <br>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.email" name="em" />
+          <label>אימייל</label>
+        </span>
 
-      <div>
-        <label for="city">עיר:</label><br>
-        <input type="text" id="city" name="city" 
-               [(ngModel)]="userToRegister.city" required>
-      </div>
-      <br>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.phoneNumber" name="ph" />
+          <label>טלפון</label>
+        </span>
 
-      <div>
-        <label for="address">כתובת:</label><br>
-        <input type="text" id="address" name="address" 
-               [(ngModel)]="userToRegister.address" required>
-      </div>
-      <br>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.address" name="ad" />
+          <label>כתובת</label>
+        </span>
 
-      <button type="submit">שלח רישום</button>
-    </form>
-  </fieldset>
+        <span class="p-float-label">
+          <input pInputText [(ngModel)]="userToRegister.city" name="ct" />
+          <label>עיר</label>
+        </span>
 
-  <p *ngIf="message">{{ message }}</p>
+        <button pButton type="submit" class="premium-glow-btn">
+          אישור והצטרפות <i class="pi pi-sparkles"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- צד ויזואלי -->
+    <div class="visual-side">
+      <i class="pi pi-heart-fill heart"></i>
+      <h1>מתנת חיים</h1>
+      <p>מצילים חיים ביחד</p>
+    </div>
+
+  </div>
 </div>

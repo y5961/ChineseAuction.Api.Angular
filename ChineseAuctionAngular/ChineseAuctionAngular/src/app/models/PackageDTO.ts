@@ -8,6 +8,7 @@ export class PackageDTO {
   price: number = 0;
   name: string = '';
   description?: string;
+  image?: string; // הוספת השדה החסר
 
   constructor(init?: Partial<PackageDTO>) {
     Object.assign(this, init);
