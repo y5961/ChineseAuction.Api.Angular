@@ -57,4 +57,5 @@ sortByEmail(email: string): Observable<Donor[]> {
 sortByGift(giftName: string): Observable<Donor> {
   return this.http.get<Donor>(`${this.BASE_URL}/sort/gift/${giftName}`);
 }
+
 }

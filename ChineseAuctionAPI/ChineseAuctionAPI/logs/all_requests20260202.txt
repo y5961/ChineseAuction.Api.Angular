@@ -23027,3 +23027,599 @@ System.InvalidOperationException: INSUFFICIENT_TICKETS
 2026-02-02 17:24:35.450 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
 2026-02-02 17:24:35.452 +02:00 [INF] HTTP GET /api/Gift responded 200 in 10.3735 ms
 2026-02-02 17:24:35.459 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.2462 ms
+2026-02-02 22:40:37.312 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-02 22:40:40.670 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 189.9221 ms
+2026-02-02 22:40:41.018 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 99.0052 ms
+2026-02-02 22:42:07.380 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:42:10.447 +02:00 [INF] HTTP GET /api/Packages responded 200 in 3825.3010 ms
+2026-02-02 22:42:10.500 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:42:10.804 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-02 22:42:11.110 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 630.4563 ms
+2026-02-02 22:42:12.981 +02:00 [INF] HTTP GET /api/Donors responded 401 in 39.4545 ms
+2026-02-02 22:45:33.738 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:45:33.794 +02:00 [INF] HTTP GET /api/Packages responded 200 in 61.6288 ms
+2026-02-02 22:45:33.842 +02:00 [INF] HTTP GET /api/Donors responded 401 in 4.3294 ms
+2026-02-02 22:45:34.050 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:45:34.116 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 69.6877 ms
+2026-02-02 22:45:38.827 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:45:38.846 +02:00 [INF] HTTP GET /api/Donors responded 401 in 9.8095 ms
+2026-02-02 22:45:38.849 +02:00 [INF] HTTP GET /api/Packages responded 200 in 32.1764 ms
+2026-02-02 22:45:38.896 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:45:38.954 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 62.8785 ms
+2026-02-02 22:45:53.046 +02:00 [INF] HTTP GET /api/Donors responded 401 in 0.4840 ms
+2026-02-02 22:46:44.121 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:46:44.138 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.9209 ms
+2026-02-02 22:46:44.171 +02:00 [INF] HTTP GET /api/Donors responded 401 in 1.2014 ms
+2026-02-02 22:46:44.309 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:46:44.347 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 38.3503 ms
+2026-02-02 22:47:31.087 +02:00 [INF] Login attempt for email: m@gmail.com
+2026-02-02 22:47:31.388 +02:00 [INF] ניסיון התחברות עבור אימייל: m@gmail.com
+2026-02-02 22:47:31.822 +02:00 [INF] HTTP POST /api/User/login responded 200 in 864.2121 ms
+2026-02-02 22:47:54.357 +02:00 [INF] Fetching all donors
+2026-02-02 22:47:54.363 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:47:54.417 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:47:54.428 +02:00 [INF] HTTP GET /api/Donors responded 200 in 200.4739 ms
+2026-02-02 22:48:39.723 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:48:39.745 +02:00 [INF] HTTP GET /api/Donors responded 401 in 3.7409 ms
+2026-02-02 22:48:39.747 +02:00 [INF] HTTP GET /api/Packages responded 200 in 48.3646 ms
+2026-02-02 22:48:39.795 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:48:39.848 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 54.3591 ms
+2026-02-02 22:50:23.943 +02:00 [INF] HTTP GET /api/Donors responded 401 in 0.4285 ms
+2026-02-02 22:50:23.944 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:50:23.972 +02:00 [INF] HTTP GET /api/Packages responded 200 in 28.8625 ms
+2026-02-02 22:50:24.008 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:50:24.046 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 38.8926 ms
+2026-02-02 22:55:26.515 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:55:26.540 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:26.542 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:26.695 +02:00 [INF] HTTP GET /api/Packages responded 200 in 182.2571 ms
+2026-02-02 22:55:26.705 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:26.720 +02:00 [INF] HTTP GET /api/Donors responded 200 in 183.0557 ms
+2026-02-02 22:55:26.748 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:55:26.769 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:55:26.770 +02:00 [INF] HTTP GET /api/Packages responded 200 in 22.1668 ms
+2026-02-02 22:55:26.817 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:26.818 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:26.825 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:26.828 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.1842 ms
+2026-02-02 22:55:26.831 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 63.0111 ms
+2026-02-02 22:55:26.866 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:55:26.873 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 8.2961 ms
+2026-02-02 22:55:40.440 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:40.442 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:40.455 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:40.459 +02:00 [INF] HTTP GET /api/Donors responded 200 in 20.2733 ms
+2026-02-02 22:55:41.305 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:41.307 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:41.318 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:41.323 +02:00 [INF] HTTP GET /api/Donors responded 200 in 20.4105 ms
+2026-02-02 22:55:42.091 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:42.094 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:42.109 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:42.114 +02:00 [INF] HTTP GET /api/Donors responded 200 in 24.9312 ms
+2026-02-02 22:55:42.759 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:42.762 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:42.774 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:42.778 +02:00 [INF] HTTP GET /api/Donors responded 200 in 19.9024 ms
+2026-02-02 22:55:46.912 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:46.915 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:46.925 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:46.929 +02:00 [INF] HTTP GET /api/Donors responded 200 in 18.4367 ms
+2026-02-02 22:55:53.651 +02:00 [INF] HTTP GET /api/Donors/sort/email responded 404 in 1.4459 ms
+2026-02-02 22:55:57.409 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:57.411 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:57.426 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:57.433 +02:00 [INF] HTTP GET /api/Donors responded 200 in 25.8012 ms
+2026-02-02 22:55:58.561 +02:00 [INF] Fetching all donors
+2026-02-02 22:55:58.563 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:55:58.580 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:55:58.583 +02:00 [INF] HTTP GET /api/Donors responded 200 in 22.6022 ms
+2026-02-02 22:56:13.543 +02:00 [INF] Fetching all donors
+2026-02-02 22:56:13.546 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:56:13.586 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:56:13.589 +02:00 [INF] HTTP GET /api/Donors responded 200 in 47.1750 ms
+2026-02-02 22:56:33.652 +02:00 [INF] Updating donor with ID: 2
+2026-02-02 22:56:33.660 +02:00 [INF] מעדכן נתוני תורם מזהה 2.
+2026-02-02 22:56:33.836 +02:00 [INF] תורם 2 עודכן בהצלחה.
+2026-02-02 22:56:33.839 +02:00 [INF] HTTP PUT /api/Donors/2 responded 204 in 208.7571 ms
+2026-02-02 22:56:37.418 +02:00 [INF] HTTP GET /api/Donors/5/gifts responded 404 in 0.7535 ms
+2026-02-02 22:56:39.776 +02:00 [INF] HTTP GET /api/Donors/4/gifts responded 404 in 0.4422 ms
+2026-02-02 22:56:42.896 +02:00 [INF] HTTP GET /api/Donors/2/gifts responded 404 in 0.4255 ms
+2026-02-02 22:59:00.599 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 22:59:00.631 +02:00 [INF] Fetching all donors
+2026-02-02 22:59:00.632 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 22:59:00.635 +02:00 [INF] HTTP GET /api/Packages responded 200 in 36.6131 ms
+2026-02-02 22:59:00.642 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 22:59:00.644 +02:00 [INF] HTTP GET /api/Donors responded 200 in 21.4241 ms
+2026-02-02 22:59:00.677 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 22:59:00.715 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 39.0244 ms
+2026-02-02 22:59:02.458 +02:00 [INF] HTTP GET /api/Donors/4/gifts responded 404 in 0.3675 ms
+2026-02-02 22:59:04.779 +02:00 [INF] HTTP GET /api/Donors/5/gifts responded 404 in 0.8314 ms
+2026-02-02 23:00:47.618 +02:00 [INF] HTTP GET /api/Donors/4/gifts responded 404 in 0.6759 ms
+2026-02-02 23:02:36.507 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:02:36.520 +02:00 [INF] Fetching all donors
+2026-02-02 23:02:36.521 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:02:36.542 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:02:36.543 +02:00 [INF] HTTP GET /api/Packages responded 200 in 49.0966 ms
+2026-02-02 23:02:36.545 +02:00 [INF] HTTP GET /api/Donors responded 200 in 26.4881 ms
+2026-02-02 23:02:36.600 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:02:36.609 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.6209 ms
+2026-02-02 23:02:36.621 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:02:36.662 +02:00 [INF] Fetching all donors
+2026-02-02 23:02:36.664 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:02:36.690 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:02:36.694 +02:00 [INF] HTTP GET /api/Donors responded 200 in 33.0143 ms
+2026-02-02 23:02:36.737 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 117.2985 ms
+2026-02-02 23:02:36.792 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:02:36.800 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 8.3461 ms
+2026-02-02 23:03:00.782 +02:00 [INF] HTTP GET /api/Donors/2/gifts responded 404 in 1.5442 ms
+2026-02-02 23:03:34.442 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:03:34.473 +02:00 [INF] HTTP GET /api/Packages responded 200 in 32.2623 ms
+2026-02-02 23:03:34.491 +02:00 [INF] Fetching all donors
+2026-02-02 23:03:34.495 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:03:34.499 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:03:34.504 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:03:34.508 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.0467 ms
+2026-02-02 23:03:34.508 +02:00 [INF] HTTP GET /api/Donors responded 200 in 24.4780 ms
+2026-02-02 23:03:34.575 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:03:34.609 +02:00 [INF] Fetching all donors
+2026-02-02 23:03:34.613 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:03:34.630 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:03:34.637 +02:00 [INF] HTTP GET /api/Donors responded 200 in 29.3372 ms
+2026-02-02 23:03:34.682 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 108.1630 ms
+2026-02-02 23:03:34.697 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:03:34.704 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 7.7436 ms
+2026-02-02 23:03:37.916 +02:00 [INF] HTTP GET /api/Donors/5/gifts responded 404 in 0.4035 ms
+2026-02-02 23:03:40.856 +02:00 [INF] HTTP GET /api/Donors/2/gifts responded 404 in 0.9117 ms
+2026-02-02 23:03:42.986 +02:00 [INF] HTTP GET /api/Donors/1/gifts responded 404 in 0.7190 ms
+2026-02-02 23:04:25.244 +02:00 [INF] HTTP GET /api/Donors/2/gifts responded 404 in 6.7921 ms
+2026-02-02 23:04:28.427 +02:00 [INF] HTTP GET /api/Donors/2/gifts responded 404 in 0.6386 ms
+2026-02-02 23:08:17.206 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:17.209 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:17.232 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:17.244 +02:00 [INF] HTTP GET /api/Donors responded 200 in 48.3181 ms
+2026-02-02 23:08:17.469 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:17.472 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:17.481 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:17.486 +02:00 [INF] HTTP GET /api/Donors responded 200 in 18.6291 ms
+2026-02-02 23:08:18.245 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:18.248 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:18.257 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:18.260 +02:00 [INF] HTTP GET /api/Donors responded 200 in 15.6184 ms
+2026-02-02 23:08:18.511 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:18.514 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:18.525 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:18.530 +02:00 [INF] HTTP GET /api/Donors responded 200 in 20.6882 ms
+2026-02-02 23:08:18.927 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:18.929 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:18.939 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:18.944 +02:00 [INF] HTTP GET /api/Donors responded 200 in 18.0683 ms
+2026-02-02 23:08:19.834 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:19.838 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:19.850 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:19.855 +02:00 [INF] HTTP GET /api/Donors responded 200 in 22.4237 ms
+2026-02-02 23:08:20.101 +02:00 [INF] Fetching all donors
+2026-02-02 23:08:20.103 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:08:20.113 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:08:20.117 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.9049 ms
+2026-02-02 23:17:41.945 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:17:41.959 +02:00 [INF] Fetching all donors
+2026-02-02 23:17:41.960 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:17:42.089 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:17:42.099 +02:00 [INF] HTTP GET /api/Packages responded 200 in 224.1416 ms
+2026-02-02 23:17:42.108 +02:00 [INF] HTTP GET /api/Donors responded 200 in 152.2626 ms
+2026-02-02 23:17:42.120 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:17:42.129 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.4972 ms
+2026-02-02 23:17:42.138 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:17:42.174 +02:00 [INF] Fetching all donors
+2026-02-02 23:17:42.175 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:17:42.179 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:17:42.182 +02:00 [INF] HTTP GET /api/Donors responded 200 in 8.7236 ms
+2026-02-02 23:17:42.194 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 56.5923 ms
+2026-02-02 23:17:42.247 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:17:42.253 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 6.1604 ms
+2026-02-02 23:18:26.184 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:18:26.211 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.3161 ms
+2026-02-02 23:18:26.248 +02:00 [INF] Fetching all donors
+2026-02-02 23:18:26.250 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:18:26.261 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:18:26.264 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.7487 ms
+2026-02-02 23:18:26.268 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:18:26.304 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 37.1244 ms
+2026-02-02 23:18:26.587 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:18:26.603 +02:00 [INF] HTTP GET /api/Packages responded 200 in 17.7210 ms
+2026-02-02 23:18:26.619 +02:00 [INF] Fetching all donors
+2026-02-02 23:18:26.622 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:18:26.634 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:18:26.637 +02:00 [INF] HTTP GET /api/Donors responded 200 in 19.3723 ms
+2026-02-02 23:18:26.729 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:18:26.737 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 8.1484 ms
+2026-02-02 23:18:32.110 +02:00 [INF] Attempting to retrieve gift with donor: אבינדב
+2026-02-02 23:18:32.221 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אבינדב responded 200 in 127.6822 ms
+2026-02-02 23:18:32.248 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.5814 ms
+2026-02-02 23:18:40.733 +02:00 [INF] Attempting to retrieve gift with donor: יוני
+2026-02-02 23:18:40.744 +02:00 [INF] HTTP GET /api/Gift/sort/donor/יוני responded 200 in 14.5715 ms
+2026-02-02 23:19:03.483 +02:00 [INF] Attempting to retrieve gift with donor: אליעזר
+2026-02-02 23:19:03.510 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אליעזר responded 200 in 31.9232 ms
+2026-02-02 23:19:06.426 +02:00 [INF] Attempting to retrieve gift with donor: d4
+2026-02-02 23:19:06.477 +02:00 [INF] HTTP GET /api/Gift/sort/donor/d4 responded 200 in 51.4699 ms
+2026-02-02 23:19:12.526 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.1692 ms
+2026-02-02 23:19:27.255 +02:00 [INF] Fetching all donors
+2026-02-02 23:19:27.257 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:19:27.268 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:19:27.271 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.4825 ms
+2026-02-02 23:19:35.134 +02:00 [INF] HTTP GET /api/Donors/sort/email responded 404 in 1.2153 ms
+2026-02-02 23:19:36.192 +02:00 [INF] Fetching all donors
+2026-02-02 23:19:36.195 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:19:36.203 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:19:36.207 +02:00 [INF] HTTP GET /api/Donors responded 200 in 15.6402 ms
+2026-02-02 23:19:37.486 +02:00 [INF] Fetching all donors
+2026-02-02 23:19:37.488 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:19:37.495 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:19:37.499 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.3168 ms
+2026-02-02 23:19:40.028 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.1862 ms
+2026-02-02 23:21:49.782 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.4812 ms
+2026-02-02 23:22:03.168 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.2922 ms
+2026-02-02 23:36:59.124 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:36:59.126 +02:00 [INF] HTTP GET /api/Donors responded 401 in 8.0804 ms
+2026-02-02 23:36:59.281 +02:00 [INF] HTTP GET /api/Packages responded 200 in 163.3772 ms
+2026-02-02 23:36:59.316 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:36:59.323 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.9256 ms
+2026-02-02 23:36:59.324 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:36:59.423 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 99.8348 ms
+2026-02-02 23:36:59.447 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:36:59.468 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 22.7897 ms
+2026-02-02 23:36:59.567 +02:00 [INF] HTTP GET /images/packages/p-red.png responded 200 in 112.0939 ms
+2026-02-02 23:37:02.661 +02:00 [INF] HTTP GET /api/Donors responded 401 in 2.5288 ms
+2026-02-02 23:37:25.135 +02:00 [INF] Login attempt for email: m@gmail.com
+2026-02-02 23:37:25.138 +02:00 [INF] ניסיון התחברות עבור אימייל: m@gmail.com
+2026-02-02 23:37:25.283 +02:00 [INF] HTTP POST /api/User/login responded 200 in 148.5599 ms
+2026-02-02 23:37:28.818 +02:00 [INF] Fetching all donors
+2026-02-02 23:37:28.821 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:37:28.847 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:37:28.853 +02:00 [INF] HTTP GET /api/Donors responded 200 in 36.3612 ms
+2026-02-02 23:37:35.791 +02:00 [INF] Fetching all donors
+2026-02-02 23:37:35.794 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:37:35.801 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:37:35.805 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.0521 ms
+2026-02-02 23:37:41.057 +02:00 [INF] Fetching all donors
+2026-02-02 23:37:41.059 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:37:41.081 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:37:41.084 +02:00 [INF] HTTP GET /api/Donors responded 200 in 28.2940 ms
+2026-02-02 23:37:42.316 +02:00 [INF] Fetching all donors
+2026-02-02 23:37:42.319 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:37:42.357 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:37:42.362 +02:00 [INF] HTTP GET /api/Donors responded 200 in 46.8569 ms
+2026-02-02 23:37:47.973 +02:00 [INF] Attempting to retrieve gift with donor: אליעזר
+2026-02-02 23:37:48.021 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אליעזר responded 200 in 49.6088 ms
+2026-02-02 23:37:50.765 +02:00 [INF] Attempting to retrieve gift with donor: אבינדב
+2026-02-02 23:37:50.777 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אבינדב responded 200 in 12.2841 ms
+2026-02-02 23:37:50.795 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.8670 ms
+2026-02-02 23:37:55.609 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.3206 ms
+2026-02-02 23:38:01.547 +02:00 [INF] HTTP POST /api/Donors responded 400 in 58.2081 ms
+2026-02-02 23:38:02.789 +02:00 [INF] HTTP POST /api/Donors responded 400 in 1.4571 ms
+2026-02-02 23:38:14.753 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.3251 ms
+2026-02-02 23:40:13.762 +02:00 [INF] Fetching all donors
+2026-02-02 23:40:13.767 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:40:13.786 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:40:13.789 +02:00 [INF] HTTP GET /api/Donors responded 200 in 35.0704 ms
+2026-02-02 23:40:14.026 +02:00 [INF] Fetching all donors
+2026-02-02 23:40:14.029 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:40:14.039 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:40:14.044 +02:00 [INF] HTTP GET /api/Donors responded 200 in 19.0099 ms
+2026-02-02 23:40:35.382 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:40:35.396 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.5465 ms
+2026-02-02 23:40:35.425 +02:00 [INF] Fetching all donors
+2026-02-02 23:40:35.427 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:40:35.433 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:40:35.437 +02:00 [INF] HTTP GET /api/Donors responded 200 in 11.9330 ms
+2026-02-02 23:40:35.542 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:40:35.589 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 48.7976 ms
+2026-02-02 23:42:03.264 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:42:03.296 +02:00 [INF] HTTP GET /api/Packages responded 200 in 37.9331 ms
+2026-02-02 23:42:03.318 +02:00 [INF] Fetching all donors
+2026-02-02 23:42:03.319 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:42:03.332 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:42:03.334 +02:00 [INF] HTTP GET /api/Donors responded 200 in 18.4308 ms
+2026-02-02 23:42:03.343 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:42:03.364 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:42:03.389 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 46.9467 ms
+2026-02-02 23:42:03.398 +02:00 [INF] HTTP GET /api/Packages responded 200 in 33.9874 ms
+2026-02-02 23:42:03.433 +02:00 [INF] Fetching all donors
+2026-02-02 23:42:03.434 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:42:03.446 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:42:03.448 +02:00 [INF] HTTP GET /api/Donors responded 200 in 15.1765 ms
+2026-02-02 23:42:03.505 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:42:03.516 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 11.6974 ms
+2026-02-02 23:42:28.181 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:42:28.197 +02:00 [INF] HTTP GET /api/Packages responded 200 in 17.0556 ms
+2026-02-02 23:42:28.211 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:42:28.217 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.5627 ms
+2026-02-02 23:42:28.230 +02:00 [INF] Fetching all donors
+2026-02-02 23:42:28.231 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:42:28.239 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:42:28.241 +02:00 [INF] HTTP GET /api/Donors responded 200 in 11.8061 ms
+2026-02-02 23:42:28.245 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:42:28.258 +02:00 [INF] Fetching all donors
+2026-02-02 23:42:28.259 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:42:28.264 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:42:28.266 +02:00 [INF] HTTP GET /api/Donors responded 200 in 8.2429 ms
+2026-02-02 23:42:28.287 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 42.6134 ms
+2026-02-02 23:42:28.563 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:42:28.582 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 20.1034 ms
+2026-02-02 23:43:07.133 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:43:07.147 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.4174 ms
+2026-02-02 23:43:07.162 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:43:07.166 +02:00 [INF] HTTP GET /api/Packages responded 200 in 4.7797 ms
+2026-02-02 23:43:07.248 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:07.251 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:07.265 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:07.268 +02:00 [INF] HTTP GET /api/Donors responded 200 in 20.7355 ms
+2026-02-02 23:43:07.276 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:43:07.319 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:07.321 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:07.330 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:07.335 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.5436 ms
+2026-02-02 23:43:07.360 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 85.5676 ms
+2026-02-02 23:43:07.371 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:43:07.378 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 7.4860 ms
+2026-02-02 23:43:16.650 +02:00 [INF] Attempting to retrieve donor with name: as@gmail.com
+2026-02-02 23:43:16.693 +02:00 [INF] HTTP GET /api/Donors/sort/name/as@gmail.com responded 200 in 53.2808 ms
+2026-02-02 23:43:18.399 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:18.403 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:18.412 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:18.415 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.9130 ms
+2026-02-02 23:43:19.536 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:19.540 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:19.546 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:19.551 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.6247 ms
+2026-02-02 23:43:20.475 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:20.478 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:20.484 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:20.489 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.8335 ms
+2026-02-02 23:43:21.364 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:21.368 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:21.376 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:21.381 +02:00 [INF] HTTP GET /api/Donors responded 200 in 17.8018 ms
+2026-02-02 23:43:30.010 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:30.013 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:30.020 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:30.024 +02:00 [INF] HTTP GET /api/Donors responded 200 in 15.6976 ms
+2026-02-02 23:43:31.108 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:31.112 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:31.119 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:31.122 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.6856 ms
+2026-02-02 23:43:35.617 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:35.619 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:35.626 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:35.630 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.0548 ms
+2026-02-02 23:43:36.600 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:36.604 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:36.615 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:36.623 +02:00 [INF] HTTP GET /api/Donors responded 200 in 23.6189 ms
+2026-02-02 23:43:37.556 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:37.559 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:37.568 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:37.573 +02:00 [INF] HTTP GET /api/Donors responded 200 in 18.0042 ms
+2026-02-02 23:43:38.044 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:38.047 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:38.052 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:38.055 +02:00 [INF] HTTP GET /api/Donors responded 200 in 12.4774 ms
+2026-02-02 23:43:39.685 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:43:39.691 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.4184 ms
+2026-02-02 23:43:39.705 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:39.706 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:39.711 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:39.713 +02:00 [INF] HTTP GET /api/Donors responded 200 in 8.8478 ms
+2026-02-02 23:43:39.856 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:43:39.917 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 62.1206 ms
+2026-02-02 23:43:39.936 +02:00 [INF] HTTP GET /images/packages/p-red.png responded 304 in 3.1985 ms
+2026-02-02 23:43:46.504 +02:00 [INF] Attempting to retrieve donor with name: as@gmail.com
+2026-02-02 23:43:46.514 +02:00 [INF] HTTP GET /api/Donors/sort/name/as@gmail.com responded 200 in 10.3255 ms
+2026-02-02 23:43:51.732 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:51.735 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:51.742 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:51.745 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.3876 ms
+2026-02-02 23:43:54.917 +02:00 [INF] Fetching all donors
+2026-02-02 23:43:54.919 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:43:54.927 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:43:54.930 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.7140 ms
+2026-02-02 23:44:00.005 +02:00 [INF] Attempting to retrieve gift with donor: אבינדב
+2026-02-02 23:44:00.031 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אבינדב responded 200 in 26.9167 ms
+2026-02-02 23:44:00.052 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.9521 ms
+2026-02-02 23:44:03.793 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:03.797 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:03.804 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:03.807 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.7339 ms
+2026-02-02 23:44:03.823 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.2235 ms
+2026-02-02 23:44:06.090 +02:00 [INF] Attempting to retrieve donor with gift: ע1
+2026-02-02 23:44:06.162 +02:00 [WRN] donor with gift: ע1 not found.
+2026-02-02 23:44:06.166 +02:00 [INF] HTTP GET /api/Donors/sort/gift/ע1 responded 204 in 88.7713 ms
+2026-02-02 23:44:06.918 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:06.919 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:06.926 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:06.930 +02:00 [INF] HTTP GET /api/Donors responded 200 in 12.9138 ms
+2026-02-02 23:44:06.946 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.8557 ms
+2026-02-02 23:44:15.460 +02:00 [INF] Attempting to retrieve donor with gift: g1
+2026-02-02 23:44:15.511 +02:00 [INF] HTTP GET /api/Donors/sort/gift/g1 responded 200 in 52.8769 ms
+2026-02-02 23:44:15.527 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.1513 ms
+2026-02-02 23:44:27.092 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.3627 ms
+2026-02-02 23:44:30.567 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:30.570 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:30.583 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:30.587 +02:00 [INF] HTTP GET /api/Donors responded 200 in 21.1697 ms
+2026-02-02 23:44:33.794 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:33.796 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:33.835 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:33.841 +02:00 [INF] HTTP GET /api/Donors responded 200 in 47.6176 ms
+2026-02-02 23:44:38.356 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:38.359 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:38.367 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:38.372 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.5859 ms
+2026-02-02 23:44:40.715 +02:00 [INF] Attempting to retrieve donor with email: as@gmail.com
+2026-02-02 23:44:40.756 +02:00 [INF] HTTP GET /api/Donors/sort/email/as@gmail.com responded 200 in 49.0388 ms
+2026-02-02 23:44:45.002 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:45.005 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:45.013 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:45.019 +02:00 [INF] HTTP GET /api/Donors responded 200 in 17.0366 ms
+2026-02-02 23:44:56.623 +02:00 [INF] Fetching all donors
+2026-02-02 23:44:56.628 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:44:56.650 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:44:56.656 +02:00 [INF] HTTP GET /api/Donors responded 200 in 34.5248 ms
+2026-02-02 23:45:05.041 +02:00 [INF] Fetching all donors
+2026-02-02 23:45:05.043 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:45:05.052 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:45:05.056 +02:00 [INF] HTTP GET /api/Donors responded 200 in 15.8100 ms
+2026-02-02 23:45:32.485 +02:00 [INF] Fetching all donors
+2026-02-02 23:45:32.488 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:45:32.525 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:45:32.529 +02:00 [INF] HTTP GET /api/Donors responded 200 in 43.6957 ms
+2026-02-02 23:45:34.083 +02:00 [INF] Fetching all donors
+2026-02-02 23:45:34.085 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:45:34.092 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:45:34.096 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.2310 ms
+2026-02-02 23:45:35.339 +02:00 [INF] Fetching all donors
+2026-02-02 23:45:35.342 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:45:35.349 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:45:35.351 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.1543 ms
+2026-02-02 23:45:37.098 +02:00 [INF] Attempting to retrieve donor with email: d2@example.com
+2026-02-02 23:45:37.107 +02:00 [INF] HTTP GET /api/Donors/sort/email/d2@example.com responded 200 in 10.1548 ms
+2026-02-02 23:45:46.132 +02:00 [INF] Attempting to retrieve donor with email: as@gmail.com
+2026-02-02 23:45:46.141 +02:00 [INF] HTTP GET /api/Donors/sort/email/as@gmail.com responded 200 in 9.8817 ms
+2026-02-02 23:45:54.927 +02:00 [INF] Fetching all donors
+2026-02-02 23:45:54.931 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:45:54.939 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:45:54.943 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.2410 ms
+2026-02-02 23:46:03.639 +02:00 [INF] Fetching all donors
+2026-02-02 23:46:03.641 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:46:03.646 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:46:03.649 +02:00 [INF] HTTP GET /api/Donors responded 200 in 9.6008 ms
+2026-02-02 23:46:05.197 +02:00 [INF] Attempting to retrieve donor with name: יוני
+2026-02-02 23:46:05.208 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני responded 200 in 11.7554 ms
+2026-02-02 23:46:08.659 +02:00 [INF] Attempting to retrieve donor with name: יוני
+2026-02-02 23:46:08.669 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני responded 200 in 11.1146 ms
+2026-02-02 23:46:11.445 +02:00 [INF] Attempting to retrieve donor with name: יוני a
+2026-02-02 23:46:11.457 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני a responded 200 in 12.2414 ms
+2026-02-02 23:46:12.856 +02:00 [INF] Attempting to retrieve donor with name: יוני
+2026-02-02 23:46:12.866 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני responded 200 in 11.2596 ms
+2026-02-02 23:46:15.240 +02:00 [INF] Attempting to retrieve donor with name: יוני שט
+2026-02-02 23:46:15.253 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני שט responded 200 in 13.2438 ms
+2026-02-02 23:46:17.818 +02:00 [INF] Attempting to retrieve donor with name: יוני שטר
+2026-02-02 23:46:17.831 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני שטר responded 200 in 12.5608 ms
+2026-02-02 23:46:20.105 +02:00 [INF] Attempting to retrieve donor with name: יוני שטרסר
+2026-02-02 23:46:20.115 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני שטרסר responded 200 in 11.0019 ms
+2026-02-02 23:46:24.294 +02:00 [INF] Attempting to retrieve donor with name: יוני ש
+2026-02-02 23:46:24.324 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני ש responded 200 in 30.2575 ms
+2026-02-02 23:46:24.554 +02:00 [INF] Attempting to retrieve donor with name: יוני
+2026-02-02 23:46:24.569 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני responded 200 in 15.0721 ms
+2026-02-02 23:46:27.389 +02:00 [INF] Attempting to retrieve donor with name: יוני
+2026-02-02 23:46:27.421 +02:00 [INF] HTTP GET /api/Donors/sort/name/יוני responded 200 in 32.9642 ms
+2026-02-02 23:46:28.295 +02:00 [INF] Fetching all donors
+2026-02-02 23:46:28.297 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:46:28.314 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:46:28.316 +02:00 [INF] HTTP GET /api/Donors responded 200 in 22.1074 ms
+2026-02-02 23:46:32.549 +02:00 [INF] Attempting to retrieve donor with name: אב
+2026-02-02 23:46:32.563 +02:00 [INF] HTTP GET /api/Donors/sort/name/אב responded 200 in 14.6481 ms
+2026-02-02 23:46:33.257 +02:00 [INF] Attempting to retrieve donor with name: אבי
+2026-02-02 23:46:33.268 +02:00 [INF] HTTP GET /api/Donors/sort/name/אבי responded 200 in 11.5406 ms
+2026-02-02 23:46:35.072 +02:00 [INF] Attempting to retrieve donor with name: אב
+2026-02-02 23:46:35.085 +02:00 [INF] HTTP GET /api/Donors/sort/name/אב responded 200 in 13.6083 ms
+2026-02-02 23:46:35.902 +02:00 [INF] Fetching all donors
+2026-02-02 23:46:35.904 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:46:35.916 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:46:35.931 +02:00 [INF] HTTP GET /api/Donors responded 200 in 29.6097 ms
+2026-02-02 23:46:39.190 +02:00 [INF] Attempting to retrieve donor with name: א
+2026-02-02 23:46:39.202 +02:00 [INF] HTTP GET /api/Donors/sort/name/א responded 200 in 12.6781 ms
+2026-02-02 23:46:45.022 +02:00 [INF] Fetching all donors
+2026-02-02 23:46:45.026 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:46:45.034 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:46:45.038 +02:00 [INF] HTTP GET /api/Donors responded 200 in 16.2349 ms
+2026-02-02 23:46:47.296 +02:00 [INF] Attempting to retrieve gift with donor: d4
+2026-02-02 23:46:47.338 +02:00 [INF] HTTP GET /api/Gift/sort/donor/d4 responded 200 in 43.2430 ms
+2026-02-02 23:46:51.116 +02:00 [INF] Attempting to retrieve gift with donor: אליעזר
+2026-02-02 23:46:51.127 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אליעזר responded 200 in 11.0520 ms
+2026-02-02 23:46:53.397 +02:00 [INF] Attempting to retrieve gift with donor: יוני
+2026-02-02 23:46:53.417 +02:00 [INF] HTTP GET /api/Gift/sort/donor/יוני responded 200 in 21.2732 ms
+2026-02-02 23:46:57.052 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.1868 ms
+2026-02-02 23:47:20.197 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:47:20.198 +02:00 [INF] Fetching all donors
+2026-02-02 23:47:20.200 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:47:20.209 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.6505 ms
+2026-02-02 23:47:20.210 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:47:20.222 +02:00 [INF] HTTP GET /api/Donors responded 200 in 23.9382 ms
+2026-02-02 23:47:20.257 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:47:20.293 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 37.0344 ms
+2026-02-02 23:47:28.716 +02:00 [INF] Attempting to retrieve donor with name: א
+2026-02-02 23:47:28.726 +02:00 [INF] HTTP GET /api/Donors/sort/name/א responded 200 in 10.6479 ms
+2026-02-02 23:47:31.110 +02:00 [INF] Attempting to retrieve donor with name: אל
+2026-02-02 23:47:31.133 +02:00 [INF] HTTP GET /api/Donors/sort/name/אל responded 200 in 24.1343 ms
+2026-02-02 23:47:32.891 +02:00 [INF] Attempting to retrieve donor with name: א
+2026-02-02 23:47:32.918 +02:00 [INF] HTTP GET /api/Donors/sort/name/א responded 200 in 27.1473 ms
+2026-02-02 23:47:33.692 +02:00 [INF] Fetching all donors
+2026-02-02 23:47:33.694 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-02 23:47:33.714 +02:00 [INF] נשלפו בהצלחה 4 תורמים מהמאגר.
+2026-02-02 23:47:33.719 +02:00 [INF] HTTP GET /api/Donors responded 200 in 27.7183 ms
+2026-02-02 23:47:42.784 +02:00 [INF] Attempting to retrieve gift with donor: d4
+2026-02-02 23:47:42.815 +02:00 [INF] HTTP GET /api/Gift/sort/donor/d4 responded 200 in 31.6832 ms
+2026-02-02 23:47:45.960 +02:00 [INF] Attempting to retrieve gift with donor: אליעזר
+2026-02-02 23:47:45.967 +02:00 [INF] HTTP GET /api/Gift/sort/donor/אליעזר responded 200 in 8.4684 ms
+2026-02-02 23:47:48.959 +02:00 [INF] Attempting to retrieve gift with donor: יוני
+2026-02-02 23:47:48.976 +02:00 [INF] HTTP GET /api/Gift/sort/donor/יוני responded 200 in 18.4236 ms
+2026-02-02 23:48:27.748 +02:00 [INF] Creating a new donor
+2026-02-02 23:48:27.754 +02:00 [INF] מתחיל יצירת תורם חדש: שמואל מאיר נ"י
+2026-02-02 23:48:27.862 +02:00 [INF] תורם נוצר בהצלחה עם מזהה 6.
+2026-02-02 23:48:27.913 +02:00 [INF] HTTP POST /api/Donors responded 201 in 212.4572 ms
+2026-02-02 23:48:34.514 +02:00 [INF] Attempting to retrieve gift with donor: שמואל מאיר
+2026-02-02 23:48:34.523 +02:00 [INF] HTTP GET /api/Gift/sort/donor/שמואל מאיר responded 200 in 9.1509 ms
+2026-02-02 23:49:05.053 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-02 23:49:05.060 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-02 23:49:05.163 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-02 23:49:05.169 +02:00 [INF] HTTP GET /api/Gift responded 200 in 141.7203 ms
+2026-02-02 23:49:05.185 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.2366 ms
+2026-02-02 23:49:06.645 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:06.674 +02:00 [INF] HTTP GET /api/Packages responded 200 in 30.4094 ms
+2026-02-02 23:49:06.769 +02:00 [INF] HTTP GET /images/packages/p-pink.png responded 200 in 73.1864 ms
+2026-02-02 23:49:06.769 +02:00 [INF] HTTP GET /images/packages/p-blue.png responded 200 in 73.3827 ms
+2026-02-02 23:49:06.946 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:07.007 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 61.3932 ms
+2026-02-02 23:49:24.689 +02:00 [INF] Updating package 3 for user 19 with amount 2
+2026-02-02 23:49:24.865 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 186.9742 ms
+2026-02-02 23:49:29.905 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-02 23:49:29.906 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-02 23:49:29.914 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-02 23:49:29.918 +02:00 [INF] HTTP GET /api/Gift responded 200 in 12.4370 ms
+2026-02-02 23:49:29.928 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.2010 ms
+2026-02-02 23:49:30.970 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:30.971 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:30.981 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.7422 ms
+2026-02-02 23:49:30.988 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 17.6565 ms
+2026-02-02 23:49:34.162 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:34.169 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.6826 ms
+2026-02-02 23:49:34.367 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:34.376 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.9613 ms
+2026-02-02 23:49:34.409 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:34.426 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 17.2899 ms
+2026-02-02 23:49:34.446 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:34.453 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 8.0409 ms
+2026-02-02 23:49:36.743 +02:00 [INF] Updating package 2 for user 19 with amount 1
+2026-02-02 23:49:36.801 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 59.7555 ms
+2026-02-02 23:49:39.705 +02:00 [INF] Updating package 1 for user 19 with amount 1
+2026-02-02 23:49:39.732 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.4346 ms
+2026-02-02 23:49:41.152 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:41.176 +02:00 [INF] HTTP GET /api/Packages responded 200 in 24.7329 ms
+2026-02-02 23:49:41.360 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:41.402 +02:00 [INF] שולף את כל החבילות.
+2026-02-02 23:49:41.421 +02:00 [INF] HTTP GET /api/Packages responded 200 in 19.8844 ms
+2026-02-02 23:49:41.445 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 86.2919 ms
+2026-02-02 23:49:41.465 +02:00 [INF] Fetching user with orders for ID: 19
+2026-02-02 23:49:41.475 +02:00 [INF] HTTP GET /api/User/19/orders responded 200 in 10.9574 ms
+2026-02-02 23:49:46.322 +02:00 [INF] Updating package 2 for user 19 with amount 0
+2026-02-02 23:49:46.401 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 81.3588 ms
+2026-02-02 23:49:47.934 +02:00 [INF] Updating package 3 for user 19 with amount 3
+2026-02-02 23:49:47.965 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.2788 ms
+2026-02-02 23:50:34.885 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-02 23:50:34.889 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-02 23:50:34.920 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-02 23:50:34.927 +02:00 [INF] HTTP GET /api/Gift responded 200 in 52.3844 ms
+2026-02-02 23:50:34.946 +02:00 [INF] HTTP GET /images/gift/meJPG responded 404 in 0.4291 ms
+2026-02-02 23:50:43.761 +02:00 [INF] HTTP GET /api/Donors responded 401 in 0.6386 ms

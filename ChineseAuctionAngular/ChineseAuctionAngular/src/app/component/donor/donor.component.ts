@@ -5,56 +5,54 @@ import { DonorService } from '../../services/donor.service';
 import { DonorDTO, DonorCreateDTO } from '../../models/DonorDTO';
 import { Gift } from '../../models/GiftDTO';
 import { environment } from '../../../../environment';
-import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, Observable } from 'rxjs';
+
+// ייבוא הקומפוננטות החיצוניות
+import { DonorGiftsComponent } from './donor-gifts/donor-gifts.component';
+import { AddGiftComponent } from './add-gift/add-gift.component';
 
 @Component({
   selector: 'app-donor',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DonorGiftsComponent, AddGiftComponent],
   templateUrl: './donor.component.html',
   styleUrl: './donor.component.scss'
 })
 export class DonorComponent implements OnInit {
   private donorService = inject(DonorService);
   
-  // נתונים
   donors: DonorDTO[] = [];
   donorGifts: { [key: number]: Gift[] } = {};
   expandedDonorId: number | null = null;
+  addingGiftToDonorId: number | null = null; 
   
-  // ניהול מודלים (Modals)
   showAddModal = false;
   showEditModal = false;
   donorToDelete: DonorDTO | null = null;
   
-  // אובייקטים לעריכה והוספה
   newDonor: DonorCreateDTO = new DonorCreateDTO();
   editingDonor: DonorDTO | null = null;
   
-  // חיפוש וסינון
   searchQuery: string = '';
   currentFilter: 'name' | 'email' | 'gift' = 'name';
   activeFilterName: string = 'שם';
-  isLoading: boolean = false; // אינדיקטור טעינה
-  private searchSubject = new Subject<string>();
-
+  isLoading: boolean = false;
   imageBaseUrl = `${environment.apiUrl}/images/gift/`;
 
-  ngOnInit(): void {
+  private searchSubject = new Subject<string>();
+
+  ngOnInit() {
     this.loadDonors();
-    
-    // הגדרת ה-Pipe לחיפוש עם השהייה (Debounce)
     this.searchSubject.pipe(
-      debounceTime(400),
+      debounceTime(300),
       distinctUntilChanged()
-    ).subscribe(() => this.executeSearch());
+    ).subscribe(query => this.executeSearch(query));
   }
 
-  // טעינת כל התורמים
   loadDonors() {
     this.isLoading = true;
     this.donorService.getAllDonors().subscribe({
-      next: (data) => {
+      next: (data: DonorDTO[]) => {
         this.donors = data;
         this.isLoading = false;
       },
@@ -62,72 +60,14 @@ export class DonorComponent implements OnInit {
     });
   }
 
-  // שינוי סוג המסנן - מבצע חיפוש חוזר עם הטקסט הקיים
-  setFilter(filter: 'name' | 'email' | 'gift', name: string) {
-    this.currentFilter = filter;
-    this.activeFilterName = name;
-    
-    // אם יש טקסט בתיבה, נבצע חיפוש לפי הקטגוריה החדשה מיד
-    if (this.searchQuery.trim()) {
-      this.executeSearch();
-    }
-  }
-
-  // ניקוי תיבת החיפוש
-  clearSearch() {
-    this.searchQuery = '';
-    this.loadDonors();
-  }
-
-  onSearchInput() {
-    this.searchSubject.next(this.searchQuery);
-  }
-
-  // פונקציית החיפוש המרכזית
-  executeSearch() {
-    const q = this.searchQuery.trim();
-    
-    if (!q) {
-      this.loadDonors();
-      return;
-    }
-
-    this.isLoading = true;
-
-    // פונקציית עזר לטיפול בתשובה מהשרת
-    const handleResponse = (res: any) => {
-      // אם התוצאה היא מערך - נשמור אותו, אם אובייקט בודד (מתנה) - נעטוף במערך
-      this.donors = Array.isArray(res) ? res : (res ? [res] : []);
-      this.isLoading = false;
-    };
-
-    const handleError = () => {
-      this.donors = [];
-      this.isLoading = false;
-    };
-
-    switch (this.currentFilter) {
-      case 'name': 
-        this.donorService.sortByName(q).subscribe({ next: handleResponse, error: handleError }); 
-        break;
-      case 'email': 
-        this.donorService.sortByEmail(q).subscribe({ next: handleResponse, error: handleError }); 
-        break;
-      case 'gift': 
-        this.donorService.sortByGift(q).subscribe({ next: handleResponse, error: handleError }); 
-        break;
-    }
-  }
-
-  // ניהול רשימת מתנות לתורם (Accordion)
-  toggleGifts(donor: DonorDTO): void {
+  toggleGifts(donor: DonorDTO) {
     const id = donor.idDonor;
-    
     if (this.expandedDonorId === id) {
       this.expandedDonorId = null;
       return;
     }
     this.expandedDonorId = id;
+    this.addingGiftToDonorId = null; 
 
     if (!this.donorGifts[id]) {
       this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
@@ -136,7 +76,22 @@ export class DonorComponent implements OnInit {
     }
   }
 
-  // פעולות עריכה
+  confirmAddGift(donor: DonorDTO) {
+    this.addingGiftToDonorId = this.addingGiftToDonorId === donor.idDonor ? null : donor.idDonor;
+    this.expandedDonorId = null; 
+  }
+
+  onGiftAddedSuccessfully(donorId: number) {
+    this.addingGiftToDonorId = null;
+    const donor = this.donors.find(d => d.idDonor === donorId);
+    if (donor) {
+      this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
+        this.donorGifts[donorId] = gifts || [];
+        this.expandedDonorId = donorId; 
+      });
+    }
+  }
+
   openEditModal(donor: DonorDTO) {
     this.editingDonor = { ...donor };
     this.showEditModal = true;
@@ -152,7 +107,6 @@ export class DonorComponent implements OnInit {
     }
   }
 
-  // פעולות הוספה
   submitAddDonor() {
     this.donorService.createDonor(this.newDonor).subscribe(id => {
       const addedDonor = new DonorDTO({ idDonor: id, ...this.newDonor });
@@ -162,9 +116,8 @@ export class DonorComponent implements OnInit {
     });
   }
 
-  // פעולות מחיקה
-  confirmDelete(donor: DonorDTO) { 
-    this.donorToDelete = donor; 
+  confirmDelete(donor: DonorDTO) {
+    this.donorToDelete = donor;
   }
 
   executeDelete() {
@@ -174,5 +127,41 @@ export class DonorComponent implements OnInit {
         this.donorToDelete = null;
       });
     }
+  }
+
+  onSearchInput() {
+    this.searchSubject.next(this.searchQuery);
+  }
+
+  executeSearch(query: string) {
+    if (!query.trim()) {
+      this.loadDonors();
+      return;
+    }
+    this.isLoading = true;
+    let obs: Observable<any>;
+    switch (this.currentFilter) {
+      case 'email': obs = this.donorService.sortByEmail(query); break;
+      case 'gift': obs = this.donorService.sortByGift(query); break;
+      default: obs = this.donorService.sortByName(query); break;
+    }
+    obs.subscribe({
+      next: (data) => {
+        this.donors = Array.isArray(data) ? data : (data ? [data] : []);
+        this.isLoading = false;
+      },
+      error: () => { this.donors = []; this.isLoading = false; }
+    });
+  }
+
+  setFilter(filter: 'name' | 'email' | 'gift', name: string) {
+    this.currentFilter = filter;
+    this.activeFilterName = name;
+    if (this.searchQuery) this.executeSearch(this.searchQuery);
+  }
+
+  clearSearch() {
+    this.searchQuery = '';
+    this.loadDonors();
   }
 }

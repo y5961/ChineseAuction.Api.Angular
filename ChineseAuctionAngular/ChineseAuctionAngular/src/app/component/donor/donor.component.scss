@@ -2,143 +2,187 @@
 
 $primary-purple: #5c2d91;
 $accent-green: #a2d15d;
-$soft-bg: #f8f6fb;
+$soft-bg: #f9f9fb;
 $white: #ffffff;
-$border-light: #e2daeb;
-$text-dark: #2d2d2d;
+$border-color: #eee;
 
 /* Animations */
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .table-container {
   direction: rtl;
   padding: 40px;
   background: $white;
   font-family: 'Assistant', sans-serif;
+  animation: fadeInUp 0.5s ease-out;
 
   .header-actions {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
-.main-title {
-  color: $primary-purple;
-  font-weight: 300; // החזרת משקל הקו שהיה
-  margin: 0 0 25px 0;
-  position: relative;
-  font-size: 1.8rem;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px; right: 0;
-    width: 65px; height: 3px;
-    background: linear-gradient(to left, $accent-green, transparent); // הקו המקורי שביקשת
-    border-radius: 2px;
-  }
-}
+.main-title { color: $primary-purple; font-weight: 300; font-size: 2.2rem; margin-bottom: 20px; }
 
+/* חיפוש וסינון */
 .filter-wrapper {
-  display: flex; gap: 20px; align-items: center; margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
   .search-input-group {
     position: relative;
+    display: flex;
+    align-items: center;
     input {
-      padding: 12px 45px; border-radius: 30px; border: 1px solid $border-light;
-      width: 280px; outline: none; transition: 0.3s; background: #faf9ff;
-      &:focus { border-color: $accent-green; background: #fff; box-shadow: 0 0 10px rgba($accent-green, 0.15); }
+      width: 320px;
+      padding: 12px 40px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      &:focus { border-color: $primary-purple; outline: none; }
     }
-    .search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: $primary-purple; opacity: 0.5; }
-    .clear-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #ccc; font-size: 0.8rem; &:hover { color: #f44336; } }
-    .spinner-inline {
-      position: absolute; left: 15px; top: 32%; width: 16px; height: 16px;
-      border: 2px solid #f3f3f3; border-top: 2px solid $primary-purple; border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-  }
-
-  .filter-buttons {
-    display: flex; background: #f1edf7; padding: 4px; border-radius: 30px;
-    button {
-      border: none; background: none; padding: 8px 20px; border-radius: 25px;
-      font-size: 0.85rem; cursor: pointer; color: #7a6e8a; transition: 0.3s; font-weight: 600;
-      &.active { background: $white; color: $primary-purple; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
-    }
+    .search-icon { position: absolute; right: 12px; color: #aaa; }
+    .clear-icon { position: absolute; left: 12px; cursor: pointer; }
   }
 }
 
-.btn-add-donor {
-  background: linear-gradient(135deg, $primary-purple, #7b43bd);
-  color: white; border: none; padding: 12px 28px; border-radius: 50px;
-  font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba($primary-purple, 0.25);
-  transition: 0.3s; display: flex; align-items: center; gap: 10px;
-  &:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba($primary-purple, 0.35); filter: brightness(1.1); }
-  .plus-icon { font-size: 1.4rem; }
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  button {
+    padding: 5px 15px; border-radius: 20px; border: 1px solid #ddd; background: white; cursor: pointer;
+    &.active { background: $primary-purple; color: white; border-color: $primary-purple; }
+  }
 }
 
+/* טבלה */
 .donor-table {
-  width: 100%; border-collapse: separate; border-spacing: 0 12px;
-  animation: fadeInUp 0.6s ease-out;
-  th { padding: 15px; color: $primary-purple; text-align: right; font-weight: 600; }
-  td { 
-    padding: 18px 15px; background: #fff; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; transition: 0.3s;
-    &:first-child { border-right: 1px solid #f0f0f0; border-radius: 0 15px 15px 0; }
-    &:last-child { border-left: 1px solid #f0f0f0; border-radius: 15px 0 0 15px; }
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+
+  th { padding: 15px; color: #777; font-weight: 600; text-align: right; }
+
+  td {
+    padding: 18px 20px;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    
+    &:first-child { border-right: 1px solid #f0f0f0; border-radius: 0 12px 12px 0; }
+    &:last-child { border-left: 1px solid #f0f0f0; border-radius: 12px 0 0 12px; }
   }
-  tr:hover:not(.gifts-row) td { background: $soft-bg; }
+
+  tr.expanded-row td {
+    background: #fdfbff; // רקע עדין מאוד לשורת התורם הפתוחה בלבד
+    border-color: rgba($primary-purple, 0.1);
+  }
+}
+
+/* כפתור הוספת מתנה - מעוצב וירוק */
+.btn-gift-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1.5px solid $accent-green;
+  color: darken($accent-green, 10%);
+  padding: 7px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.85rem;
+
+  &:hover {
+    background: $accent-green;
+    color: white;
+    box-shadow: 0 4px 12px rgba($accent-green, 0.25);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    background: darken($accent-green, 5%);
+    color: white;
+    border-color: transparent;
+  }
+}
+
+/* בלוקים נפתחים - רקע לבן נקי */
+.inline-expand-row td {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.inner-expand-card {
+  margin: 5px 20px 25px 20px;
+  padding: 30px;
+  background: $white; // רקע לבן מוחלט
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+  animation: slideDown 0.3s ease-out;
+
+  &.add-gift-card {
+    border: 2px solid rgba($accent-green, 0.4); // מסגרת ירוקה עדינה להוספה
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+
+    h3 { margin: 0; color: $primary-purple; font-size: 1.25rem; }
+    .close-inline { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #bbb; &:hover { color: #333; } }
+  }
+}
+
+/* כפתורים נוספים */
+.btn-add-donor {
+  background: $accent-green; color: white; border: none; padding: 12px 25px; border-radius: 12px; font-weight: 600; cursor: pointer;
+  &:hover { background: darken($accent-green, 5%); }
 }
 
 .btn-toggle {
-  background: transparent; border: 1px solid $primary-purple; color: $primary-purple;
-  padding: 6px 18px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: 0.3s;
-  &:hover { background: $primary-purple; color: #fff; }
+  background: transparent; border: 1.5px solid $primary-purple; color: $primary-purple; padding: 5px 15px; border-radius: 8px; cursor: pointer;
+  &:hover { background: $primary-purple; color: white; }
 }
 
+.actions-cell {
+  display: flex; align-items: center; gap: 15px;
+  .btn-icon { background: none; border: none; font-size: 1.2rem; cursor: pointer; &:hover { transform: scale(1.2); } }
+}
+
+/* מודלים קופצים */
 .modal-overlay {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);
-  display: flex; justify-content: center; align-items: center; z-index: 1000;
+  background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 1000;
 }
-
 .modal-card {
-  background: $white; padding: 40px; border-radius: 20px; width: 440px; 
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15); animation: scaleIn 0.3s ease-out;
-  .modal-title { color: $text-dark; text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; }
-  .modal-form { 
-    display: flex; flex-direction: column; gap: 15px; 
-    input { padding: 14px; border-radius: 12px; border: 1px solid #ddd; outline: none; transition: 0.2s; &:focus { border-color: $primary-purple; box-shadow: 0 0 0 3px rgba($primary-purple, 0.1); } }
+  background: white; padding: 40px; border-radius: 20px; width: 450px;
+  .modal-title { color: $primary-purple; margin-bottom: 25px; text-align: center; }
+  .modal-form { display: flex; flex-direction: column; gap: 15px; input { padding: 12px; border: 1px solid #ddd; border-radius: 8px; } }
+  .modal-actions { display: flex; justify-content: center; gap: 15px; margin-top: 30px; 
+    button { padding: 10px 25px; border-radius: 10px; cursor: pointer; }
+    .btn-confirm { background: $primary-purple; color: white; border: none; }
   }
 }
 
-.modal-actions {
-  display: flex; justify-content: center; gap: 12px; margin-top: 30px;
-  button { padding: 12px 30px; border-radius: 25px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
-  .btn-confirm { background: $primary-purple; color: #fff; }
-  .btn-confirm-delete { background: #ff4d4d; color: #fff; }
-  .btn-cancel { background: #f3f4f6; color: #555; }
+.spinner-inline {
+  width: 18px; height: 18px; border: 2px solid rgba($primary-purple, 0.1);
+  border-top-color: $primary-purple; border-radius: 50%; animation: spin 0.8s linear infinite; margin-left: 10px;
 }
-
-/* שאר עיצובי המתנות והאייקונים */
-.gifts-expanded-box { background: #fdfbff; padding: 30px; border-radius: 20px; border: 1px dashed $border-light; margin: 0 10px; .gifts-title { color: $primary-purple; margin-bottom: 20px; font-size: 1.1rem; font-weight: 700; } }
-.gifts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.gift-mini-card {
-  background: #fff; padding: 15px; border-radius: 16px; display: flex; align-items: flex-start; gap: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; transition: transform 0.2s;
-  &:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba($primary-purple, 0.08); }
-  .gift-thumb { width: 65px; height: 65px; background: #f9f9f9; border-radius: 10px; overflow: hidden; flex-shrink: 0; border: 1px solid #f0f0f0; img { width: 100%; height: 100%; object-fit: cover; } .no-img { display: flex; align-items: center; justify-content: center; height: 100%; font-size: 1.5rem; } }
-  .gift-info { display: flex; flex-direction: column; gap: 4px; overflow: hidden; .gift-header-text { display: flex; flex-direction: column; small.category-tag { color: $accent-green; font-weight: 800; font-size: 0.7rem; } span.gift-name { color: $primary-purple; font-weight: 700; font-size: 1rem; } } .gift-description { margin-top: 5px; color: #666; font-size: 0.85rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; } }
-}
-.actions-cell { display: flex; gap: 8px; .btn-icon { background: none; border: none; cursor: pointer; font-size: 1.1rem; padding: 6px; border-radius: 50%; transition: 0.2s; &:hover { background: #eee; } } }
