@@ -3,8 +3,12 @@ import { TabsModule } from 'primeng/tabs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+<<<<<<< HEAD
 import { environment } from '../../../../enviroment';
 
+=======
+import { environment } from '../../../../environment';
+>>>>>>> origin/main
 interface TabItem {
   title: string;
   value: string;
@@ -41,14 +45,17 @@ export class Header implements OnInit {
 
   }
 
-
+  // סינון הטאבים בצורה בטוחה לפי מצב המשתמש והמנהל
   tabsSee = computed(() => {
     const isLogged = this.authService.isLoggedIn();
     const isAdmin = this.authService.isManager();
 
     return this.tabs.filter(tab => {
+      // אם הטאב למנהלים בלבד והמשתמש אינו מנהל - הסתר
       if (tab.adminOnly && !isAdmin) return false;
+      // אם הטאב מיועד רק למי שמנותק (כמו כניסה) והמשתמש מחובר - הסתר
       if (tab.onlyLoggedOut && isLogged) return false;
+      // אם זה טאב התנתקות והמשתמש לא מחובר - הסתר
       if (tab.value === 'logout' && !isLogged) return false;
       
       return true;
@@ -62,4 +69,5 @@ export class Header implements OnInit {
       this.router.navigate([value]);
     }
   }
+
 }

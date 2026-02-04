@@ -16,7 +16,6 @@ import { environment } from '../../../../enviroment';
 
 export class GiftComponent implements OnInit {
   imageUrl = environment.apiUrl + '/images/gift/';  
-  
   private giftService = inject(GiftService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
@@ -45,6 +44,7 @@ export class GiftComponent implements OnInit {
     });
   }
 
+  // פונקציות לפתיחה וסגירה של המודל
   openDetails(gift: Gift): void {
     this.selectedGift.set(gift);
   }
@@ -53,6 +53,7 @@ export class GiftComponent implements OnInit {
     this.selectedGift.set(null);
   }
 
+  // פונקציה להעלאת כמות (פלוס)
   increaseQuantity(gift: Gift): void {
     const userId = this.authService.getUserId();
     const newQty = (gift.customerQuantity || 0) + 1;

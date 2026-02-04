@@ -33,42 +33,39 @@ export class PackageComponent implements OnInit {
 
     this.loadUserData();
   }
-loadUserData() {
-  const userId = this.authService.getUserId();
-  if (userId > 0) {
-    this.orderService.getUserOrders(userId).subscribe({
-      next: (userResponse: any) => {
-        const draft = userResponse.orders?.find((o: any) => o.status === 0);
-        if (draft) {
-          const qtys: Record<number, number> = {};
-          draft.ordersPackages.forEach((p: any) => {
-            // תמיכה בכל וריאציה של שם השדה מהשרת
-            const id = p.idPackage || p.packageIdPackage || p.IdPackage;
-            if (id) qtys[id] = p.quantity;
-          });
-          this.cartService.setAllQuantities(qtys);
-          this.cartService.setCartItems(draft.ordersPackages);
+
+  loadUserData() {
+    const userId = this.authService.getUserId();
+    if (userId > 0) {
+      this.orderService.getUserOrders(userId).subscribe({
+        next: (userResponse: any) => {
+          const draft = userResponse.orders?.find((o: any) => o.status === 0);
+          if (draft) {
+            const qtys: Record<number, number> = {};
+            draft.ordersPackages.forEach((p: any) => {
+              qtys[p.idPackage] = p.quantity;
+            });
+            this.cartService.setAllQuantities(qtys);
+            this.cartService.setCartItems(draft.ordersPackages);
+          }
         }
-      }
-    });
+      });
+    }
   }
-}
- 
-handlePackageUpdate(packageItem: PackageDTO, action: 'increment' | 'decrement') {
-  const packageId = packageItem.idPackage;
+handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
   const currentQty = this.packageQuantities()[packageId] || 0;
   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
   
   if (newQty < 0) return;
 
   // עדכון אופטימי מיידי בשירות
-  this.cartService.updatePackageInCart(packageItem, newQty);
+  this.cartService.updatePackageInCart(packageId, newQty);
 
   const userId = this.authService.getUserId();
   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe({
     error: () => {
       // החזרה למצב קודם במקרה של שגיאה בשרת
-      this.cartService.updatePackageInCart(packageItem, currentQty);
+      this.cartService.updatePackageInCart(packageId, currentQty);
     }
   });
 }

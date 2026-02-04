@@ -36,4 +36,3 @@ private router = inject(Router);
   );
 
 }
-

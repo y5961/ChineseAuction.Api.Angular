@@ -1,10 +1,10 @@
 
-import { HttpInterceptorFn } from '@angular/common/http';
-
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-const token = localStorage.getItem('auth_token');
-console.log('auth_token found in storage:', token); // שורת בדיקה
+  // שליפת הטוקן לפי המפתח המדויק מה-AuthService שלך
+  const token = localStorage.getItem('auth_token');
+
   if (token) {
+    // שכפול הבקשה והוספת ה-Bearer Token
     const authReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`

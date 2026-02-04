@@ -19,6 +19,7 @@ namespace ChineseAuctionAPI.Data
         public DbSet<Winner> winners => Set<Winner>();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
+        {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>()
@@ -31,6 +32,7 @@ namespace ChineseAuctionAPI.Data
           .IsUnique();
 
         }
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -41,4 +43,3 @@ namespace ChineseAuctionAPI.Data
 
     }
 }
-

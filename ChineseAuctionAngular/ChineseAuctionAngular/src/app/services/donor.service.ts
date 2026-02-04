@@ -39,22 +39,23 @@ export class DonorService {
   }
 
   // 6. קבלת מתנות של תורם ספציפי
-  getGiftsByDonorId(donorId: number): Observable<Gift[]> { // הוחלף מ-any[]
-    return this.http.get<Gift[]>(`${this.BASE_URL}/${donorId}/gifts`);
-  }
+getGiftsByDonorId(donorName: string): Observable<Gift[]> { 
+  return this.http.get<Gift[]>(`api/Gift/sort/donor/${donorName}`);
+}
 
   // 7. חיפוש/מיון לפי שם
-  sortByName(name: string): Observable<Donor[]> {
-    return this.http.get<Donor[]>(`${this.BASE_URL}/sort/name?name=${name}`);
-  }
+sortByName(name: string): Observable<Donor[]> {
+  return this.http.get<Donor[]>(`${this.BASE_URL}/sort/name/${name}`);
+}
 
-  // 8. חיפוש/מיון לפי אימייל
-  sortByEmail(email: string): Observable<Donor[]> {
-    return this.http.get<Donor[]>(`${this.BASE_URL}/sort/email?email=${email}`);
-  }
+// 8. חיפוש/מיון לפי אימייל
+sortByEmail(email: string): Observable<Donor[]> {
+  return this.http.get<Donor[]>(`${this.BASE_URL}/sort/email/${email}`);
+}
 
-  // 9. חיפוש לפי מתנה
-  sortByGift(giftName: string): Observable<Donor> {
-    return this.http.get<Donor>(`${this.BASE_URL}/sort/gift?gift=${giftName}`);
-  }
+// 9. חיפוש לפי מתנה
+sortByGift(giftName: string): Observable<Donor> {
+  return this.http.get<Donor>(`${this.BASE_URL}/sort/gift/${giftName}`);
+}
+
 }

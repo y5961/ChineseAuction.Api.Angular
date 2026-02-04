@@ -1,0 +1,33 @@
+$primary-purple: #5c2d91;
+$accent-green: #a2d15d;
+
+.add-gift-container {
+  padding: 15px;
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    .form-group {
+      display: flex; flex-direction: column;
+      &.full-width { grid-column: span 2; }
+      label { font-weight: bold; color: $primary-purple; margin-bottom: 5px; }
+      input, textarea, .custom-select {
+        padding: 10px; border-radius: 8px; border: 1px solid #ddd;
+      }
+    }
+  }
+
+  .image-box {
+    margin-top: 10px; border: 1px dashed $primary-purple; padding: 10px; border-radius: 10px;
+    .tabs { display: flex; gap: 5px; margin-bottom: 10px;
+      button { flex: 1; padding: 5px; cursor: pointer; &.active { background: $primary-purple; color: white; } }
+    }
+    .preview { max-height: 80px; display: block; margin: 0 auto; }
+  }
+
+  .btn-save {
+    width: 100%; margin-top: 20px; padding: 12px; background: $accent-green;
+    color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;
+    &:disabled { opacity: 0.6; }
+  }
+}

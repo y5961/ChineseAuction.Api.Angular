@@ -22,6 +22,28 @@ namespace ChineseAuctionAPI.Controllers
             _logger = logger;
         }
 
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("לא נבחר קובץ");
+
+            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "public", "images", "gift");
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            var filePath = Path.Combine(folderPath, file.FileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return Ok(new { fileName = file.FileName });
+        }
         [HttpGet]
         public async Task<IActionResult> Get()
         {

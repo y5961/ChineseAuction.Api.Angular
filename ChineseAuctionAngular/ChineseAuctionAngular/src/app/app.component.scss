@@ -1,41 +1,36 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden; /* מונע גלילה של כל ה-Viewport */
+  height: 100vh; /* גובה מסך מלא */
+  overflow: hidden; /* מונע גלילה של כל הדף */
 }
 
 .main-layout {
   display: flex;
-  flex: 1;
-  overflow: hidden; /* קריטי: מונע מהילדים "לפרוץ" החוצה */
+  flex: 1; /* תופס את כל השטח שמתחת ל-Header */
   direction: ltr; /* מצמיד את הסרגל לשמאל */
+  overflow: hidden;
 }
 
 .side-cart {
   width: 300px;
   min-width: 300px;
-  height: 100%;
-  overflow-y: auto; /* גלילה עצמאית לעגלה */
+  height: 100%; /* מה-Header עד למטה ממש */
+  overflow-y: auto; /* גלילה פנימית רק לעגלה */
   border-right: 1px solid #ddd;
-  background-color: #f9f9f9; /* אופציונלי: להפרדה ויזואלית */
+  flex-shrink: 0;
 }
 
 .content-and-footer {
-  flex: 1;
+  flex: 1; /* מצמצם את כל האזור הזה לימין */
   display: flex;
   flex-direction: column;
-  height: 100%; 
-  overflow-y: auto; /* כאן מתרחשת הגלילה של התוכן הראשי */
-  direction: rtl; /* חזרה לעברית */
+  height: 100%;
+  overflow-y: auto; /* הגלילה של האתר קורית כאן */
+  direction: rtl; /* מחזיר לעברית */
 }
 
 .main-content {
-  flex: 1 0 auto; /* מאפשר לתוכן לגדול ודוחף את הפוטר למטה */
+  flex: 1; /* דוחף את הפוטר לתחתית האזור הימני */
   padding: 20px;
-}
-
-app-footer {
-  flex-shrink: 0; /* מבטיח שהפוטר לא יתכווץ */
 }

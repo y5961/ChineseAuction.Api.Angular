@@ -1,0 +1,28 @@
+<div class="gifts-expanded-box">
+  <h4 class="gifts-title">🎁 מתנות שנתרמו על ידי {{ donorName }}:</h4>
+  
+  <div *ngIf="gifts.length === 0" class="no-gifts">
+    אין מתנות רשומות לתורם זה.
+  </div>
+  
+  <div class="gifts-grid" *ngIf="gifts.length > 0">
+    <div class="gift-mini-card" *ngFor="let gift of gifts">
+      <div class="gift-thumb">
+        <img *ngIf="gift.image && gift.image !== 'string'" 
+             [src]="imageBaseUrl + gift.image" 
+             alt="Gift Image">
+        <div *ngIf="!gift.image || gift.image === 'string'" class="no-img">🎁</div>
+      </div>
+      
+      <div class="gift-info">
+        <div class="gift-header-text">
+          <small class="category-tag">{{ gift.category?.name || 'מתנה' }}</small>
+          <span class="gift-name">{{ gift.name }}</span>
+        </div>
+        <p class="gift-description" *ngIf="gift.description">
+          {{ gift.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

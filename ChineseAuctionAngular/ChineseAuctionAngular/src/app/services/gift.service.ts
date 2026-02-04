@@ -16,9 +16,11 @@ export class GiftService {
     return this.http.post<Gift>(`${this.BASE_URL}`, dto);
   }
 
-deleteGift(id: number) {
-  return this.http.delete(`${this.BASE_URL}/${id}`); // בלי <boolean>
-}
+  // 2. מחיקת מתנה
+  deleteGift(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.BASE_URL}/${id}`);
+  }
+
   // 3. קבלת כל המתנות
   getAllGifts(): Observable<Gift[]> {
     return this.http.get<Gift[]>(`${this.BASE_URL}`);
@@ -58,6 +60,16 @@ deleteGift(id: number) {
   sortByAmountPeople(): Observable<Gift[]> {
     return this.http.get<Gift[]>(`${this.BASE_URL}/sort/popularity`);
   }
+<<<<<<< HEAD
 
+=======
+// 11. העלאת תמונה לסרבר
+
+uploadImage(file: File): Observable<{ fileName: string }> {
+  const formData = new FormData();
+  formData.append('file', file);
+  return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
+}
+>>>>>>> origin/main
    }
 

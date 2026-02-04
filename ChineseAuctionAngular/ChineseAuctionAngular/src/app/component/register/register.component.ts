@@ -7,17 +7,11 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CartService } from '../../services/cart.service'; 
 import { Router } from '@angular/router'; 
-import { RippleModule } from 'primeng/ripple';
-import { CardModule } from 'primeng/card';
-import { PasswordModule } from 'primeng/password';
+
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, PasswordModule, CardModule,
-    FormsModule, 
-    InputTextModule, 
-    ButtonModule, 
-    RippleModule],
+  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })

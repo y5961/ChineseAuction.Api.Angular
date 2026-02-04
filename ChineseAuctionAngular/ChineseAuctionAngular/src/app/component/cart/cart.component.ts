@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, effect, signal, computed } from '@angular/core';
+import { Component, OnInit, inject, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
@@ -15,19 +15,21 @@ import { environment } from '../../../../enviroment';
 })
 export class CartComponent implements OnInit {
   imageUrl = environment.apiUrl + '/images/packages/';
+  
+  // הזרקת שירותים (Dependencies)
   private cartService = inject(CartService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
   private packageService = inject(PackageService);
 
+  // נתונים ו-Signals
   cartPackages = this.cartService.cartItems;
   packageQuantities = this.cartService.packageQuantities;
   allAvailablePackages = signal<any[]>([]);
-  
-
-totalPrice = this.cartService.totalPrice;
+  totalPrice = this.cartService.totalPrice;
 
   constructor() {
+    // מאזין לשינויים ב-UserId וטוען את הסל בהתאם
     effect(() => {
       const userId = this.authService.getUserId();
       if (userId > 0) {
@@ -37,6 +39,7 @@ totalPrice = this.cartService.totalPrice;
   }
 
   ngOnInit() {
+    // טעינת חבילות ורק אז טעינת הסל כדי להבטיח שהנתונים זמינים להצלבה
     this.packageService.getAllPackages().subscribe((pkgs: any[]) => {
       this.allAvailablePackages.set(pkgs);
       this.loadCart();
@@ -55,6 +58,7 @@ totalPrice = this.cartService.totalPrice;
             const enrichedPackages = draft.ordersPackages.map((item: any) => {
               const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
               qtys[item.idPackage] = item.quantity;
+              
               return {
                 ...item,
                 name: fullInfo?.name || item.name || 'חבילה',
@@ -62,6 +66,7 @@ totalPrice = this.cartService.totalPrice;
               };
             });
 
+            // עדכון ה-Signals ב-Service
             this.cartService.setAllQuantities(qtys);
             this.cartService.setCartItems(enrichedPackages);
           } else {
@@ -84,23 +89,38 @@ totalPrice = this.cartService.totalPrice;
     }
   }
 
-private updateQty(idPackage: number, newQty: number) {
+  private updateQty(idPackage: number, newQty: number) {
     const userId = this.authService.getUserId();
-    // מוצאים את פרטי החבילה מהסל הקיים
     const pkg = this.cartPackages().find(p => p.idPackage === idPackage);
 
     this.orderService.updatePackageQuantity(userId, idPackage, newQty).subscribe({
       next: () => {
+        // שילוב שתי הגרסאות: גם עדכון ה-Signals וגם טיפול במחיקה
+        this.cartService.updatePackageInCart(idPackage, newQty);
+        
         if (pkg) {
           this.cartService.updatePackageInCart(pkg, newQty);
         }
-      }
+        
+        if (newQty === 0) {
+          this.loadCart(); // טעינה מחדש של הסל אם מוצר הוסר לחלוטין
+        }
+      },
+      error: (err) => console.error('Error updating quantity', err)
     });
   }
-
 
   getPackageImage(id: number): string {
     const images = ['p-green.png', 'p-blue.png', 'p-pink.png', 'p-red.png'];
     return images[id % images.length];
+  }
+
+  // פונקציה לחישוב סכום ידני במידת הצורך (למרות שיש Signal ב-Service)
+  calculateTotal(): number {
+    return this.cartPackages().reduce((acc, pkg) => {
+      const qty = this.packageQuantities()[pkg.idPackage] || 0;
+      const price = pkg.price || 0;
+      return acc + (price * qty);
+    }, 0);
   }
 }
