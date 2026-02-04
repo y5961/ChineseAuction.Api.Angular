@@ -32,7 +32,26 @@ $border-color: #eee;
   }
 }
 
-.main-title { color: $primary-purple; font-weight: 300; font-size: 2.2rem; margin-bottom: 20px; }
+/* כותרת עם קו ירוק אצילי ועדין */
+.main-title { 
+  color: $primary-purple; 
+  font-weight: 300; 
+  font-size: 2.2rem; 
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 60px; /* קו חלקי ועדין */
+    height: 3px;
+    background: $accent-green;
+    border-radius: 2px;
+  }
+}
 
 /* חיפוש וסינון */
 .filter-wrapper {
@@ -65,7 +84,7 @@ $border-color: #eee;
   }
 }
 
-/* טבלה */
+/* טבלה עם אנימציה סגלגלה */
 .donor-table {
   width: 100%;
   border-collapse: separate;
@@ -73,23 +92,38 @@ $border-color: #eee;
 
   th { padding: 15px; color: #777; font-weight: 600; text-align: right; }
 
+  /* אנימציה סגלגלה במעבר עכבר */
+  tbody tr:not(.inline-expand-row) {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.01); /* הגדלה עדינה */
+      td {
+        background: rgba($primary-purple, 0.05); /* רקע סגלגל שקוף */
+        border-color: rgba($primary-purple, 0.2);
+        color: $primary-purple;
+      }
+    }
+  }
+
   td {
     padding: 18px 20px;
     background: #fff;
     border-top: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
     
     &:first-child { border-right: 1px solid #f0f0f0; border-radius: 0 12px 12px 0; }
     &:last-child { border-left: 1px solid #f0f0f0; border-radius: 12px 0 0 12px; }
   }
 
   tr.expanded-row td {
-    background: #fdfbff; // רקע עדין מאוד לשורת התורם הפתוחה בלבד
+    background: #fdfbff; 
     border-color: rgba($primary-purple, 0.1);
   }
 }
 
-/* כפתור הוספת מתנה - מעוצב וירוק */
+/* כפתור הוספת מתנה */
 .btn-gift-action {
   display: flex;
   align-items: center;
@@ -105,8 +139,8 @@ $border-color: #eee;
   font-size: 0.85rem;
 
   &:hover {
-    background: $accent-green;
-    color: white;
+    background: $accent-green !important; /* דריסת ה-hover של השורה */
+    color: white !important;
     box-shadow: 0 4px 12px rgba($accent-green, 0.25);
     transform: translateY(-2px);
   }
@@ -118,24 +152,25 @@ $border-color: #eee;
   }
 }
 
-/* בלוקים נפתחים - רקע לבן נקי */
+/* בלוקים נפתחים */
 .inline-expand-row td {
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
+  &:hover { background: transparent !important; transform: none !important; }
 }
 
 .inner-expand-card {
   margin: 5px 20px 25px 20px;
   padding: 30px;
-  background: $white; // רקע לבן מוחלט
+  background: $white;
   border: 1px solid #e0e0e0;
   border-radius: 18px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.07);
   animation: slideDown 0.3s ease-out;
 
   &.add-gift-card {
-    border: 2px solid rgba($accent-green, 0.4); // מסגרת ירוקה עדינה להוספה
+    border: 2px solid rgba($accent-green, 0.4);
   }
 
   .card-header {

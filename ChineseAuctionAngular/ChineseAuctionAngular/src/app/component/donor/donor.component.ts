@@ -9,7 +9,7 @@ import { Subject, debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 
 // ייבוא הקומפוננטות החיצוניות
 import { DonorGiftsComponent } from './donor-gifts/donor-gifts.component';
-import { AddGiftComponent } from './add-gift/add-gift.component';
+import { AddGiftComponent } from '../add-gift/add-gift.component';
 
 @Component({
   selector: 'app-donor',
