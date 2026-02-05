@@ -10,6 +10,7 @@ import { Subject, debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 // ייבוא הקומפוננטות החיצוניות
 import { DonorGiftsComponent } from './donor-gifts/donor-gifts.component';
 import { AddGiftComponent } from '../add-gift/add-gift.component';
+import { GiftService } from '../../services/gift.service';
 
 @Component({
   selector: 'app-donor',
@@ -164,4 +165,18 @@ export class DonorComponent implements OnInit {
     this.searchQuery = '';
     this.loadDonors();
   }
+  // הזרקת השירות ב-Constructor או ב-inject
+private giftService = inject(GiftService); 
+
+deleteGiftFromDonor(giftId: number, donorId: number) {
+  this.giftService.deleteGift(giftId).subscribe({
+    next: () => {
+      // עדכון הרשימה המקומית כדי שהמתנה תיעלם מהמסך
+      if (this.donorGifts[donorId]) {
+        this.donorGifts[donorId] = this.donorGifts[donorId].filter(g => g.idGift !== giftId);
+      }
+    },
+    error: (err) => console.error("שגיאה במחיקת המתנה", err)
+  });
+}
 }

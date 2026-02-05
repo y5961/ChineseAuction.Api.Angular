@@ -47,7 +47,7 @@
           <td>
             <button class="btn-toggle" (click)="toggleGifts(donor)">
               {{ expandedDonorId === donor.idDonor ? 'סגור' : 'הצג מתנות' }}
-            </button>             
+            </button>              
           </td>
           <td class="actions-cell">
             <button class="btn-icon edit" (click)="openEditModal(donor)" title="ערוך">✏️</button>
@@ -87,7 +87,8 @@
               <app-donor-gifts 
                 [gifts]="donorGifts[donor.idDonor] || []" 
                 [donorName]="donor.firstName"
-                [imageBaseUrl]="imageBaseUrl">
+                [imageBaseUrl]="imageBaseUrl"
+                (deleteGift)="deleteGiftFromDonor($event, donor.idDonor)">
               </app-donor-gifts>
             </div>
           </td>
@@ -96,46 +97,4 @@
     </tbody>
   </table>
 
-  <div class="modal-overlay" *ngIf="showAddModal" (click)="showAddModal = false">
-    <div class="modal-card" (click)="$event.stopPropagation()">
-      <h3 class="modal-title">הוספת תורם חדש</h3>
-      <div class="modal-form">
-        <input type="text" [(ngModel)]="newDonor.firstName" placeholder="שם פרטי">
-        <input type="text" [(ngModel)]="newDonor.lastName" placeholder="שם משפחה">
-        <input type="email" [(ngModel)]="newDonor.email" placeholder="אימייל">
-        <input type="text" [(ngModel)]="newDonor.phoneNumber" placeholder="טלפון">
-      </div>
-      <div class="modal-actions">
-        <button class="btn-confirm" (click)="submitAddDonor()">הוסף תורם</button>
-        <button class="btn-cancel" (click)="showAddModal = false">ביטול</button>
-      </div>
-    </div>
   </div>
-
-  <div class="modal-overlay" *ngIf="showEditModal && editingDonor" (click)="showEditModal = false">
-    <div class="modal-card" (click)="$event.stopPropagation()">
-      <h3 class="modal-title">עריכת פרטי תורם</h3>
-      <div class="modal-form">
-        <input type="text" [(ngModel)]="editingDonor.firstName" placeholder="שם פרטי">
-        <input type="text" [(ngModel)]="editingDonor.lastName" placeholder="שם משפחה">
-        <input type="email" [(ngModel)]="editingDonor.email" placeholder="אימייל">
-        <input type="text" [(ngModel)]="editingDonor.phoneNumber" placeholder="טלפון">
-      </div>
-      <div class="modal-actions">
-        <button class="btn-confirm" (click)="submitEditDonor()">שמור שינויים</button>
-        <button class="btn-cancel" (click)="showEditModal = false">ביטול</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal-overlay" *ngIf="donorToDelete" (click)="donorToDelete = null">
-    <div class="modal-card modal-delete" (click)="$event.stopPropagation()">
-      <h3 class="modal-title">אישור מחיקה</h3>
-      <p>האם אתם בטוחים שברצונכם למחוק את <b>{{donorToDelete.firstName}} {{donorToDelete.lastName}}</b>?</p>
-      <div class="modal-actions">
-        <button class="btn-confirm-delete" (click)="executeDelete()">מחק</button>
-        <button class="btn-cancel" (click)="donorToDelete = null">ביטול</button>
-      </div>
-    </div>
-  </div>
-</div>
