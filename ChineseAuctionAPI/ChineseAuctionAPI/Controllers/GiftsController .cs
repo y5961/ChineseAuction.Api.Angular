@@ -236,7 +236,6 @@ namespace ChineseAuctionAPI.Controllers
             {
                 _logger.LogInformation("Attempting to retrieve gift with Price: {Price}");
                 var gift = await _giftService.SortByAmountPeople();
-
                 if (gift == null)
                 {
                     _logger.LogWarning("Gift with buyers: {buyers} not found.");
@@ -250,5 +249,30 @@ namespace ChineseAuctionAPI.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-    }
+
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Manager")]
+        public async Task<IActionResult> Update(int id, [FromBody] GiftDTO dto)
+        {
+            try
+            {
+                _logger.LogInformation("Attempting to update gift with ID: {Id}", id);
+
+                var success = await _giftService.UpdateGiftAsync(id, dto);
+
+                if (!success)
+                {
+                    _logger.LogWarning("Update failed. Gift with ID: {Id} not found.", id);
+                    return NotFound();
+                }
+
+                return NoContent(); // מחזיר קוד 204 (הצלחה)
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while updating gift with ID: {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        }
 }

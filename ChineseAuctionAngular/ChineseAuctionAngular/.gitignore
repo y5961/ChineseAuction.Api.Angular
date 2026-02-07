@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+# Logs
+**/logs/*.txt
+
+# Public images (if they are uploaded by users/generated)
+**/public/images/gift/*.jpg
+**/public/b.jpg

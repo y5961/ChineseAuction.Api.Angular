@@ -1,0 +1,242 @@
+2026-02-08 00:26:21.887 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-08 00:26:25.191 +02:00 [INF] HTTP OPTIONS /api/User/login responded 204 in 5.7074 ms
+2026-02-08 00:26:25.444 +02:00 [INF] Login attempt for email: Aa123456@example.com
+2026-02-08 00:26:25.453 +02:00 [INF] ניסיון התחברות עבור אימייל: Aa123456@example.com
+2026-02-08 00:26:25.829 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 82.4430 ms
+2026-02-08 00:26:26.101 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 35.3725 ms
+2026-02-08 00:26:27.653 +02:00 [INF] HTTP POST /api/User/login responded 200 in 2447.0848 ms
+2026-02-08 00:26:34.476 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.7559 ms
+2026-02-08 00:26:34.476 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.7557 ms
+2026-02-08 00:26:34.539 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:26:34.539 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:26:34.542 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:26:34.543 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:26:34.544 +02:00 [INF] Fetching all donors
+2026-02-08 00:26:34.547 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:26:34.610 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:26:34.613 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:26:34.617 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 108.9976 ms
+2026-02-08 00:26:34.618 +02:00 [INF] HTTP GET /api/Donors responded 200 in 135.0592 ms
+2026-02-08 00:26:34.695 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:26:34.715 +02:00 [INF] HTTP GET /api/Gift responded 200 in 234.2904 ms
+2026-02-08 00:26:58.161 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.7766 ms
+2026-02-08 00:26:58.169 +02:00 [INF] Fetching all donors
+2026-02-08 00:26:58.170 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:26:58.182 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:26:58.184 +02:00 [INF] HTTP GET /api/Donors responded 200 in 17.9709 ms
+2026-02-08 00:26:58.480 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:26:58.482 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:26:58.496 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:26:58.497 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 20.5954 ms
+2026-02-08 00:27:03.354 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0831 ms
+2026-02-08 00:27:03.359 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:27:03.361 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:27:03.370 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:27:03.371 +02:00 [INF] HTTP GET /api/Gift responded 200 in 13.0204 ms
+2026-02-08 00:27:09.267 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.0591 ms
+2026-02-08 00:27:09.267 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.4997 ms
+2026-02-08 00:27:09.284 +02:00 [INF] Fetching all donors
+2026-02-08 00:27:09.284 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:27:09.285 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:27:09.285 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:27:09.287 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:27:09.287 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:27:09.293 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:27:09.296 +02:00 [INF] HTTP GET /api/Donors responded 200 in 21.6343 ms
+2026-02-08 00:27:09.299 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:27:09.305 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:27:09.305 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 23.4910 ms
+2026-02-08 00:27:09.306 +02:00 [INF] HTTP GET /api/Gift responded 200 in 26.9908 ms
+2026-02-08 00:27:11.532 +02:00 [INF] Fetching all donors
+2026-02-08 00:27:11.533 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:27:11.536 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:27:11.538 +02:00 [INF] HTTP GET /api/Donors responded 200 in 6.1417 ms
+2026-02-08 00:27:11.849 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:27:11.852 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:27:11.858 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:27:11.862 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 13.8257 ms
+2026-02-08 00:27:58.733 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.2573 ms
+2026-02-08 00:27:58.747 +02:00 [INF] Fetching all donors
+2026-02-08 00:27:58.749 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:27:58.760 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:27:58.761 +02:00 [INF] HTTP GET /api/Donors responded 200 in 14.7373 ms
+2026-02-08 00:28:03.896 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.3244 ms
+2026-02-08 00:28:03.896 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.0503 ms
+2026-02-08 00:28:03.912 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:28:03.914 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:03.915 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:28:03.915 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:03.916 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:03.919 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:03.919 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:28:03.929 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 16.9400 ms
+2026-02-08 00:28:03.929 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:03.930 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:03.935 +02:00 [INF] HTTP GET /api/Gift responded 200 in 20.7490 ms
+2026-02-08 00:28:03.936 +02:00 [INF] HTTP GET /api/Donors responded 200 in 20.3304 ms
+2026-02-08 00:28:04.876 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:04.877 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:04.883 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:04.885 +02:00 [INF] HTTP GET /api/Donors responded 200 in 9.3234 ms
+2026-02-08 00:28:07.092 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:07.092 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:07.100 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:07.103 +02:00 [INF] HTTP GET /api/Gift responded 200 in 12.3069 ms
+2026-02-08 00:28:08.081 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:08.081 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:08.082 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:08.084 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:08.091 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:08.094 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.6553 ms
+2026-02-08 00:28:08.097 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:08.098 +02:00 [INF] HTTP GET /api/Gift responded 200 in 17.8000 ms
+2026-02-08 00:28:08.398 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:28:08.398 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:28:08.401 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:28:08.403 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 5.3957 ms
+2026-02-08 00:28:12.310 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.3586 ms
+2026-02-08 00:28:12.316 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:12.317 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:12.327 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:12.329 +02:00 [INF] HTTP GET /api/Gift responded 200 in 13.6066 ms
+2026-02-08 00:28:14.654 +02:00 [INF] HTTP OPTIONS /api/Gift/3/participants responded 204 in 0.1849 ms
+2026-02-08 00:28:14.658 +02:00 [INF] HTTP GET /api/Gift/3/participants responded 404 in 0.4886 ms
+2026-02-08 00:28:17.581 +02:00 [INF] HTTP GET /api/Gift/3/participants responded 404 in 0.3967 ms
+2026-02-08 00:28:18.002 +02:00 [INF] HTTP OPTIONS /api/Gift/4/participants responded 204 in 0.0775 ms
+2026-02-08 00:28:18.008 +02:00 [INF] HTTP GET /api/Gift/4/participants responded 404 in 0.3186 ms
+2026-02-08 00:28:18.566 +02:00 [INF] HTTP OPTIONS /api/Gift/10/participants responded 204 in 0.0673 ms
+2026-02-08 00:28:18.572 +02:00 [INF] HTTP GET /api/Gift/10/participants responded 404 in 0.3179 ms
+2026-02-08 00:28:32.372 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.1434 ms
+2026-02-08 00:28:32.383 +02:00 [INF] שולף את כל החבילות.
+2026-02-08 00:28:32.415 +02:00 [INF] HTTP GET /api/Packages responded 200 in 39.2323 ms
+2026-02-08 00:28:32.424 +02:00 [INF] HTTP OPTIONS /api/User/1/orders responded 204 in 0.0637 ms
+2026-02-08 00:28:32.436 +02:00 [INF] Fetching user with orders for ID: 1
+2026-02-08 00:28:32.489 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-08 00:28:32.581 +02:00 [INF] HTTP GET /api/User/1/orders responded 200 in 151.2258 ms
+2026-02-08 00:28:36.110 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.2004 ms
+2026-02-08 00:28:36.114 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:36.116 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:36.120 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:36.123 +02:00 [INF] HTTP GET /api/Gift responded 200 in 9.6279 ms
+2026-02-08 00:28:37.996 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.4209 ms
+2026-02-08 00:28:37.997 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:38.000 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:38.003 +02:00 [INF] שולף את כל החבילות.
+2026-02-08 00:28:38.006 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:38.010 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.5777 ms
+2026-02-08 00:28:38.010 +02:00 [INF] HTTP GET /api/Gift responded 200 in 13.2750 ms
+2026-02-08 00:28:38.016 +02:00 [INF] HTTP OPTIONS /api/User/1/orders responded 204 in 0.2539 ms
+2026-02-08 00:28:38.025 +02:00 [INF] Fetching user with orders for ID: 1
+2026-02-08 00:28:38.032 +02:00 [INF] HTTP GET /api/User/1/orders responded 200 in 8.9476 ms
+2026-02-08 00:28:43.916 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0442 ms
+2026-02-08 00:28:43.916 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.0504 ms
+2026-02-08 00:28:43.928 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:43.929 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:43.929 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:28:43.931 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:28:43.931 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:43.934 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:43.935 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:43.938 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:28:43.938 +02:00 [INF] HTTP GET /api/Gift responded 200 in 10.6585 ms
+2026-02-08 00:28:43.941 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 12.2113 ms
+2026-02-08 00:28:43.941 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:43.944 +02:00 [INF] HTTP GET /api/Donors responded 200 in 13.7341 ms
+2026-02-08 00:28:49.455 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.0892 ms
+2026-02-08 00:28:49.456 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0890 ms
+2026-02-08 00:28:49.473 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:49.474 +02:00 [INF] שולף את כל החבילות.
+2026-02-08 00:28:49.474 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:49.484 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:49.484 +02:00 [INF] HTTP GET /api/Packages responded 200 in 13.4471 ms
+2026-02-08 00:28:49.486 +02:00 [INF] HTTP GET /api/Gift responded 200 in 13.5271 ms
+2026-02-08 00:28:49.490 +02:00 [INF] HTTP OPTIONS /api/User/1/orders responded 204 in 0.0398 ms
+2026-02-08 00:28:49.494 +02:00 [INF] Fetching user with orders for ID: 1
+2026-02-08 00:28:49.498 +02:00 [INF] HTTP GET /api/User/1/orders responded 200 in 4.5929 ms
+2026-02-08 00:28:49.855 +02:00 [INF] שולף את כל החבילות.
+2026-02-08 00:28:49.856 +02:00 [INF] Fetching user with orders for ID: 1
+2026-02-08 00:28:49.862 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.1068 ms
+2026-02-08 00:28:49.864 +02:00 [INF] HTTP GET /api/User/1/orders responded 200 in 8.9661 ms
+2026-02-08 00:28:50.456 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:50.457 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:50.461 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:50.463 +02:00 [INF] HTTP GET /api/Gift responded 200 in 8.0052 ms
+2026-02-08 00:28:55.270 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.1325 ms
+2026-02-08 00:28:55.275 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:55.276 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:55.283 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:55.284 +02:00 [INF] HTTP GET /api/Donors responded 200 in 10.3062 ms
+2026-02-08 00:28:56.653 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0581 ms
+2026-02-08 00:28:56.655 +02:00 [INF] Fetching all donors
+2026-02-08 00:28:56.656 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:28:56.658 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:56.661 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:56.661 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:28:56.664 +02:00 [INF] HTTP GET /api/Donors responded 200 in 10.3113 ms
+2026-02-08 00:28:56.666 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:56.668 +02:00 [INF] HTTP GET /api/Gift responded 200 in 9.9863 ms
+2026-02-08 00:28:56.969 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:28:56.970 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:28:56.974 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:28:56.976 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 7.9291 ms
+2026-02-08 00:28:57.106 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:28:57.107 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:28:57.111 +02:00 [INF] נשלפו בהצלחה 7 מתנות.
+2026-02-08 00:28:57.113 +02:00 [INF] HTTP GET /api/Gift responded 200 in 6.8432 ms
+2026-02-08 00:29:03.139 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.0545 ms
+2026-02-08 00:29:03.143 +02:00 [INF] Fetching all donors
+2026-02-08 00:29:03.144 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:29:03.148 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:29:03.150 +02:00 [INF] HTTP GET /api/Donors responded 200 in 6.6760 ms
+2026-02-08 00:29:08.643 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:29:08.644 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:29:08.647 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:29:08.649 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 6.0673 ms
+2026-02-08 00:29:33.378 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.4528 ms
+2026-02-08 00:29:33.394 +02:00 [INF] Attempting to create a new gift.
+2026-02-08 00:29:33.396 +02:00 [INF] מתחיל תהליך יצירת מתנה חדשה: nn
+2026-02-08 00:29:33.523 +02:00 [INF] Gift created successfully with ID: 16
+2026-02-08 00:29:33.540 +02:00 [INF] HTTP POST /api/Gift responded 201 in 158.1714 ms
+2026-02-08 00:29:33.858 +02:00 [INF] Attempting to retrieve gift with donor: micael
+2026-02-08 00:29:33.877 +02:00 [INF] HTTP GET /api/Gift/sort/donor/micael responded 200 in 22.5883 ms
+2026-02-08 00:29:57.286 +02:00 [INF] HTTP OPTIONS /api/Donors/1 responded 204 in 0.0771 ms
+2026-02-08 00:29:57.295 +02:00 [INF] Updating donor with ID: 1
+2026-02-08 00:29:57.297 +02:00 [INF] מעדכן נתוני תורם מזהה 1.
+2026-02-08 00:29:57.319 +02:00 [INF] תורם 1 עודכן בהצלחה.
+2026-02-08 00:29:57.321 +02:00 [INF] HTTP PUT /api/Donors/1 responded 204 in 31.2437 ms
+2026-02-08 00:46:44.597 +02:00 [INF] שולף את כל החבילות.
+2026-02-08 00:46:44.623 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.1223 ms
+2026-02-08 00:46:57.609 +02:00 [INF] HTTP OPTIONS /api/User/login responded 204 in 0.0377 ms
+2026-02-08 00:46:57.614 +02:00 [INF] Login attempt for email: Aa123456@example.com
+2026-02-08 00:46:57.614 +02:00 [INF] ניסיון התחברות עבור אימייל: Aa123456@example.com
+2026-02-08 00:46:57.866 +02:00 [INF] HTTP POST /api/User/login responded 200 in 253.2314 ms
+2026-02-08 00:47:02.798 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.2627 ms
+2026-02-08 00:47:02.803 +02:00 [INF] Fetching all donors
+2026-02-08 00:47:02.804 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:47:02.808 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:47:02.808 +02:00 [INF] HTTP GET /api/Donors responded 200 in 6.2515 ms
+2026-02-08 00:47:11.386 +02:00 [INF] Attempting to retrieve gift with donor: micael
+2026-02-08 00:47:11.394 +02:00 [INF] HTTP GET /api/Gift/sort/donor/micael responded 200 in 8.1602 ms
+2026-02-08 00:47:26.096 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:47:26.097 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:47:26.103 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:47:26.104 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 8.5458 ms
+2026-02-08 00:47:58.200 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.6029 ms
+2026-02-08 00:47:58.200 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.0541 ms
+2026-02-08 00:47:58.210 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:47:58.211 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:47:58.211 +02:00 [INF] Fetching all donors
+2026-02-08 00:47:58.212 +02:00 [INF] מתחיל שליפת כל התורמים בשירות.
+2026-02-08 00:47:58.221 +02:00 [INF] נשלפו בהצלחה 8 מתנות.
+2026-02-08 00:47:58.222 +02:00 [INF] HTTP GET /api/Gift responded 200 in 13.1194 ms
+2026-02-08 00:47:58.226 +02:00 [INF] נשלפו בהצלחה 2 תורמים מהמאגר.
+2026-02-08 00:47:58.228 +02:00 [INF] HTTP GET /api/Donors responded 200 in 17.2579 ms
+2026-02-08 00:47:58.516 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-08 00:47:58.518 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-08 00:47:58.522 +02:00 [INF] נשלפו בהצלחה 2 קטגוריות.
+2026-02-08 00:47:58.523 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 7.2905 ms
+2026-02-08 00:48:07.781 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0378 ms
+2026-02-08 00:48:07.785 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-08 00:48:07.785 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-08 00:48:07.789 +02:00 [INF] נשלפו בהצלחה 8 מתנות.
+2026-02-08 00:48:07.790 +02:00 [INF] HTTP GET /api/Gift responded 200 in 5.4955 ms

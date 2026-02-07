@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PackageDTO, PackageCreateDTO } from '../models/PackageDTO';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PackageService {
-  readonly BASE_URL = "api/Packages";
+  readonly BASE_URL = `${environment.apiUrl}/api/Packages`;
   private http = inject(HttpClient);
 
   constructor() {}

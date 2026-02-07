@@ -1,0 +1,140 @@
+.add-gift-container {
+  direction: rtl;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // חלוקה ל-2 עמודות כמו בתמונה
+    gap: 20px;
+    margin-bottom: 25px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: bold;
+        color: #5d2b91; // סגול כהה לכותרות
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+
+      input, select, textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        outline: none;
+
+        &:focus {
+          border-color: #5d2b91;
+          box-shadow: 0 0 5px rgba(93, 43, 145, 0.2);
+        }
+      }
+
+      &.full-width {
+        grid-column: span 2; // שדות שתופסים שורה שלמה (תיאור ותמונה)
+      }
+      
+      textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+    }
+  }
+
+  // עיצוב אזור העלאת התמונה (המסגרת המקווקוות)
+  .image-box {
+    border: 2px dashed #a389c5;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fdfbff;
+
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+
+      button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #666;
+        transition: 0.3s;
+
+        &.active {
+          background-color: #5d2b91;
+          color: white;
+          border-radius: 4px 4px 0 0;
+        }
+      }
+    }
+
+    .content {
+      text-align: center;
+      
+      input[type="file"] {
+        display: none; // הסתרת כפתור ה-HTML המקורי
+      }
+
+      .upload-label {
+        cursor: pointer;
+        display: block;
+        padding: 20px;
+        color: #5d2b91;
+        font-weight: 500;
+
+        .preview {
+          max-width: 150px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+
+        &:hover {
+          background-color: rgba(93, 43, 145, 0.05);
+        }
+      }
+    }
+  }
+
+  // כפתור השמירה הירוק מלמטה
+  .btn-save {
+    width: 100%;
+    padding: 12px;
+    background-color: #9ac33e; // הירוק שבתמונה
+    color: black;
+    border: none;
+    border-radius: 25px; // עיגול פינות משמעותי
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover:not(:disabled) {
+      background-color: #89ae35;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// התאמה למובייל
+@media (max-width: 600px) {
+  .add-gift-container .form-grid {
+    grid-template-columns: 1fr;
+    
+    .form-group.full-width {
+      grid-column: span 1;
+    }
+  }
+}

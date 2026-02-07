@@ -6,17 +6,19 @@
       <div class="filter-wrapper">
         <div class="search-input-group">
           <span class="search-icon">🔍</span>
-          <input type="text" [(ngModel)]="searchQuery" 
-                 [placeholder]="'חיפוש לפי ' + activeFilterName + '...'"
-                 (input)="onSearchInput()">
-          <div class="spinner-inline" *ngIf="isLoading"></div>
-          <span class="clear-icon" *ngIf="searchQuery && !isLoading" (click)="clearSearch()">✖️</span>
+          <input type="text" 
+                 [ngModel]="searchQuery()" 
+                 (ngModelChange)="searchQuery.set($event); onSearchInput()"
+                 [placeholder]="'חיפוש לפי ' + activeFilterName() + '...'">
+          
+          <div class="spinner-inline" *ngIf="isLoading()"></div>
+          <span class="clear-icon" *ngIf="searchQuery() && !isLoading()" (click)="clearSearch()">✖️</span>
         </div>
         
         <div class="filter-buttons">
-          <button [class.active]="currentFilter === 'name'" (click)="setFilter('name', 'שם')">לפי שם</button>
-          <button [class.active]="currentFilter === 'email'" (click)="setFilter('email', 'אימייל')">לפי אימייל</button>
-          <button [class.active]="currentFilter === 'gift'" (click)="setFilter('gift', 'מתנה')">לפי מתנה</button>
+          <button [class.active]="currentFilter() === 'name'" (click)="setFilter('name', 'שם')">לפי שם</button>
+          <button [class.active]="currentFilter() === 'email'" (click)="setFilter('email', 'אימייל')">לפי אימייל</button>
+          <button [class.active]="currentFilter() === 'gift'" (click)="setFilter('gift', 'מתנה')">לפי מתנה</button>
         </div>
       </div>
     </div>
@@ -38,23 +40,23 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let donor of donors">
-        <tr [class.expanded-row]="expandedDonorId === donor.idDonor || addingGiftToDonorId === donor.idDonor">
+      <ng-container *ngFor="let donor of donors()">
+        <tr [class.expanded-row]="expandedDonorId() === donor.idDonor || addingGiftToDonorId() === donor.idDonor">
           <td>{{ donor.firstName }}</td>
           <td>{{ donor.lastName }}</td>
           <td>{{ donor.email }}</td>
           <td>{{ donor.phoneNumber }}</td>
           <td>
             <button class="btn-toggle" (click)="toggleGifts(donor)">
-              {{ expandedDonorId === donor.idDonor ? 'סגור' : 'הצג מתנות' }}
-            </button>             
+              {{ expandedDonorId() === donor.idDonor ? 'סגור' : 'הצג מתנות' }}
+            </button>              
           </td>
           <td class="actions-cell">
             <button class="btn-icon edit" (click)="openEditModal(donor)" title="ערוך">✏️</button>
             <button class="btn-icon delete" (click)="confirmDelete(donor)" title="מחק">❌</button>
             
             <button class="btn-gift-action" 
-                    [class.active]="addingGiftToDonorId === donor.idDonor"
+                    [class.active]="addingGiftToDonorId() === donor.idDonor"
                     (click)="confirmAddGift(donor)">
               <span class="icon">🎁</span>
               <span class="text">הוסף מתנה</span>
@@ -62,12 +64,12 @@
           </td>
         </tr>
 
-        <tr *ngIf="addingGiftToDonorId === donor.idDonor" class="inline-expand-row">
+        <tr *ngIf="addingGiftToDonorId() === donor.idDonor" class="inline-expand-row">
           <td colspan="6">
             <div class="inner-expand-card add-gift-card">
               <div class="card-header">
                 <h3>הוספת מתנה חדשה עבור {{ donor.firstName }} {{ donor.lastName }}</h3>
-                <button class="close-inline" (click)="addingGiftToDonorId = null">✖</button>
+                <button class="close-inline" (click)="addingGiftToDonorId.set(null)">✖</button>
               </div>
               <app-add-gift 
                 [donorId]="donor.idDonor" 
@@ -77,17 +79,18 @@
           </td>
         </tr>
 
-        <tr *ngIf="expandedDonorId === donor.idDonor" class="inline-expand-row">
+        <tr *ngIf="expandedDonorId() === donor.idDonor" class="inline-expand-row">
           <td colspan="6">
             <div class="inner-expand-card">
               <div class="card-header">
                 <h3>מתנות שנתרמו ע"י {{ donor.firstName }}</h3>
-                <button class="close-inline" (click)="expandedDonorId = null">✖</button>
+                <button class="close-inline" (click)="expandedDonorId.set(null)">✖</button>
               </div>
               <app-donor-gifts 
-                [gifts]="donorGifts[donor.idDonor] || []" 
+                [gifts]="donorGifts()[donor.idDonor] || []" 
                 [donorName]="donor.firstName"
-                [imageBaseUrl]="imageBaseUrl">
+                [imageBaseUrl]="imageBaseUrl"
+                (deleteGift)="deleteGiftFromDonor($event, donor.idDonor)">
               </app-donor-gifts>
             </div>
           </td>
@@ -96,8 +99,8 @@
     </tbody>
   </table>
 
-  <div class="modal-overlay" *ngIf="showAddModal" (click)="showAddModal = false">
-    <div class="modal-card" (click)="$event.stopPropagation()">
+  <div class="modal-overlay" *ngIf="showAddModal">
+    <div class="modal-card">
       <h3 class="modal-title">הוספת תורם חדש</h3>
       <div class="modal-form">
         <input type="text" [(ngModel)]="newDonor.firstName" placeholder="שם פרטי">
@@ -112,10 +115,10 @@
     </div>
   </div>
 
-  <div class="modal-overlay" *ngIf="showEditModal && editingDonor" (click)="showEditModal = false">
-    <div class="modal-card" (click)="$event.stopPropagation()">
+  <div class="modal-overlay" *ngIf="showEditModal">
+    <div class="modal-card">
       <h3 class="modal-title">עריכת פרטי תורם</h3>
-      <div class="modal-form">
+      <div class="modal-form" *ngIf="editingDonor">
         <input type="text" [(ngModel)]="editingDonor.firstName" placeholder="שם פרטי">
         <input type="text" [(ngModel)]="editingDonor.lastName" placeholder="שם משפחה">
         <input type="email" [(ngModel)]="editingDonor.email" placeholder="אימייל">
@@ -128,12 +131,12 @@
     </div>
   </div>
 
-  <div class="modal-overlay" *ngIf="donorToDelete" (click)="donorToDelete = null">
-    <div class="modal-card modal-delete" (click)="$event.stopPropagation()">
+  <div class="modal-overlay" *ngIf="donorToDelete">
+    <div class="modal-card">
       <h3 class="modal-title">אישור מחיקה</h3>
-      <p>האם אתם בטוחים שברצונכם למחוק את <b>{{donorToDelete.firstName}} {{donorToDelete.lastName}}</b>?</p>
+      <p style="text-align: center;">האם את בטוחה שברצונך למחוק את התורם <strong>{{ donorToDelete.firstName }} {{ donorToDelete.lastName }}</strong>?</p>
       <div class="modal-actions">
-        <button class="btn-confirm-delete" (click)="executeDelete()">מחק</button>
+        <button class="btn-confirm" style="background-color: #ff4d4d;" (click)="executeDelete()">כן, מחק</button>
         <button class="btn-cancel" (click)="donorToDelete = null">ביטול</button>
       </div>
     </div>

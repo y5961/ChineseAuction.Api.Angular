@@ -13,7 +13,11 @@ namespace ChineseAuctionAPI.Repositories
         {
             _context = context;
         }
-
+        //public async Task<bool> UpdateAsync(Gift gift)
+        //{
+        //    _context.Gifts.Update(gift);
+        //    return await _context.SaveChangesAsync() > 0;
+        //}
         public async Task<IEnumerable<Gift>> GetAllAsync()
         {
             return await _context.Gifts

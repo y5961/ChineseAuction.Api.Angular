@@ -28,26 +28,28 @@ export class AddGiftComponent implements OnInit {
   isUploading = false;
   isSubmitting = false;
 
-ngOnInit() {
-  this.loadCategories();
-  // אתחול ערכי ברירת מחדל כדי למנוע שגיאת 400
-  this.newGift.quantity = 1; 
-  this.newGift.categoryId = 0; 
-  
-  if (this.donorId) {
-    this.newGift.idDonor = this.donorId;
+  ngOnInit() {
+    this.loadCategories();
+    // מניעת שגיאת 400: השרת דורש כמות בין 1 ל-500
+    this.newGift.amount = 1; 
+    this.newGift.categoryId = 0; 
+    
+    if (this.donorId) {
+      this.newGift.idDonor = this.donorId;
+    }
   }
-}
 
   loadCategories() {
-    this.categoryService.getAllCategories().subscribe(data => this.categories = data);
+    this.categoryService.getAllCategories().subscribe({
+      next: (data: GiftCategoryDTO[]) => this.categories = data,
+      error: (err) => console.error("Error loading categories", err)
+    });
   }
 
   onFileSelected(event: any) {
     const file = event.target.files[0];
     if (!file) return;
 
-    // תצוגה מקדימה
     const reader = new FileReader();
     reader.onload = () => this.imagePreview = reader.result as string;
     reader.readAsDataURL(file);
@@ -55,7 +57,7 @@ ngOnInit() {
     this.isUploading = true;
     this.giftService.uploadImage(file).subscribe({
       next: (res: any) => {
-        this.newGift.image = res.fileName; // עדכון שם הקובץ ב-DTO
+        this.newGift.image = res.fileName;
         this.isUploading = false;
       },
       error: () => {
@@ -68,9 +70,13 @@ ngOnInit() {
   saveGift() {
     this.isSubmitting = true;
     this.giftService.createGift(this.newGift).subscribe({
-      next: () => this.giftAdded.emit(),
-      error: () => {
-        alert("שגיאה בשמירת המתנה - בדקי תאימות שדות (400)"); // פותר שגיאה 400
+      next: () => {
+        this.giftAdded.emit();
+        this.isSubmitting = false;
+      },
+      error: (err) => {
+        console.error("Save error:", err);
+        alert("שגיאה בשמירת המתנה - בדקי שהכמות חוקית (1-500)");
         this.isSubmitting = false;
       }
     });

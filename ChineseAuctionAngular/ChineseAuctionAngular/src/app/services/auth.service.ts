@@ -4,10 +4,11 @@ import { DtoLogin, UserDTO } from '../models/UserDTO';
 import { tap } from 'rxjs';
 import { CartService } from './cart.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  readonly BASE_URL = "/api/User";
+  readonly BASE_URL = `${environment.apiUrl}/api/User`;
   private http = inject(HttpClient);
   private router = inject(Router);
   private cartService = inject(CartService);

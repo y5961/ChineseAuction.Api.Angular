@@ -18,6 +18,11 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label>כמות (1-500)</label>
+      <input type="number" [(ngModel)]="newGift.amount" min="1" max="500">
+    </div>
+
     <div class="form-group full-width">
       <label>תיאור המתנה</label>
       <textarea [(ngModel)]="newGift.description" placeholder="ספרי על המתנה..."></textarea>
@@ -25,22 +30,30 @@
 
     <div class="form-group full-width image-box">
       <div class="tabs">
-        <button (click)="uploadMode='file'" [class.active]="uploadMode==='file'">העלאת קובץ</button>
-        <button (click)="uploadMode='manual'" [class.active]="uploadMode==='manual'">טקסט חופשי</button>
+        <button type="button" (click)="uploadMode='file'" [class.active]="uploadMode==='file'">📁 העלאת קובץ</button>
+        <button type="button" (click)="uploadMode='manual'" [class.active]="uploadMode==='manual'">✍️ טקסט חופשי</button>
       </div>
       
       <div class="content" *ngIf="uploadMode==='file'">
-        <input type="file" (change)="onFileSelected($event)" id="fileInput">
+        <input type="file" (change)="onFileSelected($event)" id="fileInput" accept="image/*" hidden>
         <label for="fileInput" class="upload-label">
-          <img *ngIf="imagePreview" [src]="imagePreview" class="preview">
-          <span *ngIf="!imagePreview">לחצי לבחירת תמונה</span>
+          <div class="preview-container">
+            <img *ngIf="imagePreview" [src]="imagePreview" class="preview">
+            <div *ngIf="!imagePreview" class="placeholder-icon">📸</div>
+          </div>
+          <span class="upload-hint">{{ imagePreview ? 'לחצי להחלפת תמונה' : 'לחצי לבחירת תמונה' }}</span>
         </label>
       </div>
-      <input *ngIf="uploadMode==='manual'" type="text" [(ngModel)]="newGift.image" placeholder="שם קובץ/URL">
+
+      <input *ngIf="uploadMode==='manual'" 
+             type="text" 
+             class="manual-input"
+             [(ngModel)]="newGift.image" 
+             placeholder="הדבקי כאן נתיב לתמונה (URL)">
     </div>
   </div>
 
-  <button class="btn-save" (click)="saveGift()" [disabled]="isSubmitting || isUploading">
-    שמור מתנה לתורם
+  <button class="btn-save" (click)="saveGift()" [disabled]="isSubmitting || isUploading || newGift.amount < 1">
+    {{ isSubmitting ? 'שומר נתונים...' : 'שמור מתנה לתורם' }}
   </button>
 </div>

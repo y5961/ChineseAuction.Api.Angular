@@ -22,7 +22,24 @@
         <p class="gift-description" *ngIf="gift.description">
           {{ gift.description }}
         </p>
+        
+        <button class="btn-delete-minimal" (click)="openConfirm(gift)">
+          <span class="icon">🗑️</span>
+          מחק מתנה
+        </button> 
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="delete-dialog-overlay" *ngIf="giftToDelete" (click)="giftToDelete = null">
+  <div class="delete-dialog-card" (click)="$event.stopPropagation()">
+    <div class="dialog-icon">⚠️</div>
+    <h3>אישור מחיקה</h3>
+    <p>האם אתה בטוח שברצונך למחוק את המתנה <strong>"{{ giftToDelete.name }}"</strong>?</p>
+    <div class="dialog-actions">
+      <button class="btn-cancel" (click)="giftToDelete = null">ביטול</button>
+      <button class="btn-confirm-delete" (click)="confirmDelete()">מחק לצמיתות</button>
     </div>
   </div>
 </div>

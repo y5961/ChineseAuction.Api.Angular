@@ -1,71 +1,82 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Gift, GiftDTO, GiftNewDTO } from '../models/GiftDTO';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GiftService {
-  readonly BASE_URL="api/Gift";
- private http =inject(HttpClient);
+  readonly BASE_URL = `${environment.apiUrl}/api/Gift`; 
+  private http = inject(HttpClient);
 
   constructor() {}
-    // 1. יצירת מתנה חדשה
-  createGift(dto: GiftDTO): Observable<Gift> {
-    return this.http.post<Gift>(`${this.BASE_URL}`, dto);
-  }
 
-  // 2. מחיקת מתנה
-  deleteGift(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.BASE_URL}/${id}`);
-  }
-
-  // 3. קבלת כל המתנות
+  // 1. קבלת כל המתנות
   getAllGifts(): Observable<Gift[]> {
-    return this.http.get<Gift[]>(`${this.BASE_URL}`);
+    return this.http.get<Gift[]>(this.BASE_URL);
   }
 
-  // 4. קבלת מתנה לפי ID
+  // 2. קבלת מתנה לפי ID
   getGiftById(id: number): Observable<Gift> {
     return this.http.get<Gift>(`${this.BASE_URL}/${id}`);
   }
 
-  // 5. הגרלת זוכה למתנה
+  // 3. יצירת מתנה חדשה
+  createGift(dto: GiftDTO): Observable<Gift> {
+    return this.http.post<Gift>(this.BASE_URL, dto);
+  }
+
+  // 4. עדכון מתנה קיימת
+  updateGift(id: number, gift: GiftDTO): Observable<any> {
+    return this.http.put(`${this.BASE_URL}/${id}`, gift);
+  }
+
+  // 5. מחיקת מתנה
+  deleteGift(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.BASE_URL}/${id}`);
+  }
+
+
+  // 6. ביצוע ההגרלה האמיתית בשרת (תואם ל- [HttpPost("{id}/draw")])
   drawWinnerForGift(giftId: number): Observable<any> {
-    return this.http.post<any>(`${this.BASE_URL}/draw/${giftId}`, {});
+    return this.http.post<any>(`${this.BASE_URL}/${giftId}/draw`, {});
   }
 
-  // 6. חיפוש מתנה לפי שם
+  // 7. קבלת שמות המשתתפים (עבור הרולטה ב-UI)
+  getParticipantsByGiftId(giftId: number): Observable<string[]> {
+    return this.http.get<string[]>(`${this.BASE_URL}/${giftId}/participants`);
+  }
+
+  // 8. חיפוש מתנה לפי שם (תואם ל- sort/word/{word})
   getByNameGift(word: string): Observable<Gift[]> {
-    return this.http.get<Gift[]>(`${this.BASE_URL}/search/gift?word=${word}`);
+    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/word/${word}`);
   }
 
-  // 7. חיפוש לפי שם תורם
+  // 9. חיפוש לפי שם תורם (תואם ל- sort/donor/{donor})
   getByNameDonor(donor: string): Observable<Gift[]> {
-    return this.http.get<Gift[]>(`${this.BASE_URL}/search/donor?donor=${donor}`);
+    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/donor/${donor}`);
   }
 
-  // 8. קבלת מתנות לפי מספר רוכשים
+  // 10. סינון לפי מספר רוכשים (תואם ל- sort/buyers/{buyers})
   getByNumOfBuyers(buyers: number): Observable<GiftNewDTO[]> {
-    return this.http.get<GiftNewDTO[]>(`${this.BASE_URL}/buyers/${buyers}`);
+    return this.http.get<GiftNewDTO[]>(`${this.BASE_URL}/sort/buyers/${buyers}`);
   }
 
-  // 9. מיון לפי מחיר
+  // 11. מיון לפי מחיר (תואם ל- sort/gift_price)
   sortByPrice(): Observable<Gift[]> {
-    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/price`);
+    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/gift_price`);
   }
 
-  // 10. מיון לפי כמות אנשים (פופולריות)
+  // 12. מיון לפי כמות אנשים (תואם ל- sort/amount_buyers)
   sortByAmountPeople(): Observable<Gift[]> {
-    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/popularity`);
+    return this.http.get<Gift[]>(`${this.BASE_URL}/sort/amount_buyers`);
   }
-// 11. העלאת תמונה לסרבר
-
-uploadImage(file: File): Observable<{ fileName: string }> {
-  const formData = new FormData();
-  formData.append('file', file);
-  return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
+  // 13. העלאת תמונה לשרת
+  uploadImage(file: File): Observable<{ fileName: string }> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
+  }
 }
-   }
-

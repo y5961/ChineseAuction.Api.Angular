@@ -17,8 +17,7 @@ export class Gift {
   user?: UserDTO;
   price: number = 0;
   ordersGifts: any[] = [];
-  
-  // השדה החדש שישמש את ה-UI בלבד
+  totalPurchases?: number; 
   customerQuantity: number = 0; 
 
   constructor(init?: Partial<Gift>) {
@@ -30,16 +29,19 @@ export class Gift {
 
 // שאר ה-DTOs נשארים ללא שינוי
 export class GiftDTO {
+  idGift: number = 0;         // חובה לעדכון
   name: string = '';
   description?: string = '';
-  categoryId: number = 0;
-  quantity: number = 0;
+  categoryId: number = 0;     // ודאי שזה השם ב-C# (או IdGiftCategory)
+  amount: number = 0;         // השם שהשרת מצפה לו
   image?: string = '';
   idDonor: number = 0;
   price: number = 0;
-  constructor(init?: Partial<GiftDTO>) { Object.assign(this, init); }
-}
 
+  constructor(init?: Partial<GiftDTO>) { 
+    Object.assign(this, init); 
+  }
+}
 export class GiftNewDTO {
   idGift: number = 0;
   name: string = '';

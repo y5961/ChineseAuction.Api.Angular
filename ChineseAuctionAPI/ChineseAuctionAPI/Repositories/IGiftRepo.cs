@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using ChineseAuctionAPI.Data;
 using ChineseAuctionAPI.Models;
 
 namespace ChineseAuctionAPI.Repositories

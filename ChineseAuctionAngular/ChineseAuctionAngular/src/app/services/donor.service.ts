@@ -3,12 +3,13 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Donor, DonorDTO, DonorCreateDTO } from '../models/DonorDTO';
 import { Gift } from '../models/GiftDTO';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonorService {
-  readonly BASE_URL = "api/Donors";
+  readonly BASE_URL = `${environment.apiUrl}/api/Donors`;
   private http = inject(HttpClient);
 
   constructor() {}

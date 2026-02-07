@@ -17,8 +17,33 @@ namespace ChineseAuctionAPI.Services
 
         private readonly ILogger<GiftService> _logger;
         private readonly IConfiguration _configuration;
+        public async Task<bool> UpdateGiftAsync(int id, GiftDTO dto)
+        {
+            try
+            {
+                // 1. חיפוש המתנה הקיימת
+                var existingGift = await _repository.GetByIdAsync(id);
+                if (existingGift == null) return false;
 
+                existingGift.Name = dto.Name;
+                existingGift.Description = dto.Description;
+                existingGift.Price = dto.Price;
+                existingGift.Amount = dto.Amount; 
+                existingGift.CategoryId = dto.CategoryId;
+                existingGift.IdDonor = dto.IdDonor;
 
+                if (!string.IsNullOrEmpty(dto.Image) && dto.Image != "string")
+                {
+                    existingGift.Image = dto.Image;
+                }
+                return await _repository.UpdateAsync(existingGift);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating gift ID: {Id}", id);
+                throw;
+            }
+        }
         public GiftService(IGiftRepo repository, ILogger<GiftService> logger, IConfiguration configuration, IEmailService1 emailService, IUserRepo userRepo)
         {
             _repository = repository;
@@ -38,7 +63,7 @@ namespace ChineseAuctionAPI.Services
                 {
                     Name = dto.Name,
                     Description = dto.Description,
-                    Amount = dto.Quantity,
+                    Amount = dto.Amount,
                     Price = dto.Price,
                     Image = dto.Image,
                     CategoryId = dto.CategoryId,

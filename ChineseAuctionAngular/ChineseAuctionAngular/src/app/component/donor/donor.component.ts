@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DonorService } from '../../services/donor.service';
@@ -6,9 +6,8 @@ import { DonorDTO, DonorCreateDTO } from '../../models/DonorDTO';
 import { Gift } from '../../models/GiftDTO';
 import { environment } from '../../../../environment';
 import { Subject, debounceTime, distinctUntilChanged, Observable } from 'rxjs';
-
-// ייבוא הקומפוננטות החיצוניות
 import { DonorGiftsComponent } from './donor-gifts/donor-gifts.component';
+import { GiftService } from '../../services/gift.service';
 import { AddGiftComponent } from './add-gift/add-gift.component';
 
 @Component({
@@ -20,23 +19,29 @@ import { AddGiftComponent } from './add-gift/add-gift.component';
 })
 export class DonorComponent implements OnInit {
   private donorService = inject(DonorService);
-  
-  donors: DonorDTO[] = [];
-  donorGifts: { [key: number]: Gift[] } = {};
-  expandedDonorId: number | null = null;
-  addingGiftToDonorId: number | null = null; 
-  
+  private giftService = inject(GiftService);
+
+  // --- Signals State ---
+  donors = signal<DonorDTO[]>([]);
+  donorGifts = signal<{ [key: number]: Gift[] }>({});
+  expandedDonorId = signal<number | null>(null);
+  addingGiftToDonorId = signal<number | null>(null);
+  isLoading = signal<boolean>(false);
+  searchQuery = signal<string>('');
+  currentFilter = signal<'name' | 'email' | 'gift'>('name');
+
+  // --- Computed Signals ---
+  activeFilterName = computed(() => {
+    const names = { name: 'שם', email: 'אימייל', gift: 'מתנה' };
+    return names[this.currentFilter()];
+  });
+
+  // --- Modals & Utils ---
   showAddModal = false;
   showEditModal = false;
   donorToDelete: DonorDTO | null = null;
-  
   newDonor: DonorCreateDTO = new DonorCreateDTO();
   editingDonor: DonorDTO | null = null;
-  
-  searchQuery: string = '';
-  currentFilter: 'name' | 'email' | 'gift' = 'name';
-  activeFilterName: string = 'שם';
-  isLoading: boolean = false;
   imageBaseUrl = `${environment.apiUrl}/images/gift/`;
 
   private searchSubject = new Subject<string>();
@@ -50,46 +55,132 @@ export class DonorComponent implements OnInit {
   }
 
   loadDonors() {
-    this.isLoading = true;
+    this.isLoading.set(true);
     this.donorService.getAllDonors().subscribe({
       next: (data: DonorDTO[]) => {
-        this.donors = data;
-        this.isLoading = false;
+        this.donors.set(data);
+        this.isLoading.set(false);
       },
-      error: () => this.isLoading = false
+      error: () => this.isLoading.set(false)
     });
   }
 
+  // --- CRUD Operations ---
+
+  submitAddDonor() {
+    if (!this.newDonor.firstName || !this.newDonor.lastName) return;
+    
+    this.donorService.createDonor(this.newDonor).subscribe({
+      next: (id) => {
+        const addedDonor = new DonorDTO({ idDonor: id, ...this.newDonor });
+        this.donors.update(list => [...list, addedDonor]);
+        this.showAddModal = false;
+        this.newDonor = new DonorCreateDTO(); // Reset
+      }
+    });
+  }
+
+  submitEditDonor() {
+    if (this.editingDonor) {
+      this.donorService.updateDonor(this.editingDonor.idDonor, new DonorCreateDTO(this.editingDonor)).subscribe(() => {
+        this.donors.update(list => 
+          list.map(d => d.idDonor === this.editingDonor?.idDonor ? this.editingDonor! : d)
+        );
+        this.showEditModal = false;
+      });
+    }
+  }
+
+  executeDelete() {
+    if (this.donorToDelete) {
+      this.donorService.deleteDonor(this.donorToDelete.idDonor).subscribe(() => {
+        this.donors.update(list => list.filter(d => d.idDonor !== this.donorToDelete?.idDonor));
+        this.donorToDelete = null;
+      });
+    }
+  }
+
+  // --- Gift Logic ---
+
   toggleGifts(donor: DonorDTO) {
     const id = donor.idDonor;
-    if (this.expandedDonorId === id) {
-      this.expandedDonorId = null;
+    if (this.expandedDonorId() === id) {
+      this.expandedDonorId.set(null);
       return;
     }
-    this.expandedDonorId = id;
-    this.addingGiftToDonorId = null; 
+    this.expandedDonorId.set(id);
+    this.addingGiftToDonorId.set(null);
 
-    if (!this.donorGifts[id]) {
+    if (!this.donorGifts()[id]) {
       this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
-        this.donorGifts[id] = gifts || [];
+        this.donorGifts.update(prev => ({ ...prev, [id]: gifts || [] }));
       });
     }
   }
 
   confirmAddGift(donor: DonorDTO) {
-    this.addingGiftToDonorId = this.addingGiftToDonorId === donor.idDonor ? null : donor.idDonor;
-    this.expandedDonorId = null; 
+    const currentId = this.addingGiftToDonorId();
+    this.addingGiftToDonorId.set(currentId === donor.idDonor ? null : donor.idDonor);
+    this.expandedDonorId.set(null);
   }
 
   onGiftAddedSuccessfully(donorId: number) {
-    this.addingGiftToDonorId = null;
-    const donor = this.donors.find(d => d.idDonor === donorId);
+    this.addingGiftToDonorId.set(null);
+    const donor = this.donors().find(d => d.idDonor === donorId);
     if (donor) {
       this.donorService.getGiftsByDonorId(donor.firstName).subscribe(gifts => {
-        this.donorGifts[donorId] = gifts || [];
-        this.expandedDonorId = donorId; 
+        this.donorGifts.update(prev => ({ ...prev, [donorId]: gifts || [] }));
+        this.expandedDonorId.set(donorId);
       });
     }
+  }
+
+  deleteGiftFromDonor(giftId: number, donorId: number) {
+    this.giftService.deleteGift(giftId).subscribe({
+      next: () => {
+        this.donorGifts.update(prev => {
+          const updatedGifts = prev[donorId]?.filter(g => g.idGift !== giftId) || [];
+          return { ...prev, [donorId]: updatedGifts };
+        });
+      }
+    });
+  }
+
+  // --- Search & Filter ---
+
+  executeSearch(query: string) {
+    if (!query.trim()) {
+      this.loadDonors();
+      return;
+    }
+    this.isLoading.set(true);
+    let obs: Observable<any>;
+    switch (this.currentFilter()) {
+      case 'email': obs = this.donorService.sortByEmail(query); break;
+      case 'gift': obs = this.donorService.sortByGift(query); break;
+      default: obs = this.donorService.sortByName(query); break;
+    }
+    obs.subscribe({
+      next: (data) => {
+        this.donors.set(Array.isArray(data) ? data : (data ? [data] : []));
+        this.isLoading.set(false);
+      },
+      error: () => { this.donors.set([]); this.isLoading.set(false); }
+    });
+  }
+
+  onSearchInput() {
+    this.searchSubject.next(this.searchQuery());
+  }
+
+  setFilter(filter: 'name' | 'email' | 'gift', name: string) {
+    this.currentFilter.set(filter);
+    if (this.searchQuery()) this.executeSearch(this.searchQuery());
+  }
+
+  clearSearch() {
+    this.searchQuery.set('');
+    this.loadDonors();
   }
 
   openEditModal(donor: DonorDTO) {
@@ -97,71 +188,7 @@ export class DonorComponent implements OnInit {
     this.showEditModal = true;
   }
 
-  submitEditDonor() {
-    if (this.editingDonor) {
-      this.donorService.updateDonor(this.editingDonor.idDonor, new DonorCreateDTO(this.editingDonor)).subscribe(() => {
-        const idx = this.donors.findIndex(d => d.idDonor === this.editingDonor?.idDonor);
-        if (idx !== -1) this.donors[idx] = this.editingDonor!;
-        this.showEditModal = false;
-      });
-    }
-  }
-
-  submitAddDonor() {
-    this.donorService.createDonor(this.newDonor).subscribe(id => {
-      const addedDonor = new DonorDTO({ idDonor: id, ...this.newDonor });
-      this.donors.push(addedDonor);
-      this.showAddModal = false;
-      this.newDonor = new DonorCreateDTO();
-    });
-  }
-
   confirmDelete(donor: DonorDTO) {
     this.donorToDelete = donor;
-  }
-
-  executeDelete() {
-    if (this.donorToDelete) {
-      this.donorService.deleteDonor(this.donorToDelete.idDonor).subscribe(() => {
-        this.donors = this.donors.filter(d => d.idDonor !== this.donorToDelete?.idDonor);
-        this.donorToDelete = null;
-      });
-    }
-  }
-
-  onSearchInput() {
-    this.searchSubject.next(this.searchQuery);
-  }
-
-  executeSearch(query: string) {
-    if (!query.trim()) {
-      this.loadDonors();
-      return;
-    }
-    this.isLoading = true;
-    let obs: Observable<any>;
-    switch (this.currentFilter) {
-      case 'email': obs = this.donorService.sortByEmail(query); break;
-      case 'gift': obs = this.donorService.sortByGift(query); break;
-      default: obs = this.donorService.sortByName(query); break;
-    }
-    obs.subscribe({
-      next: (data) => {
-        this.donors = Array.isArray(data) ? data : (data ? [data] : []);
-        this.isLoading = false;
-      },
-      error: () => { this.donors = []; this.isLoading = false; }
-    });
-  }
-
-  setFilter(filter: 'name' | 'email' | 'gift', name: string) {
-    this.currentFilter = filter;
-    this.activeFilterName = name;
-    if (this.searchQuery) this.executeSearch(this.searchQuery);
-  }
-
-  clearSearch() {
-    this.searchQuery = '';
-    this.loadDonors();
   }
 }

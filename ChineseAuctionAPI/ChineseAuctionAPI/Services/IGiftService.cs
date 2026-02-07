@@ -6,6 +6,8 @@ namespace ChineseAuctionAPI.Services
 {
     public interface IGiftService
     {
+        Task<bool> UpdateGiftAsync(int id, GiftDTO dto);
+
         Task<Gift> CreateGiftAsync(GiftDTO dto);
         Task<bool> DeleteGiftAsync(int id);
         Task<IEnumerable<Gift>> GetAllGiftsAsync();

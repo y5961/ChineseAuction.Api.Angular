@@ -150,7 +150,7 @@ namespace ChineseAuctionAPI.Services
                     Name = g.Name,
                     Description = g.Description,
                     CategoryId = g.CategoryId,
-                    Quantity = g.Amount,
+                    Amount = g.Amount,
                     Price = g.Price,
                     Image = g.Image,
                     IdDonor = donorId

@@ -7,6 +7,9 @@ import { GiftComponent } from './component/gift/gift.component';
 import { PackageComponent } from './component/package/package.component';
 import { DonorComponent } from './component/donor/donor.component';
 import { ManagerComponent } from './component/admin/manager/manager.component';
+import { ManagGiftsComponent } from './component/manag-gifts/manag-gifts.component';
+import { EditGiftComponent } from './component/manag-gifts/edit-gift/edit-gift.component';
+import { RaffleComponent } from './component/raffle/raffle.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch: 'full' },
@@ -17,8 +20,8 @@ export const routes: Routes = [
     { path: 'manager', component: ManagerComponent,
         children: [
           { path: 'donor', component: DonorComponent, pathMatch: 'full' },
-          { path: 'manage-gifts', component: GiftComponent, pathMatch: 'full' },
-
+          { path: 'manage-gifts', component: ManagGiftsComponent, pathMatch: 'full' },
+          { path: 'raffle', component: RaffleComponent, pathMatch: 'full' },
         ],
        },
         { path: '**', component: NotFoundComponent, pathMatch: 'full' },
