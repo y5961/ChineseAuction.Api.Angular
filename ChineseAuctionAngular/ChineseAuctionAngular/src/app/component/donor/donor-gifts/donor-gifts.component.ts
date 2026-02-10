@@ -9,6 +9,7 @@ import { Gift } from '../../../models/GiftDTO';
   templateUrl: './donor-gifts.component.html',
   styleUrl: './donor-gifts.component.scss'
 })
+
 export class DonorGiftsComponent {
   @Input() gifts: Gift[] = [];
   @Input() donorName: string = '';
@@ -33,3 +34,6 @@ confirmDelete() {
   }
 }
 }
+
+
+

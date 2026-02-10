@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { GiftService } from '../../services/gift.service';
 import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 import { Gift } from '../../models/GiftDTO';
 import { environment } from '../../../../environment';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gift',
@@ -19,6 +21,8 @@ export class GiftComponent implements OnInit {
   private giftService = inject(GiftService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
+  private cartService = inject(CartService);
+  private router = inject(Router);
   
   gifts = signal<Gift[]>([]);
   selectedGift = signal<Gift | null>(null);
@@ -99,6 +103,8 @@ export class GiftComponent implements OnInit {
       return matchCategory && matchPrice;
     });
   });
+
+  // (ticket modal displayed via CartService)
   
   categories = computed(() => {
     const names = this.gifts().map(g => g.category?.name).filter(Boolean);
@@ -122,27 +128,110 @@ export class GiftComponent implements OnInit {
   // --- ניהול עגלה ---
 
   increaseQuantity(gift: Gift): void {
+    // Determine current server/cart quantity (fallback to local) and increment
+    const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
+    if (!this.cartService.canAddGift(1)) {
+      const tickets = this.cartService.totalTickets();
+      const used = this.cartService.totalGiftCount();
+      const missing = Math.max(0, (used + 1) - tickets);
+      const msg = tickets === 0 ? 'אין לך כרטיסים בסל — יש לרכוש חבילות כרטיסים.' : `אין מספיק כרטיסים. חסרים ${missing} כרטיסים.`;
+      this.cartService.openTicketLimitModal(msg);
+      return;
+    }
+
     const userId = this.authService.getUserId();
-    const newQty = (gift.customerQuantity || 0) + 1;
+    const newQty = currentQty + 1;
     this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
       next: () => {
         gift.customerQuantity = newQty;
         this.gifts.set([...this.gifts()]);
+        // merge into cartService list: set absolute quantity returned/newQty
+        const currentCart = [...this.cartService.cartGifts()];
+        const idx = currentCart.findIndex(c => c.idGift === gift.idGift);
+        if (idx >= 0) {
+          const existing = currentCart[idx];
+          currentCart[idx] = {
+            ...existing,
+            amount: newQty
+          };
+        } else {
+          currentCart.push({
+            idGift: gift.idGift,
+            name: gift.name,
+            price: gift.price,
+            amount: newQty,
+            image: gift.image,
+            category: gift.category?.name || ''
+          });
+        }
+        this.cartService.setCartGifts(currentCart);
+        this.cartService.setGiftQuantity(gift.idGift, newQty);
+      },
+      error: (err) => {
+        try {
+          const status = err?.status;
+          const code = err?.error?.code || err?.error;
+          if (status === 400 && (code === 'INSUFFICIENT_TICKETS' || (typeof code === 'string' && code.includes('INSUFFICIENT_TICKETS')))) {
+            const tickets = this.cartService.totalTickets();
+            const used = this.cartService.totalGiftCount();
+            const missing = Math.max(0, (used + 1) - tickets);
+            const msg = tickets === 0 ? 'אין לך כרטיסים בסל — יש לרכוש חבילות כרטיסים.' : `אין מספיק כרטיסים. חסרים ${missing} כרטיסים.`;
+            this.cartService.openTicketLimitModal(msg);
+            return;
+          }
+        } catch (e) {
+          // ignore
+        }
+        console.error('Error adding gift', err);
       }
     });
   }
 
+  closeLimitModal() {
+    this.cartService.closeTicketLimitModal();
+  }
+
+  goToPackages() {
+    this.cartService.closeTicketLimitModal();
+    this.router.navigate(['/package']);
+  }
+
   decreaseQuantity(gift: Gift): void {
-    if (!gift.customerQuantity || gift.customerQuantity <= 0) return;
+    // Determine current quantity from cart (fallback to local)
+    const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
+    if (currentQty <= 0) return;
     const userId = this.authService.getUserId();
-    const newQty = gift.customerQuantity - 1;
+    const newQty = currentQty - 1;
     this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
       next: () => {
         gift.customerQuantity = newQty;
         this.gifts.set([...this.gifts()]);
+        // merge update into cart: set absolute quantity
+        const currentCart = [...this.cartService.cartGifts()];
+        const idx = currentCart.findIndex(c => c.idGift === gift.idGift);
+        if (idx >= 0) {
+          if (newQty > 0) {
+            currentCart[idx] = { ...currentCart[idx], amount: newQty };
+          } else {
+            currentCart.splice(idx, 1);
+          }
+        } else if (newQty > 0) {
+          currentCart.push({
+            idGift: gift.idGift,
+            name: gift.name,
+            price: gift.price,
+            amount: newQty,
+            image: gift.image,
+            category: gift.category?.name || ''
+          });
+        }
+        this.cartService.setCartGifts(currentCart);
+        this.cartService.setGiftQuantity(gift.idGift, newQty);
       }
     });
   }
+
+  // (old helper removed) merging is done inline when quantities change to avoid overwriting existing cart
 
   openDetails(gift: Gift): void { this.selectedGift.set(gift); }
   closeDetails(): void { this.selectedGift.set(null); }

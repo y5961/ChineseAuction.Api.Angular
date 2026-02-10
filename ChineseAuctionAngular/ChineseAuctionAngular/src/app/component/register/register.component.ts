@@ -28,7 +28,7 @@ export class RegisterComponent {
     this.authService.register(this.userToRegister).subscribe({
       next: (response) => {
         this.cartService.clearCart(); 
-        console.log('Registration successful!', response);
+        // registration succeeded
         this.message = 'נרשמת בהצלחה למכירה הסינית!';
         setTimeout(() => {
           this.router.navigate(['/home']);

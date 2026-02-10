@@ -64,7 +64,7 @@ private initDefaultValues() {
     this.donorService.getAllDonors().subscribe({
       next: (data) => {
         this.donors = data;
-        console.log('Donors loaded:', data);
+        // donors loaded
       },
       error: (err) => console.error('שגיאה בטעינת תורמים', err)
     });
