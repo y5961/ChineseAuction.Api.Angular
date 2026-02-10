@@ -71,47 +71,7 @@ namespace ChineseAuctionAPI.Repositories
 
             return total - used;
         }
-        //public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int amount)
-        //{
-        //    // 1. חיפוש הזמנה קיימת בטיוטה
-        //    var order = await _context.OrdersOrders
-        //        .Include(o => o.OrdersGift)
-        //        .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
-
-        //    // 2. אם לא קיימת, יוצרים אחת חדשה
-        //    if (order == null)
-        //    {
-        //        order = new Order
-        //        {
-        //            IdUser = userId,
-        //            Price = 0,
-        //            OrderDate = DateTime.Now,
-        //            Status = OrderStatus.Draft,
-        //            OrdersGift = new List<OrdersGift>()
-        //        };
-
-        //        _context.OrdersOrders.Add(order);
-        //        await _context.SaveChangesAsync();
-        //    }
-
-        //    // 3. הוספה או עדכון של המתנה בתוך ה-order שמצאנו/יצרנו
-        //    var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
-        //    if (existingGift != null)
-        //    {
-        //        existingGift.Amount = amount;
-        //    }
-        //    else
-        //    {
-        //        order.OrdersGift.Add(new OrdersGift
-        //        {
-        //            IdGift = IdGift,
-        //            Amount = amount,
-        //            IdOrder = order.IdOrder
-        //        });
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //}
+ 
         public async Task<bool?> CompleteOrder(int orderId)
         {
             var order = await _context.OrdersOrders.FindAsync(orderId);
@@ -174,12 +134,7 @@ namespace ChineseAuctionAPI.Repositories
                 .FirstOrDefaultAsync(o => o.IdOrder == orderId);
         }
 
-        //public async Task<IEnumerable<Order?>> GetAllOrder(int userId)
-        //{
-        //    return await _context.OrdersOrders
-        //        .Where(o => o.IdUser == userId)
-        //        .ToListAsync();
-        //}
+   
       
         public async Task<IEnumerable<Order>> GetAllOrder(int userId)
         {
@@ -243,49 +198,6 @@ namespace ChineseAuctionAPI.Repositories
 
             await _context.SaveChangesAsync();
         }
-        // בתוך מחלקת OrderRepo
-        //public async Task AddOrUpdatePackageInOrderAsync(int userId, int packageId, int amount)
-        //{
-        //    // 1. מציאת הזמנת טיוטה או יצירת חדשה
-        //    var order = await GetDraftOrderByUserAsync(userId) ?? await CreateDraftOrderAsync(userId);
-
-        //    var package = await _context.Packages.FindAsync(packageId);
-        //    if (package == null) throw new Exception("Package not found");
-
-        //    // 2. חיפוש אם החבילה כבר קיימת בהזמנה
-        //    var orderPackage = await _context.OrdersPackage
-        //        .FirstOrDefaultAsync(op => op.OrderId == order.IdOrder && op.IdPackage == packageId);
-
-        //    if (orderPackage != null)
-        //    {
-        //        // עדכון כמות (מונע ירידה מתחת ל-0)
-        //        orderPackage.Quantity += amount;
-
-        //        if (orderPackage.Quantity <= 0)
-        //        {
-        //            _context.OrdersPackage.Remove(orderPackage);
-        //            order.Price -= package.Price * (orderPackage.Quantity - amount); // עדכון מחיר בהסרה
-        //        }
-        //        else
-        //        {
-        //            order.Price += package.Price * amount;
-        //        }
-        //    }
-        //    else if (amount > 0)
-        //    {
-        //        // הוספה חדשה
-        //        var newOrderPackage = new OrdersPackage
-        //        {
-        //            OrderId = order.IdOrder,
-        //            IdPackage = packageId,
-        //            Quantity = amount,
-        //            PriceAtPurchase = package.Price
-        //        };
-        //        _context.OrdersPackage.Add(newOrderPackage);
-        //        order.Price += package.Price * amount;
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //}
+      
     }
 }

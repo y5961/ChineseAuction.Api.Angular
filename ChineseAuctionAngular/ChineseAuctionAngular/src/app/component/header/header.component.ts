@@ -32,6 +32,7 @@ export class Header implements OnInit {
     { title: 'ניהול', value: 'manager', adminOnly: true },
     { title: 'הרשמה', value: 'register', onlyLoggedOut: true },
     { title: 'כניסה', value: 'login', onlyLoggedOut: true },
+    { title: 'רכישה', value: 'buying'},
     { title: 'התנתקות', value: 'logout' }
   ];
 

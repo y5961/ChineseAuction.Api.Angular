@@ -18,18 +18,18 @@ namespace ChineseAuctionAPI.Services
             _logger = logger;
             _config = config;
         }
-       
+
         public async Task<bool> AddOrUpdateGiftInOrderAsync(int userId, int giftId, int amount)
         {
             try
             {
-                _logger.LogInformation("מעדכן/מוסיף מתנה {GiftId} להזמנה {OrderId} בכמות {Amount}.", giftId, userId, amount);
+                _logger.LogInformation("מעדכן/מוסיף מתנה {GiftId} למשתמש {UserId} בכמות {Amount}.", giftId, userId, amount);
                 await _OrderRepository.AddOrUpdateGiftInOrderAsync(userId, giftId, amount);
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "שגיאה בעת עדכון מתנה {GiftId} בהזמנה {OrderId}.", giftId, userId);
+                _logger.LogError(ex, "שגיאה בעת עדכון מתנה {GiftId} בהזמנה של משתמש {UserId}.", giftId, userId);
                 throw;
             }
         }
@@ -74,24 +74,22 @@ namespace ChineseAuctionAPI.Services
 
                 var ordersDto = orders.Select(o => new OrderDTO
                 {
-                    
+                    IdOrder = o.IdOrder, // התיקון הקריטי כאן!
                     IdUser = o.IdUser,
                     OrderDate = o.OrderDate,
                     Status = o.Status,
-                    Amount = o.OrdersGift.Sum(og => og.Amount),
-                    TotalPrice = o.OrdersGift.Sum(go => go.Gift.Price),
-                    TotalAmount=o.OrdersGift.Sum(go=>go.Amount),
+                    TotalAmount = o.OrdersGift.Sum(og => og.Amount),
+                    TotalPrice = o.OrdersGift.Sum(og => og.Amount * og.Gift.Price),
                     OrdersGifts = o.OrdersGift.Select(og => new OrdersGiftDTO
                     {
-                        Category=og.Gift.Category.Name,
+                        Category = og.Gift.Category?.Name ?? "",
                         Name = og.Gift.Name ?? "",
                         Amount = og.Amount,
                         Price = og.Gift.Price,
                         Description = og.Gift.Description,
                         Image = og.Gift.Image
-                    })?.ToList(),
-                   
-                })?.ToList();
+                    }).ToList()
+                }).ToList();
 
                 return ordersDto;
             }
@@ -117,13 +115,15 @@ namespace ChineseAuctionAPI.Services
 
                 return new OrderDTO
                 {
+                    IdOrder = order.IdOrder, // תיקון: הוספת ה-ID שחסר
+                    IdUser = order.IdUser,
                     OrderDate = order.OrderDate,
                     Status = order.Status,
                     OrdersGifts = order.OrdersGift.Select(og => new OrdersGiftDTO
                     {
                         Name = og.Gift.Name,
                         Description = og.Gift.Description,
-                        Category = og.Gift.Category.Name,
+                        Category = og.Gift.Category?.Name ?? "",
                         Amount = og.Amount,
                         Price = og.Gift.Price,
                         Image = og.Gift.Image
@@ -138,7 +138,6 @@ namespace ChineseAuctionAPI.Services
                 throw;
             }
         }
-
         public async Task<OrderDTO?> GetDraftOrderByUserAsync(int userId)
         {
             try
@@ -148,19 +147,27 @@ namespace ChineseAuctionAPI.Services
 
                 if (order == null) return null;
 
+                // כאן התיקון הקריטי - את חייבת להעתיק את הערכים מה-Model ל-DTO
                 return new OrderDTO
                 {
+                    IdOrder = order.IdOrder, // זה השורה שהייתה חסרה וגרמה ל-0!
                     IdUser = order.IdUser,
                     OrderDate = order.OrderDate,
                     Status = order.Status,
-                    OrdersGifts = order.OrdersGift.Select(og => new OrdersGiftDTO
+
+                    // חישוב סכומים בזמן אמת כדי שלא יחזור 0 ב-Angular
+                    TotalAmount = order.OrdersGift?.Sum(og => og.Amount) ?? 0,
+                    TotalPrice = order.OrdersGift?.Sum(og => (og.Amount) * (og.Gift?.Price ?? 0)) ?? 0,
+
+                    OrdersGifts = order.OrdersGift?.Select(og => new OrdersGiftDTO
                     {
-                        Name = og.Gift.Name,
+                        Name = og.Gift?.Name ?? "ללא שם",
                         Amount = og.Amount,
-                        Price = og.Gift.Price,
-                        Description = og.Gift.Description,
-                        Image = og.Gift.Image
-                    }).ToList()
+                        Price = og.Gift?.Price ?? 0,
+                        Description = og.Gift?.Description,
+                        Category = og.Gift?.Category?.Name ?? "",
+                        Image = og.Gift?.Image
+                    }).ToList() ?? new List<OrdersGiftDTO>()
                 };
             }
             catch (Exception ex)
@@ -169,7 +176,41 @@ namespace ChineseAuctionAPI.Services
                 throw;
             }
         }
-        // בתוך מחלקת OrderService
+        //public async Task<OrderDTO?> GetDraftOrderByUserAsync(int userId)
+        //{
+        //    try
+        //    {
+        //        _logger.LogInformation("מחפש הזמנה במצב טיוטה (Draft) עבור משתמש {UserId}.", userId);
+        //        var order = await _OrderRepository.GetDraftOrderByUserAsync(userId);
+
+        //        if (order == null) return null;
+
+        //        return new OrderDTO
+        //        {
+        //            IdOrder = order.IdOrder, // וודאי שה-43 עובר כאן
+        //            IdUser = order.IdUser,
+        //            OrderDate = order.OrderDate,
+        //            Status = order.Status,
+        //            OrdersGifts = order.OrdersGift.Select(og => new OrdersGiftDTO
+        //            {
+        //                Name = og.Gift.Name,
+        //                Amount = og.Amount,
+        //                Price = og.Gift.Price,
+        //                Description = og.Gift.Description,
+        //                Category = og.Gift.Category?.Name ?? "",
+        //                Image = og.Gift.Image
+        //            }).ToList(),
+        //            TotalAmount = order.OrdersGift.Sum(og => og.Amount),
+        //            TotalPrice = order.OrdersGift.Sum(og => og.Amount * og.Gift.Price)
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "שגיאה בשליפת טיוטת הזמנה למשתמש {UserId}.", userId);
+        //        throw;
+        //    }
+        //}
+
         public async Task<bool> UpdatePackageQuantityAsync(int userId, int packageId, int amount)
         {
             try
@@ -180,7 +221,7 @@ namespace ChineseAuctionAPI.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating package in order");
+                _logger.LogError(ex, "Error updating package in order for user {UserId}", userId);
                 return false;
             }
         }

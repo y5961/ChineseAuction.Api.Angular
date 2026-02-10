@@ -26,6 +26,8 @@ namespace ChineseAuctionAPI.DTOs
     // 3. אובייקט ההזמנה המלא שמחבר את הכל
     public class OrderDTO
     {
+        [Required]
+        public int IdOrder { get; set; }
         [Required, Range(0, int.MaxValue)]
         public int TotalAmount { get; set; }
         [Required, Range(0, int.MaxValue)]

@@ -14,12 +14,46 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
+    // --- פונקציות חדשות שהיו חסרות וגורמות לבעיה ---
+
+    [HttpGet("draft/{userId}")]
+    public async Task<ActionResult<OrderDTO>> GetDraftOrder(int userId)
+    {
+        try
+        {
+            var order = await _orderService.GetDraftOrderByUserAsync(userId);
+            if (order == null) return NotFound("לא נמצאה טיוטת הזמנה");
+
+            // כאן יעבור ה-ID 44 שמצאנו ב-SQL
+            return Ok(order);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    [HttpGet("user/{userId}")]
+    public async Task<ActionResult<IEnumerable<OrderDTO>>> GetAllOrders(int userId)
+    {
+        try
+        {
+            var orders = await _orderService.GetAllAsync(userId);
+            return Ok(orders);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    // --- הפונקציות הקיימות שלך ---
+
     [HttpPost("update-package")]
     public async Task<ActionResult> UpdatePackageQuantity([FromBody] PackageUpdateDto dto)
     {
         try
         {
-            // כאן ה-Service צריך לקבל את הכמות הסופית החדשה או הפרש (תלוי במימוש שלך)
             var result = await _orderService.UpdatePackageQuantityAsync(dto.UserId, dto.PackageId, dto.Quantity);
             if (result) return Ok(true);
             return BadRequest("שגיאה בעדכון כמות החבילה");
@@ -29,20 +63,18 @@ public class OrdersController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
     [HttpPost("add-gift")]
     public async Task<ActionResult> AddOrUpdateGift([FromBody] GiftUpdateDto dto)
     {
         try
         {
-            // קריאה לשירות שכבר מימשת ב-Service וב-Repo
             var result = await _orderService.AddOrUpdateGiftInOrderAsync(dto.UserId, dto.GiftId, dto.Amount);
-
             if (result) return Ok(true);
             return BadRequest("שגיאה בעדכון המתנה");
         }
         catch (InvalidOperationException ex) when (ex.Message == "INSUFFICIENT_TICKETS")
         {
-            // מחזירים BadRequest ספציפי כדי שה-Angular יזהה שנגמרו הכרטיסים
             return BadRequest("INSUFFICIENT_TICKETS");
         }
         catch (Exception ex)
@@ -51,6 +83,18 @@ public class OrdersController : ControllerBase
         }
     }
 
- 
+    [HttpPost("complete/{orderId}")]
+    public async Task<ActionResult> CompleteOrder(int orderId)
+    {
+        try
+        {
+            var result = await _orderService.CompleteOrder(orderId);
+            if (result) return Ok("ההזמנה הושלמה בהצלחה");
+            return BadRequest("לא ניתן היה להשלים את ההזמנה");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 }
-
