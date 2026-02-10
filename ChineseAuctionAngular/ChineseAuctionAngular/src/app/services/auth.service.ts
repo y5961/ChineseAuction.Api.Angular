@@ -15,7 +15,6 @@ export class AuthService {
   
   private readonly TOKEN_KEY = 'auth_token';
   private readonly MANAGER_KEY = 'is_manager'; 
-  // ה-Signal שבו ה-Header משתמש
   isLoggedIn = signal<boolean>(!!localStorage.getItem('auth_token'));
 
   isManager = signal<boolean>(localStorage.getItem(this.MANAGER_KEY) === 'true');
@@ -69,7 +68,7 @@ login(details: DtoLogin) {
 
   logout() {
     localStorage.removeItem(this.TOKEN_KEY);
-    this.isLoggedIn.set(false); // מחזיר את ה-Header למצב "כניסה/הרשמה"
+    this.isLoggedIn.set(false); 
     this.currentUserId.set(0);
     this.cartService.clearCart();
     this.router.navigate(['/login']);
@@ -99,3 +98,4 @@ login(details: DtoLogin) {
     return this.currentUserId();
   }
 }
+

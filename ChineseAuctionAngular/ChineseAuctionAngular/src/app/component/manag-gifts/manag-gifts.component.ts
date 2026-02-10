@@ -19,7 +19,7 @@ import { AddGiftComponent } from './add-gift/add-gift.component';
 export class ManagGiftsComponent {
 imageUrl = environment.apiUrl + '/images/gift/';  
   private router = inject(Router);
-  editForm: any = {}
+  editForm: any = {};
   @Input() gift: Gift | null = null;
   private giftService = inject(GiftService);
   private orderService = inject(OrderService);
@@ -37,6 +37,7 @@ onGiftAdded() {
   this.loadGifts(); 
   this.isAddModalVisible.set(false); 
 }
+
   ngOnInit(): void {
     this.loadGifts();
   }
@@ -116,7 +117,6 @@ edit(gift: any): void {
     this.isEditModalVisible.set(true);
   }
 
-  // התיקון לשגיאת ה-Type ב-HTML
   onGiftSaved(updatedData: any) {
     this.loadGifts(); // מרענן את הרשימה מה-DB
     this.isEditModalVisible.set(false); // מוודא שהחלון נסגר

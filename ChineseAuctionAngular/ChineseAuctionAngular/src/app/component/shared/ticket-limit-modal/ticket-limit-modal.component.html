@@ -1,0 +1,20 @@
+<div class="tlm-mask" (click)="close()"></div>
+
+<div class="tlm-card" role="dialog" aria-modal="true">
+  <button class="tlm-close" (click)="close()">✕</button>
+
+  <div class="tlm-body">
+    <div class="tlm-top">
+      <div class="tlm-logo">📘</div>
+      <h2 class="tlm-title">אופס, טרם בחרת חבילת כרטיסים</h2>
+      <div class="tlm-divider"></div>
+    </div>
+
+    <p class="tlm-desc">{{ cartService.ticketMessage() || 'בחירת כרטיסים תאפשר לך לבחור פרסים' }}</p>
+
+    <div class="tlm-actions">
+      <button class="tlm-primary" (click)="goToPackages()">אני רוצה לבחור חבילה</button>
+      <button class="tlm-link" (click)="close()">תנו לי להציג מבט בפרסים</button>
+    </div>
+  </div>
+</div>
