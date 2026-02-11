@@ -1,4 +1,5 @@
-﻿using ChineseAuctionAPI.Models;
+﻿using ChineseAuctionAPI.DTOs;
+using ChineseAuctionAPI.Models;
 
 namespace ChineseAuctionAPI.Repositories
 {
@@ -17,6 +18,8 @@ namespace ChineseAuctionAPI.Repositories
 
         Task <IEnumerable <Order?> > GetAllOrder(int userId);
         Task AddOrUpdatePackageInOrderAsync(int userId, int packageId, int amount);
+        Task<IncomeReportDTO> GetIncomeReportAsync();
+
 
     }
 }

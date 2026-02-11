@@ -1,4 +1,5 @@
 ﻿using ChineseAuctionAPI.Data;
+using ChineseAuctionAPI.DTOs;
 using ChineseAuctionAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -202,6 +203,29 @@ namespace ChineseAuctionAPI.Repositories
 
             await _context.SaveChangesAsync();
         }
-      
+        public async Task<IncomeReportDTO> GetIncomeReportAsync()
+        {
+            // 1. חישוב סך ההכנסות מהזמנות שהושלמו
+            var totalRevenue = await _context.OrdersOrders
+                .Where(o => o.Status == OrderStatus.Completed)
+                .SumAsync(o => o.Price);
+
+            // 2. ספירת רוכשים ייחודיים שביצעו לפחות הזמנה אחת שהושלמה
+            var totalBuyers = await _context.OrdersOrders
+                .Where(o => o.Status == OrderStatus.Completed)
+                .Select(o => o.IdUser)
+                .Distinct()
+                .CountAsync();
+
+            // 3. ספירת תורמים
+            var totalDonors = await _context.Donors.CountAsync();
+
+            return new IncomeReportDTO
+            {
+                TotalRevenue = totalRevenue,
+                TotalBuyers = totalBuyers,
+                TotalDonors = totalDonors
+            };
+        }
     }
 }

@@ -39,23 +39,46 @@ export class Header implements OnInit {
   ngOnInit() {
     // הטאבים כבר מוגדרים למעלה בצורה טיפוסית (Typed)
   }
-
-  // סינון הטאבים בצורה בטוחה לפי מצב המשתמש והמנהל
+// סינון הטאבים בצורה בטוחה לפי מצב המשתמש והמנהל
   tabsSee = computed(() => {
     const isLogged = this.authService.isLoggedIn();
     const isAdmin = this.authService.isManager();
 
     return this.tabs.filter(tab => {
-      // אם הטאב למנהלים בלבד והמשתמש אינו מנהל - הסתר
-      if (tab.adminOnly && !isAdmin) return false;
-      // אם הטאב מיועד רק למי שמנותק (כמו כניסה) והמשתמש מחובר - הסתר
-      if (tab.onlyLoggedOut && isLogged) return false;
-      // אם זה טאב התנתקות והמשתמש לא מחובר - הסתר
-      if (tab.value === 'logout' && !isLogged) return false;
+      // 1. הגנה על טאב ניהול: יוצג רק אם המשתמש מחובר וגם מנהל
+      if (tab.adminOnly && (!isLogged || !isAdmin)) {
+        return false;
+      }
+
+      // 2. הגנה על טאבים של אורחים בלבד (כניסה/הרשמה): יוסתרו אם המשתמש מחובר
+      if (tab.onlyLoggedOut && isLogged) {
+        return false;
+      }
+
+      // 3. הגנה על טאב התנתקות: יוסתר אם המשתמש לא מחובר
+      if (tab.value === 'logout' && !isLogged) {
+        return false;
+      }
       
       return true;
     });
   });
+  // // סינון הטאבים בצורה בטוחה לפי מצב המשתמש והמנהל
+  // tabsSee = computed(() => {
+  //   const isLogged = this.authService.isLoggedIn();
+  //   const isAdmin = this.authService.isManager();
+
+  //   return this.tabs.filter(tab => {
+  //     // אם הטאב למנהלים בלבד והמשתמש אינו מנהל - הסתר
+  //     if (tab.adminOnly && !isAdmin) return false;
+  //     // אם הטאב מיועד רק למי שמנותק (כמו כניסה) והמשתמש מחובר - הסתר
+  //     if (tab.onlyLoggedOut && isLogged) return false;
+  //     // אם זה טאב התנתקות והמשתמש לא מחובר - הסתר
+  //     if (tab.value === 'logout' && !isLogged) return false;
+      
+  //     return true;
+  //   });
+  // });
 
   onTabChange(value: string) {
     if (value === 'logout') {

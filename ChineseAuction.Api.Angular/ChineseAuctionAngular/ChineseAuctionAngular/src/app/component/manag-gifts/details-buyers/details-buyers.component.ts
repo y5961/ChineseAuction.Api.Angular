@@ -17,11 +17,8 @@ export class DetailsBuyersComponent implements OnInit {
   buyers = signal<any[]>([]);
 
   ngOnInit() {
-    // טעינת רשימת הרוכשים מהסרוויס
     this.giftService.getParticipantsByGiftId(this.giftId).subscribe({
       next: (data) => {
-        // מניח שהשרת מחזיר אובייקטים של משתמשים. 
-        // אם הוא מחזיר רק שמות, תצטרכי לשנות את ה-API בשרת
         this.buyers.set(data);
       },
       error: (err) => console.error('Error loading buyers:', err)

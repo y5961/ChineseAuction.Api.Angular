@@ -11,7 +11,7 @@ import { ManagGiftsComponent } from './component/manag-gifts/manag-gifts.compone
 import { EditGiftComponent } from './component/manag-gifts/edit-gift/edit-gift.component';
 import { RaffleComponent } from './component/raffle/raffle.component';
 import { BuyingComponent } from './component/buying/buying.component';
-
+import { RevenueComponent } from './component/revenue/revenue.component';
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch: 'full' },
     { path: 'register', component: RegisterComponent, pathMatch: 'full' },
@@ -23,6 +23,7 @@ export const routes: Routes = [
           { path: 'donor', component: DonorComponent, pathMatch: 'full' },
           { path: 'manage-gifts', component: ManagGiftsComponent, pathMatch: 'full' },
           { path: 'raffle', component: RaffleComponent, pathMatch: 'full' },
+          { path: 'revenue', component: RevenueComponent, pathMatch: 'full' }
         ],
        },
     { path: 'buying', component: BuyingComponent, pathMatch: 'full' },

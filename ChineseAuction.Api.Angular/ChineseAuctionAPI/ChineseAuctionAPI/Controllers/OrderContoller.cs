@@ -14,8 +14,20 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
-    // --- פונקציות חדשות שהיו חסרות וגורמות לבעיה ---
-
+    [HttpGet("income-report")]
+    // [Authorize(Roles = "Manager")] // כדאי להוסיף אם יש לך הגדרת תפקידים
+    public async Task<ActionResult<IncomeReportDTO>> GetIncomeReport()
+    {
+        try
+        {
+            var report = await _orderService.GetIncomeReportAsync();
+            return Ok(report);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "שגיאה בהפקת הדוח: " + ex.Message);
+        }
+    }
     [HttpGet("draft/{userId}")]
     public async Task<ActionResult<OrderDTO>> GetDraftOrder(int userId)
     {

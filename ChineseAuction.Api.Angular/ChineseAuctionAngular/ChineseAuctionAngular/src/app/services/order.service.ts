@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../environment';
-
+import { IncomeReport } from '../models/income-report'; 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
   private http = inject(HttpClient);
@@ -55,5 +55,7 @@ export class OrderService {
   getPurchasersByGiftId(giftId: number): Observable<string[]> {
     return this.http.get<string[]>(`${this.BASE_URL}/purchasers/${giftId}`);
   }
-
+getIncomeReport(): Observable<IncomeReport> {
+  return this.http.get<IncomeReport>(`${this.BASE_URL}/income-report`);
+}
 }

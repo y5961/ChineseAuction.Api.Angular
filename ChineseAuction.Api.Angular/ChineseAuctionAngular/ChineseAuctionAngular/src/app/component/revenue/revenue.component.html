@@ -1,0 +1,54 @@
+<div class="revenue-dashboard" dir="rtl">
+  
+  <header class="report-header">
+    <div class="title-section">
+      <h1>📊 דו"ח סיכום הכנסות</h1>
+      <p class="subtitle" *ngIf="reportData()">
+        סטטיסטיקה מעודכנת ליום {{ reportData()?.reportDate | date:'dd/MM/yyyy' }} בשעה {{ reportData()?.reportDate | date:'HH:mm' }}
+      </p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ הדפס דו"ח</button>
+  </header>
+
+  <hr class="divider">
+
+  <div class="stats-grid" *ngIf="!loading(); else loader">
+    
+    <div class="stat-card revenue">
+      <div class="card-icon">₪</div>
+      <div class="card-info">
+        <span class="label">סך הכל הוכנס</span>
+        <h2 class="value">{{ reportData()?.totalRevenue | currency:'ILS':'symbol':'1.0-0' }}</h2>
+      </div>
+    </div>
+
+    <div class="stat-card buyers">
+      <div class="card-icon">👥</div>
+      <div class="card-info">
+        <span class="label">מספר רוכשים (עסקאות)</span>
+        <h2 class="value">{{ reportData()?.totalBuyers }}</h2>
+      </div>
+    </div>
+
+    <div class="stat-card donors">
+      <div class="card-icon">🎁</div>
+      <div class="card-info">
+        <span class="label">מספר תורמים פעילים</span>
+        <h2 class="value">{{ reportData()?.totalDonors }}</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #loader>
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>מחשב נתונים מהשרת, רק רגע...</p>
+    </div>
+  </ng-template>
+
+  <footer class="report-footer" *ngIf="!loading()">
+    <p>* הנתונים כוללים אך ורק עסקאות שהושלמו בהצלחה (Status: Completed).</p>
+  </footer>
+
+</div>

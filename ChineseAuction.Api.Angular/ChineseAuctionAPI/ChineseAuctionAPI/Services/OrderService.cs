@@ -182,41 +182,7 @@ namespace ChineseAuctionAPI.Services
                 throw;
             }
         }
-        //public async Task<OrderDTO?> GetDraftOrderByUserAsync(int userId)
-        //{
-        //    try
-        //    {
-        //        _logger.LogInformation("מחפש הזמנה במצב טיוטה (Draft) עבור משתמש {UserId}.", userId);
-        //        var order = await _OrderRepository.GetDraftOrderByUserAsync(userId);
-
-        //        if (order == null) return null;
-
-        //        return new OrderDTO
-        //        {
-        //            IdOrder = order.IdOrder, // וודאי שה-43 עובר כאן
-        //            IdUser = order.IdUser,
-        //            OrderDate = order.OrderDate,
-        //            Status = order.Status,
-        //            OrdersGifts = order.OrdersGift.Select(og => new OrdersGiftDTO
-        //            {
-        //                Name = og.Gift.Name,
-        //                Amount = og.Amount,
-        //                Price = og.Gift.Price,
-        //                Description = og.Gift.Description,
-        //                Category = og.Gift.Category?.Name ?? "",
-        //                Image = og.Gift.Image
-        //            }).ToList(),
-        //            TotalAmount = order.OrdersGift.Sum(og => og.Amount),
-        //            TotalPrice = order.OrdersGift.Sum(og => og.Amount * og.Gift.Price)
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "שגיאה בשליפת טיוטת הזמנה למשתמש {UserId}.", userId);
-        //        throw;
-        //    }
-        //}
-
+     
         public async Task<bool> UpdatePackageQuantityAsync(int userId, int packageId, int amount)
         {
             try
@@ -229,6 +195,20 @@ namespace ChineseAuctionAPI.Services
             {
                 _logger.LogError(ex, "Error updating package in order for user {UserId}", userId);
                 return false;
+            }
+        }
+        public async Task<IncomeReportDTO> GetIncomeReportAsync()
+        {
+            try
+            {
+                _logger.LogInformation("ח הכנסות כללי למערכת.");
+                return await _OrderRepository.GetIncomeReportAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "שגיאה בהפקת דוח הכנסות.");
+        
+                throw;
             }
         }
     }

@@ -11,6 +11,7 @@ namespace ChineseAuctionAPI.Services
         Task<OrderDTO?> GetByIdWithGiftsAsync(int orderId);
         Task<bool> CompleteOrder(int orderId);
         Task<bool> UpdatePackageQuantityAsync(int userId, int packageId, int amount);
+        Task<IncomeReportDTO> GetIncomeReportAsync();
 
     }
 }
