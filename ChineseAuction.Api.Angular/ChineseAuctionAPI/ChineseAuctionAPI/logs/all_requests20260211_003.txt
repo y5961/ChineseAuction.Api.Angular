@@ -232,3 +232,11 @@ System.InvalidOperationException: INSUFFICIENT_TICKETS
 2026-02-11 11:22:11.608 +02:00 [INF] שולף את כל החבילות.
 2026-02-11 11:22:11.610 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 3.4649 ms
 2026-02-11 11:22:11.610 +02:00 [INF] HTTP GET /api/Packages responded 200 in 2.6399 ms
+2026-02-11 11:36:17.239 +02:00 [INF] HTTP OPTIONS /api/Orders/update-package responded 204 in 0.0946 ms
+2026-02-11 11:36:17.245 +02:00 [INF] Updating package 5 for user 1 with amount 2
+2026-02-11 11:36:17.299 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 55.1883 ms
+2026-02-11 11:36:29.703 +02:00 [INF] HTTP OPTIONS /api/Orders/update-package responded 204 in 0.0426 ms
+2026-02-11 11:36:29.707 +02:00 [INF] Updating package 2 for user 1 with amount 1
+2026-02-11 11:36:29.769 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 62.0789 ms
+2026-02-11 11:36:31.069 +02:00 [INF] Updating package 2 for user 1 with amount 2
+2026-02-11 11:36:31.079 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.2495 ms
