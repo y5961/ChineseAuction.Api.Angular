@@ -1,0 +1,91 @@
+$purple: #5c2d91;
+$green: #a2d15d;
+
+.add-gift-container {
+  direction: rtl;
+  padding: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .title {
+      color: $purple;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .close {
+      cursor: pointer;
+      color: #aaa;
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    &.full-width {
+      grid-column: span 2;
+    }
+
+    label {
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: $purple;
+    }
+  }
+
+  .image-box {
+    border: 1px dashed $purple;
+    border-radius: 10px;
+    padding: 12px;
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+
+      button {
+        flex: 1;
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid $purple;
+        background: #f5f5f5;
+        cursor: pointer;
+
+        &.active {
+          background: $purple;
+          color: white;
+        }
+      }
+    }
+
+    .drop-zone {
+      text-align: center;
+      cursor: pointer;
+
+      img {
+        max-height: 90px;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  .btn-save {
+    margin-top: 25px;
+    width: 100%;
+    background: $green;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,82 @@
+<p-dialog 
+    header="עריכת פרטי מתנה" 
+    [(visible)]="visible" 
+    [modal]="true" 
+    [style]="{ width: '450px' }" 
+    [draggable]="false" 
+    [resizable]="false"
+    (onHide)="onClose()"
+    [rtl]="true"
+    appendTo="body">
+    
+    <div class="flex flex-column gap-4 p-fluid" style="direction: rtl; font-family: sans-serif; padding: 10px;">
+        
+        <div style="text-align: center; margin-bottom: 1rem;">
+            <label style="display: block; font-weight: bold; margin-bottom: 10px; color: #4a148c;">תצוגה מקדימה</label>
+            <div style="display: flex; justify-content: center;">
+                <img [src]="imagePreview || (editForm.image?.startsWith('http') ? editForm.image : 'https://localhost:7273/images/gift/' + editForm.image)" 
+                     style="width: 140px; height: 140px; object-fit: contain; border-radius: 12px; border: 2px solid #f3e5f5; background: #fafafa; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+                     *ngIf="editForm.image || imagePreview">
+            </div>
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label for="image" style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">נתיב תמונה / שם קובץ</label>
+            <div style="display: flex; gap: 5px;">
+                <input pInputText id="image" [(ngModel)]="editForm.image" placeholder="הכנס URL או שם קובץ" />
+                <button type="button" pButton icon="pi pi-upload" class="p-button-help p-button-outlined" (click)="filePicker.click()" [disabled]="isUploading"></button>
+            </div>
+            <input #filePicker type="file" (change)="onFileSelected($event)" style="display: none" accept="image/*">
+            <small *ngIf="isUploading" style="color: #9c27b0;">מעלה תמונה, נא להמתין...</small>
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">שם המתנה</label>
+            <input pInputText id="name" [(ngModel)]="editForm.name" />
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label for="desc" style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">תיאור</label>
+            <input pInputText id="desc" [(ngModel)]="editForm.description" />
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label for="price" style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">מחיר כרטיס (₪)</label>
+            <p-inputNumber id="price" [(ngModel)]="editForm.price" mode="currency" currency="ILS" locale="he-IL"></p-inputNumber>
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">תורם</label>
+            <p-dropdown 
+                [options]="donors()" 
+                [(ngModel)]="editForm.idDonor" 
+                optionLabel="firstName" 
+                optionValue="idDonor"
+                appendTo="body" 
+                placeholder="בחר תורם">
+            </p-dropdown>
+        </div>
+
+        <div class="field" style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">קטגוריה</label>
+            <p-dropdown 
+                [options]="categories()" 
+                [(ngModel)]="editForm.idGiftCategory" 
+                optionLabel="name" 
+                optionValue="idGiftCategory"
+                [scrollHeight]="'200px'"
+                placeholder="בחר קטגוריה"
+                appendTo="body">
+            </p-dropdown>
+        </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <div style="display: flex; gap: 10px; justify-content: flex-end; padding-top: 20px;">
+            <p-button label="ביטול" icon="pi pi-times" (click)="onClose()" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button label="שמור שינויים" icon="pi pi-check" (click)="save()" [disabled]="isUploading" styleClass="p-button-raised p-button-help"></p-button>
+        </div>
+    </ng-template>
+</p-dialog>
+
+

@@ -1,0 +1,71 @@
+<div dir="rtl">
+  <h2>רישום משתמש חדש</h2>
+
+  <fieldset>
+    <legend>פרטי משתמש</legend>
+
+    <form (ngSubmit)="onRegister()">
+      
+      <div>
+        <label for="identity">תעודת זהות:</label><br>
+        <input type="text" id="identity" name="identity" 
+               [(ngModel)]="userToRegister.identity" 
+               border="1" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="firstName">שם פרטי:</label><br>
+        <input type="text" id="firstName" name="firstName" 
+               [(ngModel)]="userToRegister.firstName" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="lastName">שם משפחה:</label><br>
+        <input type="text" id="lastName" name="lastName" 
+               [(ngModel)]="userToRegister.lastName" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="password">סיסמה:</label><br>
+       <input type="password" id="password" name="password" autocomplete="new-password" 
+               [(ngModel)]="userToRegister.password" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="email">אימייל:</label><br>
+        <input type="email" id="email" name="email" 
+               [(ngModel)]="userToRegister.email">
+      </div>
+      <br>
+
+      <div>
+        <label for="phoneNumber">מספר טלפון:</label><br>
+        <input type="tel" id="phoneNumber" name="phoneNumber" 
+               [(ngModel)]="userToRegister.phoneNumber" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="city">עיר:</label><br>
+        <input type="text" id="city" name="city" 
+               [(ngModel)]="userToRegister.city" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="address">כתובת:</label><br>
+        <input type="text" id="address" name="address" 
+               [(ngModel)]="userToRegister.address" required>
+      </div>
+      <br>
+
+      <button type="submit">שלח רישום</button>
+    </form>
+  </fieldset>
+
+  <p *ngIf="message">{{ message }}</p>
+</div>

@@ -1,0 +1,83 @@
+/* רקע המודל - מכסה את כל המסך */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); // טשטוש כהה לרקע
+  backdrop-filter: blur(4px); // אפקט טשטוש זכוכית (Glassmorphism)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* תיבת התוכן של המודל */
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  direction: rtl; // הצמדה לימין
+  animation: slideUp 0.4s ease-out;
+
+  /* כפתור סגירה (X) */
+  .close-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #f3e5f5;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6a1b9a;
+    font-weight: bold;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #e1bee7;
+      transform: rotate(90deg);
+    }
+  }
+
+  h2 {
+    color: #6a1b9a;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+}
+
+/* אנימציות */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* עיצוב גלילה פנימי */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ce93d8;
+  border-radius: 10px;
+}

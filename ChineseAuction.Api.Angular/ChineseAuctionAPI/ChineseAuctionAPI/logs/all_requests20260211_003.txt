@@ -1,0 +1,234 @@
+2026-02-11 03:22:31.580 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-11 03:22:32.559 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address https://127.0.0.1:7273: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-02-11 03:22:32.624 +02:00 [FTL] Host terminated unexpectedly
+System.IO.IOException: Failed to bind to address https://127.0.0.1:7273: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\1\OneDrive\Desktop\projects\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Program.cs:line 136
+2026-02-11 03:33:56.637 +02:00 [INF] Starting web host - Monitoring all requests
+2026-02-11 04:51:20.923 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 33.2690 ms
+2026-02-11 04:51:20.923 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 33.2596 ms
+2026-02-11 04:51:20.923 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 33.9032 ms
+2026-02-11 11:13:37.863 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:13:37.888 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:13:39.639 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-11 11:13:40.385 +02:00 [INF] HTTP GET /api/Packages responded 200 in 22939438.2518 ms
+2026-02-11 11:13:40.388 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 22939441.6273 ms
+2026-02-11 11:19:49.709 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.4412 ms
+2026-02-11 11:19:49.747 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:19:49.755 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.7716 ms
+2026-02-11 11:19:49.794 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:19:50.034 +02:00 [INF] HTTP GET /api/Packages responded 200 in 311.9628 ms
+2026-02-11 11:19:50.086 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.2943 ms
+2026-02-11 11:19:50.101 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:19:50.128 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 339.7832 ms
+2026-02-11 11:19:50.132 +02:00 [INF] HTTP GET /api/Packages responded 200 in 66.6735 ms
+2026-02-11 11:19:50.149 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-11 11:19:50.172 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-11 11:19:50.300 +02:00 [INF] נשלפו בהצלחה 8 מתנות.
+2026-02-11 11:19:50.354 +02:00 [INF] HTTP GET /api/Gift responded 200 in 221.5256 ms
+2026-02-11 11:19:50.363 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:19:50.369 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 7.9514 ms
+2026-02-11 11:19:50.394 +02:00 [INF] HTTP GET /images/gift/d.jpg responded 304 in 5.3897 ms
+2026-02-11 11:19:50.394 +02:00 [INF] HTTP GET /images/gift/e.jpg responded 304 in 5.3706 ms
+2026-02-11 11:19:50.394 +02:00 [INF] HTTP GET /images/gift/c.jpg responded 304 in 5.3616 ms
+2026-02-11 11:19:50.394 +02:00 [INF] HTTP GET /images/gift/a.jpg responded 304 in 5.3760 ms
+2026-02-11 11:19:50.394 +02:00 [INF] HTTP GET /images/gift/d.JPG responded 304 in 5.3672 ms
+2026-02-11 11:19:56.830 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.1215 ms
+2026-02-11 11:19:56.838 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-11 11:19:56.839 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-11 11:19:56.842 +02:00 [INF] נשלפו בהצלחה 8 מתנות.
+2026-02-11 11:19:56.844 +02:00 [INF] HTTP GET /api/Gift responded 200 in 9.0880 ms
+2026-02-11 11:20:06.574 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.1999 ms
+2026-02-11 11:20:06.574 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.0915 ms
+2026-02-11 11:20:06.578 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:20:06.578 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:20:06.582 +02:00 [INF] HTTP GET /api/Packages responded 200 in 4.2334 ms
+2026-02-11 11:20:06.584 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 6.0221 ms
+2026-02-11 11:20:08.849 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:20:08.854 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.5143 ms
+2026-02-11 11:20:08.899 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:20:08.901 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:20:08.905 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.8885 ms
+2026-02-11 11:20:08.910 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 10.8586 ms
+2026-02-11 11:20:08.918 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.0978 ms
+2026-02-11 11:20:08.944 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-11 11:20:08.945 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-11 11:20:08.954 +02:00 [INF] נשלפו בהצלחה 8 מתנות.
+2026-02-11 11:20:08.957 +02:00 [INF] HTTP GET /api/Gift responded 200 in 34.0879 ms
+2026-02-11 11:20:08.997 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:20:09.032 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 37.4810 ms
+2026-02-11 11:21:18.674 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.1016 ms
+2026-02-11 11:21:18.680 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:21:18.708 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 28.6332 ms
+2026-02-11 11:21:24.465 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.1828 ms
+2026-02-11 11:21:24.465 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.0712 ms
+2026-02-11 11:21:24.470 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:21:24.471 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:21:24.474 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.8824 ms
+2026-02-11 11:21:24.475 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 5.0166 ms
+2026-02-11 11:21:28.322 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:21:28.325 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 3.5479 ms
+2026-02-11 11:21:51.270 +02:00 [INF] HTTP OPTIONS /api/Orders/add-gift responded 204 in 0.2247 ms
+2026-02-11 11:21:51.304 +02:00 [INF] מעדכן/מוסיף מתנה 4 למשתמש 1 בכמות 3.
+2026-02-11 11:21:51.315 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-11 11:21:51.417 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 143.0898 ms
+2026-02-11 11:21:55.656 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 2.
+2026-02-11 11:21:55.679 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 23.6204 ms
+2026-02-11 11:21:56.068 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 3.
+2026-02-11 11:21:56.084 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 17.1349 ms
+2026-02-11 11:21:56.301 +02:00 [INF] HTTP OPTIONS /api/Orders/add-gift responded 204 in 0.1054 ms
+2026-02-11 11:21:56.303 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 4.
+2026-02-11 11:21:56.325 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 22.4805 ms
+2026-02-11 11:21:56.492 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 5.
+2026-02-11 11:21:56.514 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 22.6028 ms
+2026-02-11 11:21:56.713 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 6.
+2026-02-11 11:21:56.736 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 23.3685 ms
+2026-02-11 11:21:56.897 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 7.
+2026-02-11 11:21:56.918 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 21.8534 ms
+2026-02-11 11:21:58.497 +02:00 [INF] HTTP OPTIONS /api/Orders/update-package responded 204 in 0.0904 ms
+2026-02-11 11:21:58.506 +02:00 [INF] Updating package 1 for user 1 with amount 7
+2026-02-11 11:21:58.514 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-11 11:21:58.583 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 80.6626 ms
+2026-02-11 11:21:58.769 +02:00 [INF] Updating package 1 for user 1 with amount 6
+2026-02-11 11:21:58.779 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.4605 ms
+2026-02-11 11:21:58.937 +02:00 [INF] Updating package 1 for user 1 with amount 5
+2026-02-11 11:21:58.963 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.3915 ms
+2026-02-11 11:21:59.077 +02:00 [INF] Updating package 1 for user 1 with amount 4
+2026-02-11 11:21:59.101 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.3344 ms
+2026-02-11 11:21:59.217 +02:00 [INF] Updating package 1 for user 1 with amount 3
+2026-02-11 11:21:59.242 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.7218 ms
+2026-02-11 11:21:59.364 +02:00 [INF] Updating package 1 for user 1 with amount 2
+2026-02-11 11:21:59.391 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.2536 ms
+2026-02-11 11:21:59.710 +02:00 [INF] Updating package 1 for user 1 with amount 1
+2026-02-11 11:21:59.735 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9640 ms
+2026-02-11 11:21:59.873 +02:00 [INF] Updating package 1 for user 1 with amount 0
+2026-02-11 11:21:59.898 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9117 ms
+2026-02-11 11:21:59.904 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.0486 ms
+2026-02-11 11:21:59.907 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:21:59.921 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 14.8463 ms
+2026-02-11 11:22:00.098 +02:00 [INF] Updating package 3 for user 1 with amount 3
+2026-02-11 11:22:00.120 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1467 ms
+2026-02-11 11:22:00.683 +02:00 [INF] Updating package 3 for user 1 with amount 2
+2026-02-11 11:22:00.713 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.9501 ms
+2026-02-11 11:22:01.080 +02:00 [INF] Updating package 3 for user 1 with amount 1
+2026-02-11 11:22:01.085 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 5.4231 ms
+2026-02-11 11:22:01.322 +02:00 [INF] Updating package 3 for user 1 with amount 0
+2026-02-11 11:22:01.340 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.7673 ms
+2026-02-11 11:22:01.346 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:22:01.411 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 64.7240 ms
+2026-02-11 11:22:01.829 +02:00 [INF] Updating package 2 for user 1 with amount 4
+2026-02-11 11:22:01.843 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 14.0586 ms
+2026-02-11 11:22:02.898 +02:00 [INF] Updating package 2 for user 1 with amount 3
+2026-02-11 11:22:02.906 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 8.4181 ms
+2026-02-11 11:22:03.236 +02:00 [INF] Updating package 2 for user 1 with amount 2
+2026-02-11 11:22:03.246 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.7210 ms
+2026-02-11 11:22:03.632 +02:00 [INF] HTTP OPTIONS /api/Orders/update-package responded 204 in 0.0692 ms
+2026-02-11 11:22:03.637 +02:00 [INF] Updating package 2 for user 1 with amount 1
+2026-02-11 11:22:03.652 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.4014 ms
+2026-02-11 11:22:04.065 +02:00 [INF] Updating package 2 for user 1 with amount 0
+2026-02-11 11:22:04.081 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.9217 ms
+2026-02-11 11:22:04.086 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:22:04.089 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 2.8317 ms
+2026-02-11 11:22:06.642 +02:00 [INF] HTTP OPTIONS /api/Orders/add-gift responded 204 in 0.1602 ms
+2026-02-11 11:22:06.645 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 6.
+2026-02-11 11:22:06.657 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 13.0372 ms
+2026-02-11 11:22:06.862 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 5.
+2026-02-11 11:22:06.895 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 32.6108 ms
+2026-02-11 11:22:07.047 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 4.
+2026-02-11 11:22:07.053 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 6.5641 ms
+2026-02-11 11:22:07.177 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 3.
+2026-02-11 11:22:07.181 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 4.7276 ms
+2026-02-11 11:22:07.326 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 2.
+2026-02-11 11:22:07.335 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 9.1682 ms
+2026-02-11 11:22:07.457 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 1.
+2026-02-11 11:22:07.466 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 8.8181 ms
+2026-02-11 11:22:07.680 +02:00 [INF] מעדכן/מוסיף מתנה 11 למשתמש 1 בכמות 0.
+2026-02-11 11:22:07.690 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 10.7227 ms
+2026-02-11 11:22:07.695 +02:00 [INF] HTTP OPTIONS /api/Orders/user/1 responded 204 in 0.0458 ms
+2026-02-11 11:22:07.697 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:22:07.700 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 2.5774 ms
+2026-02-11 11:22:07.839 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 2.
+2026-02-11 11:22:07.844 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 5.7011 ms
+2026-02-11 11:22:08.663 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 3.
+2026-02-11 11:22:08.679 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 16.5205 ms
+2026-02-11 11:22:08.965 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 4.
+2026-02-11 11:22:08.974 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 10.0463 ms
+2026-02-11 11:22:09.141 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 5.
+2026-02-11 11:22:09.149 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 9.3232 ms
+2026-02-11 11:22:09.339 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 6.
+2026-02-11 11:22:09.348 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 9.4661 ms
+2026-02-11 11:22:09.484 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 7.
+2026-02-11 11:22:09.492 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 8.4253 ms
+2026-02-11 11:22:09.676 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 8.
+2026-02-11 11:22:09.684 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 8.6778 ms
+2026-02-11 11:22:09.838 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 9.
+2026-02-11 11:22:09.848 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 9.8598 ms
+2026-02-11 11:22:10.023 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 10.
+2026-02-11 11:22:10.031 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 8.7458 ms
+2026-02-11 11:22:10.185 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 11.
+2026-02-11 11:22:10.189 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 4.7095 ms
+2026-02-11 11:22:10.376 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 12.
+2026-02-11 11:22:10.384 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 200 in 9.0051 ms
+2026-02-11 11:22:10.596 +02:00 [INF] מעדכן/מוסיף מתנה 10 למשתמש 1 בכמות 13.
+2026-02-11 11:22:10.600 +02:00 [ERR] שגיאה בעת עדכון מתנה 10 בהזמנה של משתמש 1.
+System.InvalidOperationException: INSUFFICIENT_TICKETS
+   at ChineseAuctionAPI.Repositories.OrderRepo.AddOrUpdateGiftInOrderAsync(Int32 userId, Int32 IdGift, Int32 amount) in C:\Users\1\OneDrive\Desktop\projects\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Repositories\OrderRepo.cs:line 45
+   at ChineseAuctionAPI.Services.OrderService.AddOrUpdateGiftInOrderAsync(Int32 userId, Int32 giftId, Int32 amount) in C:\Users\1\OneDrive\Desktop\projects\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\OrderService.cs:line 27
+2026-02-11 11:22:10.618 +02:00 [INF] HTTP POST /api/Orders/add-gift responded 400 in 22.3286 ms
+2026-02-11 11:22:11.604 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.0362 ms
+2026-02-11 11:22:11.607 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 1.
+2026-02-11 11:22:11.608 +02:00 [INF] שולף את כל החבילות.
+2026-02-11 11:22:11.610 +02:00 [INF] HTTP GET /api/Orders/user/1 responded 200 in 3.4649 ms
+2026-02-11 11:22:11.610 +02:00 [INF] HTTP GET /api/Packages responded 200 in 2.6399 ms

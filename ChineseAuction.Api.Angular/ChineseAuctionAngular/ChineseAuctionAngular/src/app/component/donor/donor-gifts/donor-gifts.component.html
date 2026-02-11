@@ -1,0 +1,45 @@
+<div class="gifts-expanded-box">
+  <h4 class="gifts-title">🎁 מתנות שנתרמו על ידי {{ donorName }}:</h4>
+  
+  <div *ngIf="gifts.length === 0" class="no-gifts">
+    אין מתנות רשומות לתורם זה.
+  </div>
+  
+  <div class="gifts-grid" *ngIf="gifts.length > 0">
+    <div class="gift-mini-card" *ngFor="let gift of gifts">
+      <div class="gift-thumb">
+        <img *ngIf="gift.image && gift.image !== 'string'" 
+             [src]="imageBaseUrl + gift.image" 
+             alt="Gift Image">
+        <div *ngIf="!gift.image || gift.image === 'string'" class="no-img">🎁</div>
+      </div>
+      
+      <div class="gift-info">
+        <div class="gift-header-text">
+          <small class="category-tag">{{ gift.category?.name || 'מתנה' }}</small>
+          <span class="gift-name">{{ gift.name }}</span>
+        </div>
+        <p class="gift-description" *ngIf="gift.description">
+          {{ gift.description }}
+        </p>
+        
+        <button class="btn-delete-minimal" (click)="openConfirm(gift)">
+          <span class="icon">🗑️</span>
+          מחק מתנה
+        </button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="delete-dialog-overlay" *ngIf="giftToDelete" (click)="giftToDelete = null">
+  <div class="delete-dialog-card" (click)="$event.stopPropagation()">
+    <div class="dialog-icon">⚠️</div>
+    <h3>אישור מחיקה</h3>
+    <p>האם אתה בטוח שברצונך למחוק את המתנה <strong>"{{ giftToDelete.name }}"</strong>?</p>
+    <div class="dialog-actions">
+      <button class="btn-cancel" (click)="giftToDelete = null">ביטול</button>
+      <button class="btn-confirm-delete" (click)="confirmDelete()">מחק לצמיתות</button>
+    </div>
+  </div>
+</div>

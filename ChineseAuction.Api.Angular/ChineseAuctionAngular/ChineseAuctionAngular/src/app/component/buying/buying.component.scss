@@ -1,0 +1,51 @@
+.checkout-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  direction: rtl; /* יישור לימין */
+}
+
+.details-section { flex: 2; }
+.summary-section { flex: 1; }
+
+.card, .summary-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fffafb; /* צבע רקע עדין כמו בסרטון */
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #e91e63; /* ורוד-אדום כמו בסרטון */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.success-msg {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}

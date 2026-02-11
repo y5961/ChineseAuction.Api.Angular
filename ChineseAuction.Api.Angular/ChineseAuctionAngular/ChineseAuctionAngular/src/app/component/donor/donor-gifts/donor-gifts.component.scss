@@ -1,0 +1,178 @@
+$primary-purple: #5c2d91;
+$accent-green: #a2d15d;
+$border-light: #e2daeb;
+$error-red: #ff4d4f;
+
+.gifts-expanded-box {
+  background: #fdfbff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px dashed $border-light;
+  margin: 0 10px;
+
+  .gifts-title {
+    color: $primary-purple;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+}
+
+.gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gift-mini-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    // תיקון השגיאה: שימוש ב-opacity במקום darken
+    box-shadow: 0 6px 15px rgba($primary-purple, 0.1); 
+  }
+
+  .gift-thumb {
+    width: 65px;
+    height: 65px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #f0f0f0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .no-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 1.5rem;
+    }
+  }
+
+  .gift-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+
+    .gift-header-text {
+      display: flex;
+      flex-direction: column;
+
+      small.category-tag {
+        color: $accent-green;
+        font-weight: 800;
+        font-size: 0.7rem;
+      }
+
+      span.gift-name {
+        color: $primary-purple;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+    }
+
+    .gift-description {
+      margin-top: 5px;
+      color: #666;
+      font-size: 0.85rem;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* עיצוב כפתור המחיקה בתוך הכרטיס */
+    .btn-delete-minimal {
+      background: #fff;
+      border: 1px solid #eee;
+      color: #888;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s;
+      width: fit-content;
+
+      &:hover {
+        color: $error-red;
+        border-color: $error-red;
+        background: #fff1f0;
+      }
+    }
+  }
+}
+
+/* עיצוב הדיאלוג - נקי ללא סגול */
+.delete-dialog-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.184);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.delete-dialog-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+  animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  .dialog-icon { font-size: 2.5rem; margin-bottom: 10px; }
+  h3 { color: #333; margin-top: 0; }
+  p { color: #666; font-size: 0.9rem; }
+
+  .dialog-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-cancel { background: #f5f5f5; color: #666; }
+    .btn-confirm-delete { background: $error-red; color: white; }
+  }
+}
+
+.no-gifts {
+  color: #7a6e8a;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }

@@ -1,0 +1,1008 @@
+2026-01-29 00:01:52.526 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:52.538 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:52.603 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:52.615 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:52.617 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:52.622 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 96.3448 ms
+2026-01-29 00:01:52.624 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.3532 ms
+2026-01-29 00:01:56.273 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:56.275 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:56.317 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:56.323 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:56.324 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:56.326 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 52.8199 ms
+2026-01-29 00:01:56.331 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.6107 ms
+2026-01-29 00:01:59.759 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:01:59.761 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:01:59.806 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:01:59.811 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:01:59.812 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:01:59.812 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 53.5888 ms
+2026-01-29 00:01:59.818 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.7229 ms
+2026-01-29 00:02:07.890 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:02:07.899 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:02:07.907 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:02:07.961 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:02:07.972 +02:00 [INF] HTTP GET /api/Packages responded 200 in 64.6726 ms
+2026-01-29 00:02:07.979 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:02:07.983 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 93.4421 ms
+2026-01-29 00:02:20.201 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:02:20.289 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 89.3958 ms
+2026-01-29 00:02:20.423 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:02:20.445 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.9234 ms
+2026-01-29 00:02:20.979 +02:00 [INF] Updating package 1 for user 14 with amount 3
+2026-01-29 00:02:21.016 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.8853 ms
+2026-01-29 00:02:25.006 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:02:25.007 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:02:25.009 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:02:25.015 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.6598 ms
+2026-01-29 00:02:25.054 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:02:25.058 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:02:25.060 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 54.1502 ms
+2026-01-29 00:07:07.706 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:07:07.708 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:07:07.754 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:07:07.756 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:07:07.758 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 51.9244 ms
+2026-01-29 00:07:07.771 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:07:07.777 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.4969 ms
+2026-01-29 00:08:00.244 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:08:00.248 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:08:00.282 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:08:00.282 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:08:00.286 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:08:00.292 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.7097 ms
+2026-01-29 00:08:00.292 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.6336 ms
+2026-01-29 00:08:49.570 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:08:49.572 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:08:49.599 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:08:49.624 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:08:49.628 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.7924 ms
+2026-01-29 00:08:49.640 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:08:49.645 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.0118 ms
+2026-01-29 00:09:07.442 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:07.444 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:07.487 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:07.489 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:07.493 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:07.500 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 58.7215 ms
+2026-01-29 00:09:07.500 +02:00 [INF] HTTP GET /api/Packages responded 200 in 11.2122 ms
+2026-01-29 00:09:08.645 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:09:08.692 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.7082 ms
+2026-01-29 00:09:08.899 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:09:08.933 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 35.1653 ms
+2026-01-29 00:09:10.410 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:10.412 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:10.464 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:10.464 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:10.470 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:10.479 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.4815 ms
+2026-01-29 00:09:10.479 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 69.3021 ms
+2026-01-29 00:09:51.966 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:51.969 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:51.980 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:52.032 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:52.040 +02:00 [INF] HTTP GET /api/Packages responded 200 in 61.5159 ms
+2026-01-29 00:09:52.050 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:52.058 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 98.6639 ms
+2026-01-29 00:09:52.942 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:09:52.996 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.8513 ms
+2026-01-29 00:09:53.183 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:09:53.224 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.1988 ms
+2026-01-29 00:09:54.666 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:09:54.672 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:09:54.673 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:09:54.720 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:09:54.723 +02:00 [INF] HTTP GET /api/Packages responded 200 in 51.9540 ms
+2026-01-29 00:09:54.727 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:09:54.733 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 67.1952 ms
+2026-01-29 00:11:38.042 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:38.048 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:38.138 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:38.172 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:38.179 +02:00 [INF] HTTP GET /api/Packages responded 200 in 68.4090 ms
+2026-01-29 00:11:38.180 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:38.190 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 148.3803 ms
+2026-01-29 00:11:42.697 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:42.699 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:42.708 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:42.744 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:42.749 +02:00 [INF] HTTP GET /api/Packages responded 200 in 41.8545 ms
+2026-01-29 00:11:42.751 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:42.757 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 60.4632 ms
+2026-01-29 00:11:44.265 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:11:44.322 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 57.0163 ms
+2026-01-29 00:11:44.563 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:11:44.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.6128 ms
+2026-01-29 00:11:46.465 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:11:46.467 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:11:46.521 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:11:46.523 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:11:46.530 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:11:46.543 +02:00 [INF] HTTP GET /api/Packages responded 200 in 19.8556 ms
+2026-01-29 00:11:46.544 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 80.4010 ms
+2026-01-29 00:13:01.012 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:13:01.079 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 93.8635 ms
+2026-01-29 00:13:01.650 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:13:01.693 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.8681 ms
+2026-01-29 00:13:03.930 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:13:03.931 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:13:03.964 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:13:03.983 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:13:03.991 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.6763 ms
+2026-01-29 00:13:03.993 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:13:04.006 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 76.5854 ms
+2026-01-29 00:13:12.401 +02:00 [INF] Updating package 3 for user 14 with amount 1
+2026-01-29 00:13:12.420 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.6237 ms
+2026-01-29 00:13:14.283 +02:00 [INF] Updating package 3 for user 14 with amount 2
+2026-01-29 00:13:14.306 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2423 ms
+2026-01-29 00:13:15.947 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:13:15.990 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.2579 ms
+2026-01-29 00:17:37.890 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:37.893 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:37.973 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:37.993 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:37.999 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:17:38.013 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 123.2391 ms
+2026-01-29 00:17:38.025 +02:00 [INF] HTTP GET /api/Packages responded 200 in 27.1898 ms
+2026-01-29 00:17:51.120 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:51.123 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:51.213 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:51.227 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:51.227 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:17:51.233 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 112.7010 ms
+2026-01-29 00:17:51.244 +02:00 [INF] HTTP GET /api/Packages responded 200 in 16.6142 ms
+2026-01-29 00:17:51.260 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:17:51.263 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:17:51.295 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:17:51.298 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:17:51.300 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 41.6310 ms
+2026-01-29 00:18:15.007 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:15.011 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:15.019 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:18:15.091 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:15.099 +02:00 [INF] HTTP GET /api/Packages responded 200 in 80.3217 ms
+2026-01-29 00:18:15.104 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:15.118 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 115.3989 ms
+2026-01-29 00:18:15.247 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:15.252 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:15.323 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:15.329 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:15.333 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 86.8097 ms
+2026-01-29 00:18:16.516 +02:00 [INF] Updating package 2 for user 14 with amount 1
+2026-01-29 00:18:16.571 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.6246 ms
+2026-01-29 00:18:16.749 +02:00 [INF] Updating package 2 for user 14 with amount 2
+2026-01-29 00:18:16.771 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3885 ms
+2026-01-29 00:18:16.993 +02:00 [INF] Updating package 2 for user 14 with amount 3
+2026-01-29 00:18:17.035 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.9310 ms
+2026-01-29 00:18:18.485 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:18.487 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:18.529 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:18.535 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:18.538 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 53.8246 ms
+2026-01-29 00:18:18.707 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:18:18.717 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.2520 ms
+2026-01-29 00:18:18.731 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:18:18.734 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:18:18.822 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:18:18.833 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:18:18.836 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 105.1986 ms
+2026-01-29 00:20:15.640 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:15.642 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:15.689 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:15.716 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:15.723 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:15.725 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 85.3390 ms
+2026-01-29 00:20:15.741 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:15.742 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:15.756 +02:00 [INF] HTTP GET /api/Packages responded 200 in 69.2372 ms
+2026-01-29 00:20:15.779 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:15.784 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:15.786 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 45.4072 ms
+2026-01-29 00:20:21.478 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:21.482 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:21.488 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:21.509 +02:00 [INF] HTTP GET /api/Packages responded 200 in 30.5786 ms
+2026-01-29 00:20:21.550 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:21.556 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:21.558 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 77.0095 ms
+2026-01-29 00:20:21.573 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:21.574 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:21.609 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:21.612 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:21.615 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 41.5998 ms
+2026-01-29 00:20:25.800 +02:00 [INF] Updating package 1 for user 14 with amount 1
+2026-01-29 00:20:25.854 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.7158 ms
+2026-01-29 00:20:27.396 +02:00 [INF] Updating package 1 for user 14 with amount 2
+2026-01-29 00:20:27.435 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.6991 ms
+2026-01-29 00:20:28.177 +02:00 [INF] Updating package 1 for user 14 with amount 3
+2026-01-29 00:20:28.217 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.0002 ms
+2026-01-29 00:20:30.947 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:30.948 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:20:30.948 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:30.963 +02:00 [INF] HTTP GET /api/Packages responded 200 in 15.0792 ms
+2026-01-29 00:20:31.002 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:31.008 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:31.010 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 62.8040 ms
+2026-01-29 00:20:31.041 +02:00 [INF] Fetching user with orders for ID: 14
+2026-01-29 00:20:31.042 +02:00 [INF] שולף משתמש 14 עם הזמנות.
+2026-01-29 00:20:31.075 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 14
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:20:31.080 +02:00 [WRN] User with ID: 14 not found for orders request
+2026-01-29 00:20:31.081 +02:00 [INF] HTTP GET /api/User/14/orders responded 404 in 40.6297 ms
+2026-01-29 00:21:28.563 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-29 00:21:28.565 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-29 00:21:28.745 +02:00 [INF] HTTP POST /api/User/login responded 200 in 190.7058 ms
+2026-01-29 00:21:30.848 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:21:30.862 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:30.866 +02:00 [INF] HTTP GET /api/Packages responded 200 in 18.6679 ms
+2026-01-29 00:21:30.870 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:30.931 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:30.937 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:30.940 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 82.9836 ms
+2026-01-29 00:21:38.036 +02:00 [INF] Updating package 1 for user 13 with amount 1
+2026-01-29 00:21:38.109 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 72.9479 ms
+2026-01-29 00:21:39.291 +02:00 [INF] Updating package 1 for user 13 with amount 2
+2026-01-29 00:21:39.311 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3544 ms
+2026-01-29 00:21:40.278 +02:00 [INF] Updating package 1 for user 13 with amount 3
+2026-01-29 00:21:40.312 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.5342 ms
+2026-01-29 00:21:43.388 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:21:43.390 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:43.391 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:43.394 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.5245 ms
+2026-01-29 00:21:43.425 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:43.429 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:43.431 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 42.0757 ms
+2026-01-29 00:21:43.460 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:21:43.462 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:21:43.494 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:21:43.497 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:21:43.498 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 38.3323 ms
+2026-01-29 00:23:33.291 +02:00 [INF] Updating package 1 for user 13 with amount 1
+2026-01-29 00:23:33.366 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 80.7900 ms
+2026-01-29 00:23:41.346 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:23:41.348 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:23:41.348 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:23:41.378 +02:00 [INF] HTTP GET /api/Packages responded 200 in 31.0380 ms
+2026-01-29 00:23:41.411 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:23:41.457 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:23:41.459 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 113.6227 ms
+2026-01-29 00:23:41.477 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:23:41.478 +02:00 [INF] שולף משתמש 13 עם הזמנות.
+2026-01-29 00:23:41.512 +02:00 [ERR] שגיאה בשליפת משתמש והזמנות עבור מזהה 13
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at ChineseAuctionAPI.Services.UserService.<>c.<GetUserWithOrdersAsync>b__8_0(Order o) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 97
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at ChineseAuctionAPI.Services.UserService.GetUserWithOrdersAsync(Int32 userId) in C:\Users\User\Documents\Handesaim\api_angular_proj\ChineseAuction.Api.Angular\ChineseAuctionAPI\ChineseAuctionAPI\Services\UserService.cs:line 93
+2026-01-29 00:23:41.517 +02:00 [WRN] User with ID: 13 not found for orders request
+2026-01-29 00:23:41.519 +02:00 [INF] HTTP GET /api/User/13/orders responded 404 in 42.5520 ms
+2026-01-29 00:43:26.569 +02:00 [INF] Starting web host - Monitoring all requests
+2026-01-29 00:43:29.345 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 220.9333 ms
+2026-01-29 00:43:29.630 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 28.6563 ms
+2026-01-29 00:43:52.260 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:43:54.562 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-01-29 00:43:56.173 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 4700.2598 ms
+2026-01-29 00:44:08.427 +02:00 [INF] Login attempt for email: 111222333@gmail.com
+2026-01-29 00:44:08.444 +02:00 [INF] ניסיון התחברות עבור אימייל: 111222333@gmail.com
+2026-01-29 00:44:08.861 +02:00 [INF] HTTP POST /api/User/login responded 200 in 481.8219 ms
+2026-01-29 00:44:12.117 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:44:12.189 +02:00 [INF] HTTP GET /api/Packages responded 200 in 107.3504 ms
+2026-01-29 00:44:12.405 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:44:12.439 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 44.1664 ms
+2026-01-29 00:44:26.339 +02:00 [INF] Updating package 3 for user 13 with amount 39
+2026-01-29 00:44:26.493 +02:00 [INF] Updating package 3 for user 13 with amount 39
+2026-01-29 00:44:26.583 +02:00 [INF] Updating package 3 for user 13 with amount 39
+2026-01-29 00:44:26.658 +02:00 [INF] Updating package 3 for user 13 with amount 39
+2026-01-29 00:44:26.893 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 313.2739 ms
+2026-01-29 00:44:26.893 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 235.1218 ms
+2026-01-29 00:44:26.893 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 576.0126 ms
+2026-01-29 00:44:26.893 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 402.3264 ms
+2026-01-29 00:44:27.486 +02:00 [INF] Updating package 3 for user 13 with amount 38
+2026-01-29 00:44:27.544 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 58.5908 ms
+2026-01-29 00:44:28.469 +02:00 [INF] Updating package 3 for user 13 with amount 37
+2026-01-29 00:44:28.518 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.4392 ms
+2026-01-29 00:44:28.640 +02:00 [INF] Updating package 3 for user 13 with amount 37
+2026-01-29 00:44:28.669 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.2679 ms
+2026-01-29 00:44:28.733 +02:00 [INF] Updating package 3 for user 13 with amount 37
+2026-01-29 00:44:28.760 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.3339 ms
+2026-01-29 00:44:28.820 +02:00 [INF] Updating package 3 for user 13 with amount 36
+2026-01-29 00:44:28.858 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.4604 ms
+2026-01-29 00:44:28.975 +02:00 [INF] Updating package 3 for user 13 with amount 36
+2026-01-29 00:44:29.001 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.7326 ms
+2026-01-29 00:44:29.135 +02:00 [INF] Updating package 3 for user 13 with amount 35
+2026-01-29 00:44:29.162 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.8631 ms
+2026-01-29 00:44:29.306 +02:00 [INF] Updating package 3 for user 13 with amount 35
+2026-01-29 00:44:29.332 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.5315 ms
+2026-01-29 00:44:29.479 +02:00 [INF] Updating package 3 for user 13 with amount 34
+2026-01-29 00:44:29.511 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.8725 ms
+2026-01-29 00:44:29.656 +02:00 [INF] Updating package 3 for user 13 with amount 34
+2026-01-29 00:44:29.668 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.9142 ms
+2026-01-29 00:44:29.853 +02:00 [INF] Updating package 3 for user 13 with amount 33
+2026-01-29 00:44:29.880 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.5722 ms
+2026-01-29 00:44:30.024 +02:00 [INF] Updating package 3 for user 13 with amount 33
+2026-01-29 00:44:30.052 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.2210 ms
+2026-01-29 00:44:30.190 +02:00 [INF] Updating package 3 for user 13 with amount 32
+2026-01-29 00:44:30.210 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3035 ms
+2026-01-29 00:44:30.362 +02:00 [INF] Updating package 3 for user 13 with amount 31
+2026-01-29 00:44:30.391 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.1043 ms
+2026-01-29 00:44:30.580 +02:00 [INF] Updating package 3 for user 13 with amount 30
+2026-01-29 00:44:30.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1976 ms
+2026-01-29 00:44:30.748 +02:00 [INF] Updating package 3 for user 13 with amount 30
+2026-01-29 00:44:30.768 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.2125 ms
+2026-01-29 00:44:30.921 +02:00 [INF] Updating package 3 for user 13 with amount 29
+2026-01-29 00:44:30.931 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.6295 ms
+2026-01-29 00:44:31.145 +02:00 [INF] Updating package 3 for user 13 with amount 28
+2026-01-29 00:44:31.188 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 43.2222 ms
+2026-01-29 00:44:31.715 +02:00 [INF] Updating package 3 for user 13 with amount 27
+2026-01-29 00:44:31.739 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.2239 ms
+2026-01-29 00:44:32.280 +02:00 [INF] Updating package 3 for user 13 with amount 26
+2026-01-29 00:44:32.325 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.2714 ms
+2026-01-29 00:44:32.471 +02:00 [INF] Updating package 3 for user 13 with amount 26
+2026-01-29 00:44:32.500 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.0974 ms
+2026-01-29 00:44:32.551 +02:00 [INF] Updating package 3 for user 13 with amount 26
+2026-01-29 00:44:32.580 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.8851 ms
+2026-01-29 00:44:32.625 +02:00 [INF] Updating package 3 for user 13 with amount 25
+2026-01-29 00:44:32.647 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7971 ms
+2026-01-29 00:44:32.796 +02:00 [INF] Updating package 3 for user 13 with amount 25
+2026-01-29 00:44:32.817 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4137 ms
+2026-01-29 00:44:32.981 +02:00 [INF] Updating package 3 for user 13 with amount 24
+2026-01-29 00:44:33.002 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0935 ms
+2026-01-29 00:44:33.164 +02:00 [INF] Updating package 3 for user 13 with amount 23
+2026-01-29 00:44:33.182 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.7917 ms
+2026-01-29 00:44:33.339 +02:00 [INF] Updating package 3 for user 13 with amount 22
+2026-01-29 00:44:33.360 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.5280 ms
+2026-01-29 00:44:33.511 +02:00 [INF] Updating package 3 for user 13 with amount 21
+2026-01-29 00:44:33.537 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8146 ms
+2026-01-29 00:44:33.696 +02:00 [INF] Updating package 3 for user 13 with amount 20
+2026-01-29 00:44:33.715 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9537 ms
+2026-01-29 00:44:33.885 +02:00 [INF] Updating package 3 for user 13 with amount 19
+2026-01-29 00:44:33.916 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 31.0118 ms
+2026-01-29 00:44:34.071 +02:00 [INF] Updating package 3 for user 13 with amount 19
+2026-01-29 00:44:34.094 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7976 ms
+2026-01-29 00:44:34.244 +02:00 [INF] Updating package 3 for user 13 with amount 18
+2026-01-29 00:44:34.269 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9884 ms
+2026-01-29 00:44:34.410 +02:00 [INF] Updating package 3 for user 13 with amount 18
+2026-01-29 00:44:34.422 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.1447 ms
+2026-01-29 00:44:34.604 +02:00 [INF] Updating package 3 for user 13 with amount 17
+2026-01-29 00:44:34.626 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.9696 ms
+2026-01-29 00:44:34.773 +02:00 [INF] Updating package 3 for user 13 with amount 16
+2026-01-29 00:44:34.792 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.7452 ms
+2026-01-29 00:44:34.963 +02:00 [INF] Updating package 3 for user 13 with amount 15
+2026-01-29 00:44:34.982 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.8263 ms
+2026-01-29 00:44:35.147 +02:00 [INF] Updating package 3 for user 13 with amount 14
+2026-01-29 00:44:35.157 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.0643 ms
+2026-01-29 00:44:35.337 +02:00 [INF] Updating package 3 for user 13 with amount 13
+2026-01-29 00:44:35.355 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5859 ms
+2026-01-29 00:44:35.541 +02:00 [INF] Updating package 3 for user 13 with amount 12
+2026-01-29 00:44:35.562 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.5013 ms
+2026-01-29 00:44:35.750 +02:00 [INF] Updating package 3 for user 13 with amount 11
+2026-01-29 00:44:35.772 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2096 ms
+2026-01-29 00:44:35.917 +02:00 [INF] Updating package 3 for user 13 with amount 10
+2026-01-29 00:44:35.938 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6677 ms
+2026-01-29 00:44:36.135 +02:00 [INF] Updating package 3 for user 13 with amount 9
+2026-01-29 00:44:36.169 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.3784 ms
+2026-01-29 00:44:36.368 +02:00 [INF] Updating package 3 for user 13 with amount 8
+2026-01-29 00:44:36.389 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0307 ms
+2026-01-29 00:44:36.555 +02:00 [INF] Updating package 3 for user 13 with amount 7
+2026-01-29 00:44:36.575 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2306 ms
+2026-01-29 00:44:36.852 +02:00 [INF] Updating package 3 for user 13 with amount 6
+2026-01-29 00:44:36.876 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6722 ms
+2026-01-29 00:44:37.022 +02:00 [INF] Updating package 3 for user 13 with amount 5
+2026-01-29 00:44:37.044 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.0824 ms
+2026-01-29 00:44:37.226 +02:00 [INF] Updating package 3 for user 13 with amount 4
+2026-01-29 00:44:37.247 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.4513 ms
+2026-01-29 00:44:37.398 +02:00 [INF] Updating package 3 for user 13 with amount 3
+2026-01-29 00:44:37.420 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1670 ms
+2026-01-29 00:44:37.584 +02:00 [INF] Updating package 3 for user 13 with amount 2
+2026-01-29 00:44:37.611 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.1057 ms
+2026-01-29 00:44:37.831 +02:00 [INF] Updating package 3 for user 13 with amount 1
+2026-01-29 00:44:37.871 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.7017 ms
+2026-01-29 00:44:38.007 +02:00 [INF] Updating package 3 for user 13 with amount 0
+2026-01-29 00:44:38.031 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.6257 ms
+2026-01-29 00:44:41.255 +02:00 [INF] Updating package 2 for user 13 with amount 16
+2026-01-29 00:44:41.300 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.1052 ms
+2026-01-29 00:44:42.023 +02:00 [INF] Updating package 2 for user 13 with amount 15
+2026-01-29 00:44:42.049 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8891 ms
+2026-01-29 00:44:42.164 +02:00 [INF] Updating package 2 for user 13 with amount 15
+2026-01-29 00:44:42.191 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.2587 ms
+2026-01-29 00:44:42.271 +02:00 [INF] Updating package 2 for user 13 with amount 15
+2026-01-29 00:44:42.297 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.0390 ms
+2026-01-29 00:44:42.333 +02:00 [INF] Updating package 2 for user 13 with amount 14
+2026-01-29 00:44:42.356 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.4264 ms
+2026-01-29 00:44:42.436 +02:00 [INF] Updating package 2 for user 13 with amount 14
+2026-01-29 00:44:42.460 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6550 ms
+2026-01-29 00:44:42.607 +02:00 [INF] Updating package 2 for user 13 with amount 13
+2026-01-29 00:44:42.627 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.1640 ms
+2026-01-29 00:44:42.786 +02:00 [INF] Updating package 2 for user 13 with amount 12
+2026-01-29 00:44:42.812 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.4255 ms
+2026-01-29 00:44:43.220 +02:00 [INF] Updating package 2 for user 13 with amount 11
+2026-01-29 00:44:43.267 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 47.1692 ms
+2026-01-29 00:44:43.347 +02:00 [INF] Updating package 2 for user 13 with amount 11
+2026-01-29 00:44:43.371 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.9514 ms
+2026-01-29 00:44:43.476 +02:00 [INF] Updating package 2 for user 13 with amount 11
+2026-01-29 00:44:43.506 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.7024 ms
+2026-01-29 00:44:43.778 +02:00 [INF] Updating package 2 for user 13 with amount 10
+2026-01-29 00:44:43.799 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9117 ms
+2026-01-29 00:44:44.346 +02:00 [INF] Updating package 2 for user 13 with amount 9
+2026-01-29 00:44:44.391 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 45.4458 ms
+2026-01-29 00:44:44.509 +02:00 [INF] Updating package 2 for user 13 with amount 9
+2026-01-29 00:44:44.520 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 11.5034 ms
+2026-01-29 00:44:44.608 +02:00 [INF] Updating package 2 for user 13 with amount 9
+2026-01-29 00:44:44.629 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.1339 ms
+2026-01-29 00:44:44.669 +02:00 [INF] Updating package 2 for user 13 with amount 8
+2026-01-29 00:44:44.692 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.3391 ms
+2026-01-29 00:44:44.838 +02:00 [INF] Updating package 2 for user 13 with amount 8
+2026-01-29 00:44:44.855 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.3489 ms
+2026-01-29 00:44:45.015 +02:00 [INF] Updating package 2 for user 13 with amount 7
+2026-01-29 00:44:45.041 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1481 ms
+2026-01-29 00:44:45.170 +02:00 [INF] Updating package 2 for user 13 with amount 7
+2026-01-29 00:44:45.192 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0488 ms
+2026-01-29 00:44:45.357 +02:00 [INF] Updating package 2 for user 13 with amount 6
+2026-01-29 00:44:45.380 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7296 ms
+2026-01-29 00:44:45.515 +02:00 [INF] Updating package 2 for user 13 with amount 6
+2026-01-29 00:44:45.535 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.3432 ms
+2026-01-29 00:44:45.683 +02:00 [INF] Updating package 2 for user 13 with amount 5
+2026-01-29 00:44:45.707 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0586 ms
+2026-01-29 00:44:45.871 +02:00 [INF] Updating package 2 for user 13 with amount 4
+2026-01-29 00:44:45.897 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.5893 ms
+2026-01-29 00:44:46.074 +02:00 [INF] Updating package 2 for user 13 with amount 3
+2026-01-29 00:44:46.099 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.8092 ms
+2026-01-29 00:44:46.261 +02:00 [INF] Updating package 2 for user 13 with amount 3
+2026-01-29 00:44:46.283 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.5780 ms
+2026-01-29 00:44:46.429 +02:00 [INF] Updating package 2 for user 13 with amount 2
+2026-01-29 00:44:46.448 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.9582 ms
+2026-01-29 00:44:46.618 +02:00 [INF] Updating package 2 for user 13 with amount 1
+2026-01-29 00:44:46.639 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.3871 ms
+2026-01-29 00:44:46.834 +02:00 [INF] Updating package 2 for user 13 with amount 0
+2026-01-29 00:44:46.848 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 15.1408 ms
+2026-01-29 00:44:48.439 +02:00 [INF] Updating package 1 for user 13 with amount 100
+2026-01-29 00:44:48.479 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6585 ms
+2026-01-29 00:44:48.931 +02:00 [INF] Updating package 1 for user 13 with amount 99
+2026-01-29 00:44:48.958 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.0069 ms
+2026-01-29 00:44:49.102 +02:00 [INF] Updating package 1 for user 13 with amount 99
+2026-01-29 00:44:49.124 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7584 ms
+2026-01-29 00:44:49.181 +02:00 [INF] Updating package 1 for user 13 with amount 99
+2026-01-29 00:44:49.203 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.6612 ms
+2026-01-29 00:44:49.276 +02:00 [INF] Updating package 1 for user 13 with amount 98
+2026-01-29 00:44:49.301 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.8281 ms
+2026-01-29 00:44:49.459 +02:00 [INF] Updating package 1 for user 13 with amount 97
+2026-01-29 00:44:49.480 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7421 ms
+2026-01-29 00:44:49.629 +02:00 [INF] Updating package 1 for user 13 with amount 96
+2026-01-29 00:44:49.651 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.5605 ms
+2026-01-29 00:44:49.815 +02:00 [INF] Updating package 1 for user 13 with amount 95
+2026-01-29 00:44:49.839 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.5453 ms
+2026-01-29 00:44:50.034 +02:00 [INF] Updating package 1 for user 13 with amount 94
+2026-01-29 00:44:50.081 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 47.5669 ms
+2026-01-29 00:44:50.238 +02:00 [INF] Updating package 1 for user 13 with amount 93
+2026-01-29 00:44:50.265 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1658 ms
+2026-01-29 00:44:50.441 +02:00 [INF] Updating package 1 for user 13 with amount 92
+2026-01-29 00:44:50.467 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8848 ms
+2026-01-29 00:44:50.642 +02:00 [INF] Updating package 1 for user 13 with amount 91
+2026-01-29 00:44:50.667 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.8319 ms
+2026-01-29 00:44:50.841 +02:00 [INF] Updating package 1 for user 13 with amount 90
+2026-01-29 00:44:50.861 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.0553 ms
+2026-01-29 00:44:51.046 +02:00 [INF] Updating package 1 for user 13 with amount 89
+2026-01-29 00:44:51.069 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1877 ms
+2026-01-29 00:44:51.248 +02:00 [INF] Updating package 1 for user 13 with amount 88
+2026-01-29 00:44:51.269 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6974 ms
+2026-01-29 00:44:51.544 +02:00 [INF] Updating package 1 for user 13 with amount 87
+2026-01-29 00:44:51.569 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.1173 ms
+2026-01-29 00:44:51.695 +02:00 [INF] Updating package 1 for user 13 with amount 87
+2026-01-29 00:44:51.712 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 17.5627 ms
+2026-01-29 00:44:51.900 +02:00 [INF] Updating package 1 for user 13 with amount 86
+2026-01-29 00:44:51.922 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1635 ms
+2026-01-29 00:44:52.112 +02:00 [INF] Updating package 1 for user 13 with amount 85
+2026-01-29 00:44:52.148 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.1308 ms
+2026-01-29 00:44:52.304 +02:00 [INF] Updating package 1 for user 13 with amount 84
+2026-01-29 00:44:52.324 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.5050 ms
+2026-01-29 00:44:52.539 +02:00 [INF] Updating package 1 for user 13 with amount 83
+2026-01-29 00:44:52.578 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.8751 ms
+2026-01-29 00:44:52.750 +02:00 [INF] Updating package 1 for user 13 with amount 82
+2026-01-29 00:44:52.772 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.8565 ms
+2026-01-29 00:44:52.952 +02:00 [INF] Updating package 1 for user 13 with amount 81
+2026-01-29 00:44:52.977 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.2881 ms
+2026-01-29 00:44:53.124 +02:00 [INF] Updating package 1 for user 13 with amount 81
+2026-01-29 00:44:53.143 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6923 ms
+2026-01-29 00:44:53.296 +02:00 [INF] Updating package 1 for user 13 with amount 80
+2026-01-29 00:44:53.321 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.7461 ms
+2026-01-29 00:44:53.530 +02:00 [INF] Updating package 1 for user 13 with amount 79
+2026-01-29 00:44:53.570 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 40.6735 ms
+2026-01-29 00:44:53.720 +02:00 [INF] Updating package 1 for user 13 with amount 79
+2026-01-29 00:44:53.747 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.4837 ms
+2026-01-29 00:44:53.888 +02:00 [INF] Updating package 1 for user 13 with amount 78
+2026-01-29 00:44:53.913 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.9339 ms
+2026-01-29 00:44:54.289 +02:00 [INF] Updating package 1 for user 13 with amount 77
+2026-01-29 00:44:54.312 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.8017 ms
+2026-01-29 00:44:54.786 +02:00 [INF] Updating package 1 for user 13 with amount 76
+2026-01-29 00:44:54.812 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.1397 ms
+2026-01-29 00:44:54.944 +02:00 [INF] Updating package 1 for user 13 with amount 76
+2026-01-29 00:44:54.966 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.1051 ms
+2026-01-29 00:44:55.056 +02:00 [INF] Updating package 1 for user 13 with amount 76
+2026-01-29 00:44:55.079 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.0141 ms
+2026-01-29 00:44:55.133 +02:00 [INF] Updating package 1 for user 13 with amount 75
+2026-01-29 00:44:55.154 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.9776 ms
+2026-01-29 00:44:55.316 +02:00 [INF] Updating package 1 for user 13 with amount 74
+2026-01-29 00:44:55.337 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8242 ms
+2026-01-29 00:44:55.500 +02:00 [INF] Updating package 1 for user 13 with amount 73
+2026-01-29 00:44:55.525 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.8137 ms
+2026-01-29 00:44:55.704 +02:00 [INF] Updating package 1 for user 13 with amount 72
+2026-01-29 00:44:55.723 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.2302 ms
+2026-01-29 00:44:55.895 +02:00 [INF] Updating package 1 for user 13 with amount 71
+2026-01-29 00:44:55.924 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.3310 ms
+2026-01-29 00:44:56.079 +02:00 [INF] Updating package 1 for user 13 with amount 70
+2026-01-29 00:44:56.097 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 18.4491 ms
+2026-01-29 00:44:56.283 +02:00 [INF] Updating package 1 for user 13 with amount 69
+2026-01-29 00:44:56.315 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.1421 ms
+2026-01-29 00:44:56.483 +02:00 [INF] Updating package 1 for user 13 with amount 68
+2026-01-29 00:44:56.496 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 13.1077 ms
+2026-01-29 00:44:56.690 +02:00 [INF] Updating package 1 for user 13 with amount 67
+2026-01-29 00:44:56.736 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.3388 ms
+2026-01-29 00:44:56.906 +02:00 [INF] Updating package 1 for user 13 with amount 66
+2026-01-29 00:44:56.926 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.6306 ms
+2026-01-29 00:44:57.108 +02:00 [INF] Updating package 1 for user 13 with amount 65
+2026-01-29 00:44:57.129 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.3625 ms
+2026-01-29 00:44:57.277 +02:00 [INF] Updating package 1 for user 13 with amount 65
+2026-01-29 00:44:57.299 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3390 ms
+2026-01-29 00:44:57.453 +02:00 [INF] Updating package 1 for user 13 with amount 64
+2026-01-29 00:44:57.479 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.2190 ms
+2026-01-29 00:44:57.636 +02:00 [INF] Updating package 1 for user 13 with amount 64
+2026-01-29 00:44:57.657 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.3029 ms
+2026-01-29 00:44:57.791 +02:00 [INF] Updating package 1 for user 13 with amount 63
+2026-01-29 00:44:57.812 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.1907 ms
+2026-01-29 00:44:57.976 +02:00 [INF] Updating package 1 for user 13 with amount 62
+2026-01-29 00:44:57.996 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8225 ms
+2026-01-29 00:44:58.147 +02:00 [INF] Updating package 1 for user 13 with amount 61
+2026-01-29 00:44:58.174 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8386 ms
+2026-01-29 00:44:58.366 +02:00 [INF] Updating package 1 for user 13 with amount 60
+2026-01-29 00:44:58.414 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 48.2063 ms
+2026-01-29 00:44:58.661 +02:00 [INF] Updating package 1 for user 13 with amount 59
+2026-01-29 00:44:58.699 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.2516 ms
+2026-01-29 00:44:58.850 +02:00 [INF] Updating package 1 for user 13 with amount 59
+2026-01-29 00:44:58.874 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.9832 ms
+2026-01-29 00:44:59.024 +02:00 [INF] Updating package 1 for user 13 with amount 58
+2026-01-29 00:44:59.054 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.5972 ms
+2026-01-29 00:44:59.207 +02:00 [INF] Updating package 1 for user 13 with amount 58
+2026-01-29 00:44:59.234 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.5347 ms
+2026-01-29 00:44:59.379 +02:00 [INF] Updating package 1 for user 13 with amount 57
+2026-01-29 00:44:59.401 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.5073 ms
+2026-01-29 00:44:59.565 +02:00 [INF] Updating package 1 for user 13 with amount 56
+2026-01-29 00:44:59.586 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2138 ms
+2026-01-29 00:44:59.751 +02:00 [INF] Updating package 1 for user 13 with amount 56
+2026-01-29 00:44:59.772 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2708 ms
+2026-01-29 00:44:59.910 +02:00 [INF] Updating package 1 for user 13 with amount 55
+2026-01-29 00:44:59.932 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.4258 ms
+2026-01-29 00:45:00.098 +02:00 [INF] Updating package 1 for user 13 with amount 54
+2026-01-29 00:45:00.125 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.8926 ms
+2026-01-29 00:45:00.281 +02:00 [INF] Updating package 1 for user 13 with amount 53
+2026-01-29 00:45:00.302 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.5361 ms
+2026-01-29 00:45:00.468 +02:00 [INF] Updating package 1 for user 13 with amount 52
+2026-01-29 00:45:00.488 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.4951 ms
+2026-01-29 00:45:00.641 +02:00 [INF] Updating package 1 for user 13 with amount 51
+2026-01-29 00:45:00.664 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.4500 ms
+2026-01-29 00:45:00.828 +02:00 [INF] Updating package 1 for user 13 with amount 51
+2026-01-29 00:45:00.847 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.2718 ms
+2026-01-29 00:45:00.984 +02:00 [INF] Updating package 1 for user 13 with amount 50
+2026-01-29 00:45:01.015 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.1188 ms
+2026-01-29 00:45:01.181 +02:00 [INF] Updating package 1 for user 13 with amount 49
+2026-01-29 00:45:01.208 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.2946 ms
+2026-01-29 00:45:01.367 +02:00 [INF] Updating package 1 for user 13 with amount 49
+2026-01-29 00:45:01.389 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.3648 ms
+2026-01-29 00:45:01.539 +02:00 [INF] Updating package 1 for user 13 with amount 48
+2026-01-29 00:45:01.561 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.4049 ms
+2026-01-29 00:45:01.726 +02:00 [INF] Updating package 1 for user 13 with amount 47
+2026-01-29 00:45:01.745 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 19.6414 ms
+2026-01-29 00:45:01.913 +02:00 [INF] Updating package 1 for user 13 with amount 46
+2026-01-29 00:45:01.935 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0426 ms
+2026-01-29 00:45:02.101 +02:00 [INF] Updating package 1 for user 13 with amount 45
+2026-01-29 00:45:02.124 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3371 ms
+2026-01-29 00:45:02.272 +02:00 [INF] Updating package 1 for user 13 with amount 44
+2026-01-29 00:45:02.296 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6950 ms
+2026-01-29 00:45:02.461 +02:00 [INF] Updating package 1 for user 13 with amount 43
+2026-01-29 00:45:02.482 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.8766 ms
+2026-01-29 00:45:02.632 +02:00 [INF] Updating package 1 for user 13 with amount 43
+2026-01-29 00:45:02.652 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.0293 ms
+2026-01-29 00:45:02.818 +02:00 [INF] Updating package 1 for user 13 with amount 42
+2026-01-29 00:45:02.839 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.4117 ms
+2026-01-29 00:45:02.988 +02:00 [INF] Updating package 1 for user 13 with amount 41
+2026-01-29 00:45:03.011 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5555 ms
+2026-01-29 00:45:03.174 +02:00 [INF] Updating package 1 for user 13 with amount 40
+2026-01-29 00:45:03.201 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1702 ms
+2026-01-29 00:45:03.375 +02:00 [INF] Updating package 1 for user 13 with amount 39
+2026-01-29 00:45:03.400 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.7258 ms
+2026-01-29 00:45:03.575 +02:00 [INF] Updating package 1 for user 13 with amount 38
+2026-01-29 00:45:03.602 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.7620 ms
+2026-01-29 00:45:03.732 +02:00 [INF] Updating package 1 for user 13 with amount 38
+2026-01-29 00:45:03.753 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2629 ms
+2026-01-29 00:45:03.905 +02:00 [INF] Updating package 1 for user 13 with amount 37
+2026-01-29 00:45:03.925 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.8655 ms
+2026-01-29 00:45:04.107 +02:00 [INF] Updating package 1 for user 13 with amount 36
+2026-01-29 00:45:04.129 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7156 ms
+2026-01-29 00:45:04.278 +02:00 [INF] Updating package 1 for user 13 with amount 35
+2026-01-29 00:45:04.303 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.6080 ms
+2026-01-29 00:45:04.465 +02:00 [INF] Updating package 1 for user 13 with amount 34
+2026-01-29 00:45:04.490 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.3316 ms
+2026-01-29 00:45:04.682 +02:00 [INF] Updating package 1 for user 13 with amount 33
+2026-01-29 00:45:04.726 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 44.6060 ms
+2026-01-29 00:45:04.880 +02:00 [INF] Updating package 1 for user 13 with amount 32
+2026-01-29 00:45:04.902 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7547 ms
+2026-01-29 00:45:05.088 +02:00 [INF] Updating package 1 for user 13 with amount 31
+2026-01-29 00:45:05.109 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.7219 ms
+2026-01-29 00:45:05.286 +02:00 [INF] Updating package 1 for user 13 with amount 30
+2026-01-29 00:45:05.308 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.0672 ms
+2026-01-29 00:45:05.580 +02:00 [INF] Updating package 1 for user 13 with amount 29
+2026-01-29 00:45:05.607 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1205 ms
+2026-01-29 00:45:06.081 +02:00 [INF] Updating package 1 for user 13 with amount 28
+2026-01-29 00:45:06.123 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.8451 ms
+2026-01-29 00:45:06.266 +02:00 [INF] Updating package 1 for user 13 with amount 28
+2026-01-29 00:45:06.287 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.2700 ms
+2026-01-29 00:45:06.330 +02:00 [INF] Updating package 1 for user 13 with amount 27
+2026-01-29 00:45:06.353 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.5181 ms
+2026-01-29 00:45:06.484 +02:00 [INF] Updating package 1 for user 13 with amount 26
+2026-01-29 00:45:06.506 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.1338 ms
+2026-01-29 00:45:06.702 +02:00 [INF] Updating package 1 for user 13 with amount 25
+2026-01-29 00:45:06.737 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 34.8965 ms
+2026-01-29 00:45:06.890 +02:00 [INF] Updating package 1 for user 13 with amount 24
+2026-01-29 00:45:06.912 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.7712 ms
+2026-01-29 00:45:07.126 +02:00 [INF] Updating package 1 for user 13 with amount 23
+2026-01-29 00:45:07.174 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 49.0700 ms
+2026-01-29 00:45:07.327 +02:00 [INF] Updating package 1 for user 13 with amount 22
+2026-01-29 00:45:07.352 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.6288 ms
+2026-01-29 00:45:07.543 +02:00 [INF] Updating package 1 for user 13 with amount 21
+2026-01-29 00:45:07.576 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 33.9222 ms
+2026-01-29 00:45:07.730 +02:00 [INF] Updating package 1 for user 13 with amount 20
+2026-01-29 00:45:07.751 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6296 ms
+2026-01-29 00:45:07.950 +02:00 [INF] Updating package 1 for user 13 with amount 19
+2026-01-29 00:45:07.976 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.6963 ms
+2026-01-29 00:45:08.167 +02:00 [INF] Updating package 1 for user 13 with amount 18
+2026-01-29 00:45:08.198 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 32.0684 ms
+2026-01-29 00:45:08.347 +02:00 [INF] Updating package 1 for user 13 with amount 17
+2026-01-29 00:45:08.358 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.8481 ms
+2026-01-29 00:45:08.552 +02:00 [INF] Updating package 1 for user 13 with amount 16
+2026-01-29 00:45:08.590 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 38.0402 ms
+2026-01-29 00:45:08.762 +02:00 [INF] Updating package 1 for user 13 with amount 15
+2026-01-29 00:45:08.788 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 26.8435 ms
+2026-01-29 00:45:08.982 +02:00 [INF] Updating package 1 for user 13 with amount 14
+2026-01-29 00:45:09.011 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 30.3733 ms
+2026-01-29 00:45:09.193 +02:00 [INF] Updating package 1 for user 13 with amount 13
+2026-01-29 00:45:09.220 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.6056 ms
+2026-01-29 00:45:09.398 +02:00 [INF] Updating package 1 for user 13 with amount 12
+2026-01-29 00:45:09.419 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 20.9356 ms
+2026-01-29 00:45:09.611 +02:00 [INF] Updating package 1 for user 13 with amount 11
+2026-01-29 00:45:09.647 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.1941 ms
+2026-01-29 00:45:09.802 +02:00 [INF] Updating package 1 for user 13 with amount 10
+2026-01-29 00:45:09.824 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.6335 ms
+2026-01-29 00:45:10.026 +02:00 [INF] Updating package 1 for user 13 with amount 9
+2026-01-29 00:45:10.054 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 29.0835 ms
+2026-01-29 00:45:10.190 +02:00 [INF] Updating package 1 for user 13 with amount 8
+2026-01-29 00:45:10.218 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 28.0843 ms
+2026-01-29 00:45:10.407 +02:00 [INF] Updating package 1 for user 13 with amount 7
+2026-01-29 00:45:10.434 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 27.1330 ms
+2026-01-29 00:45:10.592 +02:00 [INF] Updating package 1 for user 13 with amount 6
+2026-01-29 00:45:10.617 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 25.2847 ms
+2026-01-29 00:45:10.797 +02:00 [INF] Updating package 1 for user 13 with amount 5
+2026-01-29 00:45:10.818 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.4116 ms
+2026-01-29 00:45:10.967 +02:00 [INF] Updating package 1 for user 13 with amount 4
+2026-01-29 00:45:11.003 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.9553 ms
+2026-01-29 00:45:11.163 +02:00 [INF] Updating package 1 for user 13 with amount 3
+2026-01-29 00:45:11.175 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 12.0630 ms
+2026-01-29 00:45:11.431 +02:00 [INF] Updating package 1 for user 13 with amount 2
+2026-01-29 00:45:11.441 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 10.1002 ms
+2026-01-29 00:45:11.638 +02:00 [INF] Updating package 1 for user 13 with amount 1
+2026-01-29 00:45:11.675 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 36.9070 ms
+2026-01-29 00:45:11.815 +02:00 [INF] Updating package 1 for user 13 with amount 0
+2026-01-29 00:45:11.831 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 16.3766 ms
+2026-01-29 00:45:13.499 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:13.540 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 40.6376 ms
+2026-01-29 00:45:13.680 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:13.692 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.0067 ms
+2026-01-29 00:45:13.717 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:13.764 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 47.2143 ms
+2026-01-29 00:45:22.200 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:22.208 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.0338 ms
+2026-01-29 00:45:22.225 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:22.233 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:22.237 +02:00 [INF] HTTP GET /api/Packages responded 200 in 14.8658 ms
+2026-01-29 00:45:22.245 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 16.3383 ms
+2026-01-29 00:45:23.917 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:23.925 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 8.3052 ms
+2026-01-29 00:45:23.942 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:23.943 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:23.948 +02:00 [INF] HTTP GET /api/Packages responded 200 in 6.5595 ms
+2026-01-29 00:45:23.952 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.6508 ms
+2026-01-29 00:45:24.884 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:24.892 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 8.4710 ms
+2026-01-29 00:45:24.907 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:24.908 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:24.912 +02:00 [INF] HTTP GET /api/Packages responded 200 in 5.5285 ms
+2026-01-29 00:45:24.919 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 10.9750 ms
+2026-01-29 00:45:25.760 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:25.779 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:25.788 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.2120 ms
+2026-01-29 00:45:25.797 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 37.6295 ms
+2026-01-29 00:45:25.811 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:25.820 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.2033 ms
+2026-01-29 00:45:28.044 +02:00 [INF] Updating package 3 for user 13 with amount 1175
+2026-01-29 00:45:28.099 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 54.4634 ms
+2026-01-29 00:45:32.083 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:32.097 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:32.108 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.0033 ms
+2026-01-29 00:45:32.131 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 48.2159 ms
+2026-01-29 00:45:32.326 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:32.337 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 10.7998 ms
+2026-01-29 00:45:37.458 +02:00 [INF] Updating package 3 for user 13 with amount 2352
+2026-01-29 00:45:37.508 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.6314 ms
+2026-01-29 00:45:38.498 +02:00 [INF] Updating package 3 for user 13 with amount 2351
+2026-01-29 00:45:38.537 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 39.0871 ms
+2026-01-29 00:45:38.749 +02:00 [INF] Updating package 3 for user 13 with amount 2350
+2026-01-29 00:45:38.791 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 42.3703 ms
+2026-01-29 00:45:38.990 +02:00 [INF] Updating package 3 for user 13 with amount 2349
+2026-01-29 00:45:39.036 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.3169 ms
+2026-01-29 00:45:39.560 +02:00 [INF] Updating package 3 for user 13 with amount 2348
+2026-01-29 00:45:39.606 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 46.4489 ms
+2026-01-29 00:45:41.109 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:41.149 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 40.4991 ms
+2026-01-29 00:45:41.318 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:41.328 +02:00 [INF] HTTP GET /api/Packages responded 200 in 10.2031 ms
+2026-01-29 00:45:41.356 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:41.409 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 53.2007 ms
+2026-01-29 00:45:44.666 +02:00 [INF] Updating package 3 for user 13 with amount 14100
+2026-01-29 00:45:44.716 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 50.7137 ms
+2026-01-29 00:45:44.869 +02:00 [INF] Updating package 3 for user 13 with amount 14099
+2026-01-29 00:45:44.892 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.7511 ms
+2026-01-29 00:45:45.051 +02:00 [INF] Updating package 3 for user 13 with amount 14098
+2026-01-29 00:45:45.074 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 23.8217 ms
+2026-01-29 00:45:45.544 +02:00 [INF] Updating package 3 for user 13 with amount 14097
+2026-01-29 00:45:45.581 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 37.1347 ms
+2026-01-29 00:45:45.719 +02:00 [INF] Updating package 3 for user 13 with amount 14097
+2026-01-29 00:45:45.743 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.2300 ms
+2026-01-29 00:45:45.795 +02:00 [INF] Updating package 3 for user 13 with amount 14096
+2026-01-29 00:45:45.817 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 22.2834 ms
+2026-01-29 00:45:45.918 +02:00 [INF] Updating package 3 for user 13 with amount 14095
+2026-01-29 00:45:45.942 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 24.3026 ms
+2026-01-29 00:45:47.376 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:47.407 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 31.4798 ms
+2026-01-29 00:45:47.603 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:45:47.615 +02:00 [INF] HTTP GET /api/Packages responded 200 in 12.1803 ms
+2026-01-29 00:45:47.644 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:45:47.668 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 25.2247 ms
+2026-01-29 00:47:34.488 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:47:34.529 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:47:34.555 +02:00 [INF] HTTP GET /api/Packages responded 200 in 26.7636 ms
+2026-01-29 00:47:34.582 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 109.3824 ms
+2026-01-29 00:47:34.595 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:47:34.605 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 10.2267 ms
+2026-01-29 00:47:48.076 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:47:48.133 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 58.2749 ms
+2026-01-29 00:47:48.169 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:47:48.185 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:47:48.196 +02:00 [INF] HTTP GET /api/Packages responded 200 in 33.0787 ms
+2026-01-29 00:47:48.208 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 23.1469 ms
+2026-01-29 00:48:28.048 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:28.110 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 62.6430 ms
+2026-01-29 00:48:28.154 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:48:28.155 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:28.171 +02:00 [INF] HTTP GET /api/Packages responded 200 in 17.7483 ms
+2026-01-29 00:48:28.185 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 30.8001 ms
+2026-01-29 00:48:31.605 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:31.616 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 10.9818 ms
+2026-01-29 00:48:31.630 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:48:31.638 +02:00 [INF] HTTP GET /api/Packages responded 200 in 8.7228 ms
+2026-01-29 00:48:31.639 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:31.648 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.5759 ms
+2026-01-29 00:48:36.290 +02:00 [INF] Updating package 3 for user 13 with amount 112784
+2026-01-29 00:48:36.347 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 57.4253 ms
+2026-01-29 00:48:36.701 +02:00 [INF] Updating package 3 for user 13 with amount 112785
+2026-01-29 00:48:36.742 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 41.4976 ms
+2026-01-29 00:48:38.694 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:38.702 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 8.1677 ms
+2026-01-29 00:48:38.721 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:48:38.728 +02:00 [INF] HTTP GET /api/Packages responded 200 in 7.1998 ms
+2026-01-29 00:48:38.927 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:38.942 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 16.2997 ms
+2026-01-29 00:48:42.737 +02:00 [INF] Updating package 2 for user 13 with amount 260
+2026-01-29 00:48:42.758 +02:00 [INF] HTTP POST /api/Orders/update-package responded 200 in 21.5911 ms
+2026-01-29 00:48:44.059 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:44.068 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 8.9250 ms
+2026-01-29 00:48:44.069 +02:00 [INF] שולף את כל החבילות.
+2026-01-29 00:48:44.078 +02:00 [INF] HTTP GET /api/Packages responded 200 in 9.8053 ms
+2026-01-29 00:48:44.085 +02:00 [INF] Fetching user with orders for ID: 13
+2026-01-29 00:48:44.093 +02:00 [INF] HTTP GET /api/User/13/orders responded 200 in 9.4138 ms

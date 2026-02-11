@@ -1,0 +1,141 @@
+<div class="cart-container" dir="rtl" style="background: #fdfaf7; padding: 20px; border-radius: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.05); min-height: 100vh; font-family: 'Segoe UI', sans-serif; max-width: 400px; margin: 0 auto;">
+  
+  <div class="cart-header" style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:20px;">
+    <h2 style="color: #442604; font-size: 1.3em; margin:0; font-weight: 800;">סל הקניות שלי</h2>
+    <div class="ticket-badge" style="display:flex; align-items:center; gap:8px;">
+      <div style="font-size:0.85em; color:#6a1b9a; font-weight:700; text-align:right;">כרטיסים בשימוש</div>
+      <div class="badge" style="background:linear-gradient(180deg,#2e7d32,#1b5e20); color:white; font-weight:900; padding:8px 12px; border-radius:20px; display:flex; align-items:center; gap:8px; min-width:72px; justify-content:center;">
+        <span>{{ cartService.totalGiftCount() }}</span>
+        <span style="opacity:0.7;">/</span>
+        <span>{{ cartService.totalTickets() }}</span>
+      </div>
+    </div>
+  </div>
+
+  @if (cartPackages().length > 0 || cartGifts().length > 0) {
+    
+    @if (cartPackages().length > 0) {
+      <h3 style="color: #442604; font-size: 1.1em; margin-bottom: 12px; font-weight: 700;">חבילות</h3>
+      <div class="cart-items" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px;">
+        @for (pkg of cartPackages(); track pkg.idPackage) {
+          @if ((packageQuantities()[pkg.idPackage] || 0) > 0) {
+            
+            <div class="cart-item" style="background: white; border-radius: 15px; padding: 12px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;">
+              
+              <div style="display: flex; align-items: center; background: #f3f3f3; border-radius: 20px; padding: 4px 10px; min-width: 90px; justify-content: space-between;">
+                <button (click)="increment(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 18px;">+</button>
+                <span style="font-weight: 800; font-size: 1em; color: #442604;">{{ packageQuantities()[pkg.idPackage] }}</span>
+                <button (click)="decrement(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 22px;">-</button>
+              </div>
+
+              <div style="flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; text-align: right;">
+                <span style="font-weight: 800; color: #442604; font-size: 1em; line-height: 1.2;">{{ pkg.name }}</span>
+                <span style="color: #b08d57; font-size: 0.85em; font-weight: 600;">₪{{ pkg.price }} ליחידה</span>
+                <div style="font-weight: 900; color: #442604; font-size: 0.9em; margin-top: 4px;">
+                  סה"כ: ₪{{ (pkg.price || 0) * (packageQuantities()[pkg.idPackage] || 0) }}
+                </div>
+              </div>
+
+              <div style="width: 50px; height: 50px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; flex-shrink: 0; overflow: hidden;">
+                @if (pkg.image && pkg.image !== 'string') {
+                  <img [src]="imageUrl + pkg.image" 
+                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                } @else {
+                  <img [src]="imageUrl + getPackageImage(pkg.idPackage)" 
+                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                }
+              </div>
+
+            </div>
+          }
+        }
+      </div>
+    }
+
+    <!-- Gifts Section -->
+    @if (cartGifts().length > 0) {
+      <h3 style="color: #442604; font-size: 1.1em; margin-bottom: 12px; font-weight: 700;">פרטים בהגרלות</h3>
+      <div class="cart-gifts" style="display: flex; flex-direction: column; gap: 12px;">
+        @for (gift of cartGifts(); track gift.idGift) {
+          @if ((giftQuantities()[gift.idGift] || gift.amount || 0) > 0) {
+            
+            <div class="cart-item" style="background: white; border-radius: 15px; padding: 12px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;">
+              
+              <div style="display: flex; align-items: center; background: #f3f3f3; border-radius: 20px; padding: 4px 10px; min-width: 90px; justify-content: space-between;">
+                <button (click)="incrementGift(gift.idGift)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 18px;">+</button>
+                <span style="font-weight: 800; font-size: 1em; color: #442604;">{{ giftQuantities()[gift.idGift] || gift.amount || 0 }}</span>
+                <button (click)="decrementGift(gift.idGift)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 22px;">-</button>
+              </div>
+
+              <div style="flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; text-align: right;">
+                <span style="font-weight: 800; color: #442604; font-size: 1em; line-height: 1.2;">{{ gift.name }}</span>
+                <span style="color: #b08d57; font-size: 0.85em; font-weight: 600;"></span>
+                <div style="font-weight: 900; color: #442604; font-size: 0.9em; margin-top: 4px;">
+                </div>
+              </div>
+
+              <div style="width: 50px; height: 50px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; flex-shrink: 0; overflow: hidden;">
+                @if (gift.image && gift.image.trim() && gift.image !== 'string') {
+                  <img [src]="giftImageUrl + gift.image" 
+                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                } @else {
+                  <div style="color: #ce93d8; font-size: 1.5em; opacity: 0.6;">🎁</div>
+                }
+              </div>
+            </div>
+          }
+        }
+      </div>
+    }
+
+    <div class="ticket-progress">
+      <div class="tp-row">
+        <div class="tp-counter">{{ cartService.totalGiftCount() }} / {{ cartService.totalTickets() }}</div>
+        <div class="tp-label">נותרו לך למימוש</div>
+        <div class="tp-icons">
+          <div class="gift-icon">
+            <img src="/assets/icons/gift-small.png" alt="gift">
+            <span class="gift-badge">{{ cartService.totalGiftCount() }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" [style.width.%]="cartService.totalTickets() ? (cartService.totalGiftCount() / cartService.totalTickets()) * 100 : 0"></div>
+      </div>
+
+      <div class="tp-actions">
+        <button class="big-next" (click)="goToPackages()">לשלב הבא</button>
+      </div>
+    </div>
+
+  } @else {
+    <div style="text-align: center; color: #ccc; padding: 50px 0;">
+      <div style="font-size: 4em; margin-bottom: 10px;">🛒</div>
+      <p>הסל שלך עדיין ריק</p>
+    </div>
+  }
+  
+</div>
+
+  @if (cartService.ticketModal()) {
+    <div class="ticket-modal" style="position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:2200;">
+      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.45);" (click)="cartService.closeTicketLimitModal()"></div>
+      <div style="background:white; border-radius:16px; padding:18px; width:90%; max-width:420px; box-shadow:0 20px 60px rgba(0,0,0,0.35); z-index:2300; text-align:right;">
+        <div style="font-weight:900; color:#4a148c; font-size:1.05em; margin-bottom:8px;">אין מספיק כרטיסים בעגלה</div>
+        <div style="color:#555; margin-bottom:16px;">{{ cartService.ticketMessage() }}</div>
+        <div style="display:flex; gap:10px; justify-content:flex-start;">
+          <button (click)="cartService.closeTicketLimitModal()" style="background:#e1bee7; color:#4a148c; border:none; padding:10px 14px; border-radius:10px; font-weight:800;">המשך</button>
+          <button (click)="goToPackages()" style="background:#2e7d32; color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:800;">רכוש עוד כרטיסים</button>
+        </div>
+      </div>
+    </div>
+  }
+    @if (cartService.ticketModal()) {
+      <app-ticket-limit-modal></app-ticket-limit-modal>
+    }
+
+
+
+
+

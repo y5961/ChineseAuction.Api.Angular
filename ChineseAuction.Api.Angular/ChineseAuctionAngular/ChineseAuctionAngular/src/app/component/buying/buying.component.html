@@ -1,0 +1,59 @@
+<div class="checkout-container">
+  
+  @if (isCompleted) {
+    <div class="success-container card">
+      <div class="success-content">
+        <span class="success-icon">✅</span>
+        <h2>הרכישה בוצעה בהצלחה!</h2>
+        <p>מספר הזמנה שנסגרה: <strong>{{currentOrder?.idOrder}}</strong></p>
+        <button class="btn-submit" (click)="goToHome()">חזרה לקטלוג</button>
+      </div>
+    </div>
+  } 
+  @else {
+    <div class="details-section">
+      <div class="card">
+        <h3>פרטים אחרונים וסיימנו!</h3>
+        <p>שדות המסומנים ב (*) הינם שדות חובה</p>
+        
+        <div class="form-grid">
+          <div class="form-field">
+            <label>שם פרטי*</label>
+            <input type="text" placeholder="שם פרטי">
+          </div>
+          <div class="form-field">
+            <label>שם משפחה*</label>
+            <input type="text" placeholder="שם משפחה">
+          </div>
+        </div>
+
+        <div class="checkbox-section">
+          <input type="checkbox" id="terms">
+          <label for="terms">לחץ/י על המלבן המטה להסכמה לתקנון המועדון</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-section">
+      <div class="summary-card card">
+        <h3>סיכום הזמנה</h3>
+        <div class="summary-item">
+          <span>חבילות:</span>
+          <span>{{currentOrder?.totalAmount || 0}} כרטיסים</span>
+        </div>
+        <hr>
+        <div class="total-price">
+          <span>סה"כ לתשלום:</span>
+          <span class="price">₪{{currentOrder?.totalPrice || 0}}</span>
+        </div>
+
+        <button 
+          class="btn-submit" 
+          (click)="onCompleteOrder()" 
+          [disabled]="isLoading || !currentOrder">
+          {{ isLoading ? 'מעבד...' : 'המשך לתשלום' }}
+        </button>
+      </div>
+    </div>
+  }
+</div>
