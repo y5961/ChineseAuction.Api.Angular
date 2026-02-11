@@ -226,32 +226,56 @@ namespace ChineseAuctionAPI.Controllers
             }
         }
 
-
-
         [HttpGet("{id}/participants")]
-        [Authorize(Roles = "Manager")] 
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetParticipants(int id)
         {
             try
             {
-                _logger.LogInformation("שולף רשימת משתתפים עבור מתנה: {Id}", id);
+                _logger.LogInformation("שולף פרטי משתתפים מלאים עבור מתנה: {Id}", id);
 
-                var names = await _giftService.GetParticipantsNamesAsync(id);
+                // שימוש בפונקציה המעודכנת מה-Service
+                var participants = await _giftService.GetParticipantsDetailsAsync(id);
 
-                if (names == null || !names.Any())
+                if (participants == null || !participants.Any())
                 {
                     _logger.LogWarning("לא נמצאו משתתפים למתנה {Id}", id);
-                    return Ok(new List<string>()); 
+                    return Ok(new List<ParticipantDetailsDTO>());
                 }
 
-                return Ok(names);
+                return Ok(participants);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "שגיאה ב-Endpoint שליפת משתתפים למתנה {Id}", id);
+                _logger.LogError(ex, "שגיאה ב-Endpoint שליפת פרטי משתתפים למתנה {Id}", id);
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        //[HttpGet("{id}/participants")]
+        //[Authorize(Roles = "Manager")] 
+        //public async Task<IActionResult> GetParticipants(int id)
+        //{
+        //    try
+        //    {
+        //        _logger.LogInformation("שולף רשימת משתתפים עבור מתנה: {Id}", id);
+
+        //        var names = await _giftService.GetParticipantsNamesAsync(id);
+
+        //        if (names == null || !names.Any())
+        //        {
+        //            _logger.LogWarning("לא נמצאו משתתפים למתנה {Id}", id);
+        //            return Ok(new List<string>()); 
+        //        }
+
+        //        return Ok(names);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "שגיאה ב-Endpoint שליפת משתתפים למתנה {Id}", id);
+        //        return StatusCode(500, "Internal server error");
+        //    }
+        //}
 
         [HttpGet("winners")]
         public async Task<IActionResult> GetWinners()

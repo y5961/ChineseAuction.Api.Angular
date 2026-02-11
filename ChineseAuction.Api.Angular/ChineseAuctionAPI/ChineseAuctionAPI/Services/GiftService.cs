@@ -278,36 +278,64 @@ namespace ChineseAuctionAPI.Services
                 }
             }
         }
-
-        public async Task<IEnumerable<string>> GetParticipantsNamesAsync(int giftId)
+        public async Task<IEnumerable<ParticipantDetailsDTO>> GetParticipantsDetailsAsync(int giftId)
         {
             try
             {
                 var gift = await _repository.GetGiftWithOrdersAndUsersAsync(giftId);
-                if (gift == null) return Enumerable.Empty<string>();
+                if (gift == null) return Enumerable.Empty<ParticipantDetailsDTO>();
 
-                // Build a list of participant names, repeating each buyer's name by the number of tickets they bought
-                var names = gift.OrdersGifts
+                // בניית רשימת המשתתפים עם כל הפרטים
+                var participants = gift.OrdersGifts
                     .Where(og => og.Order != null && og.Order.User != null)
-                    .SelectMany(og => Enumerable.Repeat(
-                        $"{og.Order.User.FirstName} {og.Order.User.LastName}", og.Amount))
+                    .Select(og => new ParticipantDetailsDTO
+                    {
+                        FirstName = og.Order.User.FirstName,
+                        LastName = og.Order.User.LastName,
+                        Email = og.Order.User.Email,
+                        Phone = og.Order.User.PhoneNumber, // וודאי שזה שם השדה ב-UserDTO שלך
+                        City = og.Order.User.City,
+                        TicketCount = og.Amount
+                    })
                     .ToList();
 
-                // For any OrdersGifts where user object is missing, fallback to UserId entries
-                var fallback = gift.OrdersGifts
-                    .Where(og => og.Order == null || og.Order.User == null)
-                    .SelectMany(og => Enumerable.Repeat($"Order {og.IdOrder}", og.Amount));
-
-                names.AddRange(fallback);
-
-                return names;
+                return participants;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error building participants list for gift {GiftId}", giftId);
+                _logger.LogError(ex, "Error building participants details for gift {GiftId}", giftId);
                 throw;
             }
         }
+        //public async Task<IEnumerable<string>> GetParticipantsNamesAsync(int giftId)
+        //{
+        //    try
+        //    {
+        //        var gift = await _repository.GetGiftWithOrdersAndUsersAsync(giftId);
+        //        if (gift == null) return Enumerable.Empty<string>();
+
+        //        // Build a list of participant names, repeating each buyer's name by the number of tickets they bought
+        //        var names = gift.OrdersGifts
+        //            .Where(og => og.Order != null && og.Order.User != null)
+        //            .SelectMany(og => Enumerable.Repeat(
+        //                $"{og.Order.User.FirstName} {og.Order.User.LastName}", og.Amount))
+        //            .ToList();
+
+        //        // For any OrdersGifts where user object is missing, fallback to UserId entries
+        //        var fallback = gift.OrdersGifts
+        //            .Where(og => og.Order == null || og.Order.User == null)
+        //            .SelectMany(og => Enumerable.Repeat($"Order {og.IdOrder}", og.Amount));
+
+        //        names.AddRange(fallback);
+
+        //        return names;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "Error building participants list for gift {GiftId}", giftId);
+        //        throw;
+        //    }
+        //}
 
         public async Task<IEnumerable<Winner>> GetAllWinnersAsync()
         {
