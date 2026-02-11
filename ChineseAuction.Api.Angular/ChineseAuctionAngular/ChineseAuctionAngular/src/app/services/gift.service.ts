@@ -3,7 +3,9 @@ import { inject, Injectable } from '@angular/core';
 import { Gift, GiftDTO, GiftNewDTO } from '../models/GiftDTO';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environment';
-
+import { map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -74,14 +76,24 @@ export class GiftService {
     return this.http.get<Gift[]>(`${this.BASE_URL}/sort/amount_buyers`);
   }
   
-  // 14. קבלת רשימת זוכים שמורה בשרת
+  // 13. קבלת רשימת זוכים שמורה בשרת
   getWinners(): Observable<{ gift: string, winnerName: string, giftId: number, winnerUserId: number }[]> {
     return this.http.get<{ gift: string, winnerName: string, giftId: number, winnerUserId: number }[]>(`${this.BASE_URL}/winners`);
   }
-  // 13. העלאת תמונה לשרת
+  // 14. העלאת תמונה לשרת
   uploadImage(file: File): Observable<{ fileName: string }> {
     const formData = new FormData();
     formData.append('file', file);
     return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
   }
+  // 15. קבלת מספר משתתפים במתנה
+getParticipantsCount(giftId: number): Observable<number> {
+  return this.http.get<any[]>(`${this.BASE_URL}/${giftId}/participants`)
+    .pipe(
+      map(data => {
+        return data ? data.length : 0;
+      }),
+      catchError(() => of(0)) 
+    );
+}
 }

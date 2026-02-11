@@ -21,7 +21,7 @@ imageUrl = environment.apiUrl + '/images/gift/';
   private router = inject(Router);
   editForm: any = {};
   @Input() gift: Gift | null = null;
-  private giftService = inject(GiftService);
+  public giftService = inject(GiftService);
   private orderService = inject(OrderService);
   private authService = inject(AuthService);
   isEditModalVisible = signal<boolean>(false);
@@ -46,21 +46,36 @@ ngOnChanges() {
       this.editForm = { ...this.gift }; 
     }
   }
+  // loadGifts(): void {
+  //   this.giftService.getAllGifts().subscribe({
+  //     next: (data) => {
+  //       const initializedGifts = data.map(g => {
+  //         const gift = new Gift(g);
+  //         gift.customerQuantity = 0;
+  //         return gift;
+  //       });
+  //       this.gifts.set(initializedGifts);
+  //     },
+  //     error: (err: any) => {
+  //       console.error('שגיאה בטעינת הנתונים', err);
+  //     }
+  //   });
+  // }
   loadGifts(): void {
-    this.giftService.getAllGifts().subscribe({
-      next: (data) => {
-        const initializedGifts = data.map(g => {
-          const gift = new Gift(g);
-          gift.customerQuantity = 0;
-          return gift;
+  this.giftService.getAllGifts().subscribe({
+    next: (data) => {
+      const initializedGifts = data.map(g => new Gift(g));
+      this.gifts.set(initializedGifts);
+
+      // טעינת כמות הרוכשים לכל מתנה בנפרד
+      initializedGifts.forEach(gift => {
+        this.giftService.getParticipantsCount(gift.idGift).subscribe(count => {
+          gift.totalPurchases = count; // עדכון השדה במודל
         });
-        this.gifts.set(initializedGifts);
-      },
-      error: (err: any) => {
-        console.error('שגיאה בטעינת הנתונים', err);
-      }
-    });
-  }
+      });
+    }
+  });
+}
 filteredGifts = computed(() => {
   const giftText = this.giftSearchText().toLowerCase();
   const donorText = this.donorSearchText().toLowerCase();
