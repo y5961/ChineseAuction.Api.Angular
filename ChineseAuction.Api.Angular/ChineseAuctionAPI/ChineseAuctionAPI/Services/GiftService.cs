@@ -174,8 +174,10 @@ namespace ChineseAuctionAPI.Services
                 IdUser = winnerUserId
             };
 
-            gift.IsDrawn = true; // סימון שהמתנה הוגרלה כדי למנוע הגרלה כפולה
-
+            // סימון שהמתנה הוגרלה כדי למנוע הגרלה כפולה
+            gift.IsDrawn = true;
+            gift.IdUser = winnerUserId;
+            await _repository.UpdateAsync(gift);
             await _repository.AddWinnerAsync(winnerRecord);
             try
             {
@@ -303,6 +305,20 @@ namespace ChineseAuctionAPI.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error building participants list for gift {GiftId}", giftId);
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<Winner>> GetAllWinnersAsync()
+        {
+            try
+            {
+                var winners = await _repository.GetAllWinnersAsync();
+                return winners;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching winners list.");
                 throw;
             }
         }

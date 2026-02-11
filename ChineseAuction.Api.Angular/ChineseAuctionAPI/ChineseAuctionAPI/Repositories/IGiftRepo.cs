@@ -13,6 +13,7 @@ namespace ChineseAuctionAPI.Repositories
         Task<bool> DeleteAsync(int id);
         Task<Gift?> GetGiftWithOrdersAndUsersAsync(int giftId);
         Task AddWinnerAsync(Winner winner);
+        Task<IEnumerable<Winner>> GetAllWinnersAsync();
         Task<IEnumerable<Gift?>> GetByNameDonor(string donor);
         Task<IEnumerable<Gift?> >GetByNumOfBuyers(int buyers);
         Task<IEnumerable<Gift?>> GetByNameGift(string word);

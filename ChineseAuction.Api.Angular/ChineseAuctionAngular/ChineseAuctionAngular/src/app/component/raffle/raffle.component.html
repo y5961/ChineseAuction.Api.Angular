@@ -9,22 +9,39 @@
       <div style="overflow-y: auto; flex-grow: 1; padding-left: 5px;">
         @for (gift of gifts(); track gift.idGift) {
           <div (click)="selectGift(gift)" 
-               [style.background]="currentGift()?.idGift === gift.idGift ? '#f3e5f5' : 'white'"
-               [style.border-color]="currentGift()?.idGift === gift.idGift ? '#6a1b9a' : '#eee'"
-               style="padding: 12px; margin-bottom: 10px; border-radius: 15px; cursor: pointer; transition: all 0.2s; border: 1.5px solid; display: flex; align-items: center; gap: 10px;">
-            <div style="width: 40px; height: 40px; background: #fafafa; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2em;">
+               [style.background]="currentGift()?.idGift === gift.idGift ? '#f3e5f5' : (gift.isDrawn ? '#f9f9f9' : 'white')"
+               [style.border-color]="gift.isDrawn ? '#2e7d32' : (currentGift()?.idGift === gift.idGift ? '#6a1b9a' : '#eee')"
+               [style.opacity]="gift.isDrawn ? '0.7' : '1'"
+               style="padding: 12px; margin-bottom: 10px; border-radius: 15px; cursor: pointer; transition: all 0.2s; border: 1.5px solid; display: flex; align-items: center; gap: 10px; position: relative;">
+            
+            @if (gift.isDrawn) {
+              <div style="position: absolute; top: -5px; left: -5px; background: #2e7d32; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.8em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 5; border: 2px solid white;">
+                ✔
+              </div>
+            }
+
+            <div [style.filter]="gift.isDrawn ? 'grayscale(1)' : 'none'" 
+                 style="width: 40px; height: 40px; background: #fafafa; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2em;">
                @if (gift.image && gift.image !== 'string') {
                  <img [src]="imageUrl + gift.image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                } @else { 🎁 }
             </div>
+
             <div style="flex-grow: 1;">
-              <div style="font-weight: bold; font-size: 0.9em; color: #4a148c;">{{ gift.name }}</div>
+              <div [style.text-decoration]="gift.isDrawn ? 'line-through' : 'none'"
+                   [style.color]="gift.isDrawn ? '#888' : '#4a148c'"
+                   style="font-weight: bold; font-size: 0.9em;">
+                {{ gift.name }}
+              </div>
               <div style="font-size: 0.8em; color: #2e7d32; font-weight: 600;">₪{{ gift.price }}</div>
+                @if (gift.isDrawn) {
+                  <div style="font-size:0.75em; color: #555; margin-top:6px;">זוכה: {{ gift.user?.firstName ? (gift.user?.firstName + ' ' + (gift.user?.lastName || '')) : ('משתמש ' + gift.idUser) }}</div>
+                }
             </div>
           </div>
         } @empty {
           <p style="text-align: center; color: #999; margin-top: 20px;">אין מתנות זמינות</p>
-        }
+        } 
       </div>
     </div>
 
@@ -32,14 +49,18 @@
       
       @if (currentGift()) {
         <div style="margin-bottom: 30px; animation: fadeIn 0.5s;">
-          <span style="background: #f3e5f5; color: #6a1b9a; padding: 8px 25px; border-radius: 50px; font-weight: 800; font-size: 0.9em; text-transform: uppercase;">מגרילים כעת</span>
+          <span [style.background]="currentGift()?.isDrawn ? '#e8f5e9' : '#f3e5f5'" 
+                [style.color]="currentGift()?.isDrawn ? '#2e7d32' : '#6a1b9a'"
+                style="padding: 8px 25px; border-radius: 50px; font-weight: 800; font-size: 0.9em; text-transform: uppercase;">
+            {{ currentGift()?.isDrawn ? 'הגרלה הושלמה ✅' : 'מגרילים כעת' }}
+          </span>
           <h1 style="color: #4a148c; font-size: 3.5em; margin: 15px 0; font-weight: 900; line-height: 1.1;">{{ currentGift()?.name }}</h1>
           <div style="font-size: 1.2em; color: #7b1fa2;">
             בשתתפות <strong>{{ participants().length }}</strong> כרטיסים
           </div>
         </div>
 
-        <div [style.background]="isSpinning() ? '#2a0a4a' : (selectedWinner() ? '#2e7d32' : '#4a148c')"
+        <div [style.background]="isSpinning() ? '#2a0a4a' : (selectedWinner() || currentGift()?.isDrawn ? '#2e7d32' : '#4a148c')"
              style="height: 220px; border-radius: 35px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; border: 8px solid #ffd700; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
           
           <div style="color: white; font-size: 4em; font-weight: 900; text-shadow: 0 4px 15px rgba(0,0,0,0.4); padding: 0 20px; text-align: center;">
@@ -51,7 +72,7 @@
           }
         </div>
 
-        @if (selectedWinner()) {
+        @if (selectedWinner() || (currentGift()?.isDrawn && !isSpinning())) {
           <div style="margin-top: 25px; color: #2e7d32; font-size: 2em; font-weight: 900; animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
             🎉 מזל טוב לזוכה המאושר! 🎉
           </div>
@@ -59,17 +80,17 @@
 
         <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">
           <button (click)="startRaffle()" 
-                  [disabled]="isSpinning() || participants().length === 0"
-                  style="background: #6a1b9a; color: white; border: none; padding: 20px 50px; border-radius: 60px; font-size: 1.4em; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(106, 27, 154, 0.3); transition: all 0.2s; min-width: 220px;"
-                  onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  [disabled]="isSpinning() || participants().length === 0 || currentGift()?.isDrawn"
+                  [style.opacity]="(isSpinning() || participants().length === 0 || currentGift()?.isDrawn) ? '0.5' : '1'"
+                  style="background: #6a1b9a; color: white; border: none; padding: 20px 50px; border-radius: 60px; font-size: 1.4em; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(106, 27, 154, 0.3); transition: all 0.2s; min-width: 220px;">
             🚀 התחל הגרלה
           </button>
 
           <button (click)="stopRaffle()" 
                   [disabled]="!isSpinning()"
-                  style="background: #ff5252; color: white; border: none; padding: 20px 50px; border-radius: 60px; font-size: 1.4em; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3); transition: all 0.2s; min-width: 220px;"
-                  onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            🛑 עצור חשיפה
+                  [style.opacity]="!isSpinning() ? '0.5' : '1'"
+                  style="background: #ff5252; color: white; border: none; padding: 20px 50px; border-radius: 60px; font-size: 1.4em; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3); transition: all 0.2s; min-width: 220px;">
+            🛑 עצור 
           </button>
         </div>
       } @else {
@@ -128,4 +149,3 @@
     100% { transform: translateX(100%); }
   }
 </style>
-

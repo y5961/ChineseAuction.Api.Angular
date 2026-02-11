@@ -1,6 +1,7 @@
 ﻿using ChineseAuctionAPI.DTOs;
 using ChineseAuctionAPI.Models;
 using ChineseAuctionAPI.Services;
+using ChineseAuctionAPI.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +15,13 @@ namespace ChineseAuctionAPI.Controllers
     public class GiftController : ControllerBase
     {
         private readonly IGiftService _giftService;
+        private readonly IUserRepo _userRepo;
         private readonly ILogger<GiftController> _logger;
 
-        public GiftController(IGiftService giftService, ILogger<GiftController> logger)
+        public GiftController(IGiftService giftService, IUserRepo userRepo, ILogger<GiftController> logger)
         {
             _giftService = giftService;
+            _userRepo = userRepo;
             _logger = logger;
         }
         [HttpPost("upload")]
@@ -67,13 +70,7 @@ namespace ChineseAuctionAPI.Controllers
             {
                 _logger.LogInformation("Attempting to retrieve gift with ID: {Id}", id);
                 var gift = await _giftService.GetGiftByIdAsync(id);
-
-                if (gift == null)
-                {
-                    _logger.LogWarning("Gift with ID: {Id} not found.", id);
-                    return NotFound();
-                }
-
+                // return the gift (owner/user info is included by repository when available)
                 return Ok(gift);
             }
             catch (Exception ex)
@@ -141,20 +138,26 @@ namespace ChineseAuctionAPI.Controllers
             }
 
             var gift = await _giftService.GetGiftByIdAsync(id);
-            var winnerUser = gift?.OrdersGifts.FirstOrDefault(og => og.Order.IdUser == result.IdUser)?.Order.User;
+            var winnerUser = gift?.OrdersGifts?.FirstOrDefault(og => og.Order?.IdUser == result.IdUser)?.Order?.User;
+            if (winnerUser == null)
+            {
+                winnerUser = await _userRepo.GetByIdAsync(result.IdUser);
+            }
 
             string fullName = winnerUser != null
                 ? $"{winnerUser.FirstName} {winnerUser.LastName}"
                 : $"משתמש {result.IdUser}";
 
-            _logger.LogInformation("הגרלה הסתיימה למתנה {id}. זוכה: {fullName}", id, fullName);
+            var response = new {
+                gift = gift?.Name ?? string.Empty,
+                winnerName = fullName,
+                winnerUserId = result.IdUser,
+                winnerEmail = winnerUser?.Email ?? string.Empty
+            };
 
-            return Ok(new
-            {
-                Message = "ההגרלה בוצעה בהצלחה!",
-                WinnerUserId = result.IdUser,
-                WinnerName = fullName 
-            });
+            _logger.LogInformation("הגרלה הסתיימה למתנה {Id}. זוכה: {FullName}", id, fullName);
+
+            return Ok(response);
         }
 
 
@@ -246,6 +249,28 @@ namespace ChineseAuctionAPI.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "שגיאה ב-Endpoint שליפת משתתפים למתנה {Id}", id);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("winners")]
+        public async Task<IActionResult> GetWinners()
+        {
+            try
+            {
+                var winners = await _giftService.GetAllWinnersAsync();
+                var dto = winners.Select(w => new {
+                    gift = w.Gift?.Name ?? "",
+                    winnerName = w.User != null ? ($"{w.User.FirstName} {w.User.LastName}") : ($"משתמש {w.IdUser}"),
+                    giftId = w.IdGift,
+                    winnerUserId = w.IdUser
+                });
+
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error returning winners list");
                 return StatusCode(500, "Internal server error");
             }
         }

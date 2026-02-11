@@ -73,6 +73,11 @@ export class GiftService {
   sortByAmountPeople(): Observable<Gift[]> {
     return this.http.get<Gift[]>(`${this.BASE_URL}/sort/amount_buyers`);
   }
+  
+  // 14. קבלת רשימת זוכים שמורה בשרת
+  getWinners(): Observable<{ gift: string, winnerName: string, giftId: number, winnerUserId: number }[]> {
+    return this.http.get<{ gift: string, winnerName: string, giftId: number, winnerUserId: number }[]>(`${this.BASE_URL}/winners`);
+  }
   // 13. העלאת תמונה לשרת
   uploadImage(file: File): Observable<{ fileName: string }> {
     const formData = new FormData();

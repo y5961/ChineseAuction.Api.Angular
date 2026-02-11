@@ -1,51 +1,115 @@
-.checkout-container {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  direction: rtl; /* יישור לימין */
-}
+$pastel-purple: #f3f0f7;
+$deep-lavender: #7c5cb7;
+$soft-mint: #e8f5f1;
+$mint-text: #4db6ac;
+$white: #ffffff;
 
-.details-section { flex: 2; }
-.summary-section { flex: 1; }
+.checkout-wrapper {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  direction: rtl;
+  color: #555;
 
-.card, .summary-card {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
+  .checkout-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+    align-items: start;
+    @media (max-width: 850px) { grid-template-columns: 1fr; }
+  }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
+  .card {
+    border-radius: 24px;
+    padding: 40px;
+    border: none;
+    background: $white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+  }
 
-.form-field input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fffafb; /* צבע רקע עדין כמו בסרטון */
-}
+  // --- ריבוע אשראי צבעוני בסטייל עדין ---
+  .payment-card-soft {
+    background: linear-gradient(135deg, #ffffff 0%, $pastel-purple 100%);
+    border: 1px solid rgba($deep-lavender, 0.1);
+    position: relative;
+    
+    // עיגולי צבע עדינים ברקע (סטייל צבעוני אך שקוף)
+    &::after {
+      content: '';
+      position: absolute;
+      top: -10%; left: -10%;
+      width: 100px; height: 100px;
+      background: rgba($mint-text, 0.05);
+      filter: blur(40px);
+      border-radius: 50%;
+    }
 
-.btn-submit {
-  width: 100%;
-  padding: 15px;
-  background-color: #e91e63; /* ורוד-אדום כמו בסרטון */
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-top: 20px;
-}
+    .card-header-clean {
+      margin-bottom: 30px;
+      .soft-purple { color: $deep-lavender; font-weight: 700; margin: 0; }
+      .soft-mint { color: $mint-text; font-size: 0.9rem; margin-top: 5px; }
+    }
+  }
 
-.success-msg {
-  color: green;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
+  .clean-form {
+    .form-field {
+      margin-bottom: 20px;
+      label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: #888; }
+    }
+    .form-row { display: flex; gap: 15px; }
+    .flex-1 { flex: 1; }
+
+    ::ng-deep .soft-input, ::ng-deep .soft-input-mask input {
+      width: 100% !important;
+      padding: 12px 15px !important;
+      border: 1px solid #ececec !important;
+      border-radius: 12px !important;
+      background: $white !important;
+      transition: all 0.3s;
+      &:focus { border-color: $deep-lavender !important; box-shadow: 0 0 0 4px rgba($deep-lavender, 0.05) !important; }
+    }
+  }
+
+  // --- סיכום הזמנה אוורירי ---
+  .summary-card-clean {
+    background: $soft-mint;
+    border: 1px solid rgba($mint-text, 0.1);
+    
+    .summary-title-soft { color: #2d5a56; font-size: 1.3rem; margin-bottom: 25px; }
+    
+    .detail-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      .val-soft { font-weight: 600; color: #2d5a56; }
+    }
+
+    .total-row {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba($mint-text, 0.2);
+      .final-price-soft { color: $deep-lavender; font-size: 2rem; font-weight: 800; }
+    }
+
+    .btn-soft-action {
+      background: $deep-lavender;
+      border: none;
+      width: 100%;
+      height: 55px;
+      border-radius: 15px;
+      margin-top: 25px;
+      box-shadow: 0 10px 20px rgba($deep-lavender, 0.15);
+      &:hover { opacity: 0.9; transform: translateY(-1px); }
+    }
+  }
+
+  .secure-footer-simple {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ccc;
+    font-size: 0.75rem;
+  }
 }

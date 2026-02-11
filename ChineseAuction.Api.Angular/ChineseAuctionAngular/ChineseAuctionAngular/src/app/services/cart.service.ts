@@ -22,27 +22,25 @@ export class CartService {
   private availablePackagesSignal = signal<any[]>([]);
   availablePackages = this.availablePackagesSignal.asReadonly();
 
-  // לוגיקה חדשה: חישוב אוטומטי של המחיר הכולל בתוך השירות (חבילות ומתנות)
-  totalPrice = computed(() => {
-    const items = this.cartItemsSignal();
-    const quantities = this.quantitiesSignal();
-    const gifts = this.cartGiftsSignal();
-    const giftQtys = this.giftQuantitiesSignal();
-    
-    const packagesTotal = items.reduce((acc, pkg) => {
-      const qty = quantities[pkg.idPackage] || 0;
-      const price = pkg.price || 0;
-      return acc + (price * qty);
-    }, 0);
 
-    const giftsTotal = gifts.reduce((acc, gift) => {
-      const qty = giftQtys[gift.idGift] || gift.amount || 0;
-      const price = gift.price || 0;
-      return acc + (price * qty);
-    }, 0);
+  totalPrice = computed(() => {
+  const pkgs = this.availablePackagesSignal(); 
+  const quantities = this.quantitiesSignal();  
+  
+  let total = 0;
+
+  for (const idStr of Object.keys(quantities)) {
+    const id = Number(idStr);
+    const qty = quantities[id] || 0;
+    const pkg = pkgs.find((p: any) => p.idPackage === id);
     
-    return packagesTotal + giftsTotal;
-  });
+    if (pkg && pkg.price) {
+      total += pkg.price * qty;
+    }
+  }
+  return total;
+});
+
 
   // Total tickets (cards) computed from available packages and package quantities
   totalTickets = computed(() => {

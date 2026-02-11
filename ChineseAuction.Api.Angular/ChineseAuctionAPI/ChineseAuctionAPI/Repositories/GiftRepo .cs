@@ -23,6 +23,7 @@ namespace ChineseAuctionAPI.Repositories
             return await _context.Gifts
                 .Include(g => g.Category)
                 .Include(g => g.Donor)
+                .Include(g => g.user)
                 .ToListAsync();
         }
 
@@ -31,6 +32,7 @@ namespace ChineseAuctionAPI.Repositories
             return await _context.Gifts
                 .Include(g => g.Category)
                 .Include(g => g.Donor)
+                .Include(g => g.user)
                 .FirstOrDefaultAsync(g => g.IdGift == id);
         }
 
@@ -72,6 +74,15 @@ namespace ChineseAuctionAPI.Repositories
         {
             await _context.winners.AddAsync(winner);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Winner>> GetAllWinnersAsync()
+        {
+            return await _context.winners
+                .Include(w => w.Gift)
+                .Include(w => w.User)
+                .OrderByDescending(w => w.IdWinner)
+                .ToListAsync();
         }
        
 

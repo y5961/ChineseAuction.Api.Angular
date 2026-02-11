@@ -29,11 +29,23 @@ export class RaffleComponent implements OnInit {
 
   ngOnInit() {
     this.loadGifts();
+    this.loadWinners();
+  }
+
+  loadWinners() {
+    this.giftService.getWinners().subscribe({
+      next: (list) => {
+        const mapped = list.map(i => ({ gift: i.gift, winner: i.winnerName }));
+        this.winnersList.set(mapped);
+      },
+      error: (err) => console.warn('Failed loading winners', err)
+    });
   }
 
   loadGifts() {
     this.giftService.getAllGifts().subscribe({
       next: (data) => this.gifts.set(data),
+      
       error: (err) => console.error('Error loading gifts', err)
     });
   }
@@ -44,7 +56,11 @@ export class RaffleComponent implements OnInit {
     this.currentGift.set(gift);
     this.selectedWinner.set(null);
     this.displayText.set('טוען משתתפים...');
-
+     if( gift.isDrawn)
+     {        
+      this.displayText.set('הפרס כבר הוגרל');
+      return;
+     }
     this.giftService.getParticipantsByGiftId(gift.idGift).subscribe({
       next: (names: string[]) => {
         this.participants.set(names);
@@ -67,39 +83,63 @@ export class RaffleComponent implements OnInit {
     });
   }
 
-  stopRaffle() {
-    const gift = this.currentGift();
-    if (!gift || !this.isSpinning()) return;
+stopRaffle() {
+  const gift = this.currentGift();
+  if (!gift || !this.isSpinning()) return;
 
-    this.giftService.drawWinnerForGift(gift.idGift).subscribe({
-      next: (res) => {
-        // עצירת האנימציה רק כשהתשובה מהשרת הגיעה
-        this.spinSubscription?.unsubscribe();
-        
-        // חילוץ שם הזוכה (השרת מחזיר WinnerUserId או WinnerName)
-        const winnerName = res.winnerName || `זוכה מספר ${res.winnerUserId}`;
-        
-        this.displayText.set(winnerName);
-        this.selectedWinner.set(winnerName);
-        this.isSpinning.set(false);
-        this.launchConfetti();
-        this.winnersList.update(prev => [
-          { gift: gift.name, winner: winnerName },
-          ...prev
-        ]);
-      },
-      error: (err) => {
-        this.spinSubscription?.unsubscribe();
-        this.isSpinning.set(false);
-        this.displayText.set("שגיאה בהגרלה");
-      }
-    });
-  }
+  this.giftService.drawWinnerForGift(gift.idGift).subscribe({
+    next: (res) => {
+      this.spinSubscription?.unsubscribe();
+      const winnerName = res.winnerName || `זוכה מספר ${res.winnerUserId}`;
+      
+      this.displayText.set(winnerName);
+      this.selectedWinner.set(winnerName);
+      this.isSpinning.set(false);
+      
+      // mark gift as drawn and attach winner id locally (avoid assigning partial user object)
+      this.gifts.update(allGifts => 
+        allGifts.map(g => g.idGift === gift.idGift ? { 
+          ...g, 
+          isDrawn: true, 
+          idUser: res.winnerUserId ?? g.idUser
+        } : g)
+      );
+
+      this.currentGift.update(curr => curr ? { 
+        ...curr, 
+        isDrawn: true, 
+        idUser: res.winnerUserId ?? curr.idUser
+      } : null);
+
+      this.winnersList.update(prev => [
+        { gift: gift.name, winner: winnerName },
+        ...prev
+      ]);
+
+      this.giftService.getGiftById(gift.idGift).subscribe({
+        next: (fresh) => {
+          this.gifts.update(allGifts => allGifts.map(g => g.idGift === fresh.idGift ? fresh : g));
+          this.currentGift.set(fresh);
+        },
+        error: (err) => {
+          console.warn('Failed to refresh gift after draw', err);
+        }
+      });
+    },
+
+    error: (err) => {
+      console.error('Error drawing winner', err);
+      this.spinSubscription?.unsubscribe();
+      this.displayText.set('אירעה שגיאה, נסו שוב');
+      this.isSpinning.set(false);
+    }
+  
+  });
+}
   launchConfetti() {
     throw new Error('Method not implemented.');
   }
 
-  // פונקציה לייצוא דו"ח (CSV) כפי שמופיע בכפתור הצהוב שלך
   exportWinnersReport() {
     if (this.winnersList().length === 0) return;
 

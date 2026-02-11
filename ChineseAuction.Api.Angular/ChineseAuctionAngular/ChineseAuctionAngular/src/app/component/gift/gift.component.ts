@@ -128,7 +128,6 @@ private initializeGifts(data: any[]): void {
     }
 
     const userId = this.authService.getUserId();
-    // Send delta (+1) instead of absolute quantity
     this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, 1).subscribe({
       next: () => {
         const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;

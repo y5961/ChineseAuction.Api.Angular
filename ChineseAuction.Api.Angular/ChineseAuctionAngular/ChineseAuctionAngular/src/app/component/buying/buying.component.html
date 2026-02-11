@@ -1,59 +1,83 @@
-<div class="checkout-container">
-  
+<div class="checkout-wrapper" [@fadeInUp]>
+  <p-toast></p-toast>
+
   @if (isCompleted) {
-    <div class="success-container card">
-      <div class="success-content">
-        <span class="success-icon">✅</span>
-        <h2>הרכישה בוצעה בהצלחה!</h2>
-        <p>מספר הזמנה שנסגרה: <strong>{{currentOrder?.idOrder}}</strong></p>
-        <button class="btn-submit" (click)="goToHome()">חזרה לקטלוג</button>
+    <div class="success-screen card">
+      <div class="icon-circle-success">
+        <i class="pi pi-check"></i>
       </div>
+      <h2 class="soft-purple">התרומה הושלמה בהצלחה</h2>
+      <p>תודה על תרומתכם הנדיבה למען הצלת חיים.</p>
+      <div class="order-id-tag">מספר אישור: {{currentOrder?.idOrder}}</div>
+      <button pButton label="חזרה לקטלוג" class="p-button-rounded p-button-text" (click)="goToHome()"></button>
     </div>
   } 
   @else {
-    <div class="details-section">
-      <div class="card">
-        <h3>פרטים אחרונים וסיימנו!</h3>
-        <p>שדות המסומנים ב (*) הינם שדות חובה</p>
-        
-        <div class="form-grid">
-          <div class="form-field">
-            <label>שם פרטי*</label>
-            <input type="text" placeholder="שם פרטי">
+    <div class="checkout-grid">
+      
+      <section class="payment-section">
+        <div class="card payment-card-soft">
+          <header class="card-header-clean">
+            <h3 class="soft-purple">פרטי תשלום</h3>
+            <p class="soft-mint">סביבה מאובטחת ומוצפנת</p>
+          </header>
+          
+          <form [formGroup]="paymentForm" class="clean-form">
+            <div class="form-field">
+              <label>שם בעל הכרטיס</label>
+              <input pInputText formControlName="holderName" placeholder="ישראל ישראלי" class="soft-input">
+            </div>
+
+            <div class="form-field">
+              <label>מספר כרטיס</label>
+              <p-inputMask formControlName="cardNumber" mask="9999-9999-9999-9999" placeholder="0000 0000 0000 0000" styleClass="soft-input-mask"></p-inputMask>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field flex-1">
+                <label>תוקף</label>
+                <p-inputMask formControlName="expiry" mask="99/99" placeholder="MM/YY" styleClass="soft-input-mask"></p-inputMask>
+              </div>
+              <div class="form-field flex-1">
+                <label>CVV</label>
+                <p-inputMask formControlName="cvv" mask="999" placeholder="123" styleClass="soft-input-mask"></p-inputMask>
+              </div>
+            </div>
+          </form>
+
+          <div class="secure-footer-simple">
+            <i class="pi pi-shield"></i>
+            <span>תשלום מאובטח PCI Standard</span>
           </div>
-          <div class="form-field">
-            <label>שם משפחה*</label>
-            <input type="text" placeholder="שם משפחה">
+        </div>
+      </section>
+
+      <aside class="summary-section">
+        <div class="card summary-card-clean">
+          <h3 class="summary-title-soft">סיכום תרומה</h3>
+          
+          <div class="summary-details">
+            <div class="detail-line">
+              <span>כרטיסים:</span>
+              <span class="val-soft">{{cartService.totalTickets()}}</span>
+            </div>
+            <div class="detail-line total-row">
+              <span>לתשלום:</span>
+              <span class="final-price-soft">₪{{cartService.totalPrice()}}</span>
+            </div>
           </div>
-        </div>
 
-        <div class="checkbox-section">
-          <input type="checkbox" id="terms">
-          <label for="terms">לחץ/י על המלבן המטה להסכמה לתקנון המועדון</label>
+          <button 
+            pButton
+            class="p-button-lg btn-soft-action p-button-rounded" 
+            (click)="onCompleteOrder()" 
+            [disabled]="isLoading || !currentOrder"
+            [icon]="isLoading ? 'pi pi-spin pi-spinner' : 'pi pi-lock'"
+            [label]="isLoading ? 'מעבד...' : 'אישור תשלום'">
+          </button>
         </div>
-      </div>
-    </div>
+      </aside>
 
-    <div class="summary-section">
-      <div class="summary-card card">
-        <h3>סיכום הזמנה</h3>
-        <div class="summary-item">
-          <span>חבילות:</span>
-          <span>{{currentOrder?.totalAmount || 0}} כרטיסים</span>
-        </div>
-        <hr>
-        <div class="total-price">
-          <span>סה"כ לתשלום:</span>
-          <span class="price">₪{{currentOrder?.totalPrice || 0}}</span>
-        </div>
-
-        <button 
-          class="btn-submit" 
-          (click)="onCompleteOrder()" 
-          [disabled]="isLoading || !currentOrder">
-          {{ isLoading ? 'מעבד...' : 'המשך לתשלום' }}
-        </button>
-      </div>
     </div>
   }
 </div>

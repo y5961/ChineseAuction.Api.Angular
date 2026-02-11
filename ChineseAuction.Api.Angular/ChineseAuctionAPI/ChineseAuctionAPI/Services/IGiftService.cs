@@ -19,6 +19,7 @@ namespace ChineseAuctionAPI.Services
         Task<IEnumerable<Gift?>> SortByPrice();
         Task<IEnumerable<Gift?>> SortByAmountPeople();
         Task<IEnumerable<string>> GetParticipantsNamesAsync(int giftId);
+        Task<IEnumerable<Winner>> GetAllWinnersAsync();
 
     }
 
