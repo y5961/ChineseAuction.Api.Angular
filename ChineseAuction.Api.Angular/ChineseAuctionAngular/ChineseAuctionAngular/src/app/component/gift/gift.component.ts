@@ -37,7 +37,6 @@ export class GiftComponent implements OnInit {
     this.loadGifts();
   }
 
-  // טעינה ראשונית של כל המתנות
   loadGifts(): void {
     this.giftService.getAllGifts().subscribe({
       next: (data) => this.initializeGifts(data),
@@ -45,19 +44,12 @@ export class GiftComponent implements OnInit {
     });
   }
 
-  // פונקציית עזר לאתחול הנתונים שחוזרים מה-Service
-  private initializeGifts(data: any[]): void {
-    const initializedGifts = data.map(g => {
-      const gift = new Gift(g);
-      gift.customerQuantity = 0; // אתחול כמות בעגלה
-      return gift;
-    });
-    this.gifts.set(initializedGifts);
-  }
+private initializeGifts(data: any[]): void {
+  const initializedGifts = data.map(g => new Gift(g));
+  this.gifts.set(initializedGifts);
+}
 
-  // --- שימוש בפונקציות המיון והסינון מה-Service ---
 
-  // מיון לפי מחיר מהשרת
   onSortByPrice(): void {
     this.giftService.sortByPrice().subscribe({
       next: (data) => this.initializeGifts(data)
@@ -125,11 +117,7 @@ export class GiftComponent implements OnInit {
     this.maxPrice.set(val ? parseFloat(val) : null);
   }
 
-  // --- ניהול עגלה ---
-
   increaseQuantity(gift: Gift): void {
-    // Determine current server/cart quantity (fallback to local) and increment
-    const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
     if (!this.cartService.canAddGift(1)) {
       const tickets = this.cartService.totalTickets();
       const used = this.cartService.totalGiftCount();
@@ -140,12 +128,11 @@ export class GiftComponent implements OnInit {
     }
 
     const userId = this.authService.getUserId();
-    const newQty = currentQty + 1;
-    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
+    // Send delta (+1) instead of absolute quantity
+    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, 1).subscribe({
       next: () => {
-        gift.customerQuantity = newQty;
-        this.gifts.set([...this.gifts()]);
-        // merge into cartService list: set absolute quantity returned/newQty
+        const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
+        const newQty = currentQty + 1;
         const currentCart = [...this.cartService.cartGifts()];
         const idx = currentCart.findIndex(c => c.idGift === gift.idGift);
         if (idx >= 0) {
@@ -197,16 +184,14 @@ export class GiftComponent implements OnInit {
   }
 
   decreaseQuantity(gift: Gift): void {
-    // Determine current quantity from cart (fallback to local)
+
     const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
     if (currentQty <= 0) return;
     const userId = this.authService.getUserId();
-    const newQty = currentQty - 1;
-    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, newQty).subscribe({
+
+    this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, -1).subscribe({
       next: () => {
-        gift.customerQuantity = newQty;
-        this.gifts.set([...this.gifts()]);
-        // merge update into cart: set absolute quantity
+        const newQty = currentQty - 1;
         const currentCart = [...this.cartService.cartGifts()];
         const idx = currentCart.findIndex(c => c.idGift === gift.idGift);
         if (idx >= 0) {
@@ -231,7 +216,10 @@ export class GiftComponent implements OnInit {
     });
   }
 
-  // (old helper removed) merging is done inline when quantities change to avoid overwriting existing cart
+getGiftQuantity(giftId: number): number {
+  return this.cartService.giftQuantities()[giftId] || 0;
+}
+
 
   openDetails(gift: Gift): void { this.selectedGift.set(gift); }
   closeDetails(): void { this.selectedGift.set(null); }

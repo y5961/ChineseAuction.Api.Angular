@@ -171,27 +171,28 @@ ngOnInit() {
     }
 
     // proceed to update the server
-    this.updateGiftQty(idGift, (this.giftQuantities()[idGift] || 0) + 1);
+    this.updateGiftQty(idGift, 1); // Send delta (+1) instead of absolute quantity
   }
 
   decrementGift(idGift: number) {
     const current = this.giftQuantities()[idGift] || 0;
     if (current > 0) {
-      this.updateGiftQty(idGift, current - 1);
+      this.updateGiftQty(idGift, -1); // Send delta (-1) instead of absolute quantity
     }
   }
 
-  private updateGiftQty(idGift: number, newQty: number) {
+  private updateGiftQty(idGift: number, delta: number) {
     const userId = this.authService.getUserId();
-    this.orderService.addOrUpdateGiftInOrder(userId, idGift, newQty).subscribe({
+    this.orderService.addOrUpdateGiftInOrder(userId, idGift, delta).subscribe({
       next: () => {
+        const currentQty = this.giftQuantities()[idGift] || 0;
+        const newQty = currentQty + delta;
         this.cartService.setGiftQuantity(idGift, newQty);
         if (newQty === 0) {
           this.loadCart();
         }
       },
       error: (err) => {
-        // If backend rejects due to insufficient tickets, show the ticket modal
         try {
           const status = err?.status;
           const code = err?.error?.code || err?.error;

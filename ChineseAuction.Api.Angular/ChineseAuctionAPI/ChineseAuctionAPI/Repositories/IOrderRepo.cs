@@ -9,7 +9,7 @@ namespace ChineseAuctionAPI.Repositories
 
         Task<Order> CreateDraftOrderAsync(int userId);
 
-        Task AddOrUpdateGiftInOrderAsync(int orderId, int giftId, int amount);
+        Task AddOrUpdateGiftInOrderAsync(int userId, int giftId, int deltaAmount);
 
         Task<Order?> GetByIdWithGiftsAsync(int orderId);
 

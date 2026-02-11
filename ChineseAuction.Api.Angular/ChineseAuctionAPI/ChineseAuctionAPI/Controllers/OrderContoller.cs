@@ -98,3 +98,9 @@ public class OrdersController : ControllerBase
         }
     }
 }
+public class GiftUpdateDto
+{
+    public int UserId { get; set; }
+    public int GiftId { get; set; }
+    public int Amount { get; set; } 
+}

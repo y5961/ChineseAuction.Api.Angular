@@ -19,12 +19,12 @@ namespace ChineseAuctionAPI.Services
             _config = config;
         }
 
-        public async Task<bool> AddOrUpdateGiftInOrderAsync(int userId, int giftId, int amount)
+        public async Task<bool> AddOrUpdateGiftInOrderAsync(int userId, int giftId, int deltaAmount)
         {
             try
             {
-                _logger.LogInformation("מעדכן/מוסיף מתנה {GiftId} למשתמש {UserId} בכמות {Amount}.", giftId, userId, amount);
-                await _OrderRepository.AddOrUpdateGiftInOrderAsync(userId, giftId, amount);
+                _logger.LogInformation("מעדכן/מוסיף מתנה {GiftId} למשתמש {UserId} בדלתא {DeltaAmount}.", giftId, userId, deltaAmount);
+                await _OrderRepository.AddOrUpdateGiftInOrderAsync(userId, giftId, deltaAmount);
                 return true;
             }
             catch (Exception ex)

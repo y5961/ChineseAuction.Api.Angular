@@ -60,7 +60,6 @@ export class RaffleComponent implements OnInit {
     this.isSpinning.set(true);
     this.selectedWinner.set(null);
     
-    // הרצת שמות מהירה (כל 80 מילישניות) ליצירת מתח
     this.spinSubscription = interval(80).subscribe(() => {
       const names = this.participants();
       const randomIndex = Math.floor(Math.random() * names.length);

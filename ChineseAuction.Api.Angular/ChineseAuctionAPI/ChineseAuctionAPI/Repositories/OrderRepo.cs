@@ -15,18 +15,15 @@ namespace ChineseAuctionAPI.Repositories
 
         }
 
-        public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int amount)
+        public async Task AddOrUpdateGiftInOrderAsync(int userId, int IdGift, int deltaAmount)
         {
-            // 1. שליפת ההזמנה כולל החבילות והמתנות שכבר קיימות בה
             var order = await _context.OrdersOrders
                 .Include(o => o.OrdersGift)
-                .Include(o => o.OrdersPackage) // חשוב! כדי לדעת כמה כרטיסים יש לו
+                .Include(o => o.OrdersPackage) 
                 .FirstOrDefaultAsync(o => o.IdUser == userId && o.Status == OrderStatus.Draft);
 
             if (order == null) throw new Exception("עליך לבחור חבילה לפני בחירת מתנות");
 
-            // 2. חישוב סך הכרטיסים המגיעים לו מהחבילות (לפי השדות בדגם שלך)
-            // אני משתמש ב-AmountRegular, שנהי לפי הצורך ל-AmountPremium אם זו מתנת פרימיום
             var totalTicketsAllowed = await _context.OrdersPackage
                 .Where(op => op.OrderId == order.IdOrder)
                 .Join(_context.Packages, op => op.IdPackage, p => p.IdPackage, (op, p) => p.AmountRegular * op.Quantity)
@@ -37,22 +34,29 @@ namespace ChineseAuctionAPI.Repositories
 
             // בדיקה אם המתנה החדשה תחרוג מהמותר
             var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
-            int extraRequested = amount - (existingGift?.Amount ?? 0);
+            int extraRequested = deltaAmount > 0 ? deltaAmount : 0; // Only check positive deltas
 
-            if (currentUsedTickets + extraRequested > totalTicketsAllowed)
+            if (deltaAmount > 0 && currentUsedTickets + extraRequested > totalTicketsAllowed)
             {
-                // זריקת שגיאה שתחזור ל-Angular ותקפיץ את ההודעה
                 throw new InvalidOperationException("INSUFFICIENT_TICKETS");
             }
 
-            // 4. לוגיקת ההוספה הקיימת שלך...
             if (existingGift != null)
             {
-                existingGift.Amount = amount;
+                if (deltaAmount <= 0 && existingGift.Amount + deltaAmount <= 0)
+                {
+                    order.OrdersGift.Remove(existingGift);
+                }
+                else
+                {
+                    // מוסיפים את הכמות המבוקשת לכמות הקיימת
+                    existingGift.Amount += deltaAmount;
+                }
             }
-            else
+            else if (deltaAmount > 0)
             {
-                order.OrdersGift.Add(new OrdersGift { IdGift = IdGift, Amount = amount, IdOrder = order.IdOrder });
+                // הוספה חדשה - כאן deltaAmount הוא הכמות ההתחלתית (בד"כ 1)
+                order.OrdersGift.Add(new OrdersGift { IdGift = IdGift, Amount = deltaAmount, IdOrder = order.IdOrder });
             }
 
             await _context.SaveChangesAsync();
@@ -178,9 +182,6 @@ namespace ChineseAuctionAPI.Repositories
                 }
                 else
                 {
-                    // Treat incoming `amount` as a delta to add to existing quantity
-                    // (client sends e.g. 1 when user clicks +). This will increment
-                    // the stored quantity rather than overwrite it.
                     int delta = amount;
                     orderPackage.Quantity += delta;
                     order.Price += package.Price * delta;
@@ -188,7 +189,6 @@ namespace ChineseAuctionAPI.Repositories
             }
             else if (amount > 0)
             {
-                // הוספה חדשה - כאן amount הוא הכמות ההתחלתית (בד"כ 1)
                 var newOrderPackage = new OrdersPackage
                 {
                     OrderId = order.IdOrder,
