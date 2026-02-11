@@ -21,28 +21,43 @@ export class CartService {
   // Available packages (full package definitions) to compute total tickets
   private availablePackagesSignal = signal<any[]>([]);
   availablePackages = this.availablePackagesSignal.asReadonly();
+totalPrice = computed(() => {
+  const pkgs = this.availablePackagesSignal(); // המחירון המלא מהשרת
+  const quantities = this.quantitiesSignal();   // הכמויות שהמשתמש בחר
+  
+  let total = 0;
 
-  // לוגיקה חדשה: חישוב אוטומטי של המחיר הכולל בתוך השירות (חבילות ומתנות)
-  totalPrice = computed(() => {
-    const items = this.cartItemsSignal();
-    const quantities = this.quantitiesSignal();
-    const gifts = this.cartGiftsSignal();
-    const giftQtys = this.giftQuantitiesSignal();
+  for (const idStr of Object.keys(quantities)) {
+    const id = Number(idStr);
+    const qty = quantities[id] || 0;
+    const pkg = pkgs.find((p: any) => p.idPackage === id);
     
-    const packagesTotal = items.reduce((acc, pkg) => {
-      const qty = quantities[pkg.idPackage] || 0;
-      const price = pkg.price || 0;
-      return acc + (price * qty);
-    }, 0);
+    if (pkg && pkg.price) {
+      total += pkg.price * qty;
+    }
+  }
+  return total;
+});
+  // totalPrice = computed(() => {
+  //   const items = this.cartItemsSignal();
+  //   const quantities = this.quantitiesSignal();
+  //   const gifts = this.cartGiftsSignal();
+  //   const giftQtys = this.giftQuantitiesSignal();
+    
+  //   const packagesTotal = items.reduce((acc, pkg) => {
+  //     const qty = quantities[pkg.idPackage] || 0;
+  //     const price = pkg.price || 0;
+  //     return acc + (price * qty);
+  //   }, 0);
 
-    const giftsTotal = gifts.reduce((acc, gift) => {
-      const qty = giftQtys[gift.idGift] || gift.amount || 0;
-      const price = gift.price || 0;
-      return acc + (price * qty);
-    }, 0);
+  //   // const giftsTotal = gifts.reduce((acc, gift) => {
+  //   //   const qty = giftQtys[gift.idGift] || gift.amount || 0;
+  //   //   const price = gift.price || 0;
+  //   //   return acc + (price * qty);
+  //   // }, 0);
     
-    return packagesTotal + giftsTotal;
-  });
+  //   return packagesTotal; // + giftsTotal;
+  // });
 
   // Total tickets (cards) computed from available packages and package quantities
   totalTickets = computed(() => {

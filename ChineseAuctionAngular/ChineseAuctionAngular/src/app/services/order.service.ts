@@ -10,10 +10,7 @@ export class OrderService {
   // הכתובת הבסיסית לכל פעולות ההזמנה
   readonly BASE_URL = `${environment.apiUrl}/api/Orders`; 
 
-  /**
-   * שליפת הזמנות של משתמש
-   * תיקון: שינוי ה-URL כדי שיפנה ל-OrdersController שבו ה-ID מחולץ נכון
-   */
+
   getUserOrders(userId: number): Observable<any> {
     console.log(`[OrderService] Fetching orders for userId: ${userId} from ${this.BASE_URL}/user/${userId}`);
     
