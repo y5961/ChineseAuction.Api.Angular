@@ -211,5 +211,64 @@ namespace ChineseAuctionAPI.Services
                 throw;
             }
         }
+        public async Task<bool> DeleteOrderAsync(int orderId)
+        {
+            try
+            {
+                _logger.LogInformation("מוחק הזמנה {OrderId} כולל פריטים.", orderId);
+                var result = await _OrderRepository.DeleteOrderAsync(orderId);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "שגיאה במחיקת הזמנה {OrderId}.", orderId);
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteGiftFromOrderAsync(int orderId, int giftId)
+        {
+            try
+            {
+                _logger.LogInformation("מוחק מתנה {GiftId} מהזמנה {OrderId}.", giftId, orderId);
+                var result = await _OrderRepository.DeleteGiftFromOrderAsync(orderId, giftId);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "שגיאה במחיקת מתנה {GiftId} מהזמנה {OrderId}.", giftId, orderId);
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteDraftOrderByUserAsync(int userId)
+        {
+            try
+            {
+                var order = await _OrderRepository.GetDraftOrderByUserAsync(userId);
+                if (order == null) return false;
+                return await _OrderRepository.DeleteOrderAsync(order.IdOrder);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "שגיאה במחיקת טיוטת ההזמנה למשתמש {UserId}.", userId);
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteGiftFromDraftByUserAsync(int userId, int giftId)
+        {
+            try
+            {
+                var order = await _OrderRepository.GetDraftOrderByUserAsync(userId);
+                if (order == null) return false;
+                return await _OrderRepository.DeleteGiftFromOrderAsync(order.IdOrder, giftId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "שגיאה במחיקת מתנה {GiftId} מטיוטת ההזמנה של המשתמש {UserId}.", giftId, userId);
+                throw;
+            }
+        }
     }
 }

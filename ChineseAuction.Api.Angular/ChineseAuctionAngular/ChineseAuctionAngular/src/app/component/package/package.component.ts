@@ -56,39 +56,71 @@ export class PackageComponent implements OnInit {
 handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
   const currentQty = this.packageQuantities()[packageId] || 0;
   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
-  
+
   if (newQty < 0) return;
-  this.cartService.setQuantity(packageId, newQty);
+
+    // Optimistic update: take snapshots and apply locally first
+    const prevQty = currentQty;
+    const prevCart = [...this.cartService.cartItems()];
+
+    this.cartService.setQuantity(packageId, newQty);
+
+  // update cartItems so Cart shows change immediately
+  const pkgInfo = this.packages().find(p => p.idPackage === packageId) || { idPackage: packageId, price: 0 };
+  const updatedCart = [...this.cartService.cartItems()];
+  const idx = updatedCart.findIndex((c: any) => c.idPackage === packageId);
+  if (newQty > 0) {
+    const item = { idPackage: packageId, quantity: newQty, price: pkgInfo.price || 0 };
+    if (idx >= 0) updatedCart[idx] = { ...updatedCart[idx], quantity: newQty, price: pkgInfo.price || updatedCart[idx].price };
+    else updatedCart.push(item);
+  } else {
+    if (idx >= 0) updatedCart.splice(idx, 1);
+  }
+  this.cartService.setCartItems(updatedCart);
+
+  const totalPackages = Object.values(this.cartService.packageQuantities()).reduce((acc, v) => acc + (v || 0), 0);
+  if (totalPackages === 0) {
+    // When packages drop to zero, clear the entire cart locally
+    this.cartService.clearCart();
+    const userIdConfirm = this.authService.getUserId();
+    if (userIdConfirm && userIdConfirm > 0) {
+      // Prefer deleting server draft; if that fails, attempt to set this package quantity=0
+      this.orderService.deleteDraft(userIdConfirm).subscribe({
+        next: () => {},
+        error: (err) => {
+          console.warn('deleteDraft failed, attempting to update package to 0 as fallback', err);
+          // best-effort fallback to ensure server draft won't repopulate the cart
+          this.orderService.updatePackageQuantity(userIdConfirm, packageId, 0).subscribe({
+            next: () => {},
+            error: (err2) => console.warn('Fallback updatePackageQuantity failed', err2)
+          });
+        }
+      });
+    }
+    return;
+  }
+
   const userId = this.authService.getUserId();
+  if (!userId || userId <= 0) {
+    // not logged in - keep local change only
+    return;
+  }
+
+  // confirm change with server, revert on error
   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe({
     next: () => {
+      // success - nothing to do
     },
     error: (err) => {
-      this.cartService.setQuantity(packageId, currentQty);
+      // revert optimistic update
+      this.cartService.setQuantity(packageId, prevQty);
+      this.cartService.setCartItems(prevCart);
+      console.error('Failed updating package quantity', err);
     }
   });
 }
 
-  // handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
-  //   const userId = this.authService.getUserId();
-  //   if (!userId) { 
-  //     this.router.navigate(['/register']); 
-  //     return; 
-  //   }
-
-  //   const currentQty = this.packageQuantities()[packageId] || 0;
-  //   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
-  //   if (newQty < 0) return;
-
-  //   this.orderService.updatePackageQuantity(userId, packageId, newQty).subscribe(() => {
-  //     this.cartService.setQuantity(packageId, newQty);
-      
-  //     if (newQty === 1 && action === 'increment') {
-  //       this.loadUserData();
-  //     }
-  //   });
-  // }
-  getPackageGradient(id: number): string {
+getPackageGradient(id: number): string {
     const gradients = [
       'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', // ירוק
       'linear-gradient(135deg, #00c6fb 0%, #005bea 100%)', // כחול
@@ -104,3 +136,4 @@ handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
     return images[id % images.length];
   }
 }
+

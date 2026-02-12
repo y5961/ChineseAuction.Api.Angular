@@ -88,18 +88,21 @@ export class CartService {
   closeTicketLimitModal() {
     this.ticketModalSignal.set(false);
   }
+setQuantity(packageId: number, qty: number) {
+  this.quantitiesSignal.update(current => {
+    const updated = { ...current };
+    if (qty <= 0) {
+      delete updated[packageId];
+    } else {
+      updated[packageId] = qty;
+    }
+    return updated;
+  });
+  
 
-  setQuantity(packageId: number, qty: number) {
-    this.quantitiesSignal.update(current => {
-      const updated = { ...current };
-      if (qty <= 0) {
-        delete updated[packageId];
-      } else {
-        updated[packageId] = qty;
-      }
-      return updated;
-    });
-  }
+
+  this.enforceGiftLimit(); 
+}
 
   setCartItems(items: any[]) {
     this.cartItemsSignal.set(items);
@@ -108,11 +111,61 @@ export class CartService {
   setAvailablePackages(items: any[]) {
     this.availablePackagesSignal.set(items);
   }
+setAllQuantities(quantities: Record<number, number>) {
+  this.quantitiesSignal.set(quantities);
+  // אכיפה לאחר עדכון מאסיבי
+  this.enforceGiftLimit();
+}
 
-  setAllQuantities(quantities: Record<number, number>) {
-    this.quantitiesSignal.set(quantities);
+private enforceGiftLimit() {
+  // 1. קבלת כמות הכרטיסים המקסימלית המעודכנת (לפי החבילות שיש כרגע בסל)
+  const allowed = this.totalTickets(); 
+  
+  // 2. יצירת עותק של כמויות המתנות הנוכחיות כדי לעדכן אותן
+  const giftQtys = { ...this.giftQuantitiesSignal() }; 
+  
+  // 3. חישוב סך המתנות שיש כרגע בסל
+  let currentTotal = Object.values(giftQtys).reduce((acc, v) => acc + (v || 0), 0);
+
+  // 4. בדיקה: אם אנחנו כבר בטווח המותר, אין צורך לעשות כלום
+  if (currentTotal <= allowed) return;
+
+  // 5. יצירת עותק של רשימת המתנות כדי לעדכן את התצוגה
+  const giftsList = [...this.cartGiftsSignal()];
+
+  /**
+   * 6. לולאת הסרה: עוברים על רשימת המתנות מהסוף להתחלה (LIFO).
+   * ממשיכים כל עוד סך המתנות גבוה מהמכסה המותרת.
+   */
+  for (let i = giftsList.length - 1; i >= 0 && currentTotal > allowed; i--) {
+    const g = giftsList[i];
+    const id = g.idGift;
+    const qty = giftQtys[id] || 0;
+    
+    if (qty <= 0) continue;
+
+    // חישוב כמה "עודף" יש לנו מעבר למותר
+    const excess = currentTotal - allowed;
+    // מחליטים כמה להסיר: או את כל הכמות של המתנה הזו, או רק את מה שחורג
+    const remove = Math.min(qty, excess);
+    const newQty = qty - remove;
+    
+    // עדכון הספירה הכוללת להמשך הלולאה
+    currentTotal -= remove;
+
+    if (newQty > 0) {
+      // אם נשארה כמות, מעדכנים אותה
+      giftQtys[id] = newQty;
+      giftsList[i] = { ...g, amount: newQty };
+    } else {
+      delete giftQtys[id];
+      giftsList.splice(i, 1);
+    }
   }
 
+  this.giftQuantitiesSignal.set(giftQtys);
+  this.cartGiftsSignal.set(giftsList);
+}
   // Gift management methods
   setGiftQuantity(giftId: number, qty: number) {
     this.giftQuantitiesSignal.update(current => {
@@ -140,4 +193,5 @@ export class CartService {
     this.giftQuantitiesSignal.set({});
     this.cartGiftsSignal.set([]);
   }
+  
 }

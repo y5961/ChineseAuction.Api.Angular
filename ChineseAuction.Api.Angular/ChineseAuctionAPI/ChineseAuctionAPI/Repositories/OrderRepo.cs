@@ -131,6 +131,39 @@ namespace ChineseAuctionAPI.Repositories
             return true;
         }
 
+        public async Task<bool> DeleteOrderAsync(int orderId)
+        {
+            var order = await _context.OrdersOrders.FindAsync(orderId);
+            if (order == null) return false;
+
+            _context.OrdersOrders.Remove(order);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteGiftFromOrderAsync(int orderId, int giftId)
+        {
+            var gift = await _context.Gifts.FindAsync(giftId);
+            var order = await _context.OrdersOrders
+                .Include(o => o.OrdersGift)
+                .FirstOrDefaultAsync(o => o.IdOrder == orderId);
+
+            if (order == null) throw new Exception("Order not found");
+
+            var orderGift = order.OrdersGift.FirstOrDefault(go => go.IdGift == giftId);
+            if (orderGift == null) return false;
+
+            // adjust price
+            if (gift != null)
+            {
+                order.Price = order.Price - (gift.Price * orderGift.Amount);
+            }
+
+            _context.OrdersGift.Remove(orderGift);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
         public Task<Order?> GetByIdWithGiftsAsync(int orderId)
         {
             return _context.OrdersOrders

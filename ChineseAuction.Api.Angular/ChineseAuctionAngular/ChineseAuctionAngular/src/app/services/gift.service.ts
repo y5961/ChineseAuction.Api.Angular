@@ -87,13 +87,14 @@ export class GiftService {
     return this.http.post<{ fileName: string }>(`${this.BASE_URL}/upload`, formData);
   }
   // 15. קבלת מספר משתתפים במתנה
-getParticipantsCount(giftId: number): Observable<number> {
+getParticipantsCount(giftId: number): Observable<number | null> {
   return this.http.get<any[]>(`${this.BASE_URL}/${giftId}/participants`)
     .pipe(
-      map(data => {
-        return data ? data.length : 0;
-      }),
-      catchError(() => of(0)) 
+      map(data => data ? data.length : 0),
+      catchError((err) => {
+        console.warn(`[GiftService] failed to fetch participants for gift ${giftId}:`, err);
+        return of(null);
+      })
     );
 }
 }

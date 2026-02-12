@@ -144,11 +144,66 @@ ngOnInit() {
 
   private updateQty(idPackage: number, newQty: number) {
     const userId = this.authService.getUserId();
+
+    // If not logged in, just apply locally
+    if (!userId || userId <= 0) {
+      this.cartService.setQuantity(idPackage, newQty);
+      if (newQty === 0) {
+        this.cartService.clearCart();
+      }
+      return;
+    }
+
+    // Logged-in: update server, but don't reload full cart on zero (that may repopulate stale server draft)
+    const prevQty = this.packageQuantities()[idPackage] || 0;
+    const prevCart = [...this.cartService.cartItems()];
     this.orderService.updatePackageQuantity(userId, idPackage, newQty).subscribe({
       next: () => {
         this.cartService.setQuantity(idPackage, newQty);
         if (newQty === 0) {
-          this.loadCart();
+          const confirmMsg = 'זו החבילה האחרונה בסל — האם אתה בטוח שברצונך למחוק את כל מה שיש בסל?';
+          const ok = window.confirm(confirmMsg);
+          if (!ok) {
+            // user cancelled: revert optimistic change
+            this.cartService.setQuantity(idPackage, prevQty);
+            this.cartService.setCartItems(prevCart);
+            return;
+          }
+
+          // user confirmed: Clear local cart and attempt to remove gifts on the server too.
+          const currentGifts = [...this.cartService.cartGifts()];
+          this.cartService.clearCart();
+          currentGifts.forEach(g => {
+            try {
+              const gid = g.idGift || g.id || 0;
+              const qty = (g.amount || this.giftQuantities()[gid] || 0);
+              if (gid > 0) {
+                // Prefer explicit delete endpoint; fallback to negative-delta update if not supported
+                this.orderService.removeGiftFromDraft(userId, gid).subscribe({
+                  next: () => {},
+                  error: (err) => {
+                    console.warn('removeGiftFromDraft failed, falling back to negative update', gid, err);
+                    if (qty > 0) {
+                      this.orderService.addOrUpdateGiftInOrder(userId, gid, -qty).subscribe({
+                        next: () => {},
+                        error: (err2) => console.warn('Fallback remove failed', gid, err2)
+                      });
+                    }
+                  }
+                });
+              }
+            } catch (e) {
+              console.warn('Error during server gift cleanup', e);
+            }
+          });
+
+          // Also try deleting draft; if that fails, we already attempted per-gift removals.
+          this.orderService.deleteDraft(userId).subscribe({
+            next: () => {},
+            error: (err) => {
+              console.warn('deleteDraft failed after local clear and per-gift removals', err);
+            }
+          });
         }
       },
       error: (err) => console.error('Error updating quantity', err)
@@ -169,17 +224,15 @@ ngOnInit() {
       this.cartService.openTicketLimitModal(msg);
       return;
     }
-
-    // proceed to update the server
     this.updateGiftQty(idGift, (this.giftQuantities()[idGift] || 0) + 1);
   }
-
-  decrementGift(idGift: number) {
-    const current = this.giftQuantities()[idGift] || 0;
-    if (current > 0) {
-      this.updateGiftQty(idGift, current - 1);
-    }
+      
+decrementGift(idGift: number) {
+  const current = this.giftQuantities()[idGift] || 0;
+  if (current > 0) {
+    this.updateGiftQty(idGift, current - 1);
   }
+}
 
   private updateGiftQty(idGift: number, newQty: number) {
     const userId = this.authService.getUserId();

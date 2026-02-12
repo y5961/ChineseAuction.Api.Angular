@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common'; // <--- וודאי שזה מיובא
 import { OrderService } from '../../services/order.service';
-import { IncomeReport } from '../../models/income-report';
+import { IncomeReport } from '../../models/Income-report';
 
 @Component({
   selector: 'app-revenue',
@@ -29,3 +29,5 @@ export class RevenueComponent implements OnInit {
     });
   }
 }
+
+export { RevenueComponent as PurchasesComponent };

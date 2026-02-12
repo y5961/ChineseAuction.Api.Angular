@@ -36,3 +36,5 @@ export class GiftCategoryService {
     return this.http.delete<boolean>(`${this.BASE_URL}/${id}`);
   }
 }
+
+export { GiftCategoryService as CategoryService };

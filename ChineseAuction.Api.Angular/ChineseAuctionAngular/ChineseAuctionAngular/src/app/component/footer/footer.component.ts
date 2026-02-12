@@ -7,6 +7,8 @@ import { environment } from '../../../../environment';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class Footer {
+export class FooterComponent {
   imageUrl = environment.apiUrl + '/images/main/';
 }
+
+export { FooterComponent as Footer };

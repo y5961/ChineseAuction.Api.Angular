@@ -109,6 +109,36 @@ public class OrdersController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+    [HttpDelete("draft/{userId}")]
+    public async Task<ActionResult> DeleteDraft(int userId)
+    {
+        try
+        {
+            var result = await _orderService.DeleteDraftOrderByUserAsync(userId);
+            if (result) return Ok(true);
+            return NotFound("No draft found for user");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    [HttpDelete("draft/{userId}/gift/{giftId}")]
+    public async Task<ActionResult> DeleteGiftFromDraft(int userId, int giftId)
+    {
+        try
+        {
+            var result = await _orderService.DeleteGiftFromDraftByUserAsync(userId, giftId);
+            if (result) return Ok(true);
+            return NotFound("Gift not found in draft");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 }
 public class GiftUpdateDto
 {

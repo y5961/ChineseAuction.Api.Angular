@@ -3,6 +3,79 @@
   height: 100%;
 }
 
+.cart-container {
+  max-width: 640px;
+  margin: 18px auto;
+  background: #fdfaf7;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(68,38,4,0.04);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #442604;
+
+  h2 { margin:0; font-size:1.25rem; font-weight:800; }
+
+  .ticket-badge { display:flex; align-items:center; gap:8px; }
+  .badge { background: linear-gradient(180deg,#2e7d32,#1b5e20); color: #fff; padding:8px 12px; border-radius:20px; font-weight:900; display:flex; gap:8px; align-items:center; min-width:72px; justify-content:center; }
+  .ticket-label { font-size:0.9rem; color:#6a1b9a; font-weight:700; }
+  .slash { opacity:0.75; margin: 0 4px; }
+
+  .cart-content { padding-top: 12px; }
+
+  .empty-state { text-align:center; color:#bdbdbd; padding:48px 0; }
+  .empty-emoji { font-size:3.6rem; margin-bottom:8px; }
+
+  .cart-item { display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.04); border:1px solid #f0efe9; }
+  .cart-item.design-v2 { padding:10px; position:relative; }
+  .cart-item .trash-col { width:36px; display:flex; align-items:flex-start; justify-content:center; }
+  .trash-btn { background:transparent; border:none; cursor:pointer; padding:6px; border-radius:8px; }
+  .trash-btn:hover { background: rgba(170,120,80,0.06); }
+
+  .price-col { width:110px; text-align:left; padding-left:6px; }
+  .price-col .price { font-weight:900; font-size:1.1rem; color:#442604; }
+  .price-label { color:#7b5238; font-weight:800; font-size:0.85rem; }
+
+  .center-col { flex:1; text-align:right; display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+  .center-col .pkg-name { font-weight:800; color:#442604; }
+
+  .badge-col { width:96px; display:flex; align-items:center; justify-content:center; }
+  .big-badge { width:80px; height:80px; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-weight:900; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+  .big-badge .big-num { font-size:1.6rem; line-height:1; }
+  .big-badge .small-label { font-size:0.8rem; opacity:0.95; }
+  .badge-orange { background: linear-gradient(180deg,#ffb56a,#ff8a4f); color:#4a1f0e; }
+  .badge-green { background: linear-gradient(180deg,#6ee7b7,#2eaf6b); color:#04381a; }
+  .qty-box { display:flex; align-items:center; background:#fafafa; border-radius:18px; padding:6px 10px; min-width:96px; justify-content:space-between; }
+  .control-btn { border:none; background:none; font-size:20px; cursor:pointer; color:#4a2f1a; font-weight:800; }
+  .qty-display { font-weight:900; color:#442604; min-width:26px; text-align:center; }
+  .item-body { flex:1; text-align:right; display:flex; flex-direction:column; gap:4px; }
+  .item-title { font-weight:800; font-size:1rem; color:#442604; }
+  .item-sub { color:#b08d57; font-weight:700; font-size:0.85rem; }
+  .item-total { font-weight:900; color:#442604; font-size:0.95rem; }
+  .item-total.small { font-size:0.85rem; font-weight:700; color:#777; }
+  .item-thumb { width:56px; height:56px; border-radius:10px; background:#f9f9f9; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid #eee; flex-shrink:0; }
+  .item-thumb img { width:100%; height:100%; object-fit:contain; }
+  .placeholder-gift { font-size:1.6rem; opacity:0.75; }
+
+  /* sticky bottom bar similar to reference */
+  .cart-footer-sticky { position: fixed; left: 0; right: 0; bottom: 0; background: #fff; box-shadow: 0 -12px 40px rgba(68,38,4,0.06); padding: 14px 20px; display:flex; align-items:center; gap:12px; justify-content:space-between; z-index:2500; }
+  .footer-left { display:flex; align-items:center; gap:12px; }
+  .progress-small { width:320px; max-width:60vw; height:10px; background: #f4e7e7; border-radius:10px; overflow:hidden; }
+  .progress-small .fill { height:100%; background: linear-gradient(90deg,#ffd2d2,#ff9aa2); width: calc( ({{ cartService.totalGiftCount() }} / ({{ cartService.totalTickets() }} || 1) ) * 100% ); }
+  .next-big { background: linear-gradient(180deg,#f48b8b,#f06f79); color:white; border:none; padding:10px 22px; border-radius:26px; font-weight:900; box-shadow:0 8px 24px rgba(240,111,121,0.18); cursor:pointer; }
+  .cart-icon { position:relative; width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+  .cart-badge { position:absolute; top:-6px; right:-6px; background:#ef6c66; color:#fff; font-weight:800; font-size:12px; padding:2px 6px; border-radius:14px; }
+
+  .ticket-modal .ticket-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:2200; }
+  .ticket-modal { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:2300; }
+  .ticket-dialog { background:white; border-radius:14px; padding:20px; width:92%; max-width:420px; box-shadow:0 20px 60px rgba(0,0,0,0.28); text-align:right; z-index:2301; }
+  .ticket-title { font-weight:900; color:#4a148c; margin-bottom:8px; }
+  .ticket-body { color:#555; margin-bottom:14px; }
+  .ticket-actions { display:flex; gap:10px; justify-content:flex-start; }
+  .btn-alt { background:#e1bee7; color:#4a148c; border:none; padding:10px 14px; border-radius:10px; font-weight:800; }
+  .btn-primary { background:#2e7d32; color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:800; }
+
+}
+
 .cart-wrapper {
   display: flex;
   flex-direction: column;

@@ -6,6 +6,8 @@ namespace ChineseAuctionAPI.Repositories
     public interface IOrderRepo
     {
         Task<bool> DeleteAsync(int orderId, int giftId, int amount);
+        Task<bool> DeleteOrderAsync(int orderId);
+        Task<bool> DeleteGiftFromOrderAsync(int orderId, int giftId);
         Task<Order?> GetDraftOrderByUserAsync(int userId);
 
         Task<Order> CreateDraftOrderAsync(int userId);

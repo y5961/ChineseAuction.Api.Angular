@@ -1,12 +1,12 @@
-<div class="cart-container" dir="rtl" style="background: #fdfaf7; padding: 20px; border-radius: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.05); min-height: 100vh; font-family: 'Segoe UI', sans-serif; max-width: 400px; margin: 0 auto;">
-  
-  <div class="cart-header" style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:20px;">
-    <h2 style="color: #442604; font-size: 1.3em; margin:0; font-weight: 800;">סל הקניות שלי</h2>
-    <div class="ticket-badge" style="display:flex; align-items:center; gap:8px;">
-      <div style="font-size:0.85em; color:#6a1b9a; font-weight:700; text-align:right;">כרטיסים בשימוש</div>
-      <div class="badge" style="background:linear-gradient(180deg,#2e7d32,#1b5e20); color:white; font-weight:900; padding:8px 12px; border-radius:20px; display:flex; align-items:center; gap:8px; min-width:72px; justify-content:center;">
+<div class="cart-container" dir="rtl">
+
+  <div class="cart-header">
+    <h2>סל הקניות שלי</h2>
+    <div class="ticket-badge">
+      <div class="ticket-label">כרטיסים בשימוש</div>
+      <div class="badge">
         <span>{{ cartService.totalGiftCount() }}</span>
-        <span style="opacity:0.7;">/</span>
+        <span class="slash">/</span>
         <span>{{ cartService.totalTickets() }}</span>
       </div>
     </div>
@@ -20,32 +20,38 @@
         @for (pkg of cartPackages(); track pkg.idPackage) {
           @if ((packageQuantities()[pkg.idPackage] || 0) > 0) {
             
-            <div class="cart-item" style="background: white; border-radius: 15px; padding: 12px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;">
-              
-              <div style="display: flex; align-items: center; background: #f3f3f3; border-radius: 20px; padding: 4px 10px; min-width: 90px; justify-content: space-between;">
-                <button (click)="increment(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 18px;">+</button>
-                <span style="font-weight: 800; font-size: 1em; color: #442604;">{{ packageQuantities()[pkg.idPackage] }}</span>
-                <button (click)="decrement(pkg.idPackage)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 22px;">-</button>
+            <div class="cart-item design-v2">
+              <div class="trash-col">
+                <button class="trash-btn" title="הסר" (click)="decrement(pkg.idPackage)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6h18" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 11v4" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M14 11v4" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </button>
               </div>
 
-              <div style="flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; text-align: right;">
-                <span style="font-weight: 800; color: #442604; font-size: 1em; line-height: 1.2;">{{ pkg.name }}</span>
-                <span style="color: #b08d57; font-size: 0.85em; font-weight: 600;">₪{{ pkg.price }} ליחידה</span>
-                <div style="font-weight: 900; color: #442604; font-size: 0.9em; margin-top: 4px;">
-                  סה"כ: ₪{{ (pkg.price || 0) * (packageQuantities()[pkg.idPackage] || 0) }}
+              <div class="price-col">
+                <div class="price">₪{{ (pkg.price || 0) * (packageQuantities()[pkg.idPackage] || 0) }}</div>
+                <div class="price-label">₪{{ pkg.price }} ליחידה</div>
+              </div>
+
+              <div class="center-col">
+                <div class="qty-box small">
+                  <button (click)="increment(pkg.idPackage)" class="control-btn">+</button>
+                  <span class="qty-display">{{ packageQuantities()[pkg.idPackage] }}</span>
+                  <button (click)="decrement(pkg.idPackage)" class="control-btn">-</button>
+                </div>
+                <div class="pkg-name">{{ pkg.name }}</div>
+              </div>
+
+              <div class="badge-col">
+                <div class="big-badge" [class.badge-orange]="(packageQuantities()[pkg.idPackage] || 0) <= 1" [class.badge-green]="(packageQuantities()[pkg.idPackage] || 0) > 1">
+                  <div class="big-num">{{ packageQuantities()[pkg.idPackage] }}</div>
+                  <div class="small-label">כרטיסים</div>
                 </div>
               </div>
-
-              <div style="width: 50px; height: 50px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; flex-shrink: 0; overflow: hidden;">
-                @if (pkg.image && pkg.image !== 'string') {
-                  <img [src]="imageUrl + pkg.image" 
-                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
-                } @else {
-                  <img [src]="imageUrl + getPackageImage(pkg.idPackage)" 
-                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
-                }
-              </div>
-
             </div>
           }
         }
@@ -59,27 +65,32 @@
         @for (gift of cartGifts(); track gift.idGift) {
           @if ((giftQuantities()[gift.idGift] || gift.amount || 0) > 0) {
             
-            <div class="cart-item" style="background: white; border-radius: 15px; padding: 12px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #f0f0f0;">
-              
-              <div style="display: flex; align-items: center; background: #f3f3f3; border-radius: 20px; padding: 4px 10px; min-width: 90px; justify-content: space-between;">
-                <button (click)="incrementGift(gift.idGift)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 18px;">+</button>
-                <span style="font-weight: 800; font-size: 1em; color: #442604;">{{ giftQuantities()[gift.idGift] || gift.amount || 0 }}</span>
-                <button (click)="decrementGift(gift.idGift)" style="border: none; background: none; cursor: pointer; font-weight: bold; color: #442604; font-size: 22px;">-</button>
+            <div class="cart-item design-v2 gift-row">
+              <div class="trash-col">
+                <button class="trash-btn" title="הסר" (click)="decrementGift(gift.idGift)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6h18" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 11v4" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M14 11v4" stroke="#7b5238" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </button>
               </div>
 
-              <div style="flex-grow: 1; margin-right: 15px; display: flex; flex-direction: column; text-align: right;">
-                <span style="font-weight: 800; color: #442604; font-size: 1em; line-height: 1.2;">{{ gift.name }}</span>
-                <span style="color: #b08d57; font-size: 0.85em; font-weight: 600;"></span>
-                <div style="font-weight: 900; color: #442604; font-size: 0.9em; margin-top: 4px;">
+              <div class="center-col">
+                <div class="qty-box small">
+                  <button (click)="incrementGift(gift.idGift)" class="control-btn">+</button>
+                  <span class="qty-display">{{ giftQuantities()[gift.idGift] || gift.amount || 0 }}</span>
+                  <button (click)="decrementGift(gift.idGift)" class="control-btn">-</button>
                 </div>
+                <div class="pkg-name">{{ gift.name }}</div>
               </div>
 
-              <div style="width: 50px; height: 50px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; flex-shrink: 0; overflow: hidden;">
+              <div class="item-thumb">
                 @if (gift.image && gift.image.trim() && gift.image !== 'string') {
-                  <img [src]="giftImageUrl + gift.image" 
-                       style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                  <img [src]="giftImageUrl + gift.image">
                 } @else {
-                  <div style="color: #ce93d8; font-size: 1.5em; opacity: 0.6;">🎁</div>
+                  <div class="placeholder-gift">🎁</div>
                 }
               </div>
             </div>
@@ -110,8 +121,8 @@
     </div>
 
   } @else {
-    <div style="text-align: center; color: #ccc; padding: 50px 0;">
-      <div style="font-size: 4em; margin-bottom: 10px;">🛒</div>
+    <div class="empty-state">
+      <div class="empty-emoji">🛒</div>
       <p>הסל שלך עדיין ריק</p>
     </div>
   }
@@ -119,14 +130,14 @@
 </div>
 
   @if (cartService.ticketModal()) {
-    <div class="ticket-modal" style="position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:2200;">
-      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.45);" (click)="cartService.closeTicketLimitModal()"></div>
-      <div style="background:white; border-radius:16px; padding:18px; width:90%; max-width:420px; box-shadow:0 20px 60px rgba(0,0,0,0.35); z-index:2300; text-align:right;">
-        <div style="font-weight:900; color:#4a148c; font-size:1.05em; margin-bottom:8px;">אין מספיק כרטיסים בעגלה</div>
-        <div style="color:#555; margin-bottom:16px;">{{ cartService.ticketMessage() }}</div>
-        <div style="display:flex; gap:10px; justify-content:flex-start;">
-          <button (click)="cartService.closeTicketLimitModal()" style="background:#e1bee7; color:#4a148c; border:none; padding:10px 14px; border-radius:10px; font-weight:800;">המשך</button>
-          <button (click)="goToPackages()" style="background:#2e7d32; color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:800;">רכוש עוד כרטיסים</button>
+    <div class="ticket-modal">
+      <div class="ticket-backdrop" (click)="cartService.closeTicketLimitModal()"></div>
+      <div class="ticket-dialog">
+        <div class="ticket-title">אין מספיק כרטיסים בעגלה</div>
+        <div class="ticket-body">{{ cartService.ticketMessage() }}</div>
+        <div class="ticket-actions">
+          <button (click)="cartService.closeTicketLimitModal()" class="btn-alt">המשך</button>
+          <button (click)="goToPackages()" class="btn-primary">רכוש עוד כרטיסים</button>
         </div>
       </div>
     </div>
