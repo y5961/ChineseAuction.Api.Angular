@@ -1,0 +1,129 @@
+/* עיצוב בצבעים של מתנת חיים */
+body {
+  display: block;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #6a1b9a; /* צבע סגול */
+  text-align: center;
+}
+
+ .auth-page {
+   height: 100vh;
+   overflow: hidden; /* למנוע גלילה של הדף */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(180deg, #f3f7fb 0%, #e8f6f2 100%);
+   padding: 16px;
+ }
+
+button {
+  background-color: #6a1b9a; /* כפתור סגול */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px; /* עיצוב עגול יותר */
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #4a148c; /* גוון כהה יותר של סגול */
+  transform: scale(1.05);
+}
+
+/* עיצוב מחדש לתמונה ולכפתורים */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px; /* מגביל את גובה התמונה */
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* כתב מיוחד */
+  font-size: 1.2rem;
+  color: #6a1b9a;
+}
+
+.switch-link a {
+  color: #4caf50; /* ירוק */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.switch-link a:hover {
+  color: #388e3c; /* ירוק כהה יותר */
+}
+
+.auth-inner {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.auth-image img {
+  max-height: 60vh;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(106,27,154,0.18);
+  object-fit: contain;
+}
+
+.auth-card {
+  flex: 1 1 520px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,245,255,0.95));
+  border: 1px solid rgba(106,27,154,0.12);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.card-header h2 { margin:0; color:#6a1b9a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.switch-link { color:#4caf50; font-weight:600; }
+
+.register-form .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; align-items:center; }
+.form-grid .full { grid-column: 1 / -1; }
+
+label { display:block; margin-bottom:6px; color:#4a148c; font-weight:600; }
+
+input[pInputText] {
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(106,27,154,0.15);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.p-button { border-radius: 28px; padding:0 18px; height:44px; }
+.p-button-primary { background: linear-gradient(90deg,#6a1b9a,#8e24aa); border:none; }
+
+.message { margin-top:12px; color:#2e7d32; font-weight:600; }
+
+/* Responsive: stack on narrow screens, reduce sizes to avoid scroll */
+@media (max-width: 900px) {
+  .auth-inner { flex-direction: column-reverse; gap:16px; }
+  .auth-image img { max-height: 28vh; }
+  .auth-card { padding:14px; }
+  .register-form .form-grid { grid-template-columns: 1fr; }
+}

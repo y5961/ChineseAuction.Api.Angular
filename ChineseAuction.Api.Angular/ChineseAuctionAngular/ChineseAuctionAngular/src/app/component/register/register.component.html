@@ -1,71 +1,64 @@
-<div dir="rtl">
-  <h2>רישום משתמש חדש</h2>
+<div class="auth-page" dir="rtl" @fadeInOut>
+  <div class="auth-inner">
+    <div class="auth-image">
+      <img src="/favicon.png" alt="מתנת חיים">
+    </div>
 
-  <fieldset>
-    <legend>פרטי משתמש</legend>
-
-    <form (ngSubmit)="onRegister()">
-      
-      <div>
-        <label for="identity">תעודת זהות:</label><br>
-        <input type="text" id="identity" name="identity" 
-               [(ngModel)]="userToRegister.identity" 
-               border="1" required>
+    <div class="auth-card">
+      <div class="card-header">
+        <h2>רישום משתמש חדש</h2>
+        <div class="switch-link">כבר יש לך חשבון? <a routerLink="/login">התחבר כאן</a></div>
       </div>
-      <br>
 
-      <div>
-        <label for="firstName">שם פרטי:</label><br>
-        <input type="text" id="firstName" name="firstName" 
-               [(ngModel)]="userToRegister.firstName" required>
-      </div>
-      <br>
+      <form (ngSubmit)="onRegister()" class="register-form">
+        <div class="form-grid">
+          <div>
+            <label for="identity">תעודת זהות</label>
+            <input pInputText type="text" id="identity" name="identity" [(ngModel)]="userToRegister.identity" required>
+          </div>
 
-      <div>
-        <label for="lastName">שם משפחה:</label><br>
-        <input type="text" id="lastName" name="lastName" 
-               [(ngModel)]="userToRegister.lastName" required>
-      </div>
-      <br>
+          <div>
+            <label for="firstName">שם פרטי</label>
+            <input pInputText type="text" id="firstName" name="firstName" [(ngModel)]="userToRegister.firstName" required>
+          </div>
 
-      <div>
-        <label for="password">סיסמה:</label><br>
-       <input type="password" id="password" name="password" autocomplete="new-password" 
-               [(ngModel)]="userToRegister.password" required>
-      </div>
-      <br>
+          <div>
+            <label for="lastName">שם משפחה</label>
+            <input pInputText type="text" id="lastName" name="lastName" [(ngModel)]="userToRegister.lastName" required>
+          </div>
 
-      <div>
-        <label for="email">אימייל:</label><br>
-        <input type="email" id="email" name="email" 
-               [(ngModel)]="userToRegister.email">
-      </div>
-      <br>
+          <div>
+            <label for="phoneNumber">טלפון</label>
+            <input pInputText type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="userToRegister.phoneNumber" required>
+          </div>
 
-      <div>
-        <label for="phoneNumber">מספר טלפון:</label><br>
-        <input type="tel" id="phoneNumber" name="phoneNumber" 
-               [(ngModel)]="userToRegister.phoneNumber" required>
-      </div>
-      <br>
+          <div>
+            <label for="email">אימייל</label>
+            <input pInputText type="email" id="email" name="email" [(ngModel)]="userToRegister.email">
+          </div>
 
-      <div>
-        <label for="city">עיר:</label><br>
-        <input type="text" id="city" name="city" 
-               [(ngModel)]="userToRegister.city" required>
-      </div>
-      <br>
+          <div>
+            <label for="password">סיסמה</label>
+            <input pInputText type="password" id="password" name="password" autocomplete="new-password" [(ngModel)]="userToRegister.password" required>
+          </div>
 
-      <div>
-        <label for="address">כתובת:</label><br>
-        <input type="text" id="address" name="address" 
-               [(ngModel)]="userToRegister.address" required>
-      </div>
-      <br>
+          <div>
+            <label for="city">עיר</label>
+            <input pInputText type="text" id="city" name="city" [(ngModel)]="userToRegister.city" required>
+          </div>
 
-      <button type="submit">שלח רישום</button>
-    </form>
-  </fieldset>
+          <div>
+            <label for="address">כתובת</label>
+            <input pInputText type="text" id="address" name="address" [(ngModel)]="userToRegister.address" required>
+          </div>
 
-  <p *ngIf="message">{{ message }}</p>
+          <div class="full">
+            <button pButton type="submit" label="הרשמה" class="p-button-rounded p-button-primary"></button>
+          </div>
+        </div>
+      </form>
+
+      <p class="message" *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
 </div>
