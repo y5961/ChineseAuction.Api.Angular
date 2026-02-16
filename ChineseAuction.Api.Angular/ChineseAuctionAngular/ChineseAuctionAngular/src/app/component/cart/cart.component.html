@@ -79,24 +79,24 @@
       </div>
     }
   </div>
-
-  <div class="footer-sticky">
-    <div class="progress-section">
-      <div class="progress-text">
-        <span class="count">{{ cartService.totalGiftCount() }} / {{ cartService.totalTickets() }}</span>
-        <span class="label">נותרו לך למימוש</span>
-      </div>
-      <div class="progress-bar">
-        <div class="fill" [style.width.%]="(cartService.totalGiftCount() / cartService.totalTickets()) * 100"></div>
-      </div>
+<div class="footer-sticky">
+  <div class="progress-section">
+    <div class="progress-text">
+      <span class="count">{{ cartService.totalGiftCount() }} / {{ cartService.totalTickets() }}</span>
+      <span class="label">נותרו לך למימוש</span>
     </div>
-    
-    <div class="action-section">
-      <button class="btn-next" (click)="goToPackages()">לשלב הבא</button>
-      <div class="cart-summary-icon">
-        <span class="cart-count-badge">{{ cartService.totalGiftCount() }}</span>
-        <!-- <span class="icon">🛒</span> -->
-      </div>
+    <div class="progress-bar">
+      <div class="fill" [style.width.%]="(cartService.totalGiftCount() / cartService.totalTickets()) * 100"></div>
     </div>
   </div>
+  
+  <div class="action-row">
+    <button (click)="proceedToBuying()" class="btn-next">לתשלום</button>
+    <div class="cart-summary-icon">
+      <span class="cart-count-badge">{{ cartService.totalGiftCount() }}</span>
+      <span class="icon">🛒</span> 
+    </div>
+  </div>
+</div>
+
 </div>

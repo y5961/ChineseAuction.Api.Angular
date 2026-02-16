@@ -6,14 +6,28 @@ import { DtoLogin } from '../../models/UserDTO';
 import { ButtonModule } from 'primeng/button'; 
 import { InputTextModule } from 'primeng/inputtext';
 import { CartService } from '../../services/cart.service'; 
-import { Router } from '@angular/router'; 
+import { MessageModule } from 'primeng/message';
+import { PasswordModule } from 'primeng/password';
+import { Router, RouterLink } from '@angular/router'; 
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule],
+  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule, MessageModule, PasswordModule, RouterLink],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrls: ['./register.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('500ms ease-out', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class RegisterComponent {
 
@@ -31,7 +45,7 @@ export class RegisterComponent {
         // registration succeeded
         this.message = 'נרשמת בהצלחה למכירה הסינית!';
         setTimeout(() => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         }, 1500);
       },
       error: (err) => {

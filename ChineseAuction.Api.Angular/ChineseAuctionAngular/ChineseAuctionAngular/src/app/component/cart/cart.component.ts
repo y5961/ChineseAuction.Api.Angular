@@ -287,8 +287,26 @@ decrementGift(idGift: number) {
     return packagesTotal;
   }
 
-  goToPackages() {
+
+  proceedToBuying() {
     this.cartService.closeTicketLimitModal();
-    this.router.navigate(['/package']);
+    try {
+      const remaining = this.cartService.remainingTickets();
+      if (remaining && remaining > 0) {
+        const msg = `יש לך ${remaining} כרטיסים שלא נוצלו. האם ברצונך להמשיך לתשלום ללא מימושם?`;
+        const ok = window.confirm(msg);
+        if (ok) {
+          this.router.navigate(['/buying']);
+        } else {
+          this.router.navigate(['/gift']);
+        }
+        return;
+      }
+    } catch (e) {
+      // if anything goes wrong reading signals, fall back to direct navigation
+      console.warn('Error checking remaining tickets', e);
+    }
+
+    this.router.navigate(['/buying']);
   }
 }

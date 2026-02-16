@@ -1,17 +1,18 @@
 .cart-container {
   max-width: 450px;
   margin: 0 auto;
+  position: relative;
   background-color: #fdfaf7;
   min-height: 100vh;
-  padding: 15px 15px 80px;
+  padding: 15px 15px 180px; // פדינג תחתון גבוה כדי שהתוכן לא יתחבא תחת הפוטר
   font-family: 'Segoe UI', sans-serif;
+  direction: rtl;
 
   .step-title {
     color: #442604;
     font-size: 1.25rem;
     font-weight: 800;
     margin-bottom: 20px;
-    text-align: right;
   }
 
   .section-title {
@@ -19,7 +20,6 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin: 15px 0 10px;
-    text-align: right;
   }
 
   .cart-item {
@@ -30,32 +30,15 @@
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #f0efe9;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     gap: 12px;
-
-    .delete-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-      opacity: 0.3;
-      &:hover { opacity: 0.8; }
-    }
-
-    .price-info {
-      text-align: left;
-      min-width: 85px;
-      .price { font-weight: 900; font-size: 1.05rem; color: #442604; }
-      .unit-price { font-size: 0.7rem; color: #b08d57; font-weight: 600; }
-    }
 
     .item-details {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 6px;
-      .item-name { font-weight: 800; color: #442604; font-size: 0.9rem; line-height: 1.2; text-align: right; }
+      .item-name { font-weight: 800; color: #442604; font-size: 0.9rem; }
     }
 
     .quantity-selector {
@@ -65,101 +48,124 @@
       border-radius: 8px;
       padding: 2px 8px;
       gap: 10px;
-      .qty-btn { border: none; background: none; font-weight: bold; cursor: pointer; font-size: 1.2rem; color: #442604; }
-      .qty-val { font-weight: 800; min-width: 15px; text-align: center; font-size: 0.95rem; }
+      .qty-btn { border: none; background: none; font-weight: bold; cursor: pointer; }
+      .qty-val { font-weight: 800; }
     }
 
-    /* עיצוב התמונות (גם לחבילות וגם לפרסים) */
     .item-thumb {
       width: 55px;
       height: 55px;
       border-radius: 10px;
       overflow: hidden;
-      background: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #eee;
-      flex-shrink: 0;
-      
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* שומר על פרופורציות התמונה */
-      }
-      
-      .placeholder { font-size: 1.5rem; opacity: 0.5; }
+      img { width: 100%; height: 100%; object-fit: contain; }
     }
   }
 
-  /* פוטר קומפקטי במיוחד */
+  /* --- הפוטר המעוצב (הבועה הלבנה) --- */
   .footer-sticky {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    padding: 0 15px;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 55px; 
+    bottom: 0px;
+    left: 0%;
+    transform: translateX(0);
+    width: 28%; 
+    max-width: 310px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 
+    /* חלק פס ההתקדמות */
     .progress-section {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      flex: 1;
-      max-width: 140px;
-      margin-left: 10px;
+      width: 100%;
 
       .progress-text {
-        font-size: 0.65rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
         font-weight: 800;
-        margin-bottom: 2px;
-        .count { color: #6a1b9a; }
+        font-size: 0.85rem;
+        color: #442604;
+
+        .count {
+          color: #f1908a; // צבע ורוד בולט למספרים
+          font-family: sans-serif;
+        }
       }
+
       .progress-bar {
         width: 100%;
-        height: 5px;
-        background: #f4e7e7;
+        height: 8px;
+        background: #fdf2f2;
         border-radius: 10px;
-        .fill { height: 100%; background: #ef6c66; border-radius: 10px; }
+        overflow: hidden;
+
+        .fill {
+          height: 100%;
+          background: linear-gradient(90deg, #f3a4a0 0%, #ef6c66 100%);
+          border-radius: 10px;
+          transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
       }
     }
 
-    .action-section {
+    /* שורת הכפתור והעגלה הצמודים */
+    .action-row {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 10px; // הצמדה של העגלה לכפתור
+      width: 100%;
 
       .btn-next {
-        background: #d32f2f;
+        flex: 1;
+        background: #f1908a; // הצבע הוורדרד המדויק
         color: white;
         border: none;
-        padding: 8px 18px;
-        border-radius: 10px;
-        font-weight: 800;
-        font-size: 0.85rem;
+        padding: 14px;
+        border-radius: 18px; // עיגול פינות לכפתור
+        font-weight: 900;
+        font-size: 1.1rem;
         cursor: pointer;
+        box-shadow: 0 4px 12px rgba(241, 144, 138, 0.3);
+        transition: transform 0.2s, background 0.2s;
+
+        &:active {
+          transform: scale(0.98);
+        }
       }
 
       .cart-summary-icon {
         position: relative;
-        font-size: 1.4rem;
+        background: #f8f9fa; // רקע אפור בהיר מאוד לעגלה
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        font-size: 1.6rem;
+        cursor: pointer;
+        border: 1px solid #f0f0f0;
+
         .cart-count-badge {
           position: absolute;
-          top: -5px;
-          right: -8px;
+          top: -4px;
+          right: -4px;
           background: #d32f2f;
           color: white;
-          font-size: 0.6rem;
-          padding: 1px 4px;
+          font-size: 0.7rem;
+          min-width: 20px;
+          height: 20px;
           border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-weight: bold;
-          border: 1.5px solid #fff;
+          border: 2px solid #fff;
         }
       }
     }

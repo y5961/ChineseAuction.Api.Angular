@@ -87,13 +87,11 @@ export class CartService {
   // Ticket limit modal signals and message
   private ticketModalSignal = signal<boolean>(false);
   private ticketLimitMessageSignal = signal<string>('');
-  // When user manually closes the modal we temporarily suppress auto-opening
   private ticketModalSuppressedSignal = signal<boolean>(false);
 
   ticketModal = this.ticketModalSignal.asReadonly();
   ticketMessage = this.ticketLimitMessageSignal.asReadonly();
 
-  // Helper: can we add N more gifts given current ticket count?
   canAddGift(n: number = 1): boolean {
     const tickets = this.totalTickets();
     const gifts = this.totalGiftCount();

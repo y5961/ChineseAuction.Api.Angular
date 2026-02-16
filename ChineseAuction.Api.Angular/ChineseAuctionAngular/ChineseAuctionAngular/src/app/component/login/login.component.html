@@ -1,27 +1,36 @@
-<p>login works!</p>
-<div dir="rtl">
-  <h2>רישום משתמש חדש</h2>
+<div class="auth-page" dir="rtl" @fadeInOut>
+  <div class="auth-inner">
+    <div class="auth-image">
+      <img src="/favicon.png" alt="מתנת חיים">
+    </div>
 
-  <fieldset>
-    <legend>פרטי משתמש</legend>
-
-    <form (ngSubmit)="onLogin()">
-      <div>
-        <label for="password">סיסמה:</label><br>
-       <input type="password" id="password" name="password" autocomplete="new-password" 
-               [(ngModel)]="userToLogin.password" required>
+    <div class="auth-card">
+      <div class="card-header">
+        <h2>התחברות</h2>
+        <div class="switch-link">אין לך חשבון? <a routerLink="/register">הרשם כאן</a></div>
       </div>
-      <br>
-      <div>
-        <label for="email">אימייל:</label><br>
-        <input type="email" id="email" name="email" 
-               [(ngModel)]="userToLogin.email">
-      </div>
-      <br>
 
-      <button type="submit">שלח רישום</button>
-    </form>
-  </fieldset>
+      <form (ngSubmit)="onLogin()" class="login-form" #loginForm="ngForm" novalidate>
+        <div class="form-grid">
+          <div class="full">
+            <label for="email">אימייל</label>
+            <input pInputText type="email" id="email" name="email" [(ngModel)]="userToLogin.email" #emailRef="ngModel" required [class.p-invalid]="emailRef.invalid && (emailRef.dirty || emailRef.touched)">
+            <p-message *ngIf="emailRef.invalid && (emailRef.dirty || emailRef.touched)" severity="error" text="יש להזין אימייל תקין"></p-message>
+          </div>
 
-  <p *ngIf="message">{{ message }}</p>
+          <div class="full">
+            <label for="password">סיסמה</label>
+            <input pInputText type="password" id="password" name="password" autocomplete="new-password" [(ngModel)]="userToLogin.password" #passRef="ngModel" required minlength="6" [class.p-invalid]="passRef.invalid && (passRef.dirty || passRef.touched)">
+            <p-message *ngIf="passRef.invalid && (passRef.dirty || passRef.touched)" severity="error" text="הסיסמה חייבת להכיל לפחות 6 תווים"></p-message>
+          </div>
+
+          <div class="full">
+            <button pButton type="submit" [disabled]="loginForm.invalid" class="p-button-rounded p-button-primary">התחבר</button>
+          </div>
+        </div>
+      </form>
+
+      <p class="message" *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
 </div>

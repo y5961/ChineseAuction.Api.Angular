@@ -1,7 +1,6 @@
-// משתני צבע
 $primary: #6f4bb5;
 $secondary: #57cbb0;
-$dark-bg: #1a1425; // סגול כהה מאוד ל-Hero
+$dark-bg: #3c1e71; // סגול כהה יותר
 $light-bg: #f8f9fa;
 $white: #ffffff;
 
@@ -12,11 +11,12 @@ $white: #ffffff;
   // --- HERO SECTION (החלק המונפש והזוהר) ---
   .main-hero {
     position: relative;
-    background: linear-gradient(135deg, $dark-bg 0%, #000000 100%);
+    background: linear-gradient(135deg, #3c1e71 0%, #6a3a9d 30%, #9b61c0 60%, #b281d2 100%); // מעבר בין מספר גווני סגול
     padding: 100px 20px 160px;
     text-align: center;
     color: $white;
     overflow: hidden;
+    animation: heroBackground 15s ease-in-out infinite;
 
     // עיגולי אור זזים ברקע
     .glow-orb {
@@ -25,18 +25,21 @@ $white: #ffffff;
       filter: blur(80px);
       z-index: 1;
       opacity: 0.4;
+      animation: orbMovement 20s infinite ease-in-out;
     }
+
     .orb-1 {
-      width: 400px; height: 400px;
+      width: 500px; height: 500px;
       background: $primary;
-      top: -100px; right: -50px;
-      animation: drift 15s infinite alternate ease-in-out;
+      top: -150px; right: -100px;
+      animation-duration: 18s;
     }
+
     .orb-2 {
-      width: 300px; height: 300px;
+      width: 400px; height: 400px;
       background: $secondary;
-      bottom: -50px; left: -50px;
-      animation: drift 10s infinite alternate-reverse ease-in-out;
+      bottom: -100px; left: -100px;
+      animation-duration: 25s;
     }
 
     .hero-content {
@@ -164,5 +167,24 @@ $white: #ffffff;
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-}
 
+  @keyframes heroBackground {
+    0% { background: linear-gradient(135deg, #3c1e71 0%, #6a3a9d 30%, #9b61c0 60%, #b281d2 100%); }
+    50% { background: linear-gradient(135deg, #7e4bbf 0%, #6f47a0 50%, #9e8ad5 100%); }
+    100% { background: linear-gradient(135deg, #3c1e71 0%, #6a3a9d 30%, #9b61c0 60%, #b281d2 100%); }
+  }
+
+  @keyframes orbMovement {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(50px, -50px); }
+    50% { transform: translate(-50px, 50px); }
+    75% { transform: translate(30px, 70px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes orbHover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+}

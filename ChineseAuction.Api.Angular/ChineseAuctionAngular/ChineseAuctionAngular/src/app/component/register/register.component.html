@@ -1,71 +1,72 @@
-<div dir="rtl">
-  <h2>רישום משתמש חדש</h2>
+<div class="auth-page" dir="rtl" @fadeInOut>
+  <div class="auth-inner">
+    <div class="auth-image">
+      <img src="/favicon.png" alt="מתנת חיים">
+    </div>
 
-  <fieldset>
-    <legend>פרטי משתמש</legend>
-
-    <form (ngSubmit)="onRegister()">
-      
-      <div>
-        <label for="identity">תעודת זהות:</label><br>
-        <input type="text" id="identity" name="identity" 
-               [(ngModel)]="userToRegister.identity" 
-               border="1" required>
+    <div class="auth-card">
+      <div class="card-header">
+        <h2>רישום משתמש חדש</h2>
+        <div class="switch-link">כבר יש לך חשבון? <a routerLink="/login">התחבר כאן</a></div>
       </div>
-      <br>
 
-      <div>
-        <label for="firstName">שם פרטי:</label><br>
-        <input type="text" id="firstName" name="firstName" 
-               [(ngModel)]="userToRegister.firstName" required>
-      </div>
-      <br>
+      <form (ngSubmit)="onRegister()" class="register-form" #regForm="ngForm" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="identity">תעודת זהות</label>
+            <input pInputText type="text" id="identity" name="identity" [(ngModel)]="userToRegister.identity" #identityRef="ngModel" required pattern="\d{5,9}" [class.p-invalid]="identityRef.invalid && (identityRef.dirty || identityRef.touched)">
+            <p-message *ngIf="identityRef.invalid && (identityRef.dirty || identityRef.touched)" severity="error" text="יש להזין תעודת זהות תקינה (5-9 ספרות)"></p-message>
+          </div>
 
-      <div>
-        <label for="lastName">שם משפחה:</label><br>
-        <input type="text" id="lastName" name="lastName" 
-               [(ngModel)]="userToRegister.lastName" required>
-      </div>
-      <br>
+          <div>
+            <label for="firstName">שם פרטי</label>
+            <input pInputText type="text" id="firstName" name="firstName" [(ngModel)]="userToRegister.firstName" #firstRef="ngModel" required minlength="2" [class.p-invalid]="firstRef.invalid && (firstRef.dirty || firstRef.touched)">
+            <p-message *ngIf="firstRef.invalid && (firstRef.dirty || firstRef.touched)" severity="error" text="יש להזין שם פרטי (לפחות שתי אותיות)"></p-message>
+          </div>
 
-      <div>
-        <label for="password">סיסמה:</label><br>
-       <input type="password" id="password" name="password" autocomplete="new-password" 
-               [(ngModel)]="userToRegister.password" required>
-      </div>
-      <br>
+          <div>
+            <label for="lastName">שם משפחה</label>
+            <input pInputText type="text" id="lastName" name="lastName" [(ngModel)]="userToRegister.lastName" #lastRef="ngModel" required minlength="2" [class.p-invalid]="lastRef.invalid && (lastRef.dirty || lastRef.touched)">
+            <p-message *ngIf="lastRef.invalid && (lastRef.dirty || lastRef.touched)" severity="error" text="יש להזין שם משפחה (לפחות שתי אותיות)"></p-message>
+          </div>
 
-      <div>
-        <label for="email">אימייל:</label><br>
-        <input type="email" id="email" name="email" 
-               [(ngModel)]="userToRegister.email">
-      </div>
-      <br>
+          <div>
+            <label for="phoneNumber">טלפון</label>
+            <input pInputText type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="userToRegister.phoneNumber" #phoneRef="ngModel" required pattern="^\+?\d{7,12}$" [class.p-invalid]="phoneRef.invalid && (phoneRef.dirty || phoneRef.touched)">
+            <p-message *ngIf="phoneRef.invalid && (phoneRef.dirty || phoneRef.touched)" severity="error" text="יש להזין מספר טלפון חוקי (7-12 ספרות, אפשר להתחיל ב+)"></p-message>
+          </div>
 
-      <div>
-        <label for="phoneNumber">מספר טלפון:</label><br>
-        <input type="tel" id="phoneNumber" name="phoneNumber" 
-               [(ngModel)]="userToRegister.phoneNumber" required>
-      </div>
-      <br>
+          <div>
+            <label for="email">אימייל</label>
+            <input pInputText type="email" id="email" name="email" [(ngModel)]="userToRegister.email" #emailRef="ngModel" email [class.p-invalid]="emailRef.invalid && (emailRef.dirty || emailRef.touched)">
+            <p-message *ngIf="emailRef.invalid && (emailRef.dirty || emailRef.touched)" severity="error" text="יש להזין אימייל תקין"></p-message>
+          </div>
 
-      <div>
-        <label for="city">עיר:</label><br>
-        <input type="text" id="city" name="city" 
-               [(ngModel)]="userToRegister.city" required>
-      </div>
-      <br>
+          <div>
+            <label for="password">סיסמה</label>
+            <input pInputText type="password" id="password" name="password" autocomplete="new-password" [(ngModel)]="userToRegister.password" #passRef="ngModel" required minlength="6" [class.p-invalid]="passRef.invalid && (passRef.dirty || passRef.touched)">
+            <p-message *ngIf="passRef.invalid && (passRef.dirty || passRef.touched)" severity="error" text="הסיסמה חייבת להכיל לפחות 6 תווים"></p-message>
+          </div>
 
-      <div>
-        <label for="address">כתובת:</label><br>
-        <input type="text" id="address" name="address" 
-               [(ngModel)]="userToRegister.address" required>
-      </div>
-      <br>
+          <div>
+            <label for="city">עיר</label>
+            <input pInputText type="text" id="city" name="city" [(ngModel)]="userToRegister.city" #cityRef="ngModel" required minlength="2" [class.p-invalid]="cityRef.invalid && (cityRef.dirty || cityRef.touched)">
+            <p-message *ngIf="cityRef.invalid && (cityRef.dirty || cityRef.touched)" severity="error" text="יש להזין עיר"></p-message>
+          </div>
 
-      <button type="submit">שלח רישום</button>
-    </form>
-  </fieldset>
+          <div>
+            <label for="address">כתובת</label>
+            <input pInputText type="text" id="address" name="address" [(ngModel)]="userToRegister.address" #addrRef="ngModel" required minlength="3" [class.p-invalid]="addrRef.invalid && (addrRef.dirty || addrRef.touched)">
+            <p-message *ngIf="addrRef.invalid && (addrRef.dirty || addrRef.touched)" severity="error" text="יש להזין כתובת מלאה"></p-message>
+          </div>
 
-  <p *ngIf="message">{{ message }}</p>
+          <div class="full">
+            <button pButton type="submit" [disabled]="regForm.invalid" class="p-button-rounded p-button-primary">הרשמה</button>
+          </div>
+        </div>
+      </form>
+
+      <p class="message" *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
 </div>

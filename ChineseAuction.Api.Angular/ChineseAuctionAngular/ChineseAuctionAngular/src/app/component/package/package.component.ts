@@ -30,6 +30,8 @@ export class PackageComponent implements OnInit {
   ngOnInit() {
     this.packageService.getAllPackages().subscribe((data: PackageDTO[]) => {
       this.packages.set(data);
+      // Keep CartService in sync so other pages can compute total tickets
+      this.cartService.setAvailablePackages(data as any[]);
     });
 
     this.loadUserData();
@@ -70,7 +72,14 @@ handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
   const updatedCart = [...this.cartService.cartItems()];
   const idx = updatedCart.findIndex((c: any) => c.idPackage === packageId);
   if (newQty > 0) {
-    const item = { idPackage: packageId, quantity: newQty, price: pkgInfo.price || 0 };
+    const item = {
+      idPackage: packageId,
+      quantity: newQty,
+      price: pkgInfo.price || 0,
+      amountRegular: (pkgInfo as any).amountRegular ?? 0,
+      amountPremium: (pkgInfo as any).amountPremium ?? 0,
+      name: (pkgInfo as any).name || ''
+    };
     if (idx >= 0) updatedCart[idx] = { ...updatedCart[idx], quantity: newQty, price: pkgInfo.price || updatedCart[idx].price };
     else updatedCart.push(item);
   } else {

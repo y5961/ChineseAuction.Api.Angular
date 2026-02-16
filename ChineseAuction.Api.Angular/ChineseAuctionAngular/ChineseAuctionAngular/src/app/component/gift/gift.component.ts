@@ -130,6 +130,16 @@ private initializeGifts(data: any[]): void {
     }
 
     const userId = this.authService.getUserId();
+    // Debug logs to help diagnose INS UFFICIENT_TICKETS errors
+    console.debug('[Gift] add request payload', { userId, giftId: gift.idGift, amount: 1 });
+    console.debug('[Gift] tickets total, used, remaining', {
+      totalTickets: this.cartService.totalTickets(),
+      totalGifts: this.cartService.totalGiftCount(),
+      remaining: this.cartService.remainingTickets(),
+      packageQuantities: this.cartService.packageQuantities(),
+      availablePackages: this.cartService.availablePackages()
+    });
+
     this.orderService.addOrUpdateGiftInOrder(userId, gift.idGift, 1).subscribe({
       next: () => {
         const currentQty = this.cartService.giftQuantities()[gift.idGift] || gift.customerQuantity || 0;
@@ -161,6 +171,16 @@ private initializeGifts(data: any[]): void {
           const code = err?.error?.code || err?.error;
           if (status === 400 && (code === 'INSUFFICIENT_TICKETS' || (typeof code === 'string' && code.includes('INSUFFICIENT_TICKETS')))) {
             // Trigger modal immediately on backend rejection if not already showing
+            // log useful debug info
+            console.warn('[Gift] Server rejected add - INSUFFICIENT_TICKETS', {
+              payload: { userId, giftId: gift.idGift, amount: 1 },
+              status,
+              serverError: err?.error,
+              totalTickets: this.cartService.totalTickets(),
+              totalGifts: this.cartService.totalGiftCount(),
+              remaining: this.cartService.remainingTickets()
+            });
+
             if (this.cartService.remainingTickets() === 0 && !this.cartService.ticketModal()) {
               const tickets = this.cartService.totalTickets();
               const msg = tickets === 0 ? 'אין לך כרטיסים בסל — יש לרכוש חבילות כרטיסים.' : 'כל הכרטיסים שלך כבר בשימוש. יש לרכוש חבילות נוספות.';
@@ -171,7 +191,11 @@ private initializeGifts(data: any[]): void {
         } catch (e) {
           // ignore
         }
-        console.error('Error adding gift', err);
+        console.error('Error adding gift', err, {
+          totalTickets: this.cartService.totalTickets(),
+          totalGifts: this.cartService.totalGiftCount(),
+          remaining: this.cartService.remainingTickets()
+        });
       }
     });
   }
