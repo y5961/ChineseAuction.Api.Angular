@@ -41,11 +41,6 @@
         </div>
 
         <div class="field" style="margin-bottom: 1.5rem;">
-            <label for="price" style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">מחיר כרטיס (₪)</label>
-            <p-inputNumber id="price" [(ngModel)]="editForm.price" mode="currency" currency="ILS" locale="he-IL"></p-inputNumber>
-        </div>
-
-        <div class="field" style="margin-bottom: 1.5rem;">
             <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a148c;">תורם</label>
             <p-dropdown 
                 [options]="donors()" 

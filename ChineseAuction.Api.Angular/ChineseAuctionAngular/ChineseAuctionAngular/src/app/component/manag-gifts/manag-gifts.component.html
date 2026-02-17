@@ -36,7 +36,6 @@
         <select (change)="onSortChange($event)" style="width: 100%; padding: 10px 35px 10px 30px; border-radius: 12px; border: 1.5px solid #e1bee7; appearance: none; background: white; cursor: pointer; color: #4a148c; font-size: 0.9em;">
           <option value="" disabled selected hidden>בחר מיון...</option>
           <option value="">ללא מיון</option>
-          <option value="price">💰 מחיר</option>
           <option value="buyers">👥 כמות רוכשים</option>
         </select>
         <span style="position: absolute; left: 12px; color: #6a1b9a; pointer-events: none; font-size: 0.7em;">▼</span>
@@ -68,7 +67,6 @@
           
           <div style="display: flex; justify-content: space-between; padding: 0 10px;">
             <span style="background: #f8f0fb; color: #7b1fa2; padding: 2px 8px; border-radius: 8px; font-size: 0.8em;">{{ gift.category?.name || 'כללי' }}</span>
-            <span style="font-weight: 900; color: #2e7d32;">₪{{ gift.price }}</span>
           </div>
 
           <div style="margin-top: 15px; padding: 10px; background: #fafafa; border-radius: 15px;">

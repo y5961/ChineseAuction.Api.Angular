@@ -16,8 +16,6 @@ export class CartService {
         this.openTicketLimitModal(msg);
       }
       
-      // Auto-dismiss modal when limit is no longer exceeded
-      // Close if modal is open AND we now have remaining tickets
       if (isModalOpen && remaining > 0) {
         this.closeTicketLimitModal();
       }
@@ -41,48 +39,32 @@ export class CartService {
   private availablePackagesSignal = signal<any[]>([]);
   availablePackages = this.availablePackagesSignal.asReadonly();
 
-
-  totalPrice = computed(() => {
-  const pkgs = this.availablePackagesSignal(); 
-  const quantities = this.quantitiesSignal();  
-  
-  let total = 0;
-
-  for (const idStr of Object.keys(quantities)) {
-    const id = Number(idStr);
-    const qty = quantities[id] || 0;
-    const pkg = pkgs.find((p: any) => p.idPackage === id);
-    
-    if (pkg && pkg.price) {
-      total += pkg.price * qty;
-    }
-  }
-  return total;
-});
-
-
-  // Total tickets (cards) computed from available packages and package quantities
-  totalTickets = computed(() => {
-    const pkgs = this.availablePackagesSignal();
-    const quantities = this.quantitiesSignal();
-    let total = 0;
-    for (const idStr of Object.keys(quantities)) {
-      const id = Number(idStr);
-      const qty = quantities[id] || 0;
-      const pkg = pkgs.find((p: any) => p.idPackage === id);
-      if (pkg) {
-        const per = (pkg.amountRegular || 0) + (pkg.amountPremium || 0);
-        total += per * qty;
-      }
-    }
-    return total;
-  });
-
-  // Total gifts currently in cart (sum of gift quantities)
   totalGiftCount = computed(() => {
     const gQty = this.giftQuantitiesSignal();
     return Object.values(gQty).reduce((acc, v) => acc + (v || 0), 0);
   });
+
+// בתוך CartService
+
+// בתוך CartService
+totalTickets = computed(() => {
+  const pkgs = this.availablePackagesSignal();
+  const quantities = this.quantitiesSignal();
+  
+  return Object.keys(quantities).reduce((acc, idStr) => {
+    const id = Number(idStr);
+    const pkg = pkgs.find(p => p.idPackage === id);
+    if (pkg) {
+      // סכימה מפורשת של רגיל + פרימיום
+      const regular = pkg.amountRegular || 0;
+      const premium = pkg.amountPremium || 0;
+      return acc + ((regular + premium) * quantities[id]);
+    }
+    return acc;
+  }, 0);
+});
+
+
 
   // Ticket limit modal signals and message
   private ticketModalSignal = signal<boolean>(false);
@@ -92,12 +74,13 @@ export class CartService {
   ticketModal = this.ticketModalSignal.asReadonly();
   ticketMessage = this.ticketLimitMessageSignal.asReadonly();
 
-  canAddGift(n: number = 1): boolean {
-    const tickets = this.totalTickets();
-    const gifts = this.totalGiftCount();
-    if (!tickets || tickets <= 0) return false;
-    return (gifts + n) <= tickets;
-  }
+// עדכון פונקציית העזר לבדיקת אפשרות הוספה
+canAddGift(n: number = 1): boolean {
+  const totalAllowed = this.totalTickets();
+  const alreadyUsed = this.totalGiftCount();
+  if (totalAllowed <= 0) return false;
+ return (alreadyUsed + n) <= totalAllowed;
+}
 
   // Remaining tickets available for assigning to gifts
   remainingTickets = computed(() => {

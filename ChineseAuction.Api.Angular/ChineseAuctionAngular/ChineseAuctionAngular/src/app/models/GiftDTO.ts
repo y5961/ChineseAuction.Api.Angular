@@ -15,7 +15,6 @@ export class Gift {
   isDrawn: boolean = false;
   idUser?: number;
   user?: UserDTO;
-  price: number = 0;
   ordersGifts: any[] = [];
   totalPurchases?: number; 
   customerQuantity: number = 0; 
@@ -36,7 +35,6 @@ export class GiftDTO {
   amount: number = 0;         // השם שהשרת מצפה לו
   image?: string = '';
   idDonor: number = 0;
-  price: number = 0;
 
   constructor(init?: Partial<GiftDTO>) { 
     Object.assign(this, init); 
@@ -46,7 +44,6 @@ export class GiftNewDTO {
   idGift: number = 0;
   name: string = '';
   description: string = '';
-  price: number = 0;
   numOfBuyers: number = 0;
   constructor(init?: Partial<GiftNewDTO>) { Object.assign(this, init); }
 }

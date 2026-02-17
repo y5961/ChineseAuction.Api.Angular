@@ -26,6 +26,7 @@ export class PackageComponent implements OnInit {
 
   packages = signal<PackageDTO[]>([]);
   packageQuantities = this.cartService.packageQuantities;
+  showAuthModal = signal<boolean>(false);
 
   ngOnInit() {
     this.packageService.getAllPackages().subscribe((data: PackageDTO[]) => {
@@ -56,6 +57,12 @@ export class PackageComponent implements OnInit {
     }
   }
 handlePackageUpdate(packageId: number, action: 'increment' | 'decrement') {
+  // Check if user is logged in
+  if (!this.authService.isLoggedIn()) {
+    this.showAuthModal.set(true);
+    return;
+  }
+
   const currentQty = this.packageQuantities()[packageId] || 0;
   const newQty = action === 'increment' ? currentQty + 1 : currentQty - 1;
 
@@ -143,6 +150,20 @@ getPackageGradient(id: number): string {
   getPackageImage(id: number): string {
     const images = ['p-green.png', 'p-blue.png', 'p-pink.png', 'p-red.png'];
     return images[id % images.length];
+  }
+
+  closeAuthModal(): void {
+    this.showAuthModal.set(false);
+  }
+
+  goToLogin(): void {
+    this.showAuthModal.set(false);
+    this.router.navigate(['/login']);
+  }
+
+  goToRegister(): void {
+    this.showAuthModal.set(false);
+    this.router.navigate(['/register']);
   }
 }
 

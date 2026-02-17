@@ -52,7 +52,6 @@ ngOnInit() {
     });
   });
 }
-
   loadCart() {
   const userId = this.authService.getUserId();
   if (userId > 0) {
@@ -67,8 +66,16 @@ ngOnInit() {
               const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
               qtys[item.idPackage] = item.quantity;
               return {
+                // keep original order-package fields
                 ...item,
-                price: fullInfo?.price || item.price || 0
+                // ensure we expose full package data for the cart template
+                idPackage: item.idPackage,
+                quantity: item.quantity,
+                name: fullInfo?.name ?? item.name ?? '',
+                price: fullInfo?.price ?? item.price ?? 0,
+                image: fullInfo?.image ?? item.image ?? '',
+                amountRegular: fullInfo?.amountRegular ?? 0,
+                amountPremium: fullInfo?.amountPremium ?? 0
               };
             });
 
@@ -111,7 +118,6 @@ ngOnInit() {
               return {
                 idGift: resolvedId,
                 name: fullInfo?.name || item.name || '',
-                price: fullInfo?.price || item.price || 0,
                 amount: item.amount || 0,
                 image: imageToUse,
                 category: fullInfo?.category?.name || item.category || ''
@@ -121,8 +127,6 @@ ngOnInit() {
             this.cartService.setAllGiftQuantities(giftQtys);
             this.cartService.setCartGifts(enrichedGifts);
           }
-          
-          this.calculateTotal(); 
         }
       }
     });
@@ -142,74 +146,64 @@ ngOnInit() {
     }
   }
 
-  private updateQty(idPackage: number, newQty: number) {
-    const userId = this.authService.getUserId();
+private updateQty(idPackage: number, newQty: number) {
+  const userId = this.authService.getUserId();
 
-    // If not logged in, just apply locally
-    if (!userId || userId <= 0) {
-      this.cartService.setQuantity(idPackage, newQty);
-      if (newQty === 0) {
-        this.cartService.clearCart();
-      }
-      return;
+  // 1. קודם כל נבדוק כמה חבילות נשארו בסל כרגע (כולל הנוכחית)
+  const allQtys = this.packageQuantities();
+  const activePackagesCount = Object.values(allQtys).filter(qty => qty > 0).length;
+
+  // 2. אם המשתמש לא מחובר
+  if (!userId || userId <= 0) {
+    this.cartService.setQuantity(idPackage, newQty);
+    // מוחק רק אם זו הייתה החבילה היחידה והיא ירדה ל-0
+    if (newQty === 0 && activePackagesCount <= 1) {
+      this.cartService.clearCart();
     }
-
-    // Logged-in: update server, but don't reload full cart on zero (that may repopulate stale server draft)
-    const prevQty = this.packageQuantities()[idPackage] || 0;
-    const prevCart = [...this.cartService.cartItems()];
-    this.orderService.updatePackageQuantity(userId, idPackage, newQty).subscribe({
-      next: () => {
-        this.cartService.setQuantity(idPackage, newQty);
-        if (newQty === 0) {
-          const confirmMsg = 'זו החבילה האחרונה בסל — האם אתה בטוח שברצונך למחוק את כל מה שיש בסל?';
-          const ok = window.confirm(confirmMsg);
-          if (!ok) {
-            // user cancelled: revert optimistic change
-            this.cartService.setQuantity(idPackage, prevQty);
-            this.cartService.setCartItems(prevCart);
-            return;
-          }
-
-          // user confirmed: Clear local cart and attempt to remove gifts on the server too.
-          const currentGifts = [...this.cartService.cartGifts()];
-          this.cartService.clearCart();
-          currentGifts.forEach(g => {
-            try {
-              const gid = g.idGift || g.id || 0;
-              const qty = (g.amount || this.giftQuantities()[gid] || 0);
-              if (gid > 0) {
-                // Prefer explicit delete endpoint; fallback to negative-delta update if not supported
-                this.orderService.removeGiftFromDraft(userId, gid).subscribe({
-                  next: () => {},
-                  error: (err) => {
-                    console.warn('removeGiftFromDraft failed, falling back to negative update', gid, err);
-                    if (qty > 0) {
-                      this.orderService.addOrUpdateGiftInOrder(userId, gid, -qty).subscribe({
-                        next: () => {},
-                        error: (err2) => console.warn('Fallback remove failed', gid, err2)
-                      });
-                    }
-                  }
-                });
-              }
-            } catch (e) {
-              console.warn('Error during server gift cleanup', e);
-            }
-          });
-
-          // Also try deleting draft; if that fails, we already attempted per-gift removals.
-          this.orderService.deleteDraft(userId).subscribe({
-            next: () => {},
-            error: (err) => {
-              console.warn('deleteDraft failed after local clear and per-gift removals', err);
-            }
-          });
-        }
-      },
-      error: (err) => console.error('Error updating quantity', err)
-    });
+    return;
   }
 
+  const prevQty = allQtys[idPackage] || 0;
+  const prevCart = [...this.cartService.cartItems()];
+
+  // 3. עדכון השרת
+  this.orderService.updatePackageQuantity(userId, idPackage, newQty).subscribe({
+    next: () => {
+      this.cartService.setQuantity(idPackage, newQty);
+
+      // בדיקה: האם הכמות הפכה ל-0 וגם לא נשארו חבילות אחרות בסל?
+      if (newQty === 0 && activePackagesCount <= 1) {
+        const confirmMsg = 'זו החבילה האחרונה בסל — האם אתה בטוח שברצונך למחוק את כל מה שיש בסל?';
+        const ok = window.confirm(confirmMsg);
+        
+        if (!ok) {
+          // המשתמש ביטל: נחזיר את המצב לקדמותו (גם בשרת)
+          this.cartService.setQuantity(idPackage, prevQty);
+          this.orderService.updatePackageQuantity(userId, idPackage, prevQty).subscribe();
+          return;
+        }
+
+        // המשתמש אישר: ניקוי מלא
+        this.cartService.clearCart();
+        
+        const currentGifts = [...this.cartService.cartGifts()];
+        currentGifts.forEach(g => {
+          const gid = g.idGift || g.id || 0;
+          if (gid > 0) {
+            this.orderService.removeGiftFromDraft(userId, gid).subscribe();
+          }
+        });
+
+        // מחיקת הטיוטה בשרת
+        this.orderService.deleteDraft(userId).subscribe();
+      } else if (newQty === 0) {
+        // אם זו לא החבילה האחרונה, פשוט נטען מחדש את הסל כדי שיעלם מהתצוגה
+        this.loadCart();
+      }
+    },
+    error: (err) => console.error('Error updating quantity', err)
+  });
+}
   incrementGift(idGift: number) {
     // Block when limit reached - modal already auto-triggered by CartService effect
     if (!this.cartService.canAddGift(1)) {
@@ -287,6 +281,15 @@ decrementGift(idGift: number) {
     return packagesTotal;
   }
 
+getPackageGradient(id: number): string {
+  const gradients = [
+    'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)', 
+    'linear-gradient(135deg, #84fb95 0%, #cef576 100%)', 
+    'linear-gradient(135deg, #f6d365 0%, #fda085 100%)'  
+  ];
+  return gradients[id % gradients.length];
+}
 
   proceedToBuying() {
     this.cartService.closeTicketLimitModal();

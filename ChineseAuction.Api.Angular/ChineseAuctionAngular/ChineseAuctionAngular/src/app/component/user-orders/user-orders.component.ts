@@ -105,9 +105,9 @@ export class UserOrdersComponent implements OnInit {
   getOrderTotal(order?: OrderDTO): number {
     if (!order) return 0;
     if (order.totalPrice && order.totalPrice > 0) return order.totalPrice;
-    const giftsTotal = order.ordersGifts?.reduce((s, g) => s + ((g?.price ?? 0) * (g?.amount ?? 0)), 0) ?? 0;
+    // Price is calculated from packages only (gifts don't have price)
     const packsTotal = order.ordersPackages?.reduce((s, p) => s + ((p?.price ?? 0) * (p?.quantity ?? 0)), 0) ?? 0;
-    return giftsTotal + packsTotal;
+    return packsTotal;
   }
 
   hasGifts(order?: OrderDTO): boolean {

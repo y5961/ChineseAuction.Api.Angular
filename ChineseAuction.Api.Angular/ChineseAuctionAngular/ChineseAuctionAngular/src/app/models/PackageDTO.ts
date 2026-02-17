@@ -14,7 +14,6 @@ export class PackageDTO {
   }
 }
 
-// PackageCreateDTO - עבור יצירה ועדכון
 export class PackageCreateDTO {
   amountRegular: number = 0;
   amountPremium?: number;

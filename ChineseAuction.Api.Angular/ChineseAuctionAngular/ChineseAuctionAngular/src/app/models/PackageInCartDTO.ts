@@ -4,9 +4,9 @@ import { OrderDTO } from './OrderDTO';
 export class OrdersPackage {
   idPackageOrder: number = 0;
   orderId: number = 0;
-  order?: OrderDTO;       // קשר לישות ההזמנה
+  order?: OrderDTO;       
   idPackage: number = 0;
-  package?: Package;      // קשר לישות החבילה
+  package?: Package;      
   quantity: number = 1;
   priceAtPurchase: number = 0;
 
@@ -14,3 +14,4 @@ export class OrdersPackage {
     Object.assign(this, init);
   }
 }
+

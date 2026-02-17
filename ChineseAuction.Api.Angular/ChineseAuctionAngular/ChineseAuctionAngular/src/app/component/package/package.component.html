@@ -21,20 +21,19 @@
           </div>
 
           <div class="bonus-highlight" [class.hidden]="$any(packageItem).amountPremium <= 0">
-            @if($any(packageItem).amountPremium > 0) {
-              <div class="bonus-inner">
-                <span class="gift-icon">🎁</span>
-                <div class="bonus-text">
-                  ועוד <strong>{{ $any(packageItem).amountPremium }}</strong> כרטיסי פרימיום מתנה!
-                </div>
+            <div class="bonus-inner">
+              <span class="gift-icon">🎁</span>
+              <div class="bonus-text">
+                ועוד <strong>{{ $any(packageItem).amountPremium }}</strong> כרטיסי פרימיום!
               </div>
-            }
+            </div>
           </div>
         </div>
 
         <div class="image-wrapper">
           <img [src]="imageUrl + ($any(packageItem).image || getPackageImage(packageItem.idPackage))" 
-               class="package-img" alt="gift">
+               class="package-img" 
+               alt="חבילה" />
         </div>
 
         <div class="action-footer">
@@ -43,7 +42,7 @@
             <span class="qty-val">{{ packageQuantities()[packageItem.idPackage] || 0 }}</span>
             <button class="qty-btn" (click)="handlePackageUpdate(packageItem.idPackage, 'decrement')">-</button>
           </div>
-          <span class="add-text">להוספה</span>
+          <span class="add-text">להוספה לסל</span>
         </div>
       </div>
     }

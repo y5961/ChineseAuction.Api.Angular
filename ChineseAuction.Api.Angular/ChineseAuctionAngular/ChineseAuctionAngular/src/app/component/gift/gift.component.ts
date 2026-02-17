@@ -26,6 +26,7 @@ export class GiftComponent implements OnInit {
   
   gifts = signal<Gift[]>([]);
   selectedGift = signal<Gift | null>(null);
+  showAuthModal = signal<boolean>(false);
   
   // סיגנלים לסינון (לשימוש מקומי או שליחה לשרת)
   categoryFilter = signal<string>('');
@@ -88,11 +89,7 @@ private initializeGifts(data: any[]): void {
   filteredGifts = computed(() => {
     return this.gifts().filter(gift => {
       const matchCategory = !this.categoryFilter() || gift.category?.name === this.categoryFilter();
-      const min = this.minPrice() ?? 0;
-      const max = this.maxPrice() ?? Infinity;
-      const matchPrice = gift.price >= min && gift.price <= max;
-      
-      return matchCategory && matchPrice;
+      return matchCategory;
     });
   });
 
@@ -117,7 +114,34 @@ private initializeGifts(data: any[]): void {
     this.maxPrice.set(val ? parseFloat(val) : null);
   }
 
+  onSortChange(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value;
+    
+    if (value === 'price') {
+      this.onSortByPrice();
+    } else if (value === 'popularity') {
+      this.onSortByPopularity();
+    } else if (value === 'category') {
+      // Sort by category name locally
+      const sorted = [...this.gifts()].sort((a, b) => {
+        const catA = a.category?.name || '';
+        const catB = b.category?.name || '';
+        return catA.localeCompare(catB, 'he');
+      });
+      this.gifts.set(sorted);
+    } else {
+      // No sort - reload original order
+      this.loadGifts();
+    }
+  }
+
   increaseQuantity(gift: Gift): void {
+    // Check if user is logged in
+    if (!this.authService.isLoggedIn()) {
+      this.showAuthModal.set(true);
+      return;
+    }
+
     // Block when limit reached - modal already auto-triggered by CartService effect
     if (!this.cartService.canAddGift(1)) {
       // If modal not showing yet, trigger it immediately
@@ -156,7 +180,6 @@ private initializeGifts(data: any[]): void {
           currentCart.push({
             idGift: gift.idGift,
             name: gift.name,
-            price: gift.price,
             amount: newQty,
             image: gift.image,
             category: gift.category?.name || ''
@@ -230,7 +253,6 @@ private initializeGifts(data: any[]): void {
           currentCart.push({
             idGift: gift.idGift,
             name: gift.name,
-            price: gift.price,
             amount: newQty,
             image: gift.image,
             category: gift.category?.name || ''
@@ -246,6 +268,19 @@ getGiftQuantity(giftId: number): number {
   return this.cartService.giftQuantities()[giftId] || 0;
 }
 
+  closeAuthModal(): void {
+    this.showAuthModal.set(false);
+  }
+
+  goToLogin(): void {
+    this.showAuthModal.set(false);
+    this.router.navigate(['/login']);
+  }
+
+  goToRegister(): void {
+    this.showAuthModal.set(false);
+    this.router.navigate(['/register']);
+  }
 
   openDetails(gift: Gift): void { this.selectedGift.set(gift); }
   closeDetails(): void { this.selectedGift.set(null); }

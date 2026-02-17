@@ -7,7 +7,6 @@ export class OrdersGiftDTO {
   category: string = '';
   name: string = '';
   amount: number = 1;
-  price: number = 0;
   description: string = '';
   image?: string;
 
@@ -31,7 +30,7 @@ export class OrderDTO {
   idOrder?: number; 
   
   totalAmount: number = 0; 
-  totalPrice: number = 0;  
+  totalPrice: number = 0;
   idUser: number = 0;     
   amount: number = 1;     
   orderDate: Date = new Date(); 

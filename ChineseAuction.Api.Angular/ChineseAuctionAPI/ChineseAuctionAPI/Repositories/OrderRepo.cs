@@ -25,19 +25,23 @@ namespace ChineseAuctionAPI.Repositories
 
             if (order == null) throw new Exception("עליך לבחור חבילה לפני בחירת מתנות");
 
+            // FIX: Include both AmountRegular AND AmountPremium (with null check)
             var totalTicketsAllowed = await _context.OrdersPackage
                 .Where(op => op.OrderId == order.IdOrder)
-                .Join(_context.Packages, op => op.IdPackage, p => p.IdPackage, (op, p) => p.AmountRegular * op.Quantity)
-                .SumAsync();
+                .Join(_context.Packages, 
+                      op => op.IdPackage, 
+                      p => p.IdPackage, 
+                      (op, p) => new { op.Quantity, p.AmountRegular, p.AmountPremium })
+                .ToListAsync();
 
-            // 3. חישוב כמה כרטיסים הוא כבר ניצל (סכום ה-Amount של המתנות)
+            int totalTickets = totalTicketsAllowed.Sum(x => (x.AmountRegular + (x.AmountPremium ?? 0)) * x.Quantity);
+
             var currentUsedTickets = order.OrdersGift.Sum(og => og.Amount);
 
-            // בדיקה אם המתנה החדשה תחרוג מהמותר
-            var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
-            int extraRequested = deltaAmount > 0 ? deltaAmount : 0; // Only check positive deltas
+            // var existingGift = order.OrdersGift.FirstOrDefault(og => og.IdGift == IdGift);
+            // int extraRequested = deltaAmount > 0 ? deltaAmount : 0; // Only check positive deltas
 
-            if (deltaAmount > 0 && currentUsedTickets + extraRequested > totalTicketsAllowed)
+            if (deltaAmount > 0 && currentUsedTickets + extraRequested > totalTickets)
             {
                 throw new InvalidOperationException("INSUFFICIENT_TICKETS");
             }
@@ -71,7 +75,16 @@ namespace ChineseAuctionAPI.Repositories
 
             if (order == null) return 0;
 
-            var total = order.OrdersPackage.Sum(op => _context.Packages.Find(op.IdPackage).AmountRegular * op.Quantity);
+            // FIX: Include both AmountRegular AND AmountPremium (with null check)
+            var packageData = await _context.OrdersPackage
+                .Where(op => op.OrderId == order.IdOrder)
+                .Join(_context.Packages, 
+                      op => op.IdPackage, 
+                      p => p.IdPackage, 
+                      (op, p) => new { op.Quantity, p.AmountRegular, p.AmountPremium })
+                .ToListAsync();
+
+            var total = packageData.Sum(x => (x.AmountRegular + (x.AmountPremium ?? 0)) * x.Quantity);
             var used = order.OrdersGift.Sum(og => og.Amount);
 
             return total - used;

@@ -133,14 +133,7 @@ edit(gift: any): void {
 onSortChange(event: Event) {
   const value = (event.target as HTMLSelectElement).value;
   
-  if (value === 'price') {
-    this.giftService.sortByPrice().subscribe({
-      next: (data) => {
-        this.gifts.set(data.map(g => new Gift(g)));
-        this.refreshPurchaseCounts(); // רענון מונה הרוכשים לאחר המיון
-      }
-    });
-  } else if (value === 'buyers') {
+  if (value === 'buyers') {
     this.giftService.sortByAmountPeople().subscribe({
       next: (data) => {
         this.gifts.set(data.map(g => new Gift(g)));

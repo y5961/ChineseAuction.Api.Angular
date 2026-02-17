@@ -95,8 +95,7 @@ export class EditGiftComponent implements OnInit, OnChanges {
         categoryId: this.editForm.idGiftCategory || this.editForm.categoryId,
         amount: this.editForm.amount || 1, 
         image: this.editForm.image,
-        idDonor: this.editForm.idDonor,
-        price: this.editForm.price
+        idDonor: this.editForm.idDonor
       };
 
       this.giftService.updateGift(dataToSend.idGift, dataToSend).subscribe({

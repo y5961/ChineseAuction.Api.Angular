@@ -26,9 +26,11 @@
             <div style="flex-grow: 1;">
               <div [style.text-decoration]="gift.isDrawn ? 'line-through' : 'none'" [style.color]="gift.isDrawn ? '#888' : '#4a148c'" style="font-weight: bold; font-size: 0.9em;">
                 {{ gift.name }}
-              </div>
-              <div style="font-size: 0.8em; color: #2e7d32; font-weight: 600;">₪{{ gift.price }}</div>
-            </div>
+              </div>              @if (gift.isDrawn && gift.user) {
+                <div style="font-size: 0.75em; color: #2e7d32; font-weight: 600; margin-top: 2px;">
+                  🏆 {{ gift.user.firstName }} {{ gift.user.lastName }}
+                </div>
+              }            </div>
           </div>
         }
       </div>
@@ -44,7 +46,10 @@
         </div>
 
         <div [style.background]="isSpinning() ? '#2a0a4a' : (selectedWinner() || currentGift()?.isDrawn ? '#2e7d32' : '#4a148c')"
-             style="height: 220px; border-radius: 35px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; border: 8px solid #ffd700; transition: all 0.5s; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+             style="height: 220px; border-radius: 35px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; border: 8px solid #ffd700; transition: all 0.5s; box-shadow: 0 15px 35px rgba(0,0,0,0.2); flex-direction: column; gap: 10px;">
+          @if (selectedWinner() || currentGift()?.isDrawn) {
+            <div style="color: #ffd700; font-size: 2em; font-weight: 900;">🏆 הזוכה 🏆</div>
+          }
           <div style="color: white; font-size: 4em; font-weight: 900;">{{ displayText() }}</div>
           @if (isSpinning()) { <div class="scanner-effect"></div> }
         </div>
