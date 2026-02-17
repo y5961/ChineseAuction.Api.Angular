@@ -97,8 +97,7 @@ export class UserOrdersComponent implements OnInit {
   getItemsCount(order?: OrderDTO): number {
     if (!order) return 0;
     const gifts = order.ordersGifts?.reduce((s, g) => s + (g?.amount ?? 0), 0) ?? 0;
-    const packs = order.ordersPackages?.reduce((s, p) => s + (p?.quantity ?? 0), 0) ?? 0;
-    return gifts + packs;
+    return gifts ;
   }
 
   // helper: compute total price if not provided by backend

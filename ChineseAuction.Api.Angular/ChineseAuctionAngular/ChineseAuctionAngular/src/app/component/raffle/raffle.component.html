@@ -50,8 +50,9 @@
           @if (selectedWinner() || currentGift()?.isDrawn) {
             <div style="color: #ffd700; font-size: 2em; font-weight: 900;">🏆 הזוכה 🏆</div>
           }
-          <div style="color: white; font-size: 4em; font-weight: 900;">{{ displayText() }}</div>
-          @if (isSpinning()) { <div class="scanner-effect"></div> }
+<div style="color: white; font-size: 4em; font-weight: 900;">
+  {{ (displayText() && typeof displayText() === 'object') ? 'טוען...' : displayText() }}
+</div>          @if (isSpinning()) { <div class="scanner-effect"></div> }
         </div>
 
         <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">

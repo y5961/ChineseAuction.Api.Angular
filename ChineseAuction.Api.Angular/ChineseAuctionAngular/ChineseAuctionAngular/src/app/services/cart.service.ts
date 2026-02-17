@@ -7,15 +7,9 @@ export class CartService {
   constructor() {
     effect(() => {
       const remaining = this.remainingTickets();
-      const used = this.totalGiftCount();
-      const total = this.totalTickets();
       const isModalOpen = this.ticketModalSignal();
-      
-      if (total > 0 && used > 0 && remaining === 0 && !isModalOpen && !this.ticketModalSuppressedSignal()) {
-        const msg = 'כל הכרטיסים שלך כבר בשימוש. יש לרכוש חבילות נוספות.';
-        this.openTicketLimitModal(msg);
-      }
-      
+
+      // Auto-close the modal when there are remaining tickets again.
       if (isModalOpen && remaining > 0) {
         this.closeTicketLimitModal();
       }

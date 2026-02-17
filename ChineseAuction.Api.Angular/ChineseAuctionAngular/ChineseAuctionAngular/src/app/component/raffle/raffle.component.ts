@@ -62,9 +62,11 @@ export class RaffleComponent implements OnInit {
       return;
      }
     this.giftService.getParticipantsByGiftId(gift.idGift).subscribe({
-      next: (names: string[]) => {
-        this.participants.set(names);
-        this.displayText.set(names.length > 0 ? 'מוכנים?' : 'אין משתתפים');
+      next: (names: any[]) => { 
+        const mappedNames = names.map(p => (typeof p === 'object' ? p.firstName : p));
+        
+        this.participants.set(mappedNames);
+        this.displayText.set(mappedNames.length > 0 ? 'מוכנים?' : 'אין משתתפים');
       },
       error: () => this.participants.set([])
     });
