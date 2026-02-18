@@ -18,7 +18,7 @@ namespace ChineseAuctionAPI.Tests.Controllers
         public async Task GetAll_ReturnsOk()
         {
             var mockSvc = new Mock<IGiftService>();
-            mockSvc.Setup(s => s.GetAllGiftsAsync()).ReturnsAsync(new List<Gift> { new Gift { Name = "G1" } } as IEnumerable<Gift>);
+            mockSvc.Setup(s => s.GetAllGiftsAsync()).ReturnsAsync((IEnumerable<Gift?>)new List<Gift?> { (Gift?)new Gift { Name = "G1" } });
             var ctrl = new GiftController(mockSvc.Object, Mock.Of<IUserRepo>(), Mock.Of<ILogger<GiftController>>());
 
             var res = await ctrl.Get();

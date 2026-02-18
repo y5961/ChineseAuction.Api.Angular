@@ -16,8 +16,8 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task CreateAndGetCategory()
         {
             var mockRepo = new Mock<IGiftCategoryRepo>();
-            mockRepo.Setup(r => r.CreateAsync(It.IsAny<GiftCategory>())).ReturnsAsync((GiftCategory c) => { c.IdGiftCategory = 2; return c; });
-            mockRepo.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(new GiftCategory { IdGiftCategory = 2, Name = "C" });
+            mockRepo.Setup(r => r.CreateAsync(It.IsAny<GiftCategory>())).ReturnsAsync((GiftCategory? c) => { if(c!=null) c.IdGiftCategory = 2; return c; });
+            mockRepo.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((GiftCategory?)new GiftCategory { IdGiftCategory = 2, Name = "C" });
 
             var svc = new GiftCategoryService(mockRepo.Object, Mock.Of<ILogger<GiftCategoryService>>(), Mock.Of<IConfiguration>());
 

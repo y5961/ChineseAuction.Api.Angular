@@ -16,7 +16,7 @@ namespace ChineseAuctionAPI.Tests.Controllers
         public async Task GetDraft_ReturnsOk_WhenExists()
         {
             var mockSvc = new Mock<IOrderService>();
-            mockSvc.Setup(s => s.GetDraftOrderByUserAsync(It.IsAny<int>())).ReturnsAsync(new OrderDTO { IdOrder = 1 });
+            mockSvc.Setup(s => s.GetDraftOrderByUserAsync(It.IsAny<int>())).ReturnsAsync((OrderDTO?)new OrderDTO { IdOrder = 1 });
             var ctrl = new OrdersController(mockSvc.Object);
 
             var res = await ctrl.GetDraftOrder(1);

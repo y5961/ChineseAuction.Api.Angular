@@ -18,7 +18,7 @@ namespace ChineseAuctionAPI.Tests.Services
         {
             var mockRepo = new Mock<IUserRepo>();
             mockRepo.Setup(r => r.ExistEmailAsync(It.IsAny<string>())).ReturnsAsync(false);
-            mockRepo.Setup(r => r.AddAsync(It.IsAny<User>())).ReturnsAsync(new User { IdUser = 7, Email = "u@x.com" });
+            mockRepo.Setup(r => r.AddAsync(It.IsAny<User>())).ReturnsAsync((User?)new User { IdUser = 7, Email = "u@x.com" });
 
             var config = new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string,string?>{ ["Jwt:Key"] = "01234567890123456789012345678901", ["Jwt:Issuer"] = "iss", ["Jwt:Audience"] = "aud" }).Build();
             var svc = new UserService(mockRepo.Object, config, Mock.Of<ILogger<UserService>>());

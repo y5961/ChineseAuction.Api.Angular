@@ -17,7 +17,7 @@ namespace ChineseAuctionAPI.Tests.Controllers
         public async Task GetAll_ReturnsOkWithDonors()
         {
             var mockSvc = new Mock<IDonorService>();
-            mockSvc.Setup(s => s.GetAllDonorsAsync()).ReturnsAsync(new List<DonorDTO> { new DonorDTO { IdDonor = 1, Email = "a@b.com" } });
+            mockSvc.Setup(s => s.GetAllDonorsAsync()).ReturnsAsync((IEnumerable<DonorDTO?>)new List<DonorDTO?> { (DonorDTO?)new DonorDTO { IdDonor = 1, Email = "a@b.com" } });
             var ctrl = new DonorsController(mockSvc.Object, Mock.Of<ILogger<DonorsController>>());
 
             var res = await ctrl.GetAll();

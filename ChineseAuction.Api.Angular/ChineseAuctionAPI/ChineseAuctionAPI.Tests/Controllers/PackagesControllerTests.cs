@@ -17,7 +17,7 @@ namespace ChineseAuctionAPI.Tests.Controllers
         public async Task GetAll_ReturnsOk()
         {
             var mockSvc = new Mock<IPackageService>();
-            mockSvc.Setup(s => s.GetAllPackagesAsync()).ReturnsAsync(new List<PackageDTO> { new PackageDTO { Name = "P" } });
+            mockSvc.Setup(s => s.GetAllPackagesAsync()).ReturnsAsync((IEnumerable<PackageDTO?>)new List<PackageDTO?> { (PackageDTO?)new PackageDTO { Name = "P" } });
             var ctrl = new PackagesController(mockSvc.Object, Mock.Of<ILogger<PackagesController>>());
 
             var res = await ctrl.GetAll();

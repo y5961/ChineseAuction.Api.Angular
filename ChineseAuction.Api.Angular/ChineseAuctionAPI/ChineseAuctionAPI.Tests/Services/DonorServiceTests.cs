@@ -19,7 +19,7 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task GetAllDonors_ReturnsDtoCollection()
         {
             var mockRepo = new Mock<IDonorRepository>();
-            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Donor> { new Donor { IdDonor = 1, FirstName = "A", LastName = "B", Email = "a@b.com" } });
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync((IEnumerable<Donor?>)new List<Donor?> { (Donor?)new Donor { IdDonor = 1, FirstName = "A", LastName = "B", Email = "a@b.com" } });
 
             var svc = new DonorService(mockRepo.Object, Mock.Of<ILogger<DonorService>>(), Mock.Of<IConfiguration>());
             var res = (await svc.GetAllDonorsAsync()).ToList();
@@ -63,7 +63,7 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task GetGifts_MapsToGiftDto()
         {
             var mockRepo = new Mock<IDonorRepository>();
-            mockRepo.Setup(r => r.GetGiftsAsync(It.IsAny<int>())).ReturnsAsync(new List<Gift> { new Gift { Name = "G", Description = "D", Price = 10, Amount = 1 } });
+            mockRepo.Setup(r => r.GetGiftsAsync(It.IsAny<int>())).ReturnsAsync((IEnumerable<Gift?>)new List<Gift?> { (Gift?)new Gift { Name = "G", Description = "D", Price = 10, Amount = 1 } });
             var svc = new DonorService(mockRepo.Object, Mock.Of<ILogger<DonorService>>(), Mock.Of<IConfiguration>());
 
             var res = (await svc.GetGiftsAsync(1)).ToList();

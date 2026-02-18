@@ -19,7 +19,7 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task GetAllMapsToDto()
         {
             var mockRepo = new Mock<IGiftRepo>();
-            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Gift> { new Gift { IdGift = 1, Name = "G1", Price = 10 } });
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync((IEnumerable<Gift?>)new List<Gift?> { (Gift?)new Gift { IdGift = 1, Name = "G1", Price = 10 } });
             var svc = new GiftService(mockRepo.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
 
             var res = (await svc.GetAllGiftsAsync()).ToList();
@@ -31,7 +31,7 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task AddAndDelete_UseRepository()
         {
             var mockRepo = new Mock<IGiftRepo>();
-            mockRepo.Setup(r => r.AddAsync(It.IsAny<Gift>())).ReturnsAsync(new Gift { IdGift = 5 });
+            mockRepo.Setup(r => r.AddAsync(It.IsAny<Gift>())).ReturnsAsync((Gift?)new Gift { IdGift = 5 });
             mockRepo.Setup(r => r.DeleteAsync(It.IsAny<int>())).ReturnsAsync(true);
             var svc = new GiftService(mockRepo.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
 

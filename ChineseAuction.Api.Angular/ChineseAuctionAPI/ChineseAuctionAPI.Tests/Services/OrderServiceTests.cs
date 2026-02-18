@@ -16,7 +16,7 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task GetDraftOrderByUser_ReturnsDto_WhenExists()
         {
             var mockRepo = new Mock<IOrderRepo>();
-            mockRepo.Setup(r => r.GetDraftOrderByUserAsync(It.IsAny<int>())).ReturnsAsync(new Order { IdOrder = 9, IdUser = 1 });
+            mockRepo.Setup(r => r.GetDraftOrderByUserAsync(It.IsAny<int>())).ReturnsAsync((Order?)new Order { IdOrder = 9, IdUser = 1 });
             var svc = new OrderService(mockRepo.Object, Mock.Of<IConfiguration>(), Mock.Of<ILogger<OrderService>>());
 
             var dto = await svc.GetDraftOrderByUserAsync(1);

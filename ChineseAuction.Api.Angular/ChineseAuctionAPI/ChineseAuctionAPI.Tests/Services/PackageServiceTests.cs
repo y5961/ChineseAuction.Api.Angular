@@ -15,8 +15,8 @@ namespace ChineseAuctionAPI.Tests.Services
         public async Task CreateAndGetPackage()
         {
             var mockRepo = new Mock<IPackageRepo>();
-            mockRepo.Setup(r => r.AddAsync(It.IsAny<Package>())).ReturnsAsync(3);
-            mockRepo.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(new Package { IdPackage = 3, Name = "P" });
+            mockRepo.Setup(r => r.AddAsync(It.IsAny<Package>())).ReturnsAsync((int)3);
+            mockRepo.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((Package?)new Package { IdPackage = 3, Name = "P" });
 
             var svc = new PackageService(mockRepo.Object, Mock.Of<ILogger<PackageService>>());
 
