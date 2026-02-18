@@ -1,0 +1,38 @@
+2026-02-19 00:05:38.951 +02:00 [INF] HTTP OPTIONS /api/Packages responded 204 in 0.6175 ms
+2026-02-19 00:05:39.006 +02:00 [INF] שולף את כל החבילות.
+2026-02-19 00:05:39.015 +02:00 [INF] HTTP OPTIONS /api/Gift responded 204 in 0.1519 ms
+2026-02-19 00:05:39.033 +02:00 [INF] HTTP OPTIONS /api/Donors responded 204 in 0.1327 ms
+2026-02-19 00:05:39.094 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-19 00:05:39.095 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-19 00:05:39.102 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-19 00:05:39.105 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-19 00:05:39.138 +02:00 [INF] HTTP GET /api/Packages responded 200 in 148.4216 ms
+2026-02-19 00:05:39.147 +02:00 [INF] נשלפו בהצלחה 3 קטגוריות.
+2026-02-19 00:05:39.166 +02:00 [INF] שולף את כל החבילות.
+2026-02-19 00:05:39.169 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 94.3967 ms
+2026-02-19 00:05:39.191 +02:00 [INF] נשלפו בהצלחה 3 מתנות.
+2026-02-19 00:05:39.198 +02:00 [INF] HTTP GET /api/Gift responded 200 in 132.6547 ms
+2026-02-19 00:05:39.199 +02:00 [INF] HTTP GET /api/Donors responded 401 in 106.4581 ms
+2026-02-19 00:05:39.211 +02:00 [INF] Attempting to retrieve all gift categories.
+2026-02-19 00:05:39.210 +02:00 [INF] HTTP GET /api/Packages responded 200 in 65.1284 ms
+2026-02-19 00:05:39.211 +02:00 [INF] Attempting to retrieve all gifts.
+2026-02-19 00:05:39.218 +02:00 [INF] מתחיל תהליך שליפת כל קטגוריות המתנות מהשירות.
+2026-02-19 00:05:39.225 +02:00 [INF] שולף את רשימת כל המתנות מהמאגר.
+2026-02-19 00:05:39.232 +02:00 [INF] נשלפו בהצלחה 3 קטגוריות.
+2026-02-19 00:05:39.241 +02:00 [INF] HTTP OPTIONS /api/Gift/16/participants responded 204 in 0.9629 ms
+2026-02-19 00:05:39.247 +02:00 [INF] HTTP GET /api/GiftCategory responded 200 in 46.4780 ms
+2026-02-19 00:05:39.246 +02:00 [INF] HTTP OPTIONS /api/Gift/17/participants responded 204 in 1.0431 ms
+2026-02-19 00:05:39.255 +02:00 [INF] נשלפו בהצלחה 3 מתנות.
+2026-02-19 00:05:39.238 +02:00 [INF] HTTP OPTIONS /api/Gift/15/participants responded 204 in 0.0913 ms
+2026-02-19 00:05:39.289 +02:00 [INF] HTTP GET /api/Gift responded 200 in 84.8385 ms
+2026-02-19 00:05:39.292 +02:00 [INF] HTTP GET /api/Gift/17/participants responded 401 in 2.9197 ms
+2026-02-19 00:05:39.280 +02:00 [INF] HTTP GET /api/Gift/16/participants responded 401 in 5.2580 ms
+2026-02-19 00:05:39.302 +02:00 [INF] HTTP GET /api/Gift/15/participants responded 401 in 3.2271 ms
+2026-02-19 00:05:39.329 +02:00 [INF] HTTP OPTIONS /api/Orders/user/19 responded 204 in 0.6818 ms
+2026-02-19 00:05:39.344 +02:00 [INF] שולף את כל ההזמנות עבור משתמש 19.
+2026-02-19 00:05:39.420 +02:00 [INF] HTTP GET /api/Orders/user/19 responded 200 in 79.0189 ms
+2026-02-19 00:05:39.457 +02:00 [INF] HTTP GET /images/main/logo.webp responded 304 in 5.4918 ms
+2026-02-19 00:05:39.457 +02:00 [INF] HTTP GET /images/gift/Rainbow.webp responded 304 in 5.4919 ms
+2026-02-19 00:05:39.457 +02:00 [INF] HTTP GET /images/gift/Purple_dream.webp responded 304 in 1.6050 ms
+2026-02-19 00:05:39.486 +02:00 [INF] HTTP GET /images/gift/IMG_1197.JPG responded 304 in 3.2515 ms
+2026-02-19 00:05:39.487 +02:00 [INF] HTTP GET /images/main/footer.jpg responded 304 in 2.2665 ms
