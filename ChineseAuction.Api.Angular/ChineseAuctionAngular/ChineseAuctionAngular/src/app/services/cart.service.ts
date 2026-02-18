@@ -1,64 +1,63 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
+import { Injectable, signal, computed, effect, inject, Injector } from '@angular/core';
+import { OrderService } from './order.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  private injector = inject(Injector);
+
   constructor() {
     effect(() => {
       const remaining = this.remainingTickets();
       const isModalOpen = this.ticketModalSignal();
-
-      // Auto-close the modal when there are remaining tickets again.
       if (isModalOpen && remaining > 0) {
         this.closeTicketLimitModal();
       }
     });
   }
-  // Package-related signals
+
   private quantitiesSignal = signal<Record<number, number>>({});
   private cartItemsSignal = signal<any[]>([]);
+  private giftQuantitiesSignal = signal<Record<number, number>>({});
+  private cartGiftsSignal = signal<any[]>([]);
+  private availablePackagesSignal = signal<any[]>([]);
+  private ticketModalSignal = signal<boolean>(false);
+  private ticketLimitMessageSignal = signal<string>('');
+  private ticketModalSuppressedSignal = signal<boolean>(false);
 
   packageQuantities = this.quantitiesSignal.asReadonly();
   cartItems = this.cartItemsSignal.asReadonly();
-
-  // Gift-related signals
-  private giftQuantitiesSignal = signal<Record<number, number>>({});
-  private cartGiftsSignal = signal<any[]>([]);
-
   giftQuantities = this.giftQuantitiesSignal.asReadonly();
   cartGifts = this.cartGiftsSignal.asReadonly();
-
-  // Available packages (full package definitions) to compute total tickets
-  private availablePackagesSignal = signal<any[]>([]);
   availablePackages = this.availablePackagesSignal.asReadonly();
+  ticketModal = this.ticketModalSignal.asReadonly();
+  ticketMessage = this.ticketLimitMessageSignal.asReadonly();
 
   totalGiftCount = computed(() => {
-    const gQty = this.giftQuantitiesSignal();
-    return Object.values(gQty).reduce((acc, v) => acc + (v || 0), 0);
+    return Object.values(this.giftQuantitiesSignal()).reduce((acc, v) => acc + (v || 0), 0);
   });
 
-// בתוך CartService
+  totalTickets = computed(() => {
+    const pkgs = this.availablePackagesSignal();
+    const quantities = this.quantitiesSignal();
+    return Object.keys(quantities).reduce((acc, idStr) => {
+      const id = Number(idStr);
+      const pkg = pkgs.find(p => p.idPackage === id);
+      if (pkg) {
+        const regular = pkg.amountRegular || 0;
+        const premium = pkg.amountPremium || 0;
+        return acc + ((regular + premium) * quantities[id]);
+      }
+      return acc;
+    }, 0);
+  });
 
-// בתוך CartService
-totalTickets = computed(() => {
-  const pkgs = this.availablePackagesSignal();
-  const quantities = this.quantitiesSignal();
-  
-  return Object.keys(quantities).reduce((acc, idStr) => {
-    const id = Number(idStr);
-    const pkg = pkgs.find(p => p.idPackage === id);
-    if (pkg) {
-      // סכימה מפורשת של רגיל + פרימיום
-      const regular = pkg.amountRegular || 0;
-      const premium = pkg.amountPremium || 0;
-      return acc + ((regular + premium) * quantities[id]);
-    }
-    return acc;
-  }, 0);
-});
+  remainingTickets = computed(() => {
+    return Math.max(0, this.totalTickets() - this.totalGiftCount());
+  });
 
-  // Total price for all packages currently in cart (price * quantity)
   private totalPriceSignal = computed(() => {
     const pkgs = this.availablePackagesSignal();
     const quantities = this.quantitiesSignal();
@@ -71,42 +70,18 @@ totalTickets = computed(() => {
     }, 0);
   });
 
-  // Template-friendly accessor used as cartService.totalPrice()
-  totalPrice(): number {
-    return this.totalPriceSignal();
+  totalPrice(): number { return this.totalPriceSignal(); }
+
+  canAddGift(n: number = 1): boolean {
+    const totalAllowed = this.totalTickets();
+    const alreadyUsed = this.totalGiftCount();
+    return totalAllowed > 0 && (alreadyUsed + n) <= totalAllowed;
   }
 
-
-
-  // Ticket limit modal signals and message
-  private ticketModalSignal = signal<boolean>(false);
-  private ticketLimitMessageSignal = signal<string>('');
-  private ticketModalSuppressedSignal = signal<boolean>(false);
-
-  ticketModal = this.ticketModalSignal.asReadonly();
-  ticketMessage = this.ticketLimitMessageSignal.asReadonly();
-
-// עדכון פונקציית העזר לבדיקת אפשרות הוספה
-canAddGift(n: number = 1): boolean {
-  const totalAllowed = this.totalTickets();
-  const alreadyUsed = this.totalGiftCount();
-  if (totalAllowed <= 0) return false;
- return (alreadyUsed + n) <= totalAllowed;
-}
-
-  // Remaining tickets available for assigning to gifts
-  remainingTickets = computed(() => {
-    const tickets = this.totalTickets() || 0;
-    const used = this.totalGiftCount() || 0;
-    return Math.max(0, tickets - used);
-  });
-
-  // Helper: human-friendly ticket-limit message for UI tooltips/modals
   ticketLimitMessage(n: number = 1): string {
     const tickets = this.totalTickets();
-    const used = this.totalGiftCount();
-    if (!tickets || tickets <= 0) return 'אין לך כרטיסים בסל — יש לרכוש חבילות כרטיסים.';
-    const missing = Math.max(0, (used + n) - tickets);
+    if (tickets <= 0) return 'אין לך כרטיסים בסל — יש לרכוש חבילות כרטיסים.';
+    const missing = (this.totalGiftCount() + n) - tickets;
     return `אין מספיק כרטיסים. חסרים ${missing} כרטיסים.`;
   }
 
@@ -122,103 +97,91 @@ canAddGift(n: number = 1): boolean {
       setTimeout(() => this.ticketModalSuppressedSignal.set(false), 10000);
     }
   }
-setQuantity(packageId: number, qty: number) {
-  this.quantitiesSignal.update(current => {
-    const updated = { ...current };
-    if (qty <= 0) {
-      delete updated[packageId];
-    } else {
-      updated[packageId] = qty;
+
+  setQuantity(packageId: number, qty: number) {
+    this.quantitiesSignal.update(current => {
+      const updated = { ...current };
+      if (qty <= 0) delete updated[packageId];
+      else updated[packageId] = qty;
+      return updated;
+    });
+    this.enforceGiftLimit(); 
+  }
+
+  setAllQuantities(quantities: Record<number, number>) {
+    this.quantitiesSignal.set(quantities);
+    this.enforceGiftLimit();
+  }
+
+  private enforceGiftLimit() {
+    const allowed = this.totalTickets(); 
+    const giftQtys = { ...this.giftQuantitiesSignal() }; 
+    let currentTotal = Object.values(giftQtys).reduce((acc, v) => acc + (v || 0), 0);
+
+    if (currentTotal <= allowed) return;
+
+    const giftsList = [...this.cartGiftsSignal()];
+    const removals: { id: number, amount: number, isDelete: boolean }[] = [];
+
+    for (let i = giftsList.length - 1; i >= 0 && currentTotal > allowed; i--) {
+      const g = giftsList[i];
+      const id = g.idGift;
+      const qty = giftQtys[id] || 0;
+      if (qty <= 0) continue;
+
+      const excess = currentTotal - allowed;
+      const removeCount = Math.min(qty, excess);
+      const newQty = qty - removeCount;
+      
+      currentTotal -= removeCount;
+
+      if (newQty > 0) {
+        giftQtys[id] = newQty;
+        giftsList[i] = { ...g, amount: newQty };
+        removals.push({ id, amount: removeCount, isDelete: false });
+      } else {
+        delete giftQtys[id];
+        giftsList.splice(i, 1);
+        removals.push({ id, amount: qty, isDelete: true });
+      }
     }
-    return updated;
-  });
-  
 
-  this.enforceGiftLimit(); 
-}
-
-  setCartItems(items: any[]) {
-    this.cartItemsSignal.set(items);
+    this.giftQuantitiesSignal.set(giftQtys);
+    this.cartGiftsSignal.set(giftsList);
+    this.syncRemovalsWithServer(removals);
   }
 
-  setAvailablePackages(items: any[]) {
-    this.availablePackagesSignal.set(items);
-  }
-setAllQuantities(quantities: Record<number, number>) {
-  this.quantitiesSignal.set(quantities);
-  // אכיפה לאחר עדכון מאסיבי
-  this.enforceGiftLimit();
-}
+  private syncRemovalsWithServer(removals: { id: number, amount: number, isDelete: boolean }[]) {
+    if (removals.length === 0) return;
 
-private enforceGiftLimit() {
-  // 1. קבלת כמות הכרטיסים המקסימלית המעודכנת (לפי החבילות שיש כרגע בסל)
-  const allowed = this.totalTickets(); 
-  
-  // 2. יצירת עותק של כמויות המתנות הנוכחיות כדי לעדכן אותן
-  const giftQtys = { ...this.giftQuantitiesSignal() }; 
-  
-  // 3. חישוב סך המתנות שיש כרגע בסל
-  let currentTotal = Object.values(giftQtys).reduce((acc, v) => acc + (v || 0), 0);
+    const orderService = this.injector.get(OrderService);
+    const authService = this.injector.get(AuthService);
+    const userId = authService.getUserId();
 
-  // 4. בדיקה: אם אנחנו כבר בטווח המותר, אין צורך לעשות כלום
-  if (currentTotal <= allowed) return;
-
-  // 5. יצירת עותק של רשימת המתנות כדי לעדכן את התצוגה
-  const giftsList = [...this.cartGiftsSignal()];
-
-  /**
-   * 6. לולאת הסרה: עוברים על רשימת המתנות מהסוף להתחלה (LIFO).
-   * ממשיכים כל עוד סך המתנות גבוה מהמכסה המותרת.
-   */
-  for (let i = giftsList.length - 1; i >= 0 && currentTotal > allowed; i--) {
-    const g = giftsList[i];
-    const id = g.idGift;
-    const qty = giftQtys[id] || 0;
-    
-    if (qty <= 0) continue;
-
-    // חישוב כמה "עודף" יש לנו מעבר למותר
-    const excess = currentTotal - allowed;
-    // מחליטים כמה להסיר: או את כל הכמות של המתנה הזו, או רק את מה שחורג
-    const remove = Math.min(qty, excess);
-    const newQty = qty - remove;
-    
-    // עדכון הספירה הכוללת להמשך הלולאה
-    currentTotal -= remove;
-
-    if (newQty > 0) {
-      // אם נשארה כמות, מעדכנים אותה
-      giftQtys[id] = newQty;
-      giftsList[i] = { ...g, amount: newQty };
-    } else {
-      delete giftQtys[id];
-      giftsList.splice(i, 1);
+    if (userId > 0) {
+      removals.forEach(rem => {
+        if (rem.isDelete) {
+          orderService.removeGiftFromDraft(userId, rem.id).subscribe();
+        } else {
+          orderService.addOrUpdateGiftInOrder(userId, rem.id, -rem.amount).subscribe();
+        }
+      });
     }
   }
 
-  this.giftQuantitiesSignal.set(giftQtys);
-  this.cartGiftsSignal.set(giftsList);
-}
-  // Gift management methods
   setGiftQuantity(giftId: number, qty: number) {
     this.giftQuantitiesSignal.update(current => {
       const updated = { ...current };
-      if (qty <= 0) {
-        delete updated[giftId];
-      } else {
-        updated[giftId] = qty;
-      }
+      if (qty <= 0) delete updated[giftId];
+      else updated[giftId] = qty;
       return updated;
     });
   }
 
-  setCartGifts(gifts: any[]) {
-    this.cartGiftsSignal.set(gifts);
-  }
-
-  setAllGiftQuantities(quantities: Record<number, number>) {
-    this.giftQuantitiesSignal.set(quantities);
-  }
+  setCartItems(items: any[]) { this.cartItemsSignal.set(items); }
+  setAvailablePackages(items: any[]) { this.availablePackagesSignal.set(items); }
+  setCartGifts(gifts: any[]) { this.cartGiftsSignal.set(gifts); }
+  setAllGiftQuantities(quantities: Record<number, number>) { this.giftQuantitiesSignal.set(quantities); }
 
   clearCart() {
     this.quantitiesSignal.set({});
@@ -226,5 +189,4 @@ private enforceGiftLimit() {
     this.giftQuantitiesSignal.set({});
     this.cartGiftsSignal.set([]);
   }
-  
 }

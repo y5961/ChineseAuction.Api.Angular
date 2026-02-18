@@ -27,5 +27,15 @@ namespace ChineseAuctionAPI.Tests.Services
             var c = await svc.GetByIdAsync(2);
             c.Name.Should().Be("C");
         }
+
+            [Fact]
+            public async Task GetAll_Maps()
+            {
+                var mock = new Mock<IGiftCategoryRepo>();
+                mock.Setup(r => r.GetAllAsync()).ReturnsAsync((IEnumerable<GiftCategory?>)new List<GiftCategory?>{ (GiftCategory?)new GiftCategory{ IdGiftCategory=1, Name="C"}});
+                var svc = new GiftCategoryService(mock.Object, Mock.Of<ILogger<GiftCategoryService>>(), Mock.Of<IConfiguration>());
+                var res = await svc.GetAllAsync();
+                res.Should().ContainSingle();
+            }
     }
 }

@@ -7,7 +7,6 @@ import { environment } from '../../../environment';
 export class OrderService {
   private http = inject(HttpClient);
   
-  // הכתובת הבסיסית לכל פעולות ההזמנה
   readonly BASE_URL = `${environment.apiUrl}/api/Orders`; 
 
   getUserOrders(userId: number): Observable<any> {
@@ -35,7 +34,6 @@ export class OrderService {
   deleteDraft(userId: number): Observable<any> {
     return this.http.delete(`${this.BASE_URL}/draft/${userId}`).pipe(
       catchError((err: any) => {
-        // Some backends respond 405 if DELETE on draft is not allowed; treat as benign
         if (err && err.status === 405) {
           console.warn('[OrderService] deleteDraft returned 405; treating as cleaned:', err);
           return of(null);
@@ -52,7 +50,6 @@ export class OrderService {
     return this.http.delete(deleteUrl).pipe(
       catchError((err) => {
         console.warn('[OrderService] DELETE per-gift failed, trying POST /remove-gift', err);
-        // Fallback: try POST /api/Orders/remove-gift { userId, giftId }
         return this.http.post(postRemoveUrl, { userId, giftId }).pipe(
           catchError((err2) => {
             console.warn('[OrderService] POST remove-gift also failed', err2);

@@ -39,7 +39,6 @@ export class RegisterComponent {
   message: string = '';
 
   onRegister() {
-    // Client-side validation: identity must be 9 digits
     const id = (this.userToRegister.identity || '').toString().trim();
     if (!/^[0-9]{9}$/.test(id)) {
       this.message = 'תעודת זהות לא תקינה — יש להזין 9 ספרות.';
@@ -49,7 +48,6 @@ export class RegisterComponent {
     this.authService.register(this.userToRegister).subscribe({
       next: (response) => {
         this.cartService.clearCart(); 
-        // registration succeeded
         this.message = 'נרשמת בהצלחה למכירה הסינית!';
         setTimeout(() => {
           this.router.navigate(['/']);
@@ -57,18 +55,14 @@ export class RegisterComponent {
       },
       error: (err) => {
         console.error('Registration error:', err);
-        // Provide helpful messages for common server responses
         if (err) {
-          // 409 Conflict often used for duplicate resources
           if (err.status === 409) {
             this.message = 'כתובת המייל כבר בשימוש — נא לבחור כתובת שונה.';
             return;
           }
 
-          // 400 may include validation details
           if (err.status === 400) {
             const body = err.error;
-            // If backend returns model state or errors object
             if (body && typeof body === 'object') {
               const text = JSON.stringify(body).toLowerCase();
               if (text.includes('email') || text.includes('duplicate')) {

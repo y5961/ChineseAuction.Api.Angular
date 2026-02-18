@@ -41,7 +41,6 @@ export class LoginComponent {
     this.authService.login(this.userToLogin).subscribe({
       next: (response) => {
         this.cartService.clearCart(); 
-        // login succeeded
         this.message = 'התחברת בהצלחה!';
         setTimeout(() => this.router.navigate(['/']), 1000);
       },

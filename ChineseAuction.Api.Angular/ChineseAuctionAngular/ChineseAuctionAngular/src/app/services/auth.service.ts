@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, Injector, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DtoLogin, UserDTO } from '../models/UserDTO';
 import { tap } from 'rxjs';
@@ -11,8 +11,7 @@ export class AuthService {
   readonly BASE_URL = `${environment.apiUrl}/api/User`;
   private http = inject(HttpClient);
   private router = inject(Router);
-  private cartService = inject(CartService);
-  
+private injector = inject(Injector);  
   private readonly TOKEN_KEY = 'auth_token';
   private readonly MANAGER_KEY = 'is_manager'; 
   // consider stored strings 'null'/'undefined' as missing
@@ -46,17 +45,14 @@ export class AuthService {
     }
   }
 login(details: DtoLogin) {
-  // הוספת responseType: 'text' אומרת לאנגולר לא לנסות להפוך את הטוקן ל-JSON
   return this.http.post(`${this.BASE_URL}/login`, details, { responseType: 'text' }).pipe(
     tap(token => {
-      // validate token - backend may return null/empty
       if (!token || token === 'null' || token === 'undefined') {
         throw new Error('Invalid token received from server');
       }
 
       localStorage.setItem(this.TOKEN_KEY, token);
 
-      // extract admin flag from token
       const isAdmin = this.checkAdminFromToken(token);
       localStorage.setItem(this.MANAGER_KEY, String(isAdmin));
 
@@ -86,15 +82,14 @@ login(details: DtoLogin) {
     this.isLoggedIn.set(false); 
     this.isManager.set(false);
     this.currentUserId.set(0);
-    this.cartService.clearCart();
-    this.router.navigate(['/login']);
+const cartService = this.injector.get(CartService);
+    cartService.clearCart();    this.router.navigate(['/login']);
   }
 
 
   private getUserIdFromToken(): number {
   const token = this.getToken();
   if (!token) {
-    // ensure manager flag is cleared when there's no token
     this.isManager.set(false);
     localStorage.removeItem(this.MANAGER_KEY);
     return 0;
@@ -112,7 +107,6 @@ login(details: DtoLogin) {
     const soapId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
     return Number(soapId || 0);
   } catch {
-    // parsing failed -> clear manager flag to avoid stale state
     this.isManager.set(false);
     localStorage.removeItem(this.MANAGER_KEY);
     return 0;

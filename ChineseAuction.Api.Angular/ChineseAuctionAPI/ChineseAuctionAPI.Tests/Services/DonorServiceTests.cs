@@ -69,5 +69,25 @@ namespace ChineseAuctionAPI.Tests.Services
             var res = (await svc.GetGiftsAsync(1)).ToList();
             res.Should().ContainSingle(g => g.Name == "G" && g.Price == 10);
         }
+
+        [Fact]
+        public async Task SortByEmail_DelegatesToRepository()
+        {
+            var mock = new Mock<IDonorRepository>();
+            mock.Setup(r => r.SortByEmail(It.IsAny<string>())).ReturnsAsync((IEnumerable<Donor?>)new List<Donor?> { (Donor?)new Donor { Email = "a@x.com" } });
+            var svc = new DonorService(mock.Object, Mock.Of<ILogger<DonorService>>(), Mock.Of<IConfiguration>());
+            var res = await svc.SortByEmail("a");
+            res.Should().NotBeEmpty();
+        }
+
+        [Fact]
+        public async Task SortByGift_DelegatesToRepository()
+        {
+            var mock = new Mock<IDonorRepository>();
+            mock.Setup(r => r.SortByGift(It.IsAny<string>())).ReturnsAsync((Donor?)new Donor { FirstName = "D" });
+            var svc = new DonorService(mock.Object, Mock.Of<ILogger<DonorService>>(), Mock.Of<IConfiguration>());
+            var res = await svc.SortByGift("g");
+            res.FirstName.Should().Be("D");
+        }
     }
 }

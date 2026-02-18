@@ -26,5 +26,36 @@ namespace ChineseAuctionAPI.Tests.Services
             var token = await svc.RegisterAsync(new DtoLogin { Email = "a@b.com", Password = "p" });
             token.Should().NotBeNull();
         }
+
+            [Fact]
+            public async Task Login_ReturnsNull_OnBadCreds()
+            {
+                var mock = new Mock<IUserRepo>();
+                mock.Setup(r => r.GetByEmailAsync(It.IsAny<string>())).ReturnsAsync((User?)null);
+                var config = new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string,string?>{ ["Jwt:Key"] = "01234567890123456789012345678901" }).Build();
+                var svc = new UserService(mock.Object, config, Mock.Of<ILogger<UserService>>());
+                var token = await svc.LoginAsync("a@b.com","p");
+                token.Should().BeNull();
+            }
+
+            [Fact]
+            public async Task GetAll_Maps()
+            {
+                var mock = new Mock<IUserRepo>();
+                mock.Setup(r => r.GetAllAsync()).ReturnsAsync((IEnumerable<User?>)new List<User?>{ (User?)new User{ Email = "e@x.com"}});
+                var svc = new UserService(mock.Object, Mock.Of<IConfiguration>(), Mock.Of<ILogger<UserService>>());
+                var res = await svc.GetAllAsync();
+                res.Should().ContainSingle();
+            }
+
+            [Fact]
+            public async Task Delete_ReturnsFalseIfMissing()
+            {
+                var mock = new Mock<IUserRepo>();
+                mock.Setup(r => r.DeleteAsync(It.IsAny<int>())).ReturnsAsync(false);
+                var svc = new UserService(mock.Object, Mock.Of<IConfiguration>(), Mock.Of<ILogger<UserService>>());
+                var ok = await svc.DeleteAsync(1);
+                ok.Should().BeFalse();
+            }
     }
 }

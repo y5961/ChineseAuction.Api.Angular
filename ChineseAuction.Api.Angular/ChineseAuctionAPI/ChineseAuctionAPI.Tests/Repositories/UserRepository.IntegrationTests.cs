@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
+using FluentAssertions;
 using ChineseAuctionAPI.Tests.TestHelpers;
 using ChineseAuctionAPI.Models;
 using ChineseAuctionAPI.Repositories;
@@ -51,5 +52,26 @@ public class UserRepositoryIntegrationTests
         Assert.True(deleted);
         var missing = await repo.GetByIdAsync(added.IdUser);
         Assert.Null(missing);
+    }
+
+    [Fact]
+    public async Task Repo_User_GetByEmail_Exist()
+    {
+        using var ctx = DbTestHelper.CreateInMemoryContext("r5-user");
+        await DbTestHelper.SeedDatabaseAsync(ctx);
+        var repo = new UserRepo(ctx);
+        var u = ctx.Users.First();
+        var byEmail = await repo.GetByEmailAsync(u.Email);
+        Assert.NotNull(byEmail);
+    }
+
+    [Fact]
+    public async Task Repo_User_ExistsEmail_Works()
+    {
+        using var ctx = DbTestHelper.CreateInMemoryContext("r9-user");
+        await DbTestHelper.SeedDatabaseAsync(ctx);
+        var repo = new UserRepo(ctx);
+        var u = ctx.Users.First();
+        (await repo.ExistEmailAsync(u.Email)).Should().BeTrue();
     }
 }

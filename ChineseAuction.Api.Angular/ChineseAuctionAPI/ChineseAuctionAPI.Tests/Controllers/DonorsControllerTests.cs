@@ -47,5 +47,25 @@ namespace ChineseAuctionAPI.Tests.Controllers
             var created = Assert.IsType<CreatedAtActionResult>(res.Result);
             created.Value.Should().Be(11);
         }
+
+        [Fact]
+        public async Task Update_ReturnsNoContent()
+        {
+            var mock = new Mock<IDonorService>();
+            mock.Setup(s => s.UpdateDonorAsync(It.IsAny<int>(), It.IsAny<DonorCreateDTO>())).Returns(Task.CompletedTask);
+            var ctrl = new DonorsController(mock.Object, Mock.Of<ILogger<DonorsController>>());
+            var res = await ctrl.Update(1, new DonorCreateDTO { FirstName = "F" });
+            Assert.IsType<NoContentResult>(res);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsNoContent()
+        {
+            var mock = new Mock<IDonorService>();
+            mock.Setup(s => s.DeleteDonorAsync(It.IsAny<int>())).Returns(Task.CompletedTask);
+            var ctrl = new DonorsController(mock.Object, Mock.Of<ILogger<DonorsController>>());
+            var res = await ctrl.Delete(1);
+            Assert.IsType<NoContentResult>(res);
+        }
     }
 }

@@ -11,12 +11,10 @@ export class GiftCategoryService {
 
   constructor(private http: HttpClient) {}
 
-  // 1. קבלת כל הקטגוריות 
   getAllCategories(): Observable<GiftCategoryDTO[]> {
     return this.http.get<GiftCategoryDTO[]>(this.BASE_URL);
   }
 
-  // 2. קבלת קטגוריה לפי מזהה
   getCategoryById(id: number): Observable<GiftCategoryDTO> {
     return this.http.get<GiftCategoryDTO>(`${this.BASE_URL}/${id}`);
   }

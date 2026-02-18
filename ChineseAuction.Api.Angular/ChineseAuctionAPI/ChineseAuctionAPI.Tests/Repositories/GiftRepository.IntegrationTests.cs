@@ -50,4 +50,28 @@ public class GiftRepositoryIntegrationTests
         var deletedOk = await repo.DeleteAsync(added.IdGift);
         Assert.True(deletedOk);
     }
+
+    [Fact]
+    public async Task Repo_Gift_CRUD_Smoke()
+    {
+        using var ctx = DbTestHelper.CreateInMemoryContext("r4-gift");
+        await DbTestHelper.SeedDatabaseAsync(ctx);
+        var repo = new GiftRepo(ctx);
+        var gift = new Gift { Name = "Gx", Price = 1, Amount = 1, Category = ctx.GiftCategories.First(), Donor = ctx.Donors.First() };
+        var added = await repo.AddAsync(gift);
+        Assert.NotNull(added);
+        var byId = await repo.GetByIdAsync(added.IdGift);
+        Assert.NotNull(byId);
+        await repo.DeleteAsync(added.IdGift);
+    }
+
+    [Fact]
+    public async Task Repo_Gift_GetByName_Returns()
+    {
+        using var ctx = DbTestHelper.CreateInMemoryContext("r10-gift");
+        await DbTestHelper.SeedDatabaseAsync(ctx);
+        var repo = new GiftRepo(ctx);
+        var res = await repo.GetByNameGift("Gift");
+        Assert.NotNull(res);
+    }
 }

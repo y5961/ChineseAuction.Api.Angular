@@ -17,6 +17,8 @@ import { environment } from '../../../../environment';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent implements OnInit {
+
+  
   imageUrl = environment.apiUrl + '/images/packages/';
   giftImageUrl = environment.apiUrl + '/images/gift/';
   
@@ -26,7 +28,7 @@ export class CartComponent implements OnInit {
   private packageService = inject(PackageService);
   private giftService = inject(GiftService);
   private router = inject(Router);
-
+  
   cartPackages = this.cartService.cartItems;
   packageQuantities = this.cartService.packageQuantities;
   cartGifts = this.cartService.cartGifts;
@@ -52,6 +54,7 @@ ngOnInit() {
     });
   });
 }
+
   loadCart() {
   const userId = this.authService.getUserId();
   if (userId > 0) {
@@ -66,9 +69,7 @@ ngOnInit() {
               const fullInfo = this.allAvailablePackages().find(p => p.idPackage === item.idPackage);
               qtys[item.idPackage] = item.quantity;
               return {
-                // keep original order-package fields
                 ...item,
-                // ensure we expose full package data for the cart template
                 idPackage: item.idPackage,
                 quantity: item.quantity,
                 name: fullInfo?.name ?? item.name ?? '',
@@ -306,7 +307,6 @@ getPackageGradient(id: number): string {
         return;
       }
     } catch (e) {
-      // if anything goes wrong reading signals, fall back to direct navigation
       console.warn('Error checking remaining tickets', e);
     }
 

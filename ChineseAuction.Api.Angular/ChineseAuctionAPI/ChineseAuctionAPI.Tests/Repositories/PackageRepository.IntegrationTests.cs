@@ -37,5 +37,31 @@ namespace ChineseAuctionAPI.Tests.Repositories
             var deleted = await repo.GetByIdAsync(id);
             deleted.Should().BeNull();
         }
+
+        [Fact]
+        public async Task Repo_Package_CRUD_Smoke()
+        {
+            using var ctx = DbTestHelper.CreateInMemoryContext("r3-pkg");
+            await DbTestHelper.SeedDatabaseAsync(ctx);
+            var repo = new PackageRepo(ctx);
+            var p = new Package { Name = "X" };
+            var id = await repo.AddAsync(p);
+            id.Should().BeGreaterThan(0);
+            var got = await repo.GetByIdAsync(id);
+            got.Name.Should().Be("X");
+            await repo.UpdateAsync(got);
+            await repo.DeleteAsync(id);
+            var missing = await repo.GetByIdAsync(id);
+            missing.Should().BeNull();
+        }
+
+        [Fact]
+        public async Task Repo_Package_GetAll_NotNull()
+        {
+            using var ctx = DbTestHelper.CreateInMemoryContext("r8-pkg");
+            await DbTestHelper.SeedDatabaseAsync(ctx);
+            var repo = new PackageRepo(ctx);
+            (await repo.GetAllAsync()).Should().NotBeNull();
+        }
     }
 }

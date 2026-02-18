@@ -42,5 +42,45 @@ namespace ChineseAuctionAPI.Tests.Services
             var deleted = await svc.DeleteGiftAsync(created.IdGift);
             deleted.Should().BeTrue();
         }
+
+        [Fact]
+        public async Task GetById_ReturnsNullWhenMissing()
+        {
+            var mock = new Mock<IGiftRepo>();
+            mock.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((Gift?)null);
+            var svc = new GiftService(mock.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
+            var res = await svc.GetGiftByIdAsync(999);
+            res.Should().BeNull();
+        }
+
+        [Fact]
+        public async Task SortByPrice_Delegates()
+        {
+            var mock = new Mock<IGiftRepo>();
+            mock.Setup(r => r.SortByPrice()).ReturnsAsync((IEnumerable<Gift?>)new List<Gift?>());
+            var svc = new GiftService(mock.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
+            var res = await svc.SortByPrice();
+            res.Should().NotBeNull();
+        }
+
+        [Fact]
+        public async Task Add_EmailAttempt_NoThrow()
+        {
+            var mock = new Mock<IGiftRepo>();
+            mock.Setup(r => r.AddAsync(It.IsAny<Gift>())).ReturnsAsync((Gift?)new Gift { IdGift = 1 });
+            var svc = new GiftService(mock.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
+            var g = await svc.CreateGiftAsync(new GiftDTO { Name = "N" });
+            g.IdGift.Should().Be(1);
+        }
+
+        [Fact]
+        public async Task GetParticipants_EmptyHandled()
+        {
+            var mock = new Mock<IGiftRepo>();
+            mock.Setup(r => r.GetGiftWithOrdersAndUsersAsync(It.IsAny<int>())).ReturnsAsync((Gift?)null);
+            var svc = new GiftService(mock.Object, Mock.Of<ILogger<GiftService>>(), Mock.Of<IConfiguration>(), Mock.Of<IEmailService1>(), Mock.Of<IUserRepo>());
+            var res = await svc.GetParticipantsDetailsAsync(1);
+            res.Should().BeEmpty();
+        }
     }
 }
